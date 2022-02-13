@@ -19,12 +19,6 @@ class RemoteServices {
           "password": password,
           "role": role
         });
-    // print(response.body);
-    // print(firstname);
-    // print(lastname);
-    // print(email);
-    // print(password);
-    // print(role);
     if (response.statusCode == 200) {
       print(response.body);
       if (response.body == "Success") {
@@ -42,17 +36,12 @@ class RemoteServices {
     print(response.body);
     if (response.statusCode == 200) {
       if (response.body == "Failed") {
-        appData.write("isAuthenticated", false);
         Get.snackbar("Opps", "Wrong username or password...");
         Get.toNamed('/login');
         return null;
       } else {
-        appData.write("Login", true);
-        appData.write("isAuthenticated", true);
-        appData.write("email", email);
-        appData.write("password", password);
         Get.snackbar("Hooray!", "Successfully login into your account.");
-        Get.offAllNamed('/home');
+        Get.offAllNamed('/bottombar');
 
         // List userdata = response.body.split('#');
         // User user = new User(
