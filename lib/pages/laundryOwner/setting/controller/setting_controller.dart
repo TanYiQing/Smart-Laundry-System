@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
-class SettingController extends GetxController {
+class SettingLaundryController extends GetxController {
   var appData = GetStorage();
 
   void onReady() {
@@ -37,5 +37,9 @@ class SettingController extends GetxController {
 
   void clickLogout() {
     appData.write("staySignedIn", false);
+    appData.write("email", "");
+    appData.write("password", "");
+    appData.write("role", "");
+    Get.offAllNamed('/intro');
   }
 }

@@ -1,6 +1,6 @@
+import 'package:final_year_project/pages/customer/bottombar/controller/bottombar_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-// import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -51,10 +51,15 @@ class HomePage extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                "Tan Yi Qing",
-                                style: TextStyle(fontSize: screenWidth / 20),
-                              ),
+                              GetBuilder<BottomBarController>(
+                                  builder: (controller) {
+                                return Text(
+                                  controller.user.fname.toString() +
+                                      " " +
+                                      controller.user.lname.toString(),
+                                  style: TextStyle(fontSize: screenWidth / 20),
+                                );
+                              }),
                               Text(
                                 "UID: MYR0000054543121012135",
                                 style: TextStyle(fontSize: 8),
@@ -111,7 +116,7 @@ class HomePage extends StatelessWidget {
                           padding: const EdgeInsets.all(4.0),
                           child: GestureDetector(
                             onTap: () {
-                              Get.toNamed("/setting");
+                              Get.toNamed("/setting",);
                             },
                             child: Container(
                               height: screenHeight / 12,
@@ -139,8 +144,14 @@ class HomePage extends StatelessWidget {
                           elevation: 10,
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: GestureDetector(onTap: (){Get.toNamed("/search");},
-                              child: TextField(onTap: (){Get.toNamed("/search");},
+                            child: GestureDetector(
+                              onTap: () {
+                                Get.toNamed("/search");
+                              },
+                              child: TextField(
+                                onTap: () {
+                                  Get.toNamed("/search");
+                                },
                                 decoration: InputDecoration(
                                     border: InputBorder.none,
                                     suffixIcon: Icon(Icons.search)),
@@ -166,7 +177,9 @@ class HomePage extends StatelessWidget {
                         width: screenWidth / 5,
                         height: screenHeight / 35,
                         child: MaterialButton(
-                          onPressed: () {Get.toNamed("/services");},
+                          onPressed: () {
+                            Get.toNamed("/services");
+                          },
                           child: Container(
                             child: Text(
                               "View All",

@@ -22,7 +22,6 @@ class OneSource extends StatelessWidget {
       getPages: AppPages.routes,
       unknownRoute: AppPages.notfound,
       locale: Locale(language),
-      // locale:Locale(language),
       fallbackLocale: TranslationService.fallbackLocale,
       translations: TranslationService(),
       // theme: Themes().lightTheme,

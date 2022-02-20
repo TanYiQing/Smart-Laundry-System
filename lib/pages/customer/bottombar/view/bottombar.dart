@@ -1,10 +1,10 @@
-import 'package:final_year_project/pages/customer/account/view/account.dart';
+import 'package:final_year_project/pages/customer/bottombar/branch/account/view/account.dart';
+import 'package:final_year_project/pages/customer/bottombar/branch/favourite/view/favourite.dart';
+import 'package:final_year_project/pages/customer/bottombar/branch/home/view/home.dart';
+import 'package:final_year_project/pages/customer/bottombar/branch/ongoingorder/view/ongoingorder.dart';
+import 'package:final_year_project/pages/customer/bottombar/branch/purchasehistory/view/purchasehistory.dart';
 import 'package:final_year_project/pages/customer/bottombar/controller/bottombar_controller.dart';
-import 'package:final_year_project/pages/customer/favourite/view/favourite.dart';
-import 'package:final_year_project/pages/customer/home/view/home.dart';
-import 'package:final_year_project/pages/customer/ongoingorder/view/ongoingorder.dart';
-import 'package:final_year_project/pages/customer/purchasehistory/view/purchasehistory.dart';
-import 'package:final_year_project/pages/mutual/login/view/login.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

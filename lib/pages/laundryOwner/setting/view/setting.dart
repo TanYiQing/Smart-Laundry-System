@@ -1,8 +1,8 @@
-import 'package:final_year_project/pages/customer/setting/controller/setting_controller.dart';
+import 'package:final_year_project/pages/laundryOwner/setting/controller/setting_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SettingPage extends StatelessWidget {
+class SettingPageLaundry extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -39,8 +39,8 @@ class SettingPage extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        GetX<SettingController>(
-                            init: SettingController(),
+                        GetX<SettingLaundryController>(
+                            init: SettingLaundryController(),
                             builder: (controller) {
                               controller.changeLanguage();
                               return Text(controller.language.value);
@@ -157,7 +157,7 @@ class SettingPage extends StatelessWidget {
             //     ],
             //   ),
             // ),
-            GetBuilder<SettingController>(builder: (controller) {
+            GetBuilder<SettingLaundryController>(builder: (controller) {
               return GestureDetector(
                   onTap: () {
                     // AccountController().clickLogout();

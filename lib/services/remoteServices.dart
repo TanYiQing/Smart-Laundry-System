@@ -41,16 +41,20 @@ class RemoteServices {
         return null;
       } else {
         Get.snackbar("Hooray!", "Successfully login into your account.");
-        Get.offAllNamed('/bottombar');
 
-        // List userdata = response.body.split('#');
-        // User user = new User(
-        //   fname: userdata[1],
-        //   lname: userdata[2],
-        //   email: userdata[3],
-        //   dateregister: userdata[4],
-        // );
-        // return user;
+        List userdata = response.body.split('#');
+        User user = new User(
+          fname: userdata[1],
+          lname: userdata[2],
+          email: userdata[3],
+          dateregister: userdata[4],
+        );
+        print(user.lname);
+        if (role == "Customer") {
+          Get.offAllNamed('/bottombar', arguments: user);
+        } else {
+          Get.offAllNamed('/homelaundry', arguments: user);
+        }
       }
     } else {
       Get.snackbar("Opps", "Wrong username or password...");

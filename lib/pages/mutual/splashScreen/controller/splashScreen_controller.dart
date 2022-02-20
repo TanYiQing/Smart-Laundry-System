@@ -25,5 +25,6 @@ class SplashScreenController extends GetxController {
   Future<void> loginUser() async {
     user = await RemoteServices.loginUser(
         appData.read("email"), appData.read("password"), appData.read("role"));
+   
   }
 }

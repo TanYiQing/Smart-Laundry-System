@@ -14,9 +14,9 @@ class LoginController extends GetxController {
   var ishidden = true.obs;
   var rememberme = false.obs;
 
-  void clickLogin() {
-    RemoteServices.loginUser(
-        emailController.text.toString(), passwordController.text.toString(),selectedRole.value.toString());
+  Future<void> clickLogin() async {
+    user = await RemoteServices.loginUser(emailController.text.toString(),
+        passwordController.text.toString(), selectedRole.value.toString());
   }
 
   void handleRadioButton(var role) {
@@ -26,29 +26,28 @@ class LoginController extends GetxController {
   }
 
   void togglePassword() {
-    if(ishidden.isTrue){
+    if (ishidden.isTrue) {
       ishidden.toggle();
-    }else{
+    } else {
       ishidden.value = true;
     }
     update();
   }
 
   void rememberMe(var remember) {
-    String email=emailController.text.toString();
-    String password=passwordController.text.toString();
-     if (email.isEmpty || password.isEmpty) {
-      Get.snackbar("Empty Field", "Please make sure the email and password is filled in.");
+    String email = emailController.text.toString();
+    String password = passwordController.text.toString();
+    if (email.isEmpty || password.isEmpty) {
+      Get.snackbar("Empty Field",
+          "Please make sure the email and password is filled in.");
       return;
-    }else{
+    } else {
       rememberme.value = remember;
       update();
       appData.write("staySignedIn", rememberme.value);
       appData.write("email", email);
       appData.write("password", password);
-      appData.write("role",selectedRole.value);
+      appData.write("role", selectedRole.value);
     }
-    
-    
   }
 }
