@@ -243,23 +243,28 @@ class HomePageLaundry extends StatelessWidget {
                                       elevation: 8,
                                       child: Text("Laundry")),
                                 ),
-                                Container(
-                                    height: double.infinity,
-                                    width: screenWidth - (screenWidth / 1.4),
-                                    child: Card(
-                                      elevation: 8,
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(60)),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Icon(Icons.arrow_forward_outlined),
-                                          Text("View More")
-                                        ],
-                                      ),
-                                    )),
+                                GestureDetector(
+                                  onTap: () {
+                                    Get.toNamed("/mylaundrylaundry");
+                                  },
+                                  child: Container(
+                                      height: double.infinity,
+                                      width: screenWidth - (screenWidth / 1.4),
+                                      child: Card(
+                                        elevation: 8,
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(60)),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Icon(Icons.arrow_forward_outlined),
+                                            Text("View More")
+                                          ],
+                                        ),
+                                      )),
+                                ),
                               ],
                             ),
                           ),
@@ -289,23 +294,28 @@ class HomePageLaundry extends StatelessWidget {
                                       elevation: 8,
                                       child: Text("Laundry")),
                                 ),
-                                Container(
-                                    height: double.infinity,
-                                    width: screenWidth - (screenWidth / 1.4),
-                                    child: Card(
-                                      elevation: 8,
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(60)),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Icon(Icons.arrow_forward_outlined),
-                                          Text("View More")
-                                        ],
-                                      ),
-                                    )),
+                                GestureDetector(
+                                  onTap: () {
+                                    Get.toNamed("/addnewlaundrylaundry");
+                                  },
+                                  child: Container(
+                                      height: double.infinity,
+                                      width: screenWidth - (screenWidth / 1.4),
+                                      child: Card(
+                                        elevation: 8,
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(60)),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Icon(Icons.arrow_forward_outlined),
+                                            Text("View More")
+                                          ],
+                                        ),
+                                      )),
+                                ),
                               ],
                             ),
                           ),
@@ -336,23 +346,28 @@ class HomePageLaundry extends StatelessWidget {
                                       elevation: 8,
                                       child: Text("Laundry")),
                                 ),
-                                Container(
-                                    height: double.infinity,
-                                    width: screenWidth - (screenWidth / 1.4),
-                                    child: Card(
-                                      elevation: 8,
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(60)),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Icon(Icons.arrow_forward_outlined),
-                                          Text("View More")
-                                        ],
-                                      ),
-                                    )),
+                                GestureDetector(
+                                  onTap: () {
+                                    Get.toNamed("/mywalletlaundry");
+                                  },
+                                  child: Container(
+                                      height: double.infinity,
+                                      width: screenWidth - (screenWidth / 1.4),
+                                      child: Card(
+                                        elevation: 8,
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(60)),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Icon(Icons.arrow_forward_outlined),
+                                            Text("View More")
+                                          ],
+                                        ),
+                                      )),
+                                ),
                               ],
                             ),
                           ),
@@ -382,23 +397,28 @@ class HomePageLaundry extends StatelessWidget {
                                       elevation: 8,
                                       child: Text("Laundry")),
                                 ),
-                                Container(
-                                    height: double.infinity,
-                                    width: screenWidth - (screenWidth / 1.4),
-                                    child: Card(
-                                      elevation: 8,
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(60)),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Icon(Icons.arrow_forward_outlined),
-                                          Text("View More")
-                                        ],
-                                      ),
-                                    )),
+                                GestureDetector(
+                                  onTap: () {
+                                    Get.toNamed("/mybusinesslaundry");
+                                  },
+                                  child: Container(
+                                      height: double.infinity,
+                                      width: screenWidth - (screenWidth / 1.4),
+                                      child: Card(
+                                        elevation: 8,
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(60)),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Icon(Icons.arrow_forward_outlined),
+                                            Text("View More")
+                                          ],
+                                        ),
+                                      )),
+                                ),
                               ],
                             ),
                           ),
@@ -428,23 +448,28 @@ class HomePageLaundry extends StatelessWidget {
                                       elevation: 8,
                                       child: Text("Laundry")),
                                 ),
-                                Container(
-                                    height: double.infinity,
-                                    width: screenWidth - (screenWidth / 1.4),
-                                    child: Card(
-                                      elevation: 8,
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(60)),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Icon(Icons.arrow_forward_outlined),
-                                          Text("View More")
-                                        ],
-                                      ),
-                                    )),
+                                GestureDetector(
+                                  onTap: () {
+                                    Get.toNamed("/businessreportlaundry");
+                                  },
+                                  child: Container(
+                                      height: double.infinity,
+                                      width: screenWidth - (screenWidth / 1.4),
+                                      child: Card(
+                                        elevation: 8,
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(60)),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Icon(Icons.arrow_forward_outlined),
+                                            Text("View More")
+                                          ],
+                                        ),
+                                      )),
+                                ),
                               ],
                             ),
                           ),
