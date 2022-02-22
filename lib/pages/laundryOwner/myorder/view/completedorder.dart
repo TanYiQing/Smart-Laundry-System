@@ -8,7 +8,7 @@ class CompleteOrderPageLaundry extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           title: Text(
-            "Complete Order",
+            "Completed Order",
             style: TextStyle(color: Colors.black),
           ),
           elevation: 0,

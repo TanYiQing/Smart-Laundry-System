@@ -97,7 +97,7 @@ class HomePageLaundry extends StatelessWidget {
                           padding: const EdgeInsets.all(4.0),
                           child: GestureDetector(
                             onTap: () {
-                              Get.toNamed("/settinglaundry");
+                              Get.toNamed("/setting");
                             },
                             child: Container(
                               height: screenHeight / 12,
@@ -246,57 +246,6 @@ class HomePageLaundry extends StatelessWidget {
                                 GestureDetector(
                                   onTap: () {
                                     Get.toNamed("/mylaundrylaundry");
-                                  },
-                                  child: Container(
-                                      height: double.infinity,
-                                      width: screenWidth - (screenWidth / 1.4),
-                                      child: Card(
-                                        elevation: 8,
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(60)),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Icon(Icons.arrow_forward_outlined),
-                                            Text("View More")
-                                          ],
-                                        ),
-                                      )),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            "Add New Laundry",
-                            style: TextStyle(
-                                fontSize: screenWidth / 20,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            height: screenHeight / 5,
-                            child: Row(
-                              children: [
-                                Container(
-                                  height: double.infinity,
-                                  width: screenWidth / 1.5,
-                                  child: Card(
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(20))),
-                                      elevation: 8,
-                                      child: Text("Laundry")),
-                                ),
-                                GestureDetector(
-                                  onTap: () {
-                                    Get.toNamed("/addnewlaundrylaundry");
                                   },
                                   child: Container(
                                       height: double.infinity,

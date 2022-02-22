@@ -1,24 +1,17 @@
 import 'package:final_year_project/middleware/router_auth.dart';
-
 import 'package:final_year_project/pages/customer/bottombar/binding/bottombar_binding.dart';
-import 'package:final_year_project/pages/customer/bottombar/branch/account/view/account.dart';
+import 'package:final_year_project/pages/laundryOwner/addnewlaundry/binding/addnewlaundry_binding.dart';
+import 'package:final_year_project/pages/mutual/account/binding/account_binding.dart';
+import 'package:final_year_project/pages/mutual/account/view/accountcustomer.dart';
 import 'package:final_year_project/pages/customer/bottombar/branch/favourite/view/favourite.dart';
 import 'package:final_year_project/pages/customer/bottombar/branch/home/view/home.dart';
 import 'package:final_year_project/pages/customer/bottombar/branch/ongoingorder/view/ongoingorder.dart';
 import 'package:final_year_project/pages/customer/bottombar/branch/purchasehistory/view/purchasehistory.dart';
 import 'package:final_year_project/pages/customer/bottombar/view/bottombar.dart';
-
 import 'package:final_year_project/pages/customer/location/view/location.dart';
 import 'package:final_year_project/pages/customer/notification/view/notification.dart';
-
 import 'package:final_year_project/pages/customer/search/view/search.dart';
 import 'package:final_year_project/pages/customer/services/view/services.dart';
-import 'package:final_year_project/pages/customer/setting/binding/setting_binding.dart';
-import 'package:final_year_project/pages/customer/setting/view/aboutus.dart';
-import 'package:final_year_project/pages/customer/setting/view/language.dart';
-import 'package:final_year_project/pages/customer/setting/view/setting.dart';
-import 'package:final_year_project/pages/laundryOwner/account/binding/account_binding.dart';
-import 'package:final_year_project/pages/laundryOwner/account/view/account.dart';
 import 'package:final_year_project/pages/laundryOwner/addnewlaundry/view/addnewlaundry.dart';
 import 'package:final_year_project/pages/laundryOwner/businessreport/view/businessreport.dart';
 import 'package:final_year_project/pages/laundryOwner/home/binding/home_binding.dart';
@@ -30,13 +23,21 @@ import 'package:final_year_project/pages/laundryOwner/myorder/view/completedorde
 import 'package:final_year_project/pages/laundryOwner/myorder/view/neworder.dart';
 import 'package:final_year_project/pages/laundryOwner/myorder/view/ongoingorder.dart';
 import 'package:final_year_project/pages/laundryOwner/mywallet/view/mywallet.dart';
-import 'package:final_year_project/pages/laundryOwner/setting/binding/setting_binding.dart';
-import 'package:final_year_project/pages/laundryOwner/setting/view/setting.dart';
+import 'package:final_year_project/pages/mutual/account/view/accountlaundry.dart';
+import 'package:final_year_project/pages/mutual/account/view/birthday.dart';
+import 'package:final_year_project/pages/mutual/account/view/changepassword.dart';
+import 'package:final_year_project/pages/mutual/account/view/firstname.dart';
+import 'package:final_year_project/pages/mutual/account/view/gender.dart';
+import 'package:final_year_project/pages/mutual/account/view/lastname.dart';
 import 'package:final_year_project/pages/mutual/intro/binding/intro_binding.dart';
 import 'package:final_year_project/pages/mutual/intro/view/intro.dart';
 import 'package:final_year_project/pages/mutual/login/binding/login_binding.dart';
 import 'package:final_year_project/pages/mutual/login/view/login.dart';
 import 'package:final_year_project/pages/mutual/notfound/notfound.dart';
+import 'package:final_year_project/pages/mutual/setting/binding/setting_binding.dart';
+import 'package:final_year_project/pages/mutual/setting/view/aboutus.dart';
+import 'package:final_year_project/pages/mutual/setting/view/language.dart';
+import 'package:final_year_project/pages/mutual/setting/view/setting.dart';
 import 'package:final_year_project/pages/mutual/signup/binding/singup_binding.dart';
 import 'package:final_year_project/pages/mutual/signup/view/signup.dart';
 import 'package:final_year_project/pages/mutual/splashScreen/binding/splashScreen_binding.dart';
@@ -50,7 +51,7 @@ class AppPages {
       page: () => SplashScreen());
 
   static final List<GetPage> routes = [
-    //Customer Page
+    //Mutual Page
     GetPage(
         name: '/splash',
         binding: SplashScreenBinding(),
@@ -63,6 +64,59 @@ class AppPages {
     GetPage(name: "/login", binding: LoginBingdings(), page: () => LoginPage()),
     GetPage(
         name: "/signup", binding: SignupBindings(), page: () => SignupPage()),
+    GetPage(
+        name: "/setting",
+        page: () => SettingPage(),
+        binding: SettingBindings(),
+        middlewares: [RouterAuthMiddleware()]),
+    GetPage(
+        name: "/services",
+        page: () => ServicesPage(),
+        middlewares: [RouterAuthMiddleware()]),
+    GetPage(
+        name: "/language",
+        page: () => LanguagePage(),
+        middlewares: [RouterAuthMiddleware()]),
+    GetPage(
+        name: "/aboutus",
+        page: () => AboutUsPage(),
+        middlewares: [RouterAuthMiddleware()]),
+    GetPage(
+        name: "/account",
+        page: () => AccountPageCustomer(),
+        middlewares: [RouterAuthMiddleware()]),
+    GetPage(
+        name: "/accountlaundry",
+        page: () => AccountPageLaundry(),
+        binding: AccountBindings(),
+        middlewares: [RouterAuthMiddleware()]),
+    GetPage(
+        name: "/firstname",
+        page: () => FirstNamePage(),
+        binding: AccountBindings(),
+        middlewares: [RouterAuthMiddleware()]),
+    GetPage(
+        name: "/lastname",
+        page: () => LastNamePage(),
+        binding: AccountBindings(),
+        middlewares: [RouterAuthMiddleware()]),
+    GetPage(
+        name: "/password",
+        page: () => ChangePasswordPage(),
+        binding: AccountBindings(),
+        middlewares: [RouterAuthMiddleware()]),
+    GetPage(
+        name: "/gender",
+        page: () => GenderPage(),
+        binding: AccountBindings(),
+        middlewares: [RouterAuthMiddleware()]),
+    GetPage(
+        name: "/birthday",
+        page: () => BirthdayPage(),
+        binding: AccountBindings(),
+        middlewares: [RouterAuthMiddleware()]),
+
+    //Customer Page
     GetPage(
         name: "/home",
         page: () => HomePage(),
@@ -91,43 +145,12 @@ class AppPages {
         name: "/notification",
         page: () => NotificationPage(),
         middlewares: [RouterAuthMiddleware()]),
-    GetPage(
-        name: "/setting",
-        page: () => SettingPage(),
-        binding: SettingBindings(),
-        middlewares: [RouterAuthMiddleware()]),
-    GetPage(
-        name: "/services",
-        page: () => ServicesPage(),
-        middlewares: [RouterAuthMiddleware()]),
-    GetPage(
-        name: "/account",
-        page: () => AccountPage(),
-        middlewares: [RouterAuthMiddleware()]),
-    GetPage(
-        name: "/language",
-        page: () => LanguagePage(),
-        middlewares: [RouterAuthMiddleware()]),
-    GetPage(
-        name: "/aboutus",
-        page: () => AboutUsPage(),
-        middlewares: [RouterAuthMiddleware()]),
 
     //Laundry Owner Page
     GetPage(
         name: "/homelaundry",
         binding: HomeLaundryBindings(),
         page: () => HomePageLaundry(),
-        middlewares: [RouterAuthMiddleware()]),
-    GetPage(
-        name: "/settinglaundry",
-        page: () => SettingPageLaundry(),
-        binding: SettingLaundryBindings(),
-        middlewares: [RouterAuthMiddleware()]),
-    GetPage(
-        name: "/accountlaundry",
-        page: () => AccountPageLaundry(),
-        binding: AccountLaundryBindings(),
         middlewares: [RouterAuthMiddleware()]),
     GetPage(
         name: "/neworderlaundry",
@@ -144,8 +167,9 @@ class AppPages {
         page: () => CompleteOrderPageLaundry(),
         binding: MyOrderLaundryBindings(),
         middlewares: [RouterAuthMiddleware()]),
-    GetPage(name: "/addnewlaundrylaundry", page: () => AddNewLaundryPageLaundry(),
-        // binding: MyOrderLaundryBindings(),
+    GetPage(
+        name: "/addnewlaundrylaundry", page: () => AddNewLaundryPageLaundry(),
+        binding: AddNewLaundryBindings(),
         middlewares: [RouterAuthMiddleware()]),
     GetPage(
         name: "/businessreportlaundry", page: () => BusinessReportPageLaundry(),

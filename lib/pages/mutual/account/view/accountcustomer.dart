@@ -2,7 +2,7 @@ import 'package:final_year_project/pages/customer/bottombar/controller/bottombar
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class AccountPage extends StatelessWidget {
+class AccountPageCustomer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
