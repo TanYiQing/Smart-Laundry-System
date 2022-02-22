@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:final_year_project/routes/app_pages.dart';
 import 'package:get_storage/get_storage.dart';
 
-final appData=GetStorage();
+final appData = GetStorage();
 void main() async {
   await GetStorage.init();
   runApp(OneSource());
@@ -14,7 +14,7 @@ void main() async {
 class OneSource extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final String language=appData.read("language")??'';
+    final String language = appData.read("language") ?? '';
     return GetMaterialApp(
       title: 'OneSource Laundry',
       debugShowCheckedModeBanner: false,

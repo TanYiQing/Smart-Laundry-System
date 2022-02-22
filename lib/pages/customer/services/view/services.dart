@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ServicesPage extends StatelessWidget {
   @override
@@ -20,150 +21,175 @@ class ServicesPage extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                    height: screenHeight / 4,
-                    width: double.infinity,
-                    child: Card(
-                        shape: RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(30))),
-                        elevation: 10,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.all(Radius.circular(30)),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  fit: BoxFit.fill,
-                                  image: AssetImage(
-                                      "assets/images/normalwash.jpg")),
+              GestureDetector(
+                onTap: () {
+                  Get.toNamed("/normalwash");
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                      height: screenHeight / 4,
+                      width: double.infinity,
+                      child: Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(30))),
+                          elevation: 10,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.all(Radius.circular(30)),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    fit: BoxFit.fill,
+                                    image: AssetImage(
+                                        "assets/images/normalwash.jpg")),
+                              ),
+                              child: Center(
+                                  child: Text(
+                                "Normal Wash",
+                                style: TextStyle(
+                                    fontSize: screenWidth / 15,
+                                    fontWeight: FontWeight.bold),
+                              )),
                             ),
-                            child: Center(
-                                child: Text(
-                              "Normal Wash",
-                              style: TextStyle(
-                                  fontSize: screenWidth / 15,
-                                  fontWeight: FontWeight.bold),
-                            )),
-                          ),
-                        ))),
+                          ))),
+                ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                    height: screenHeight / 4,
-                    width: double.infinity,
-                    child: Card(
-                        shape: RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(30))),
-                        elevation: 10,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.all(Radius.circular(30)),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  fit: BoxFit.fill,
-                                  image: AssetImage(
-                                      "assets/images/normalwashiron.jpg")),
+              GestureDetector(
+                onTap: () {
+                  Get.toNamed("/normalwashandironing");
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                      height: screenHeight / 4,
+                      width: double.infinity,
+                      child: Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(30))),
+                          elevation: 10,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.all(Radius.circular(30)),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    fit: BoxFit.fill,
+                                    image: AssetImage(
+                                        "assets/images/normalwashiron.jpg")),
+                              ),
+                              child: Center(
+                                  child: Text(
+                                "Normal Wash & Ironing",
+                                style: TextStyle(
+                                    fontSize: screenWidth / 15,
+                                    fontWeight: FontWeight.bold),
+                              )),
                             ),
-                            child: Center(
-                                child: Text(
-                              "Normal Wash & Ironing",
-                              style: TextStyle(
-                                  fontSize: screenWidth / 15,
-                                  fontWeight: FontWeight.bold),
-                            )),
-                          ),
-                        ))),
+                          ))),
+                ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                    height: screenHeight / 4,
-                    width: double.infinity,
-                    child: Card(
-                        shape: RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(30))),
-                        elevation: 10,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.all(Radius.circular(30)),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  fit: BoxFit.fill,
-                                  image:
-                                      AssetImage("assets/images/drywash.jpeg")),
+              GestureDetector(
+                onTap: () {
+                  Get.toNamed("/drywash");
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                      height: screenHeight / 4,
+                      width: double.infinity,
+                      child: Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(30))),
+                          elevation: 10,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.all(Radius.circular(30)),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    fit: BoxFit.fill,
+                                    image: AssetImage(
+                                        "assets/images/drywash.jpeg")),
+                              ),
+                              child: Center(
+                                  child: Text(
+                                "Dry Wash",
+                                style: TextStyle(
+                                    fontSize: screenWidth / 15,
+                                    fontWeight: FontWeight.bold),
+                              )),
                             ),
-                            child: Center(
-                                child: Text(
-                              "Dry Wash",
-                              style: TextStyle(
-                                  fontSize: screenWidth / 15,
-                                  fontWeight: FontWeight.bold),
-                            )),
-                          ),
-                        ))),
+                          ))),
+                ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                    height: screenHeight / 4,
-                    width: double.infinity,
-                    child: Card(
-                        shape: RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(30))),
-                        elevation: 10,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.all(Radius.circular(30)),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  fit: BoxFit.fill,
-                                  image: AssetImage(
-                                      "assets/images/drywashironing.jpg")),
+              GestureDetector(
+                onTap: () {
+                  Get.toNamed("/drywashandironing");
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                      height: screenHeight / 4,
+                      width: double.infinity,
+                      child: Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(30))),
+                          elevation: 10,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.all(Radius.circular(30)),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    fit: BoxFit.fill,
+                                    image: AssetImage(
+                                        "assets/images/drywashironing.jpg")),
+                              ),
+                              child: Center(
+                                  child: Text(
+                                "Dry Wash & Ironing",
+                                style: TextStyle(
+                                    fontSize: screenWidth / 15,
+                                    fontWeight: FontWeight.bold),
+                              )),
                             ),
-                            child: Center(
-                                child: Text(
-                              "Dry Wash & Ironing",
-                              style: TextStyle(
-                                  fontSize: screenWidth / 15,
-                                  fontWeight: FontWeight.bold),
-                            )),
-                          ),
-                        ))),
+                          ))),
+                ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                    height: screenHeight / 4,
-                    width: double.infinity,
-                    child: Card(
-                        shape: RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(30))),
-                        elevation: 10,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.all(Radius.circular(30)),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  fit: BoxFit.fill,
-                                  image:
-                                      AssetImage("assets/images/ironing.jpg")),
+              GestureDetector(
+                onTap: () {
+                  Get.toNamed("/ironing");
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                      height: screenHeight / 4,
+                      width: double.infinity,
+                      child: Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(30))),
+                          elevation: 10,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.all(Radius.circular(30)),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    fit: BoxFit.fill,
+                                    image: AssetImage(
+                                        "assets/images/ironing.jpg")),
+                              ),
+                              child: Center(
+                                  child: Text(
+                                "Ironing",
+                                style: TextStyle(
+                                    fontSize: screenWidth / 15,
+                                    fontWeight: FontWeight.bold),
+                              )),
                             ),
-                            child: Center(
-                                child: Text(
-                              "Ironing",
-                              style: TextStyle(
-                                  fontSize: screenWidth / 15,
-                                  fontWeight: FontWeight.bold),
-                            )),
-                          ),
-                        ))),
+                          ))),
+                ),
               ),
             ],
           ),
