@@ -1,8 +1,9 @@
-import 'package:final_year_project/pages/customer/setting/controller/setting_controller.dart';
+import 'package:final_year_project/pages/mutual/setting/controller/setting_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
+// ignore: must_be_immutable
 class LanguagePage extends StatelessWidget {
   var languageStorage = GetStorage();
   @override

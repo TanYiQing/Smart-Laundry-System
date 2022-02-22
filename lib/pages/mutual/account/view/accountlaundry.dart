@@ -1,4 +1,4 @@
-import 'package:final_year_project/pages/laundryOwner/account/controller/account_controller.dart';
+import 'package:final_year_project/pages/mutual/account/controller/account_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -48,7 +48,7 @@ class AccountPageLaundry extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              GetBuilder<AccountLaundryController>(
+                              GetBuilder<AccountController>(
                                   builder: (controller) {
                                 return Text(
                                   controller.user.fname.toString() +
@@ -131,7 +131,7 @@ class AccountPageLaundry extends StatelessWidget {
                           padding: const EdgeInsets.all(4.0),
                           child: GestureDetector(
                             onTap: () {
-                              Get.toNamed("/settinglaundry");
+                              Get.toNamed("/setting");
                             },
                             child: Container(
                               height: screenHeight / 12,
@@ -175,119 +175,128 @@ class AccountPageLaundry extends StatelessWidget {
                   // color: Colors.black,
                   child: ListView(
                     children: [
-                      ListTile(
-                        title: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text("First Name"),
-                            Row(
-                              children: [
-                                GetBuilder<AccountLaundryController>(
-                                    builder: (controller) {
-                                  return Text(controller.user.fname.toString());
-                                }),
-                                Icon(
-                                  Icons.arrow_forward_ios_outlined,
-                                  size: 15,
-                                )
-                              ],
-                            )
-                          ],
+                      GestureDetector(
+                        onTap: () {
+                          Get.toNamed("/firstname");
+                        },
+                        child: ListTile(
+                          title: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("First Name"),
+                              Row(
+                                children: [
+                                  GetBuilder<AccountController>(
+                                      builder: (controller) {
+                                    return Text(
+                                        controller.user.fname.toString());
+                                  }),
+                                  Icon(
+                                    Icons.arrow_forward_ios_outlined,
+                                    size: 15,
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
                         ),
                       ),
-                      ListTile(
-                        title: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text("Last Name"),
-                            Row(
-                              children: [
-                                GetBuilder<AccountLaundryController>(
-                                    builder: (controller) {
-                                  return Text(controller.user.lname.toString());
-                                }),
-                                Icon(
-                                  Icons.arrow_forward_ios_outlined,
-                                  size: 15,
-                                )
-                              ],
-                            )
-                          ],
+                      GestureDetector(
+                        onTap: () {
+                          Get.toNamed("/lastname");
+                        },
+                        child: ListTile(
+                          title: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Last Name"),
+                              Row(
+                                children: [
+                                  GetBuilder<AccountController>(
+                                      builder: (controller) {
+                                    return Text(
+                                        controller.user.lname.toString());
+                                  }),
+                                  Icon(
+                                    Icons.arrow_forward_ios_outlined,
+                                    size: 15,
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
                         ),
                       ),
-                      ListTile(
-                        title: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text("Bio"),
-                            Row(
-                              children: [
-                                Icon(
-                                  Icons.arrow_forward_ios_outlined,
-                                  size: 15,
-                                )
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
-                      ListTile(
-                        title: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text("Change Password"),
-                            Row(
-                              children: [
-                                Icon(
-                                  Icons.arrow_forward_ios_outlined,
-                                  size: 15,
-                                )
-                              ],
-                            )
-                          ],
+                      GestureDetector(
+                        onTap: () {
+                          Get.toNamed("/password");
+                        },
+                        child: ListTile(
+                          title: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Change Password"),
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.arrow_forward_ios_outlined,
+                                    size: 15,
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
                         ),
                       ),
                       Divider(
                         thickness: 5,
                       ),
-                      ListTile(
-                        title: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text("Gender"),
-                            Row(
-                              children: [
-                                GetBuilder<AccountLaundryController>(
-                                    builder: (controller) {
-                                  return Text(controller.user.lname.toString());
-                                }),
-                                Icon(
-                                  Icons.arrow_forward_ios_outlined,
-                                  size: 15,
-                                )
-                              ],
-                            )
-                          ],
+                      GestureDetector(
+                        onTap: () {
+                          Get.toNamed("/gender");
+                        },
+                        child: ListTile(
+                          title: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Gender"),
+                              Row(
+                                children: [
+                                  GetBuilder<AccountController>(
+                                      builder: (controller) {
+                                    return Text(
+                                        controller.user.lname.toString());
+                                  }),
+                                  Icon(
+                                    Icons.arrow_forward_ios_outlined,
+                                    size: 15,
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
                         ),
                       ),
-                      ListTile(
-                        title: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text("Birthday"),
-                            Row(
-                              children: [
-                                GetBuilder<AccountLaundryController>(
-                                    builder: (controller) {
-                                  return Text(controller.user.lname.toString());
-                                }),
-                                Icon(
-                                  Icons.arrow_forward_ios_outlined,
-                                  size: 15,
-                                )
-                              ],
-                            )
-                          ],
+                      GestureDetector(onTap:(){Get.toNamed("/birthday");},
+                        child: ListTile(
+                          title: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Birthday"),
+                              Row(
+                                children: [
+                                  GetBuilder<AccountController>(
+                                      builder: (controller) {
+                                    return Text(controller.user.lname.toString());
+                                  }),
+                                  Icon(
+                                    Icons.arrow_forward_ios_outlined,
+                                    size: 15,
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
                         ),
                       ),
                       Divider(
@@ -300,7 +309,7 @@ class AccountPageLaundry extends StatelessWidget {
                             Text("Phone"),
                             Row(
                               children: [
-                                GetBuilder<AccountLaundryController>(
+                                GetBuilder<AccountController>(
                                     builder: (controller) {
                                   return Text(controller.user.lname.toString());
                                 }),
@@ -320,7 +329,7 @@ class AccountPageLaundry extends StatelessWidget {
                             Text("Email"),
                             Row(
                               children: [
-                                GetBuilder<AccountLaundryController>(
+                                GetBuilder<AccountController>(
                                     builder: (controller) {
                                   return Text(controller.user.email.toString());
                                 }),
