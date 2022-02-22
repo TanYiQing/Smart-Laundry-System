@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 
-class NormalWashPage extends StatelessWidget {
+class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           title: Text(
-            "Normal Wash",
+            "Cart",
             style: TextStyle(color: Colors.black),
           ),
           elevation: 0,
@@ -18,8 +17,6 @@ class NormalWashPage extends StatelessWidget {
           child: Container(
             child: Text('Hello World'),
           ),
-        ),
-      ),
-    );
+        ));
   }
 }

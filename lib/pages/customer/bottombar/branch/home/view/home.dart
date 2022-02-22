@@ -116,7 +116,9 @@ class HomePage extends StatelessWidget {
                           padding: const EdgeInsets.all(4.0),
                           child: GestureDetector(
                             onTap: () {
-                              Get.toNamed("/setting",);
+                              Get.toNamed(
+                                "/setting",
+                              );
                             },
                             child: Container(
                               height: screenHeight / 12,
@@ -207,132 +209,157 @@ class HomePage extends StatelessWidget {
                   child: Container(
                     child: Row(
                       children: [
-                        Card(
-                          elevation: 5,
-                          shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(20))),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              height: screenHeight / 7,
-                              width: screenWidth / 4,
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Container(
-                                      height: screenHeight / 15,
-                                      child: Image.asset(
-                                          "assets/images/normalwash.png")),
-                                  Text(
-                                    "Normal Wash",
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ],
+                        GestureDetector(
+                          onTap: () {
+                            Get.toNamed("/normalwash");
+                          },
+                          child: Card(
+                            elevation: 5,
+                            shape: RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20))),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                height: screenHeight / 7,
+                                width: screenWidth / 4,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                        height: screenHeight / 15,
+                                        child: Image.asset(
+                                            "assets/images/normalwash.png")),
+                                    Text(
+                                      "Normal Wash",
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
                         ),
-                        Card(
-                          elevation: 5,
-                          shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(20))),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              height: screenHeight / 7,
-                              width: screenWidth / 4,
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Container(
-                                      height: screenHeight / 15,
-                                      child: Image.asset(
-                                          "assets/images/normalwashiron.png")),
-                                  Text(
-                                    "Normal Wash & Ironing",
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ],
+                        GestureDetector(
+                          onTap: () {
+                            Get.toNamed("/normalwashandironing");
+                          },
+                          child: Card(
+                            elevation: 5,
+                            shape: RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20))),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                height: screenHeight / 7,
+                                width: screenWidth / 4,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                        height: screenHeight / 15,
+                                        child: Image.asset(
+                                            "assets/images/normalwashiron.png")),
+                                    Text(
+                                      "Normal Wash & Ironing",
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
                         ),
-                        Card(
-                          elevation: 5,
-                          shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(20))),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              height: screenHeight / 7,
-                              width: screenWidth / 4,
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Container(
-                                      height: screenHeight / 15,
-                                      child: Image.asset(
-                                          "assets/images/drywash.png")),
-                                  Text(
-                                    "Dry Wash",
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ],
+                        GestureDetector(
+                          onTap: () {
+                            Get.toNamed("/drywash");
+                          },
+                          child: Card(
+                            elevation: 5,
+                            shape: RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20))),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                height: screenHeight / 7,
+                                width: screenWidth / 4,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                        height: screenHeight / 15,
+                                        child: Image.asset(
+                                            "assets/images/drywash.png")),
+                                    Text(
+                                      "Dry Wash",
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
                         ),
-                        Card(
-                          elevation: 5,
-                          shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(20))),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              height: screenHeight / 7,
-                              width: screenWidth / 4,
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Container(
-                                      height: screenHeight / 15,
-                                      child: Image.asset(
-                                          "assets/images/drywashironing.png")),
-                                  Text(
-                                    "Dry Wash & Ironing",
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ],
+                        GestureDetector(
+                          onTap: () {
+                            Get.toNamed("/drywashandironing");
+                          },
+                          child: Card(
+                            elevation: 5,
+                            shape: RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20))),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                height: screenHeight / 7,
+                                width: screenWidth / 4,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                        height: screenHeight / 15,
+                                        child: Image.asset(
+                                            "assets/images/drywashironing.png")),
+                                    Text(
+                                      "Dry Wash & Ironing",
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
                         ),
-                        Card(
-                          elevation: 5,
-                          shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(20))),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              height: screenHeight / 7,
-                              width: screenWidth / 4,
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Container(
-                                      height: screenHeight / 15,
-                                      child: Image.asset(
-                                          "assets/images/ironing.png")),
-                                  Text(
-                                    "Ironing",
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ],
+                        GestureDetector(
+                          onTap: () {
+                            Get.toNamed("/ironing");
+                          },
+                          child: Card(
+                            elevation: 5,
+                            shape: RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20))),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                height: screenHeight / 7,
+                                width: screenWidth / 4,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                        height: screenHeight / 15,
+                                        child: Image.asset(
+                                            "assets/images/ironing.png")),
+                                    Text(
+                                      "Ironing",
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),

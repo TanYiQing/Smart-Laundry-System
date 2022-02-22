@@ -1,24 +1,26 @@
 import 'package:flutter/material.dart';
 
-class NormalWashPage extends StatelessWidget {
+
+class DryWashandIroningPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return  SafeArea(
       child: Scaffold(
-        appBar: AppBar(
+          appBar: AppBar(
           backgroundColor: Colors.transparent,
           title: Text(
-            "Normal Wash",
+            "Dry Wash and Ironing",
             style: TextStyle(color: Colors.black),
           ),
           elevation: 0,
           iconTheme: IconThemeData(color: Colors.black),
         ),
-        body: Center(
-          child: Container(
-            child: Text('Hello World'),
+          body: Center(
+            child: Container(
+              child: Text('Hello World'),
+            ),
           ),
-        ),
+       
       ),
     );
   }
