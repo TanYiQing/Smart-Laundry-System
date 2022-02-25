@@ -10,6 +10,9 @@ import 'package:final_year_project/pages/customer/services/view/normalwashandiro
 import 'package:final_year_project/pages/laundryOwner/addnewlaundry/binding/addnewlaundry_binding.dart';
 import 'package:final_year_project/pages/laundryOwner/addnewlaundry/view/addnewlaundry.dart';
 import 'package:final_year_project/pages/laundryOwner/businessreport/view/businessreport.dart';
+import 'package:final_year_project/pages/laundryOwner/mylaundry/binding/mylaundry_binding.dart';
+import 'package:final_year_project/pages/laundryOwner/mylaundrydetails/binding/mylaundrydetails_binding.dart';
+import 'package:final_year_project/pages/laundryOwner/mylaundrydetails/view/mylaundrydetails.dart';
 import 'package:final_year_project/pages/mutual/account/binding/account_binding.dart';
 import 'package:final_year_project/pages/customer/bottombar/branch/accountcustomer.dart';
 import 'package:final_year_project/pages/customer/bottombar/branch/favourite/view/favourite.dart';
@@ -220,8 +223,15 @@ class AppPages {
     GetPage(name: "/mybusinesslaundry", page: () => MyBusinessPageLaundry(),
         // binding: MyOrderLaundryBindings(),
         middlewares: [RouterAuthMiddleware()]),
-    GetPage(name: "/mylaundrylaundry", page: () => MyLaundryPageLaundry(),
-        // binding: MyOrderLaundryBindings(),
+    GetPage(
+        name: "/mylaundrylaundry",
+        page: () => MyLaundryPageLaundry(),
+        binding: MyLaundryBindings(),
+        middlewares: [RouterAuthMiddleware()]),
+    GetPage(
+        name: "/mylaundrydetailslaundry",
+        page: () => MyLaundryDetailsPageLaundry(),
+        binding: MyLaundryDetailsBindings(),
         middlewares: [RouterAuthMiddleware()]),
     GetPage(name: "/mywalletlaundry", page: () => MyWalletPageLaundry(),
         // binding: MyOrderLaundryBindings(),

@@ -243,28 +243,34 @@ class HomePageLaundry extends StatelessWidget {
                                       elevation: 8,
                                       child: Text("Laundry")),
                                 ),
-                                GestureDetector(
-                                  onTap: () {
-                                    Get.toNamed("/mylaundrylaundry");
-                                  },
-                                  child: Container(
-                                      height: double.infinity,
-                                      width: screenWidth - (screenWidth / 1.4),
-                                      child: Card(
-                                        elevation: 8,
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(60)),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Icon(Icons.arrow_forward_outlined),
-                                            Text("View More")
-                                          ],
-                                        ),
-                                      )),
-                                ),
+                                GetBuilder<HomeLaundryController>(
+                                    builder: (controller) {
+                                  return GestureDetector(
+                                    onTap: () {
+                                      Get.toNamed("/mylaundrylaundry",
+                                          arguments: controller.user);
+                                    },
+                                    child: Container(
+                                        height: double.infinity,
+                                        width:
+                                            screenWidth - (screenWidth / 1.4),
+                                        child: Card(
+                                          elevation: 8,
+                                          shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(60)),
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Icon(
+                                                  Icons.arrow_forward_outlined),
+                                              Text("View More")
+                                            ],
+                                          ),
+                                        )),
+                                  );
+                                }),
                               ],
                             ),
                           ),

@@ -1,3 +1,7 @@
+// ignore_for_file: non_constant_identifier_names
+
+
+import 'package:final_year_project/models/laundry.dart';
 import 'package:final_year_project/models/user.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -22,8 +26,11 @@ class RemoteServices {
     if (response.statusCode == 200) {
       print(response.body);
       if (response.body == "Success") {
-        Get.snackbar("Hooray!", "Account registered successfully! Login Now!");
-      } else {}
+        Get.snackbar("Hooray!", "Account registered successfully, login now.");
+      } else {
+        Get.snackbar("Sign Up Failed", "Please try again...");
+        Get.offAllNamed('/intro');
+      }
     } else {
       return null;
     }
@@ -55,6 +62,71 @@ class RemoteServices {
         } else {
           Get.offAllNamed('/homelaundry', arguments: user);
         }
+      }
+    } else {
+      Get.snackbar("Opps", "Wrong username or password...");
+      return null;
+    }
+  }
+
+  static Future<Laundry?> addLaundry(
+      String laundryOwnerName,
+      laundryOwnerContact,
+      laundryName,
+      laundryAddress1,
+      laundryAddress2,
+      laundryZIP,
+      laundryCity,
+      laundryState,
+      email,
+      String? encoded_laundryshopimage,
+      String? encoded_ssmimage,
+      String? encoded_businesslicenseimage,
+      String? encoded_bankheaderimage) async {
+    var response = await client.post(
+        Uri.parse('https://hubbuddies.com/270607/onesource/php/addLaundry.php'),
+        body: {
+          "laundryOwnerName": laundryOwnerName,
+          "laundryOwnerContact": laundryOwnerContact,
+          "laundryName": laundryName,
+          "laundryAddress1": laundryAddress1,
+          "laundryAddress2": laundryAddress2,
+          "laundryZIP": laundryZIP,
+          "laundryCity": laundryCity,
+          "laundryState": laundryState,
+          "email": email,
+          "encoded_laundryshopimage": encoded_laundryshopimage,
+          "encoded_ssmimage": encoded_ssmimage,
+          "encoded_businesslicenseimage": encoded_businesslicenseimage,
+          "encoded_bankheaderimage": encoded_bankheaderimage
+        });
+    if (response.statusCode == 200) {
+      print(response.body);
+      if (response.body == "Success") {
+        Get.snackbar(
+            "Hooray!", "Laundry has been submited, please wait for approval.");
+        Get.toNamed("/mylaundrylaundry");
+      } else {
+        Get.snackbar("Failed to add laundry",
+            "Please check for laundry details and try again.");
+      }
+    } else {
+      return null;
+    }
+  }
+
+  static Future<List<Laundry>?> loadLaundry(String email) async {
+    var response = await client.post(
+        Uri.parse(
+            'https://hubbuddies.com/270607/onesource/php/loadLaundry.php'),
+        body: {"email": email});
+
+    if (response.statusCode == 200) {
+      if (response.body == "nodata") {
+        return null;
+      } else {
+        var jsondata = response.body;
+        return laundryFromJson(jsondata);
       }
     } else {
       Get.snackbar("Opps", "Wrong username or password...");

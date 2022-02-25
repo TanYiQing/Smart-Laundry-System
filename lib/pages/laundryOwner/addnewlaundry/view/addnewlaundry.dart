@@ -132,8 +132,8 @@ class AddNewLaundryPageLaundry extends GetView<AddNewLaundryController> {
                     ),
                   ),
                   SizedBox(
-                  height: screenWidth / 60,
-                ),
+                    height: screenWidth / 60,
+                  ),
                   Align(
                       alignment: Alignment.centerLeft,
                       child: Text('Laundry Address 1')),
@@ -157,8 +157,8 @@ class AddNewLaundryPageLaundry extends GetView<AddNewLaundryController> {
                     ),
                   ),
                   SizedBox(
-                  height: screenWidth / 60,
-                ),
+                    height: screenWidth / 60,
+                  ),
                   Align(
                       alignment: Alignment.centerLeft,
                       child: Text('Laundry Address 2')),
@@ -182,8 +182,8 @@ class AddNewLaundryPageLaundry extends GetView<AddNewLaundryController> {
                     ),
                   ),
                   SizedBox(
-                  height: screenWidth / 60,
-                ),
+                    height: screenWidth / 60,
+                  ),
                   Align(alignment: Alignment.centerLeft, child: Text('ZIP')),
                   Card(
                     shape: RoundedRectangleBorder(
@@ -205,8 +205,8 @@ class AddNewLaundryPageLaundry extends GetView<AddNewLaundryController> {
                     ),
                   ),
                   SizedBox(
-                  height: screenWidth / 60,
-                ),
+                    height: screenWidth / 60,
+                  ),
                   Align(alignment: Alignment.centerLeft, child: Text('City')),
                   Card(
                     shape: RoundedRectangleBorder(
@@ -228,8 +228,8 @@ class AddNewLaundryPageLaundry extends GetView<AddNewLaundryController> {
                     ),
                   ),
                   SizedBox(
-                  height: screenWidth / 60,
-                ),
+                    height: screenWidth / 60,
+                  ),
                   Align(alignment: Alignment.centerLeft, child: Text('State')),
                   Card(
                     shape: RoundedRectangleBorder(
@@ -266,46 +266,104 @@ class AddNewLaundryPageLaundry extends GetView<AddNewLaundryController> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text("Photo of Laundry Shop"),
-                    Container(
-                      height: screenHeight / 10,
-                      width: screenWidth / 5,
-                      child: Card(
-                        elevation: 5,
-                        child: Icon(Icons.add_a_photo_outlined),
-                      ),
-                    ),SizedBox(
-                  height: screenWidth / 60,
-                ),
+                    GestureDetector(
+                      onTap: () {
+                        choosePhoto(screenHeight, screenWidth, 1);
+                      },
+                      child: (controller.laundryshopimage == null)
+                          ? Container(
+                              height: screenHeight / 10,
+                              width: screenWidth / 5,
+                              child: Card(
+                                elevation: 5,
+                                child: Icon(Icons.add_a_photo_outlined),
+                              ),
+                            )
+                          : Container(
+                              height: screenHeight / 10,
+                              width: screenWidth / 5,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: FileImage(
+                                          controller.laundryshopimage!))),
+                            ),
+                    ),
+                    SizedBox(
+                      height: screenWidth / 60,
+                    ),
                     Text("Photo of SSM License"),
-                    Container(
-                      height: screenHeight / 10,
-                      width: screenWidth / 5,
-                      child: Card(
-                        elevation: 5,
-                        child: Icon(Icons.add_a_photo_outlined),
-                      ),
-                    ),SizedBox(
-                  height: screenWidth / 60,
-                ),
+                    GestureDetector(
+                      onTap: () {
+                        choosePhoto(screenHeight, screenWidth, 2);
+                      },
+                      child: (controller.ssmimage == null)
+                          ? Container(
+                              height: screenHeight / 10,
+                              width: screenWidth / 5,
+                              child: Card(
+                                elevation: 5,
+                                child: Icon(Icons.add_a_photo_outlined),
+                              ),
+                            )
+                          : Container(
+                              height: screenHeight / 10,
+                              width: screenWidth / 5,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: FileImage(controller.ssmimage!))),
+                            ),
+                    ),
+                    SizedBox(
+                      height: screenWidth / 60,
+                    ),
                     Text("Photo of Business License"),
-                    Container(
-                      height: screenHeight / 10,
-                      width: screenWidth / 5,
-                      child: Card(
-                        elevation: 5,
-                        child: Icon(Icons.add_a_photo_outlined),
-                      ),
-                    ),SizedBox(
-                  height: screenWidth / 60,
-                ),
+                    GestureDetector(
+                      onTap: () {
+                        choosePhoto(screenHeight, screenWidth, 3);
+                      },
+                      child: (controller.businesslicenseimage == null)
+                          ? Container(
+                              height: screenHeight / 10,
+                              width: screenWidth / 5,
+                              child: Card(
+                                elevation: 5,
+                                child: Icon(Icons.add_a_photo_outlined),
+                              ),
+                            )
+                          : Container(
+                              height: screenHeight / 10,
+                              width: screenWidth / 5,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: FileImage(
+                                          controller.businesslicenseimage!))),
+                            ),
+                    ),
+                    SizedBox(
+                      height: screenWidth / 60,
+                    ),
                     Text("Photo of Bank Header"),
-                    Container(
-                      height: screenHeight / 10,
-                      width: screenWidth / 5,
-                      child: Card(
-                        elevation: 5,
-                        child: Icon(Icons.add_a_photo_outlined),
-                      ),
+                    GestureDetector(
+                      onTap: () {
+                        choosePhoto(screenHeight, screenWidth, 4);
+                      },
+                      child: (controller.bankheaderimage == null)
+                          ? Container(
+                              height: screenHeight / 10,
+                              width: screenWidth / 5,
+                              child: Card(
+                                elevation: 5,
+                                child: Icon(Icons.add_a_photo_outlined),
+                              ),
+                            )
+                          : Container(
+                              height: screenHeight / 10,
+                              width: screenWidth / 5,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: FileImage(
+                                          controller.bankheaderimage!))),
+                            ),
                     ),
                   ],
                 ),
@@ -313,5 +371,60 @@ class AddNewLaundryPageLaundry extends GetView<AddNewLaundryController> {
             ),
           ))
     ];
+  }
+
+  void choosePhoto(double screenHeight, double screenWidth, id) {
+    print(id);
+    Get.bottomSheet(Container(
+      height: screenWidth / 4.5,
+      color: Colors.white,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          GestureDetector(
+            onTap: () {
+              controller.chooseCamera(id);
+            },
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.camera_alt,
+                  color: Colors.blue,
+                ),
+                Text("Camera")
+              ],
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              controller.chooseGallery(id);
+            },
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.photo_library_rounded, color: Colors.purple),
+                Text("Gallery")
+              ],
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              controller.chooseRemove(id);
+            },
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.delete,
+                  color: Colors.red,
+                ),
+                Text("Remove")
+              ],
+            ),
+          ),
+        ],
+      ),
+    ));
   }
 }
