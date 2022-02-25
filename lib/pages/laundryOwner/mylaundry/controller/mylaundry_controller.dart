@@ -32,7 +32,7 @@ class MyLaundryController extends GetxController {
 
   void viewLaundryDetails(index) {
     Laundry laundry = new Laundry(
-        laundryID: laundryList[index].laundryName,
+        laundryID: laundryList[index].laundryID,
         laundryOwnerName: laundryList[index].laundryOwnerName,
         laundryOwnerContact: laundryList[index].laundryOwnerContact,
         laundryName: laundryList[index].laundryName,

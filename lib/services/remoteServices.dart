@@ -1,6 +1,5 @@
 // ignore_for_file: non_constant_identifier_names
 
-
 import 'package:final_year_project/models/laundry.dart';
 import 'package:final_year_project/models/user.dart';
 import 'package:get/get.dart';

@@ -69,11 +69,12 @@ class LaundryTile extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                (laundry.approve.toString() == "1") ? "Approve" : "Pending",
+                (laundry.approve.toString() == "1") ? "Approved" : "Pending",
                 style: TextStyle(
                     color: ((laundry.approve.toString() == "1")
                         ? Colors.green
-                        : Colors.orange[700]),fontSize: screenWidth/22),
+                        : Colors.orange[700]),
+                    fontSize: screenWidth / 22),
               ),
             )
           ],

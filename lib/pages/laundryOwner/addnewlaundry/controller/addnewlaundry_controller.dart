@@ -86,6 +86,7 @@ class AddNewLaundryController extends GetxController {
           encoded_ssmimage,
           encoded_businesslicenseimage,
           encoded_bankheaderimage);
+      update();
     }
   }
 
