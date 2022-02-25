@@ -22,7 +22,16 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
           elevation: 0,
           iconTheme: IconThemeData(color: Colors.black),
           actions: [
-            TextButton(onPressed: () {}, child: Text("Manage Machine"))
+            GetBuilder<MyLaundryDetailsController>(
+              
+              builder: (controller) {
+                return TextButton(
+                    onPressed: () {
+                      Get.toNamed("/managemachinelaundry",arguments:controller.laundry);
+                    },
+                    child: Text("Manage Machine"));
+              }
+            )
           ],
         ),
         body: SingleChildScrollView(
