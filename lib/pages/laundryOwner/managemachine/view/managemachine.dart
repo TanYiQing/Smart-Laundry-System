@@ -12,12 +12,10 @@ class ManageMachinePageLaundry extends StatelessWidget {
           backgroundColor: Colors.white,
           appBar: AppBar(
             backgroundColor: Colors.transparent,
-            title: GetBuilder<ManageMachineController>(builder: (controller) {
-              return Text(
-                controller.laundry.laundryName,
+            title: Text(
+                "Add Machine",
                 style: TextStyle(color: Colors.black),
-              );
-            }),
+             ),
             elevation: 0,
             iconTheme: IconThemeData(color: Colors.black),
           ),
