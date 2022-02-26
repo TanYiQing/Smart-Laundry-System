@@ -10,7 +10,7 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     return SafeArea(
-      child: Scaffold(
+      child: Scaffold(backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           title: GetBuilder<MyLaundryDetailsController>(builder: (controller) {
