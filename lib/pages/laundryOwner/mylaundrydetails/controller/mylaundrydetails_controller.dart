@@ -18,7 +18,7 @@ class MyLaundryDetailsController extends GetxController {
     ownercontactcontroller.text = laundry.laundryOwnerContact;
     laundrynamecontroller.text = laundry.laundryName;
     address1controller.text = laundry.laundryAddress1;
-    address2controller.text=laundry.laundryAddress1;
+    address2controller.text=laundry.laundryAddress2;
     zipcontroller.text=laundry.laundryZIP;
     citycontroller.text=laundry.laundryCity;
     statecontroller.text=laundry.laundryState;

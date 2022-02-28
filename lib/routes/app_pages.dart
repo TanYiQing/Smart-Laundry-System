@@ -7,11 +7,14 @@ import 'package:final_year_project/pages/customer/services/view/drywashandironin
 import 'package:final_year_project/pages/customer/services/view/ironing.dart';
 import 'package:final_year_project/pages/customer/services/view/normalwash.dart';
 import 'package:final_year_project/pages/customer/services/view/normalwashandironing.dart';
+import 'package:final_year_project/pages/laundryOwner/addmachine/binding/addmachine_binding.dart';
+import 'package:final_year_project/pages/laundryOwner/addmachine/view/addmachine.dart';
 import 'package:final_year_project/pages/laundryOwner/addnewlaundry/binding/addnewlaundry_binding.dart';
+import 'package:final_year_project/pages/laundryOwner/addmachine/view/adddrywashingmachine.dart';
+import 'package:final_year_project/pages/laundryOwner/addmachine/view/addironingmachine.dart';
 import 'package:final_year_project/pages/laundryOwner/addnewlaundry/view/addnewlaundry.dart';
+import 'package:final_year_project/pages/laundryOwner/addmachine/view/addwashingmachine.dart';
 import 'package:final_year_project/pages/laundryOwner/businessreport/view/businessreport.dart';
-import 'package:final_year_project/pages/laundryOwner/machinelist/binding/machinelist_binding.dart';
-import 'package:final_year_project/pages/laundryOwner/machinelist/view/machinelist.dart';
 import 'package:final_year_project/pages/laundryOwner/managemachine/binding/managemachine_binding.dart';
 import 'package:final_year_project/pages/laundryOwner/managemachine/view/managemachine.dart';
 import 'package:final_year_project/pages/laundryOwner/mylaundry/binding/mylaundry_binding.dart';
@@ -239,13 +242,28 @@ class AppPages {
         middlewares: [RouterAuthMiddleware()]),
     GetPage(
         name: "/managemachinelaundry",
-        page: () => MachineListPageLaundry(),
-        binding: MachineListBindings(),
+        page: () => ManageMachinePageLaundry(),
+        binding: ManageMachineBindings(),
         middlewares: [RouterAuthMiddleware()]),
     GetPage(
         name: "/addmachinelaundry",
-        page: () => ManageMachinePageLaundry(),
-        binding: ManageMachineBindings(),
+        page: () => AddMachinePageLaundry(),
+        binding: AddMachineBindings(),
+        middlewares: [RouterAuthMiddleware()]),
+    GetPage(
+        name: "/addwashingmachinelaundry",
+        page: () => AddWashingMachinePageLaundry(),
+        binding: AddMachineBindings(),
+        middlewares: [RouterAuthMiddleware()]),
+    GetPage(
+        name: "/adddrywashingmachinelaundry",
+        page: () => AddDryWashingMachinePageLaundry(),
+        binding: AddMachineBindings(),
+        middlewares: [RouterAuthMiddleware()]),
+    GetPage(
+        name: "/addironingmachinelaundry",
+        page: () => AddIroningMachinePageLaundry(),
+        binding: AddMachineBindings(),
         middlewares: [RouterAuthMiddleware()]),
     GetPage(name: "/mywalletlaundry", page: () => MyWalletPageLaundry(),
         // binding: MyOrderLaundryBindings(),

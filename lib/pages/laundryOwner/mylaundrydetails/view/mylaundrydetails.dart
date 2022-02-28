@@ -10,7 +10,8 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     return SafeArea(
-      child: Scaffold(backgroundColor: Colors.white,
+      child: Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           title: GetBuilder<MyLaundryDetailsController>(builder: (controller) {
@@ -22,16 +23,14 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
           elevation: 0,
           iconTheme: IconThemeData(color: Colors.black),
           actions: [
-            GetBuilder<MyLaundryDetailsController>(
-              
-              builder: (controller) {
-                return TextButton(
-                    onPressed: () {
-                      Get.toNamed("/managemachinelaundry",arguments:controller.laundry);
-                    },
-                    child: Text("Manage Machine"));
-              }
-            )
+            GetBuilder<MyLaundryDetailsController>(builder: (controller) {
+              return TextButton(
+                  onPressed: () {
+                    Get.toNamed("/managemachinelaundry",
+                        arguments: controller.laundry);
+                  },
+                  child: Text("Manage Machine"));
+            })
           ],
         ),
         body: SingleChildScrollView(
