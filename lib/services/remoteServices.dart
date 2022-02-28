@@ -132,4 +132,34 @@ class RemoteServices {
       return null;
     }
   }
+
+  static Future<List<Laundry>?> addMachine(
+      String calculationBase,
+      String minimumWeight,
+      String maximumWeight,
+      String price,
+      String laundryID) async {
+    print(calculationBase);
+    print(minimumWeight);
+    print(maximumWeight);
+    print(price);
+    print(laundryID);
+  }
+  //   var response = await client.post(
+  //       Uri.parse(
+  //           'https://hubbuddies.com/270607/onesource/php/loadLaundry.php'),
+  //       body: {});
+
+  //   if (response.statusCode == 200) {
+  //     if (response.body == "nodata") {
+  //       return null;
+  //     } else {
+  //       var jsondata = response.body;
+  //       return laundryFromJson(jsondata);
+  //     }
+  //   } else {
+  //     Get.snackbar("Opps", "Wrong username or password...");
+  //     return null;
+  //   }
+  // }
 }

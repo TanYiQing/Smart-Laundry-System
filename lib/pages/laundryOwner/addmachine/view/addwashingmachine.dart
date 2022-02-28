@@ -394,70 +394,45 @@ class AddWashingMachinePageLaundry extends StatelessWidget {
                                         );
                                       }),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Text(
-                                        "Machine Quantity",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: GetBuilder<AddMachineController>(
-                                          builder: (controller) {
-                                        return Row(
-                                          children: [
-                                            GestureDetector(
-                                              onTap: () {
-                                                controller.clickremovebutton(4);
+                                    Align(
+                                      alignment: Alignment.centerRight,
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(
+                                            top: 10.0, left: 8.0, right: 8.0),
+                                        child: Container(
+                                          child:
+                                              GetBuilder<AddMachineController>(
+                                                  builder: (controller) {
+                                            return MaterialButton(
+                                              onPressed: () {
+                                                controller.addMachine(
+                                                    "washingMachine");
                                               },
                                               child: Container(
-                                                child: Icon(Icons.remove),
-                                              ),
-                                            ),
-                                            Card(
-                                              shape: RoundedRectangleBorder(
-                                                  side: BorderSide(
-                                                      color: Colors.black,
-                                                      width: 1),
-                                                  borderRadius:
-                                                      BorderRadius.all(
-                                                          Radius.circular(10))),
-                                              child: Container(
-                                                width: screenWidth / 3,
-                                                child: Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          left: 8.0,
-                                                          right: 8.0),
-                                                  child: Container(
-                                                    child: TextField(
-                                                      controller: controller
-                                                          .machinequantitycontroller,
-                                                      textAlign:
-                                                          TextAlign.right,
-                                                      keyboardType:
-                                                          TextInputType.number,
-                                                      decoration:
-                                                          InputDecoration(
-                                                              border:
-                                                                  InputBorder
-                                                                      .none,
-                                                              isDense: true),
-                                                    ),
-                                                  ),
+                                                child: Text(
+                                                  "Publish",
+                                                  style: TextStyle(
+                                                      fontSize:
+                                                          screenWidth / 30),
                                                 ),
                                               ),
-                                            ),
-                                            GestureDetector(onTap: (){controller.clickaddbutton(4);},
-                                              child: Container(
-                                                child: Icon(Icons.add),
-                                              ),
-                                            ),
-                                          ],
-                                        );
-                                      }),
+                                            );
+                                          }),
+                                          decoration: BoxDecoration(
+                                              gradient: LinearGradient(
+                                                  begin: Alignment(-1.0, -4.0),
+                                                  end: Alignment(1.0, 4.0),
+                                                  colors: [
+                                                    Color.fromRGBO(
+                                                        0, 194, 203, 1),
+                                                    Colors.white
+                                                  ]),
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(10))),
+                                          width: screenWidth / 3.5,
+                                          height: screenHeight / 20,
+                                        ),
+                                      ),
                                     ),
                                   ],
                                 ),
