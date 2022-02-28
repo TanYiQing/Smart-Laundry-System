@@ -1,3 +1,4 @@
+import 'package:final_year_project/services/remoteServices.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
@@ -7,14 +8,13 @@ class AddMachineController extends GetxController {
   TextEditingController minimumweightcontroller = new TextEditingController();
   TextEditingController maximumweightcontroller = new TextEditingController();
   TextEditingController pricecontroller = new TextEditingController();
-  TextEditingController machinequantitycontroller = new TextEditingController();
 
   @override
   void onInit() {
     minimumweightcontroller.text = "0";
     maximumweightcontroller.text = "0";
     pricecontroller.text = "0";
-    machinequantitycontroller.text = "0";
+
     super.onInit();
   }
 
@@ -31,12 +31,9 @@ class AddMachineController extends GetxController {
     } else if (id == 2) {
       maximumweightcontroller.text =
           (int.parse(maximumweightcontroller.text.toString()) + 1).toString();
-    } else if (id == 3) {
+    } else {
       pricecontroller.text =
           (int.parse(pricecontroller.text.toString()) + 1).toString();
-    } else {
-      machinequantitycontroller.text =
-          (int.parse(machinequantitycontroller.text.toString()) + 1).toString();
     }
     update();
   }
@@ -48,13 +45,28 @@ class AddMachineController extends GetxController {
     } else if (id == 2) {
       maximumweightcontroller.text =
           (int.parse(maximumweightcontroller.text.toString()) - 1).toString();
-    } else if (id == 3) {
+    } else {
       pricecontroller.text =
           (int.parse(pricecontroller.text.toString()) - 1).toString();
-    } else {
-      machinequantitycontroller.text =
-          (int.parse(machinequantitycontroller.text.toString()) - 1).toString();
     }
     update();
+  }
+
+  void addMachine(String s) {
+    if (selectedPriceBase.value == "" ||
+        minimumweightcontroller.text == "" ||
+        maximumweightcontroller.text == "" ||
+        pricecontroller.text == "") {
+      Get.snackbar(
+          "Failed to add machine", "Please make sure all field is filled.");
+    } else {
+      RemoteServices.addMachine(
+        selectedPriceBase.value.toString(),
+        minimumweightcontroller.text.toString(),
+        maximumweightcontroller.text.toString(),
+        pricecontroller.text.toString(),
+        laundry.laundryID.toString(),
+      );
+    }
   }
 }
