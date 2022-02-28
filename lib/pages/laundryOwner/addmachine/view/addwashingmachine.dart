@@ -2,7 +2,7 @@ import 'package:final_year_project/pages/laundryOwner/addmachine/controller/addm
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class AddWashingMachinePageLaundry extends StatelessWidget {
+class AddWashingMachinePageLaundry extends GetView<AddMachineController> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -326,14 +326,28 @@ class AddWashingMachinePageLaundry extends StatelessWidget {
                                         );
                                       }),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Text(
-                                        "Price(RM)",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    ),
+                                    GetBuilder<AddMachineController>(
+                                        builder: (controller) {
+                                      return Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: (controller
+                                                    .selectedPriceBase.value
+                                                    .toString() ==
+                                                "Per Machine")
+                                            ? Text(
+                                                "Price Per Machine(RM)",
+                                                style: TextStyle(
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              )
+                                            : Text(
+                                                "Price Per Cloth(RM)",
+                                                style: TextStyle(
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                      );
+                                    }),
                                     Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: GetBuilder<AddMachineController>(
@@ -406,7 +420,7 @@ class AddWashingMachinePageLaundry extends StatelessWidget {
                                             return MaterialButton(
                                               onPressed: () {
                                                 controller.addMachine(
-                                                    "washingMachine");
+                                                    "Washing Machine");
                                               },
                                               child: Container(
                                                 child: Text(

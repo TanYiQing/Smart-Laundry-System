@@ -134,32 +134,36 @@ class RemoteServices {
   }
 
   static Future<List<Laundry>?> addMachine(
+      String machineType,
       String calculationBase,
       String minimumWeight,
       String maximumWeight,
       String price,
       String laundryID) async {
-    print(calculationBase);
-    print(minimumWeight);
-    print(maximumWeight);
-    print(price);
-    print(laundryID);
-  }
-  //   var response = await client.post(
-  //       Uri.parse(
-  //           'https://hubbuddies.com/270607/onesource/php/loadLaundry.php'),
-  //       body: {});
+    var response = await client.post(
+        Uri.parse(
+            'https://hubbuddies.com/270607/onesource/php/addMachine.php'),
+        body: {
+          "machineType": machineType,
+          "calculationBase": calculationBase,
+          "minimumWeight": minimumWeight,
+          "maximumWeight": maximumWeight,
+          "price": price,
+          "laundryID": laundryID
+        });
 
-  //   if (response.statusCode == 200) {
-  //     if (response.body == "nodata") {
-  //       return null;
-  //     } else {
-  //       var jsondata = response.body;
-  //       return laundryFromJson(jsondata);
-  //     }
-  //   } else {
-  //     Get.snackbar("Opps", "Wrong username or password...");
-  //     return null;
-  //   }
-  // }
+    if (response.statusCode == 200) {
+      print(response.body);
+      if (response.body == "Success") {
+        Get.snackbar(
+            "Hooray!", "Machine has been submited.");
+        Get.toNamed("/addmachinelaundry");
+      } else {
+        Get.snackbar("Failed to add machine",
+            "Please check for machine details and try again.");
+      }
+    } else {
+      return null;
+    }
+  }
 }

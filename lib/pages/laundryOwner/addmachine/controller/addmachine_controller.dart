@@ -14,7 +14,6 @@ class AddMachineController extends GetxController {
     minimumweightcontroller.text = "0";
     maximumweightcontroller.text = "0";
     pricecontroller.text = "0";
-
     super.onInit();
   }
 
@@ -52,15 +51,16 @@ class AddMachineController extends GetxController {
     update();
   }
 
-  void addMachine(String s) {
+  void addMachine(String machineType) {
     if (selectedPriceBase.value == "" ||
-        minimumweightcontroller.text == "" ||
-        maximumweightcontroller.text == "" ||
-        pricecontroller.text == "") {
+        minimumweightcontroller.text == "0" ||
+        maximumweightcontroller.text == "0" ||
+        pricecontroller.text == "0") {
       Get.snackbar(
           "Failed to add machine", "Please make sure all field is filled.");
     } else {
       RemoteServices.addMachine(
+        machineType,
         selectedPriceBase.value.toString(),
         minimumweightcontroller.text.toString(),
         maximumweightcontroller.text.toString(),

@@ -329,14 +329,28 @@ class AddIroningMachinePageLaundry extends StatelessWidget {
                                         );
                                       }),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Text(
-                                        "Price(RM)",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    ),
+                                    GetBuilder<AddMachineController>(
+                                        builder: (controller) {
+                                      return Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: (controller
+                                                    .selectedPriceBase.value
+                                                    .toString() ==
+                                                "Per Machine")
+                                            ? Text(
+                                                "Price Per Machine(RM)",
+                                                style: TextStyle(
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              )
+                                            : Text(
+                                                "Price Per Cloth(RM)",
+                                                style: TextStyle(
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                      );
+                                    }),
                                     Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: GetBuilder<AddMachineController>(
@@ -409,7 +423,7 @@ class AddIroningMachinePageLaundry extends StatelessWidget {
                                             return MaterialButton(
                                               onPressed: () {
                                                 controller.addMachine(
-                                                    "ironingMachine");
+                                                    "Ironing Machine");
                                               },
                                               child: Container(
                                                 child: Text(
