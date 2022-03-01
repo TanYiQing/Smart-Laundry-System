@@ -32,6 +32,77 @@ class ManageMachinePageLaundry extends StatelessWidget {
           ),
           body: Column(
             children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: GetBuilder<ManageMachineController>(
+                        builder: (controller) {
+                      return Row(
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              controller.selectFilter("All");
+                            },
+                            child: Card(
+                                elevation:
+                                    (controller.choose1.value == true) ? 10 : 1,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20)),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text("All"),
+                                )),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              controller.selectFilter("Washing Machine");
+                            },
+                            child: Card(
+                                elevation:
+                                    (controller.choose2.value == true) ? 10 : 1,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20)),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text("Washing Machine"),
+                                )),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              controller.selectFilter("Dry Washing Machine");
+                            },
+                            child: Card(
+                                elevation:
+                                    (controller.choose3.value == true) ? 10 : 1,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20)),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text("Dry Washing Machine"),
+                                )),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              controller.selectFilter("Ironing Machine");
+                            },
+                            child: Card(
+                                elevation:
+                                    (controller.choose4.value == true) ? 10 : 1,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20)),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text("Ironing Machine"),
+                                )),
+                          )
+                        ],
+                      );
+                    }),
+                  ),
+                ),
+              ),
               GetX<ManageMachineController>(builder: (_) {
                 return Container(
                     child: Flexible(

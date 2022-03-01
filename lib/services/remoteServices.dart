@@ -166,11 +166,13 @@ class RemoteServices {
     }
   }
 
-  static Future<List<Machine>?> loadMachine(String laundryID) async {
+  static Future<List<Machine>?> loadMachine(
+      String laundryID, String machineType) async {
+        print(machineType);
     var response = await client.post(
         Uri.parse(
             'https://hubbuddies.com/270607/onesource/php/loadMachine.php'),
-        body: {"laundryID": laundryID});
+        body: {"laundryID": laundryID, "machineType": machineType});
 
     if (response.statusCode == 200) {
       if (response.body == "nodata") {
