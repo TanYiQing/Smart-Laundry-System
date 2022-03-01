@@ -1,6 +1,7 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'package:final_year_project/models/laundry.dart';
+import 'package:final_year_project/models/machine.dart';
 import 'package:final_year_project/models/user.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -128,7 +129,7 @@ class RemoteServices {
         return laundryFromJson(jsondata);
       }
     } else {
-      Get.snackbar("Opps", "Wrong username or password...");
+      Get.snackbar("Opps", "Error in loading laundry...");
       return null;
     }
   }
@@ -161,6 +162,25 @@ class RemoteServices {
             "Please check for machine details and try again.");
       }
     } else {
+      return null;
+    }
+  }
+
+  static Future<List<Machine>?> loadMachine(String laundryID) async {
+    var response = await client.post(
+        Uri.parse(
+            'https://hubbuddies.com/270607/onesource/php/loadMachine.php'),
+        body: {"laundryID": laundryID});
+
+    if (response.statusCode == 200) {
+      if (response.body == "nodata") {
+        return null;
+      } else {
+        var jsondata = response.body;
+        return machineFromJson(jsondata);
+      }
+    } else {
+      Get.snackbar("Opps", "Error in loading machine...");
       return null;
     }
   }

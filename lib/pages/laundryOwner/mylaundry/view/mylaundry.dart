@@ -31,24 +31,22 @@ class MyLaundryPageLaundry extends StatelessWidget {
           ),
           body: Column(
             children: [
-              GetX<MyLaundryController>(
-                  init: Get.find<MyLaundryController>(),
-                  builder: (_) {
-                    return Container(
-                        child: Flexible(
-                            child: Center(
-                                child: GridView.count(
-                      crossAxisCount: 1,
-                      childAspectRatio: ((screenWidth / screenHeight) / 0.2),
-                      children: List.generate(_.laundryList.length, (index) {
-                        return GestureDetector(
-                            onTap: () {
-                              _.viewLaundryDetails(index);
-                            },
-                            child: LaundryTile(_.laundryList[index]));
-                      }),
-                    ))));
+              GetX<MyLaundryController>(builder: (_) {
+                return Container(
+                    child: Flexible(
+                        child: Center(
+                            child: GridView.count(
+                  crossAxisCount: 1,
+                  childAspectRatio: ((screenWidth / screenHeight) / 0.2),
+                  children: List.generate(_.laundryList.length, (index) {
+                    return GestureDetector(
+                        onTap: () {
+                          _.viewLaundryDetails(index);
+                        },
+                        child: LaundryTile(_.laundryList[index]));
                   }),
+                ))));
+              }),
             ],
           )),
     );

@@ -37,13 +37,52 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
           child: Column(
             children: [
               GetBuilder<MyLaundryDetailsController>(builder: (controller) {
-                return Container(
-                  height: screenWidth / 1.5,
-                  width: double.infinity,
-                  child: CachedNetworkImage(
-                      fit: BoxFit.cover,
-                      imageUrl:
-                          "https://hubbuddies.com/270607/onesource/images/laundry/${controller.laundry.laundryID}/laundryshopimage.png"),
+                return Stack(
+                  children: [
+                    Container(
+                      height: screenWidth / 1.5,
+                      width: double.infinity,
+                      child: CachedNetworkImage(
+                          fit: BoxFit.cover,
+                          imageUrl:
+                              "https://hubbuddies.com/270607/onesource/images/laundry/${controller.laundry.laundryID}/laundryshopimage.png"),
+                    ),
+                    Positioned(
+                      bottom: 8,
+                      right: 8,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Color.fromRGBO(255, 255, 255, 0.5),
+                        ),
+                        child: GetBuilder<AddNewLaundryController>(
+                            builder: (controller) {
+                          return Row(
+                            children: [
+                              GestureDetector(
+                                onTap: () {
+                                  controller.chooseCamera(1);
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Icon(Icons.camera_alt),
+                                ),
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  controller.chooseGallery(1);
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Icon(Icons.photo_library_rounded),
+                                ),
+                              )
+                            ],
+                          );
+                        }),
+                      ),
+                    )
+                  ],
                 );
               }),
               Padding(
