@@ -141,8 +141,7 @@ class RemoteServices {
       String price,
       String laundryID) async {
     var response = await client.post(
-        Uri.parse(
-            'https://hubbuddies.com/270607/onesource/php/addMachine.php'),
+        Uri.parse('https://hubbuddies.com/270607/onesource/php/addMachine.php'),
         body: {
           "machineType": machineType,
           "calculationBase": calculationBase,
@@ -155,9 +154,8 @@ class RemoteServices {
     if (response.statusCode == 200) {
       print(response.body);
       if (response.body == "Success") {
-        Get.snackbar(
-            "Hooray!", "Machine has been submited.");
-        Get.toNamed("/addmachinelaundry");
+        Get.snackbar("Hooray!", "Machine has been submited.");
+        Get.offAndToNamed("/addmachinelaundry");
       } else {
         Get.snackbar("Failed to add machine",
             "Please check for machine details and try again.");
