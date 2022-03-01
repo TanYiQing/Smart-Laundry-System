@@ -26,6 +26,8 @@ class MachineTile extends StatelessWidget {
         ),
         Expanded(
           child: Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
               elevation: 10,
               child: Column(
                 children: [
