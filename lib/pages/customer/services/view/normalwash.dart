@@ -33,7 +33,10 @@ class NormalWashPage extends StatelessWidget {
                       onTap: () {
                         // _.viewLaundryDetails(index);
                       },
-                      child: ServicesTile(_.serviceList[index]));
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ServicesTile(_.serviceList[index]),
+                      ));
                 }),
               ))));
             }),

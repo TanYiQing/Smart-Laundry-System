@@ -23,6 +23,7 @@ class ManageMachineController extends GetxController {
       machinelist.assignAll(machine);
       print(machinelist);
     }
+    update();
   }
 
   Future<void> selectFilter(String machineType) async {

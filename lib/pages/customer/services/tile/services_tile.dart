@@ -11,6 +11,9 @@ class ServicesTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    return Container(color: Colors.black);
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(child: Text(laundry.email.toString())),
+    );
   }
 }

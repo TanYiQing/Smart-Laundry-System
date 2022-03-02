@@ -192,7 +192,7 @@ class RemoteServices {
         Uri.parse(
             'https://hubbuddies.com/270607/onesource/php/loadService.php'),
         body: {"machineType": machineType});
-    print(response.body);
+
     if (response.statusCode == 200) {
       if (response.body == "nodata") {
         return null;

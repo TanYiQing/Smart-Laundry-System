@@ -3,9 +3,8 @@ import 'package:final_year_project/pages/customer/services/tile/services_tile.da
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-
 class IroningPage extends StatelessWidget {
- @override
+  @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
@@ -14,7 +13,7 @@ class IroningPage extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           title: Text(
-            "Normal Wash",
+            "Ironing",
             style: TextStyle(color: Colors.black),
           ),
           elevation: 0,

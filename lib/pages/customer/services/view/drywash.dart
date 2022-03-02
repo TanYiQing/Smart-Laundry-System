@@ -1,4 +1,5 @@
 import 'package:final_year_project/pages/customer/services/controller/services_controller.dart';
+import 'package:final_year_project/pages/customer/services/tile/services_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -32,12 +33,7 @@ class DryWashPage extends StatelessWidget {
                       onTap: () {
                         // _.viewLaundryDetails(index);
                       },
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          color: Colors.black,
-                        ),
-                      ));
+                      child: ServicesTile(_.serviceList[index]));
                 }),
               ))));
             }),

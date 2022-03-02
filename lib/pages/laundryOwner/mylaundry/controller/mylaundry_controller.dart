@@ -20,6 +20,7 @@ class MyLaundryController extends GetxController {
       print("Here");
       print(laundryList);
     }
+    update();
   }
 
   String checkLaundryName(String laundryName) {

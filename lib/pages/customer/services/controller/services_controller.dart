@@ -13,13 +13,11 @@ class ServicesController extends GetxController {
   }
 
   Future<void> loadServices() async {
-    print(serviceType);
     var service = await RemoteServices.loadService(serviceType.toString());
-
     if (service != null) {
       serviceList.assignAll(service);
-      print("Here");
       print(serviceList);
     }
+    update();
   }
 }
