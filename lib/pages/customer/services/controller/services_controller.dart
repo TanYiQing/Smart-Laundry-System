@@ -29,7 +29,7 @@ class ServicesController extends GetxController {
     }
   }
 
-  void viewLaundryDetails(index) {
+  void viewServicesDetails(index) {
     Laundry laundry = new Laundry(
         laundryID: serviceList[index].laundryID,
         laundryOwnerName: serviceList[index].laundryOwnerName,
@@ -44,6 +44,6 @@ class ServicesController extends GetxController {
         email: serviceList[index].email,
         approve: serviceList[index].approve);
 
-    Get.toNamed("/mylaundrydetailslaundry", arguments: laundry);
+    Get.toNamed("/servicesdetails", arguments: laundry);
   }
 }

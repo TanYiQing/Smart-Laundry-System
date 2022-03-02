@@ -32,7 +32,7 @@ class DryWashPage extends StatelessWidget {
                 children: List.generate(_.serviceList.length, (index) {
                   return GestureDetector(
                       onTap: () {
-                        // _.viewLaundryDetails(index);
+                        _.viewServicesDetails(index);
                       },
                       child: ServicesTile(_.serviceList[index]));
                 }),
