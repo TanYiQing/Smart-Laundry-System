@@ -7,6 +7,8 @@ import 'package:final_year_project/pages/customer/services/view/drywashandironin
 import 'package:final_year_project/pages/customer/services/view/ironing.dart';
 import 'package:final_year_project/pages/customer/services/view/normalwash.dart';
 import 'package:final_year_project/pages/customer/services/view/normalwashandironing.dart';
+import 'package:final_year_project/pages/customer/servicesdetails/binding/servicesdetails_binding.dart';
+import 'package:final_year_project/pages/customer/servicesdetails/view/servicesdetails.dart';
 import 'package:final_year_project/pages/laundryOwner/addmachine/binding/addmachine_binding.dart';
 import 'package:final_year_project/pages/laundryOwner/addmachine/view/addmachine.dart';
 import 'package:final_year_project/pages/laundryOwner/addnewlaundry/binding/addnewlaundry_binding.dart';
@@ -186,6 +188,11 @@ class AppPages {
         name: "/ironing",
         page: () => IroningPage(),
         binding: ServicesBindings(),
+        middlewares: [RouterAuthMiddleware()]),
+    GetPage(
+        name: "/servicesdetails",
+        page: () => ServicesDetailsPage(),
+        binding: ServicesDetailsBindings(),
         middlewares: [RouterAuthMiddleware()]),
     GetPage(
         name: "/cart",

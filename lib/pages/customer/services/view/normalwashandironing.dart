@@ -3,7 +3,6 @@ import 'package:final_year_project/pages/customer/services/tile/services_tile.da
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-
 class NormalWashandIroningPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -11,6 +10,7 @@ class NormalWashandIroningPage extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           title: Text(
