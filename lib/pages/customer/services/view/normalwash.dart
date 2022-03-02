@@ -26,17 +26,14 @@ class NormalWashPage extends StatelessWidget {
                   child: Flexible(
                       child: Center(
                           child: GridView.count(
-                crossAxisCount: 2,
-                childAspectRatio: ((screenWidth / screenHeight) / 0.55),
+                crossAxisCount: 1,
+                childAspectRatio: ((screenWidth / screenHeight) / 0.2),
                 children: List.generate(_.serviceList.length, (index) {
                   return GestureDetector(
                       onTap: () {
                         // _.viewLaundryDetails(index);
                       },
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: ServicesTile(_.serviceList[index]),
-                      ));
+                      child: ServicesTile(_.serviceList[index]));
                 }),
               ))));
             }),

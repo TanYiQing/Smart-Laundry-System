@@ -20,4 +20,12 @@ class ServicesController extends GetxController {
     }
     update();
   }
+
+  String checkLaundryName(String laundryName) {
+    if (laundryName.length < 15) {
+      return laundryName;
+    } else {
+      return laundryName.substring(0, 15) + "...";
+    }
+  }
 }

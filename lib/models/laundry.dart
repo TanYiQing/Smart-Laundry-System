@@ -19,6 +19,7 @@ class Laundry {
       dateLaunch,
       email,
       approve;
+      
   Laundry(
       {this.laundryID,
       this.laundryOwnerName,
