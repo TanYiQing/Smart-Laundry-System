@@ -33,11 +33,11 @@ class BottomBar extends StatelessWidget {
             currentIndex: controller.tabIndex,
             items: [
               BottomNavigationBarItem(
-                  icon: Icon(Icons.home),
+                  icon: Icon(Icons.home_outlined),
                   label: "Home",
                   activeIcon: Text("Home")),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.favorite),
+                  icon: Icon(Icons.favorite_border_outlined),
                   label: 'Favorite',
                   activeIcon: Text("Favorite")),
               BottomNavigationBarItem(
@@ -49,7 +49,7 @@ class BottomBar extends StatelessWidget {
                   label: 'Purchase History',
                   activeIcon: Text("Purchase History")),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.person),
+                  icon: Icon(Icons.person_outline_rounded),
                   label: 'Account',
                   activeIcon: Text("Account")),
             ]),

@@ -168,7 +168,7 @@ class RemoteServices {
 
   static Future<List<Machine>?> loadMachine(
       String laundryID, String machineType) async {
-        print(machineType);
+    print(machineType);
     var response = await client.post(
         Uri.parse(
             'https://hubbuddies.com/270607/onesource/php/loadMachine.php'),
@@ -183,6 +183,25 @@ class RemoteServices {
       }
     } else {
       Get.snackbar("Opps", "Error in loading machine...");
+      return null;
+    }
+  }
+
+  static Future<List<Laundry>?> loadService(String machineType) async {
+    var response = await client.post(
+        Uri.parse(
+            'https://hubbuddies.com/270607/onesource/php/loadService.php'),
+        body: {"machineType": machineType});
+    print(response.body);
+    if (response.statusCode == 200) {
+      if (response.body == "nodata") {
+        return null;
+      } else {
+        var jsondata = response.body;
+        return laundryFromJson(jsondata);
+      }
+    } else {
+      Get.snackbar("Opps", "Error in loading service...");
       return null;
     }
   }
