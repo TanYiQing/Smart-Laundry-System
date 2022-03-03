@@ -22,6 +22,7 @@ class ServicesDetailsPage extends StatelessWidget {
               flexibleSpace:
                   GetBuilder<ServicesDetailsController>(builder: (controller) {
                 return FlexibleSpaceBar(
+                  collapseMode: CollapseMode.parallax,
                   title: GetBuilder<ServicesDetailsController>(
                       builder: (controller) {
                     return Text(
