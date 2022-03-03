@@ -1,19 +1,24 @@
-import 'package:flutter/cupertino.dart';
+import 'package:final_year_project/models/machine.dart';
+import 'package:final_year_project/services/remoteServices.dart';
 import 'package:get/get.dart';
 
 class ServicesDetailsController extends GetxController {
   var laundry = Get.arguments;
-  late ScrollController scrollcontroller;
-  double scrollcontrolleroffset = 0.0;
+  var machinelist = <Machine>[].obs;
 
   @override
   void onInit() {
-    scrollcontroller=ScrollController();
-    scrollcontroller.addListener(scrollListener);
+    loadMachine();
     super.onInit();
   }
-  scrollListener(){
-    scrollcontrolleroffset=scrollcontroller.offset;
+
+  Future<void> loadMachine() async {
+    var machine =
+        await RemoteServices.loadMachine(laundry.laundryID.toString(), "All");
+    if (machine != null) {
+      machinelist.assignAll(machine);
+      print(machinelist);
+    }
     update();
   }
 }
