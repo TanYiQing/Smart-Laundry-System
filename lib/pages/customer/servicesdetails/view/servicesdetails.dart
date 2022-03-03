@@ -1,4 +1,6 @@
+import 'package:final_year_project/pages/customer/servicesdetails/controller/servicesdetails_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ServicesDetailsPage extends StatelessWidget {
   @override
@@ -7,10 +9,12 @@ class ServicesDetailsPage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.transparent,
-          title: Text(
-            "Dry Wash",
-            style: TextStyle(color: Colors.black),
-          ),
+          title: GetBuilder<ServicesDetailsController>(builder: (controller) {
+            return Text(
+              controller.laundry.laundryName,
+              style: TextStyle(color: Colors.black),
+            );
+          }),
           elevation: 0,
           iconTheme: IconThemeData(color: Colors.black),
         ),
