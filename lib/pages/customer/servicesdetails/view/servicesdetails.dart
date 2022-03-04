@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:final_year_project/pages/customer/servicesdetails/controller/servicesdetails_controller.dart';
+import 'package:final_year_project/pages/customer/servicesdetails/tile/machine_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -260,6 +261,27 @@ class ServicesDetailsPage extends StatelessWidget {
                             }),
                           ),
                         ),
+                        GetBuilder<ServicesDetailsController>(builder: (_) {
+                          return Container(
+                            height: screenWidth,
+                            child: Center(
+                                child: GridView.count(
+                              physics: NeverScrollableScrollPhysics(),
+                              crossAxisCount: 2,
+                              childAspectRatio:
+                                  ((screenWidth / screenHeight) / 0.5),
+                              children: List.generate(4, (index) {
+                                // return MachineTile(_.washingmachinelist[index]);
+                                return Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Container(
+                                    color: Colors.black,
+                                  ),
+                                );
+                              }),
+                            )),
+                          );
+                        }),
                         Align(
                           alignment: Alignment.centerLeft,
                           child: Padding(
@@ -280,6 +302,27 @@ class ServicesDetailsPage extends StatelessWidget {
                             }),
                           ),
                         ),
+                        GetBuilder<ServicesDetailsController>(builder: (_) {
+                          return Container(
+                            height: screenWidth,
+                            child: Center(
+                                child: GridView.count(
+                              physics: NeverScrollableScrollPhysics(),
+                              crossAxisCount: 2,
+                              childAspectRatio:
+                                  ((screenWidth / screenHeight) / 0.5),
+                              children: List.generate(4, (index) {
+                                // return MachineTile(_.washingmachinelist[index]);
+                                return Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Container(
+                                    color: Colors.black,
+                                  ),
+                                );
+                              }),
+                            )),
+                          );
+                        }),
                         Align(
                           alignment: Alignment.centerLeft,
                           child: Padding(
@@ -300,7 +343,27 @@ class ServicesDetailsPage extends StatelessWidget {
                             }),
                           ),
                         ),
-                        Container(height: 1500)
+                        GetBuilder<ServicesDetailsController>(builder: (_) {
+                          return Container(
+                            height: screenWidth,
+                            child: Center(
+                                child: GridView.count(
+                              physics: NeverScrollableScrollPhysics(),
+                              crossAxisCount: 2,
+                              childAspectRatio:
+                                  ((screenWidth / screenHeight) / 0.5),
+                              children: List.generate(4, (index) {
+                                // return MachineTile(_.washingmachinelist[index]);
+                                return Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Container(
+                                    color: Colors.black,
+                                  ),
+                                );
+                              }),
+                            )),
+                          );
+                        }),
                       ],
                     ),
                   )

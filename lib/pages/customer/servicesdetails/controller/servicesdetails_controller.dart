@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 class ServicesDetailsController extends GetxController {
   var laundry = Get.arguments;
   var machinelist = <Machine>[].obs;
+  var washingmachinelist = <Machine>[].obs;
   final normalwashKey = GlobalKey();
   final drywashKey = GlobalKey();
   final ironingKey = GlobalKey();
@@ -24,6 +25,13 @@ class ServicesDetailsController extends GetxController {
     if (machine != null) {
       machinelist.assignAll(machine);
       print(machinelist);
+    }
+
+    var washingmachine = await RemoteServices.loadMachine(
+        laundry.laundryID.toString(), "Washing Machine");
+    if (washingmachine != null) {
+      washingmachinelist.assignAll(washingmachine);
+      print(washingmachinelist);
     }
     update();
   }
