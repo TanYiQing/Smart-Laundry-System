@@ -23,7 +23,7 @@ class ServicesPage extends StatelessWidget {
             children: [
               GestureDetector(
                 onTap: () {
-                  Get.toNamed("/normalwash");
+                  Get.toNamed("/normalwash", arguments: "Washing Machine");
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -57,7 +57,8 @@ class ServicesPage extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
-                  Get.toNamed("/normalwashandironing");
+                  Get.toNamed("/normalwashandironing",
+                      arguments: "Washing Machine and Ironing Machine");
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -91,7 +92,7 @@ class ServicesPage extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
-                  Get.toNamed("/drywash");
+                  Get.toNamed("/drywash", arguments: "Dry Washing Machine");
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -125,7 +126,8 @@ class ServicesPage extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
-                  Get.toNamed("/drywashandironing");
+                  Get.toNamed("/drywashandironing",
+                      arguments: "Dry Washing Machine and Ironing Machine");
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -159,7 +161,7 @@ class ServicesPage extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
-                  Get.toNamed("/ironing");
+                  Get.toNamed("/ironing", arguments: "Ironing Machine");
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
