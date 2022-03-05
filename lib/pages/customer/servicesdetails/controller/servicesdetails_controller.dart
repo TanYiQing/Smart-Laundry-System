@@ -7,9 +7,13 @@ class ServicesDetailsController extends GetxController {
   var laundry = Get.arguments;
   var machinelist = <Machine>[].obs;
   var washingmachinelist = <Machine>[].obs;
+  var drywashingmachinelist = <Machine>[].obs;
+  var ironingmachinelist = <Machine>[].obs;
+  var currentIndex = "0".obs;
   final normalwashKey = GlobalKey();
   final drywashKey = GlobalKey();
   final ironingKey = GlobalKey();
+  final topKey = GlobalKey();
 
   BuildContext? get context => null;
 
@@ -33,6 +37,20 @@ class ServicesDetailsController extends GetxController {
       washingmachinelist.assignAll(washingmachine);
       print(washingmachinelist);
     }
+
+    var drywashingmachine = await RemoteServices.loadMachine(
+        laundry.laundryID.toString(), "Dry Washing Machine");
+    if (drywashingmachine != null) {
+      drywashingmachinelist.assignAll(drywashingmachine);
+      print(drywashingmachinelist);
+    }
+
+    var ironingmachine = await RemoteServices.loadMachine(
+        laundry.laundryID.toString(), "Ironing Machine");
+    if (ironingmachine != null) {
+      ironingmachinelist.assignAll(ironingmachine);
+      print(ironingmachinelist);
+    }
     update();
   }
 
@@ -43,8 +61,11 @@ class ServicesDetailsController extends GetxController {
     } else if (servicesType == "Dry Wash") {
       final context = drywashKey.currentContext!;
       await Scrollable.ensureVisible(context, duration: Duration(seconds: 1));
-    } else {
+    } else if (servicesType == "Ironing") {
       final context = ironingKey.currentContext!;
+      await Scrollable.ensureVisible(context, duration: Duration(seconds: 1));
+    } else {
+      final context = topKey.currentContext!;
       await Scrollable.ensureVisible(context, duration: Duration(seconds: 1));
     }
 

@@ -35,6 +35,7 @@ class ServicesDetailsPage extends StatelessWidget {
                   }),
                   centerTitle: true,
                   background: Container(
+                    key: controller.topKey,
                     width: double.infinity,
                     height: screenHeight / 2,
                     child: CachedNetworkImage(
@@ -133,8 +134,8 @@ class ServicesDetailsPage extends StatelessWidget {
                     child: Column(
                       children: [
                         Container(
-                            height: screenWidth / 2,
-                            width: screenWidth / 2,
+                            height: screenWidth / 2.5,
+                            width: screenWidth / 2.5,
                             child: Image.asset("assets/images/search.png")),
                         Text(
                           "What services are you looking at?",
@@ -144,225 +145,283 @@ class ServicesDetailsPage extends StatelessWidget {
                             builder: (controller) {
                           return Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Container(
-                                    child: MaterialButton(
-                                      onPressed: () {
-                                        controller.scrollToItem("Normal Wash");
-                                      },
-                                      child: Container(
+                            child: GetBuilder<ServicesDetailsController>(
+                                builder: (controller) {
+                              return Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Container(
+                                      child: MaterialButton(
+                                        onPressed: (controller
+                                                    .washingmachinelist
+                                                    .length !=
+                                                0)
+                                            ? () {
+                                                controller.scrollToItem(
+                                                    "Normal Wash");
+                                              }
+                                            : null,
+                                        child: Container(
+                                          child: Text(
+                                            "Normal Wash",
+                                            style: TextStyle(
+                                                fontSize: screenWidth / 30),
+                                            textAlign: TextAlign.center,
+                                          ),
+                                        ),
+                                      ),
+                                      decoration: BoxDecoration(
+                                          gradient: LinearGradient(
+                                              begin: Alignment(-1.0, -4.0),
+                                              end: Alignment(1.0, 4.0),
+                                              colors: [
+                                                Color.fromRGBO(0, 194, 203, 1),
+                                                Colors.white
+                                              ]),
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(10))),
+                                      width: screenWidth / 4,
+                                      height: screenHeight / 20,
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Container(
+                                      child: MaterialButton(
+                                        onPressed: (controller
+                                                    .drywashingmachinelist
+                                                    .length !=
+                                                0)
+                                            ? () {
+                                                controller
+                                                    .scrollToItem("Dry Wash");
+                                              }
+                                            : null,
+                                        child: Container(
+                                          child: Text(
+                                            "Dry Wash",
+                                            style: TextStyle(
+                                                fontSize: screenWidth / 30),
+                                            textAlign: TextAlign.center,
+                                          ),
+                                        ),
+                                      ),
+                                      decoration: BoxDecoration(
+                                          gradient: LinearGradient(
+                                              begin: Alignment(-1.0, -4.0),
+                                              end: Alignment(1.0, 4.0),
+                                              colors: [
+                                                Color.fromRGBO(0, 194, 203, 1),
+                                                Colors.white
+                                              ]),
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(10))),
+                                      width: screenWidth / 4,
+                                      height: screenHeight / 20,
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Container(
+                                      child: MaterialButton(
+                                        onPressed: (controller
+                                                    .ironingmachinelist
+                                                    .length !=
+                                                0)
+                                            ? () {
+                                                controller
+                                                    .scrollToItem("Ironing");
+                                              }
+                                            : null,
+                                        child: Container(
+                                          child: Text(
+                                            "Ironing",
+                                            style: TextStyle(
+                                                fontSize: screenWidth / 30),
+                                            textAlign: TextAlign.center,
+                                          ),
+                                        ),
+                                      ),
+                                      decoration: BoxDecoration(
+                                          gradient: LinearGradient(
+                                              begin: Alignment(-1.0, -4.0),
+                                              end: Alignment(1.0, 4.0),
+                                              colors: [
+                                                Color.fromRGBO(0, 194, 203, 1),
+                                                Colors.white
+                                              ]),
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(10))),
+                                      width: screenWidth / 4,
+                                      height: screenHeight / 20,
+                                    ),
+                                  ),
+                                ],
+                              );
+                            }),
+                          );
+                        }),
+                        GetBuilder<ServicesDetailsController>(
+                            builder: (controller) {
+                          return (controller.washingmachinelist.length != 0)
+                              ? Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(top: 50),
+                                    child: Container(
+                                      key: controller.normalwashKey,
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
                                         child: Text(
-                                          "Normal Wash",
+                                          "Normal Washing Service",
                                           style: TextStyle(
-                                              fontSize: screenWidth / 30),
-                                          textAlign: TextAlign.center,
+                                              fontSize: screenWidth / 20),
                                         ),
                                       ),
                                     ),
-                                    decoration: BoxDecoration(
-                                        gradient: LinearGradient(
-                                            begin: Alignment(-1.0, -4.0),
-                                            end: Alignment(1.0, 4.0),
-                                            colors: [
-                                              Color.fromRGBO(0, 194, 203, 1),
-                                              Colors.white
-                                            ]),
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(10))),
-                                    width: screenWidth / 4,
-                                    height: screenHeight / 20,
                                   ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Container(
-                                    child: MaterialButton(
-                                      onPressed: () {
-                                        controller.scrollToItem("Dry Wash");
-                                      },
-                                      child: Container(
+                                )
+                              : Container();
+                        }),
+                        GetBuilder<ServicesDetailsController>(
+                            builder: (controller) {
+                          return (controller.washingmachinelist.length != 0)
+                              ? Container(
+                                  height:
+                                      (controller.washingmachinelist.length > 2)
+                                          ? screenWidth
+                                          : screenWidth / 2,
+                                  child: Center(
+                                      child: GridView.count(
+                                    physics: NeverScrollableScrollPhysics(),
+                                    crossAxisCount: 2,
+                                    childAspectRatio:
+                                        ((screenWidth / screenHeight) / 0.55),
+                                    children: List.generate(
+                                        (controller
+                                                    .washingmachinelist.length <
+                                                4)
+                                            ? controller
+                                                .washingmachinelist.length
+                                            : 4, (index) {
+                                      return Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: MachineTile(controller
+                                            .washingmachinelist[index]),
+                                      );
+                                    }),
+                                  )),
+                                )
+                              : Container();
+                        }),
+                        GetBuilder<ServicesDetailsController>(
+                            builder: (controller) {
+                          return (controller.drywashingmachinelist.length != 0)
+                              ? Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(top: 50),
+                                    child: Container(
+                                      key: controller.drywashKey,
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
                                         child: Text(
-                                          "Dry Wash",
+                                          "Dry Washing Service",
                                           style: TextStyle(
-                                              fontSize: screenWidth / 30),
-                                          textAlign: TextAlign.center,
+                                              fontSize: screenWidth / 20),
                                         ),
                                       ),
                                     ),
-                                    decoration: BoxDecoration(
-                                        gradient: LinearGradient(
-                                            begin: Alignment(-1.0, -4.0),
-                                            end: Alignment(1.0, 4.0),
-                                            colors: [
-                                              Color.fromRGBO(0, 194, 203, 1),
-                                              Colors.white
-                                            ]),
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(10))),
-                                    width: screenWidth / 4,
-                                    height: screenHeight / 20,
                                   ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Container(
-                                    child: MaterialButton(
-                                      onPressed: () {
-                                        controller.scrollToItem("Ironing");
-                                      },
-                                      child: Container(
+                                )
+                              : Container();
+                        }),
+                        GetBuilder<ServicesDetailsController>(
+                            builder: (controller) {
+                          return (controller.drywashingmachinelist.length != 0)
+                              ? Container(
+                                  height:
+                                      (controller.drywashingmachinelist.length >
+                                              2)
+                                          ? screenWidth
+                                          : screenWidth / 2,
+                                  child: Center(
+                                      child: GridView.count(
+                                    physics: NeverScrollableScrollPhysics(),
+                                    crossAxisCount: 2,
+                                    childAspectRatio:
+                                        ((screenWidth / screenHeight) / 0.55),
+                                    children: List.generate(
+                                        (controller.drywashingmachinelist
+                                                    .length <
+                                                4)
+                                            ? controller
+                                                .drywashingmachinelist.length
+                                            : 4, (index) {
+                                      return Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: MachineTile(controller
+                                            .drywashingmachinelist[index]),
+                                      );
+                                    }),
+                                  )),
+                                )
+                              : Container();
+                        }),
+                        GetBuilder<ServicesDetailsController>(
+                            builder: (controller) {
+                          return (controller.ironingmachinelist.length != 0)
+                              ? Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(top: 50),
+                                    child: Container(
+                                      key: controller.ironingKey,
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
                                         child: Text(
-                                          "Ironing",
+                                          "Ironing Service",
                                           style: TextStyle(
-                                              fontSize: screenWidth / 30),
-                                          textAlign: TextAlign.center,
+                                              fontSize: screenWidth / 20),
                                         ),
                                       ),
                                     ),
-                                    decoration: BoxDecoration(
-                                        gradient: LinearGradient(
-                                            begin: Alignment(-1.0, -4.0),
-                                            end: Alignment(1.0, 4.0),
-                                            colors: [
-                                              Color.fromRGBO(0, 194, 203, 1),
-                                              Colors.white
-                                            ]),
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(10))),
-                                    width: screenWidth / 4,
-                                    height: screenHeight / 20,
                                   ),
-                                ),
-                              ],
-                            ),
-                          );
+                                )
+                              : Container();
                         }),
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: Padding(
-                            padding: const EdgeInsets.only(top: 50),
-                            child: GetBuilder<ServicesDetailsController>(
-                                builder: (controller) {
-                              return Container(
-                                key: controller.normalwashKey,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text(
-                                    "Normal Washing Service",
-                                    style:
-                                        TextStyle(fontSize: screenWidth / 20),
-                                  ),
-                                ),
-                              );
-                            }),
-                          ),
-                        ),
-                        GetBuilder<ServicesDetailsController>(builder: (_) {
-                          return Container(
-                            height: screenWidth,
-                            child: Center(
-                                child: GridView.count(
-                              physics: NeverScrollableScrollPhysics(),
-                              crossAxisCount: 2,
-                              childAspectRatio:
-                                  ((screenWidth / screenHeight) / 0.5),
-                              children: List.generate(4, (index) {
-                                // return MachineTile(_.washingmachinelist[index]);
-                                return Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Container(
-                                    color: Colors.black,
-                                  ),
-                                );
-                              }),
-                            )),
-                          );
-                        }),
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: Padding(
-                            padding: const EdgeInsets.only(top: 50),
-                            child: GetBuilder<ServicesDetailsController>(
-                                builder: (controller) {
-                              return Container(
-                                key: controller.drywashKey,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text(
-                                    "Dry Washing Service",
-                                    style:
-                                        TextStyle(fontSize: screenWidth / 20),
-                                  ),
-                                ),
-                              );
-                            }),
-                          ),
-                        ),
-                        GetBuilder<ServicesDetailsController>(builder: (_) {
-                          return Container(
-                            height: screenWidth,
-                            child: Center(
-                                child: GridView.count(
-                              physics: NeverScrollableScrollPhysics(),
-                              crossAxisCount: 2,
-                              childAspectRatio:
-                                  ((screenWidth / screenHeight) / 0.5),
-                              children: List.generate(4, (index) {
-                                // return MachineTile(_.washingmachinelist[index]);
-                                return Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Container(
-                                    color: Colors.black,
-                                  ),
-                                );
-                              }),
-                            )),
-                          );
-                        }),
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: Padding(
-                            padding: const EdgeInsets.only(top: 50),
-                            child: GetBuilder<ServicesDetailsController>(
-                                builder: (controller) {
-                              return Container(
-                                key: controller.ironingKey,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text(
-                                    "Ironing Service",
-                                    style:
-                                        TextStyle(fontSize: screenWidth / 20),
-                                  ),
-                                ),
-                              );
-                            }),
-                          ),
-                        ),
-                        GetBuilder<ServicesDetailsController>(builder: (_) {
-                          return Container(
-                            height: screenWidth,
-                            child: Center(
-                                child: GridView.count(
-                              physics: NeverScrollableScrollPhysics(),
-                              crossAxisCount: 2,
-                              childAspectRatio:
-                                  ((screenWidth / screenHeight) / 0.5),
-                              children: List.generate(4, (index) {
-                                // return MachineTile(_.washingmachinelist[index]);
-                                return Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Container(
-                                    color: Colors.black,
-                                  ),
-                                );
-                              }),
-                            )),
-                          );
+                        GetBuilder<ServicesDetailsController>(
+                            builder: (controller) {
+                          return (controller.ironingmachinelist.length != 0)
+                              ? Container(
+                                  height:
+                                      (controller.ironingmachinelist.length > 2)
+                                          ? screenWidth
+                                          : screenWidth / 2,
+                                  child: Center(
+                                      child: GridView.count(
+                                    physics: NeverScrollableScrollPhysics(),
+                                    crossAxisCount: 2,
+                                    childAspectRatio:
+                                        ((screenWidth / screenHeight) / 0.55),
+                                    children: List.generate(
+                                        (controller
+                                                    .ironingmachinelist.length <
+                                                4)
+                                            ? controller
+                                                .ironingmachinelist.length
+                                            : 4, (index) {
+                                      return Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: MachineTile(controller
+                                            .ironingmachinelist[index]),
+                                      );
+                                    }),
+                                  )),
+                                )
+                              : Container();
                         }),
                       ],
                     ),
@@ -372,6 +431,17 @@ class ServicesDetailsPage extends StatelessWidget {
             )
           ],
         ),
+        floatingActionButton:
+            GetBuilder<ServicesDetailsController>(builder: (controller) {
+          return FloatingActionButton(
+            onPressed: () {
+              controller.scrollToItem("Top");
+            },
+            elevation: 10,
+            backgroundColor: Color.fromRGBO(0, 194, 203, 1),
+            child: Icon(Icons.arrow_upward_outlined),
+          );
+        }),
       ),
     );
   }
