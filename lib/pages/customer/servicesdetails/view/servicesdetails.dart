@@ -109,11 +109,17 @@ class ServicesDetailsPage extends StatelessWidget {
                                           Padding(
                                             padding: const EdgeInsets.only(
                                                 left: 8.0),
-                                            child: Text(
-                                              "See details",
-                                              style: TextStyle(
-                                                  decoration:
-                                                      TextDecoration.underline),
+                                            child: GestureDetector(
+                                              onTap: () {
+                                                Get.toNamed(
+                                                    "/servicesdashboard");
+                                              },
+                                              child: Text(
+                                                "See details",
+                                                style: TextStyle(
+                                                    decoration: TextDecoration
+                                                        .underline),
+                                              ),
                                             ),
                                           ),
                                         ],
