@@ -294,7 +294,8 @@ class ServicesDetailsPage extends StatelessWidget {
                                           child: Text(
                                             "Normal Washing Service",
                                             style: TextStyle(
-                                                fontSize: screenWidth / 20),
+                                                fontSize: screenWidth / 20,
+                                                fontWeight: FontWeight.bold),
                                           ),
                                         ),
                                       ),
@@ -378,7 +379,8 @@ class ServicesDetailsPage extends StatelessWidget {
                                           child: Text(
                                             "Dry Washing Service",
                                             style: TextStyle(
-                                                fontSize: screenWidth / 20),
+                                                fontSize: screenWidth / 20,
+                                                fontWeight: FontWeight.bold),
                                           ),
                                         ),
                                       ),
@@ -463,7 +465,8 @@ class ServicesDetailsPage extends StatelessWidget {
                                           child: Text(
                                             "Ironing Service",
                                             style: TextStyle(
-                                                fontSize: screenWidth / 20),
+                                                fontSize: screenWidth / 20,
+                                                fontWeight: FontWeight.bold),
                                           ),
                                         ),
                                       ),

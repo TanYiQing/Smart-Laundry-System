@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:final_year_project/pages/customer/servicesdetails/controller/servicesdetails_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -107,91 +105,94 @@ class ServicesDashboardPage extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
-                          child: Row(
-                            children: [
-                              Card(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15)),
-                                color: Colors.green[100],
-                                elevation: 10,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Column(
-                                    children: [
-                                      Icon(
-                                        Icons.water_sharp,
-                                        size: screenWidth / 15,
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Text("Washing Machine"),
-                                      ),
-                                      Text(
-                                          controller.washingmachinelist.length
-                                              .toString(),
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.w800,
-                                          ))
-                                    ],
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 8.0),
+                            child: Row(
+                              children: [
+                                Card(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(15)),
+                                  color: Colors.green[100],
+                                  elevation: 8,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Column(
+                                      children: [
+                                        Icon(
+                                          Icons.water_sharp,
+                                          size: screenWidth / 15,
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text("Washing Machine"),
+                                        ),
+                                        Text(
+                                            controller.washingmachinelist.length
+                                                .toString(),
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.w800,
+                                            ))
+                                      ],
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Card(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15)),
-                                color: Colors.green[400],
-                                elevation: 10,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Column(
-                                    children: [
-                                      Icon(
-                                        Icons.dry_cleaning_outlined,
-                                        size: screenWidth / 15,
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Text("Dry Washing Machine"),
-                                      ),
-                                      Text(
-                                          controller
-                                              .drywashingmachinelist.length
-                                              .toString(),
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.w800,
-                                          ))
-                                    ],
+                                Card(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(15)),
+                                  color: Colors.green[400],
+                                  elevation: 8,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Column(
+                                      children: [
+                                        Icon(
+                                          Icons.dry_cleaning_outlined,
+                                          size: screenWidth / 15,
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text("Dry Washing Machine"),
+                                        ),
+                                        Text(
+                                            controller
+                                                .drywashingmachinelist.length
+                                                .toString(),
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.w800,
+                                            ))
+                                      ],
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Card(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15)),
-                                color: Colors.blue[200],
-                                elevation: 10,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Column(
-                                    children: [
-                                      Icon(
-                                        Icons.iron_outlined,
-                                        size: screenWidth / 15,
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Text("Ironing Machine"),
-                                      ),
-                                      Text(
-                                          controller.ironingmachinelist.length
-                                              .toString(),
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.w800,
-                                          ))
-                                    ],
+                                Card(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(15)),
+                                  color: Colors.blue[200],
+                                  elevation: 8,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Column(
+                                      children: [
+                                        Icon(
+                                          Icons.iron_outlined,
+                                          size: screenWidth / 15,
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text("Ironing Machine"),
+                                        ),
+                                        Text(
+                                            controller.ironingmachinelist.length
+                                                .toString(),
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.w800,
+                                            ))
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              )
-                            ],
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       )
