@@ -13,7 +13,8 @@ class Machine {
       minimumWeight,
       maximumWeight,
       price,
-      laundryID;
+      laundryID,
+      available;
   Machine({
     this.machineID,
     this.machineType,
@@ -22,6 +23,7 @@ class Machine {
     this.maximumWeight,
     this.price,
     this.laundryID,
+    this.available,
   });
 
   factory Machine.fromJson(Map<String, dynamic> json) => Machine(
@@ -32,6 +34,7 @@ class Machine {
         maximumWeight: json["maximumWeight"],
         price: json["price"],
         laundryID: json["laundryID"],
+        available: json["available"],
       );
 
   Map<String, dynamic> toJson() => {
@@ -42,5 +45,6 @@ class Machine {
         "maximumWeight": maximumWeight,
         "price": price,
         "laundryID": laundryID,
+        "available": available,
       };
 }
