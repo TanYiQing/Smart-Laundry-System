@@ -20,6 +20,7 @@ class ServicesDetailsController extends GetxController {
   @override
   void onInit() {
     loadMachine();
+    calculateAvailability();
     super.onInit();
   }
 
@@ -70,5 +71,12 @@ class ServicesDetailsController extends GetxController {
     }
 
     update();
+  }
+
+  void calculateAvailability() {
+    RemoteServices.calculateAvailability(laundry.laundryID.toString(), "All");
+    RemoteServices.calculateAvailability(laundry.laundryID.toString(), "Washing Machine");
+    RemoteServices.calculateAvailability(laundry.laundryID.toString(), "Dry Washing Machine");
+    RemoteServices.calculateAvailability(laundry.laundryID.toString(), "Ironing Machine");
   }
 }

@@ -205,4 +205,16 @@ class RemoteServices {
       return null;
     }
   }
+
+  static Future<String?> calculateAvailability(
+      String laundryID, String machineType) async {
+    var response = await client.post(
+        Uri.parse(
+            'https://hubbuddies.com/270607/onesource/php/calculateAvailability.php'),
+        body: {"laundryID": laundryID, "machineType": machineType});
+
+    if (response.statusCode == 200) {
+      print(response.body);
+    }
+  }
 }

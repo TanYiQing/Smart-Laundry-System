@@ -68,7 +68,8 @@ class MachineTile extends StatelessWidget {
                 : Colors.transparent,
             child: (machine.available == "Not Available")
                 ? Center(
-                    child: Card(elevation: 2,
+                    child: Card(
+                    elevation: 2,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
