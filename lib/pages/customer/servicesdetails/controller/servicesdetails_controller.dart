@@ -1,7 +1,9 @@
+import 'package:final_year_project/models/availability.dart';
 import 'package:final_year_project/models/machine.dart';
 import 'package:final_year_project/services/remoteServices.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 
 class ServicesDetailsController extends GetxController {
   var laundry = Get.arguments;
@@ -9,11 +11,13 @@ class ServicesDetailsController extends GetxController {
   var washingmachinelist = <Machine>[].obs;
   var drywashingmachinelist = <Machine>[].obs;
   var ironingmachinelist = <Machine>[].obs;
+  var availabilityAllList = <Availability>[].obs;
   var currentIndex = "0".obs;
   final normalwashKey = GlobalKey();
   final drywashKey = GlobalKey();
   final ironingKey = GlobalKey();
   final topKey = GlobalKey();
+  late TooltipBehavior tooltipBehavior;
 
   BuildContext? get context => null;
 
@@ -21,6 +25,7 @@ class ServicesDetailsController extends GetxController {
   void onInit() {
     loadMachine();
     calculateAvailability();
+    tooltipBehavior = TooltipBehavior(enable: true);
     super.onInit();
   }
 
@@ -73,10 +78,12 @@ class ServicesDetailsController extends GetxController {
     update();
   }
 
-  void calculateAvailability() {
-    RemoteServices.calculateAvailability(laundry.laundryID.toString(), "All");
-    RemoteServices.calculateAvailability(laundry.laundryID.toString(), "Washing Machine");
-    RemoteServices.calculateAvailability(laundry.laundryID.toString(), "Dry Washing Machine");
-    RemoteServices.calculateAvailability(laundry.laundryID.toString(), "Ironing Machine");
+  Future<void> calculateAvailability() async {
+    var availabilityAll = await RemoteServices.calculateAvailability(
+        laundry.laundryID.toString());
+    if (availabilityAll != null) {
+      availabilityAllList.assignAll(availabilityAll);
+      print(availabilityAllList);
+    }
   }
 }

@@ -1,3 +1,4 @@
+import 'package:final_year_project/models/availability.dart';
 import 'package:final_year_project/models/machine.dart';
 import 'package:final_year_project/pages/customer/servicesdetails/controller/servicesdetails_controller.dart';
 import 'package:flutter/material.dart';
@@ -74,6 +75,7 @@ class ServicesDashboardPage extends StatelessWidget {
                             child: Container(
                               width: double.infinity,
                               child: Card(
+                                  color: Colors.blue[100],
                                   elevation: 10,
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(15)),
@@ -146,7 +148,7 @@ class ServicesDashboardPage extends StatelessWidget {
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(15)),
-                                    color: Colors.green[400],
+                                    color: Colors.purple[100],
                                     elevation: 8,
                                     child: Padding(
                                       padding: const EdgeInsets.all(8.0),
@@ -205,16 +207,41 @@ class ServicesDashboardPage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        // SfCircularChart(
-                        //   series: <CircularSeries>[
-                        //     PieSeries<Machine, String>(
-                        //         dataSource: controller.machinelist,
-                        //         xValueMapper: (Machine machinedata, _) =>
-                        //             machinedata.machineType,
-                        //         yValueMapper: (Machine machinedata, _) =>
-                        //             int.tryParse(machinedata.price ?? ""))
-                        //   ],
-                        // )
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            child: GetBuilder<ServicesDetailsController>(
+                                builder: (controller) {
+                              return SfCircularChart(
+                                palette: <Color>[
+                                  Color.fromRGBO(187, 222, 251, 1),
+                                  Color.fromRGBO(200, 230, 201, 1),
+                                  Color.fromRGBO(225, 190, 231, 1),
+                                  Color.fromRGBO(144, 202, 249, 1)
+                                ],
+                                title: ChartTitle(text: 'Occupied Level(%)'),
+                                legend: Legend(
+                                    isVisible: true,
+                                    overflowMode: LegendItemOverflowMode.scroll,
+                                    position: LegendPosition.bottom),
+                                tooltipBehavior: controller.tooltipBehavior,
+                                series: <CircularSeries>[
+                                  RadialBarSeries<Availability, String>(
+                                      dataSource:
+                                          controller.availabilityAllList,
+                                      xValueMapper: (Availability data, _) =>
+                                          data.machineType,
+                                      yValueMapper: (Availability data, _) =>
+                                          int.tryParse(data.percentage??""),
+                                      dataLabelSettings:
+                                          DataLabelSettings(isVisible: true),
+                                      enableTooltip: true,
+                                      maximumValue: 100)
+                                ],
+                              );
+                            }),
+                          ),
+                        )
                       ],
                     ),
                   ),

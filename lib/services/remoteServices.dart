@@ -1,5 +1,6 @@
 // ignore_for_file: non_constant_identifier_names
 
+import 'package:final_year_project/models/availability.dart';
 import 'package:final_year_project/models/laundry.dart';
 import 'package:final_year_project/models/machine.dart';
 import 'package:final_year_project/models/user.dart';
@@ -206,15 +207,20 @@ class RemoteServices {
     }
   }
 
-  static Future<String?> calculateAvailability(
-      String laundryID, String machineType) async {
+  static Future<List<Availability>?> calculateAvailability(
+      String laundryID,) async {
     var response = await client.post(
         Uri.parse(
             'https://hubbuddies.com/270607/onesource/php/calculateAvailability.php'),
-        body: {"laundryID": laundryID, "machineType": machineType});
+        body: {"laundryID": laundryID,});
 
     if (response.statusCode == 200) {
+      print("HEllo");
       print(response.body);
+      var jsondata = response.body;
+      return availabilityFromJson(jsondata);
+    } else {
+      return null;
     }
   }
 }
