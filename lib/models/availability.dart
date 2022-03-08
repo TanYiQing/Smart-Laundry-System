@@ -17,7 +17,7 @@ class Availability {
 
   factory Availability.fromJson(Map<String, dynamic> json) => Availability(
         machineType: json["machineType"],
-        percentage: json["percentage"],
+        percentage: (json["percentage"] == "NAN") ? "0" : json["percentage"],
       );
 
   Map<String, dynamic> toJson() => {
