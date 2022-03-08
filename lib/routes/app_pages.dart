@@ -10,6 +10,8 @@ import 'package:final_year_project/pages/customer/services/view/normalwashandiro
 import 'package:final_year_project/pages/customer/servicesdetails/binding/servicesdetails_binding.dart';
 import 'package:final_year_project/pages/customer/servicesdetails/view/servicesdashboard.dart';
 import 'package:final_year_project/pages/customer/servicesdetails/view/servicesdetails.dart';
+import 'package:final_year_project/pages/customer/servicesmachinedetails/binding/servicesmachinedetails_binding.dart';
+import 'package:final_year_project/pages/customer/servicesmachinedetails/view/servicesmachinedetails.dart';
 import 'package:final_year_project/pages/laundryOwner/addmachine/binding/addmachine_binding.dart';
 import 'package:final_year_project/pages/laundryOwner/addmachine/view/addmachine.dart';
 import 'package:final_year_project/pages/laundryOwner/addnewlaundry/binding/addnewlaundry_binding.dart';
@@ -199,6 +201,11 @@ class AppPages {
         name: "/servicesdashboard",
         page: () => ServicesDashboardPage(),
         binding: ServicesDetailsBindings(),
+        middlewares: [RouterAuthMiddleware()]),
+    GetPage(
+        name: "/servicesmachinedetails",
+        page: () => ServicesMachineDetailsPage(),
+        binding: ServicesMachineDetailsBindings(),
         middlewares: [RouterAuthMiddleware()]),
     GetPage(
         name: "/cart",
