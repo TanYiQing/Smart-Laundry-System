@@ -86,4 +86,41 @@ class ServicesDetailsController extends GetxController {
       print(availabilityAllList);
     }
   }
+
+  void viewServicesMachineDetails(index, String machineType) {
+    if (machineType == "Washing Machine") {
+      Machine machine = new Machine(
+          machineID: washingmachinelist[index].machineID,
+          machineType: washingmachinelist[index].machineType,
+          calculationBase: washingmachinelist[index].calculationBase,
+          minimumWeight: washingmachinelist[index].minimumWeight,
+          maximumWeight: washingmachinelist[index].maximumWeight,
+          price: washingmachinelist[index].price,
+          laundryID: washingmachinelist[index].laundryID,
+          available: washingmachinelist[index].available);
+      Get.toNamed("/servicesmachinedetails", arguments: machine);
+    } else if (machineType == "Dry Washing Machine") {
+      Machine machine = new Machine(
+          machineID: drywashingmachinelist[index].machineID,
+          machineType: drywashingmachinelist[index].machineType,
+          calculationBase: drywashingmachinelist[index].calculationBase,
+          minimumWeight: drywashingmachinelist[index].minimumWeight,
+          maximumWeight: drywashingmachinelist[index].maximumWeight,
+          price: drywashingmachinelist[index].price,
+          laundryID: drywashingmachinelist[index].laundryID,
+          available: drywashingmachinelist[index].available);
+      Get.toNamed("/servicesmachinedetails", arguments: machine);
+    } else if (machineType == "Ironing Machine") {
+      Machine machine = new Machine(
+          machineID: ironingmachinelist[index].machineID,
+          machineType: ironingmachinelist[index].machineType,
+          calculationBase: ironingmachinelist[index].calculationBase,
+          minimumWeight: ironingmachinelist[index].minimumWeight,
+          maximumWeight: ironingmachinelist[index].maximumWeight,
+          price: ironingmachinelist[index].price,
+          laundryID: ironingmachinelist[index].laundryID,
+          available: ironingmachinelist[index].available);
+      Get.toNamed("/servicesmachinedetails", arguments: machine);
+    }
+  }
 }

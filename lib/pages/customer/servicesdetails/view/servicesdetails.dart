@@ -355,8 +355,15 @@ class ServicesDetailsPage extends StatelessWidget {
                                             : 4, (index) {
                                       return Padding(
                                         padding: const EdgeInsets.all(8.0),
-                                        child: MachineTile(controller
-                                            .washingmachinelist[index]),
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            controller
+                                                .viewServicesMachineDetails(
+                                                    index, "Washing Machine");
+                                          },
+                                          child: MachineTile(controller
+                                              .washingmachinelist[index]),
+                                        ),
                                       );
                                     }),
                                   )),
@@ -441,8 +448,15 @@ class ServicesDetailsPage extends StatelessWidget {
                                             : 4, (index) {
                                       return Padding(
                                         padding: const EdgeInsets.all(8.0),
-                                        child: MachineTile(controller
-                                            .drywashingmachinelist[index]),
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            controller
+                                                .viewServicesMachineDetails(
+                                                    index, "Dry Washing Machine");
+                                          },
+                                          child: MachineTile(controller
+                                              .drywashingmachinelist[index]),
+                                        ),
                                       );
                                     }),
                                   )),
@@ -526,8 +540,15 @@ class ServicesDetailsPage extends StatelessWidget {
                                             : 4, (index) {
                                       return Padding(
                                         padding: const EdgeInsets.all(8.0),
-                                        child: MachineTile(controller
-                                            .ironingmachinelist[index]),
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            controller
+                                                .viewServicesMachineDetails(
+                                                    index, "Ironing Machine");
+                                          },
+                                          child: MachineTile(controller
+                                              .ironingmachinelist[index]),
+                                        ),
                                       );
                                     }),
                                   )),
