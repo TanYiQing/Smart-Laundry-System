@@ -53,14 +53,6 @@ class BottomBar extends StatelessWidget {
                   label: 'Account',
                   activeIcon: Text("Account")),
             ]),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Get.toNamed("/cart");
-          },
-          elevation: 10,
-          backgroundColor: Color.fromRGBO(0, 194, 203, 1),
-          child: Icon(Icons.shopping_cart_outlined),
-        ),
       );
     });
   }
