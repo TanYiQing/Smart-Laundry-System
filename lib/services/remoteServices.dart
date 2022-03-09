@@ -141,7 +141,13 @@ class RemoteServices {
       String minimumWeight,
       String maximumWeight,
       String price,
-      String laundryID) async {
+      String laundryID,
+      String addOn1,
+      String addOn1Price,
+      String addOn2,
+      String addOn2Price,
+      String addOn3,
+      String addOn3Price) async {
     var response = await client.post(
         Uri.parse('https://hubbuddies.com/270607/onesource/php/addMachine.php'),
         body: {
@@ -150,7 +156,13 @@ class RemoteServices {
           "minimumWeight": minimumWeight,
           "maximumWeight": maximumWeight,
           "price": price,
-          "laundryID": laundryID
+          "laundryID": laundryID,
+          "addOn1": addOn1,
+          "addOn1Price": addOn1Price,
+          "addOn2": addOn2,
+          "addOn2Price": addOn2Price,
+          "addOn3": addOn3,
+          "addOn3Price": addOn3Price
         });
 
     if (response.statusCode == 200) {
@@ -208,11 +220,14 @@ class RemoteServices {
   }
 
   static Future<List<Availability>?> calculateAvailability(
-      String laundryID,) async {
+    String laundryID,
+  ) async {
     var response = await client.post(
         Uri.parse(
             'https://hubbuddies.com/270607/onesource/php/calculateAvailability.php'),
-        body: {"laundryID": laundryID,});
+        body: {
+          "laundryID": laundryID,
+        });
 
     if (response.statusCode == 200) {
       print("HEllo");
