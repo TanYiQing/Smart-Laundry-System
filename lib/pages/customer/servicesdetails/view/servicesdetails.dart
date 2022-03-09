@@ -338,14 +338,14 @@ class ServicesDetailsPage extends StatelessWidget {
                               ? Container(
                                   height:
                                       (controller.washingmachinelist.length > 2)
-                                          ? screenWidth
+                                          ? screenWidth / 0.85
                                           : screenWidth / 2,
                                   child: Center(
                                       child: GridView.count(
                                     physics: NeverScrollableScrollPhysics(),
                                     crossAxisCount: 2,
                                     childAspectRatio:
-                                        ((screenWidth / screenHeight) / 0.55),
+                                        ((screenWidth / screenHeight) / 0.7),
                                     children: List.generate(
                                         (controller
                                                     .washingmachinelist.length <
@@ -431,14 +431,14 @@ class ServicesDetailsPage extends StatelessWidget {
                                   height:
                                       (controller.drywashingmachinelist.length >
                                               2)
-                                          ? screenWidth
+                                          ? screenWidth / 0.85
                                           : screenWidth / 2,
                                   child: Center(
                                       child: GridView.count(
                                     physics: NeverScrollableScrollPhysics(),
                                     crossAxisCount: 2,
                                     childAspectRatio:
-                                        ((screenWidth / screenHeight) / 0.55),
+                                        ((screenWidth / screenHeight) / 0.7),
                                     children: List.generate(
                                         (controller.drywashingmachinelist
                                                     .length <
@@ -452,7 +452,8 @@ class ServicesDetailsPage extends StatelessWidget {
                                           onTap: () {
                                             controller
                                                 .viewServicesMachineDetails(
-                                                    index, "Dry Washing Machine");
+                                                    index,
+                                                    "Dry Washing Machine");
                                           },
                                           child: MachineTile(controller
                                               .drywashingmachinelist[index]),
@@ -523,14 +524,14 @@ class ServicesDetailsPage extends StatelessWidget {
                               ? Container(
                                   height:
                                       (controller.ironingmachinelist.length > 2)
-                                          ? screenWidth
+                                          ? screenWidth / 0.85
                                           : screenWidth / 2,
                                   child: Center(
                                       child: GridView.count(
                                     physics: NeverScrollableScrollPhysics(),
                                     crossAxisCount: 2,
                                     childAspectRatio:
-                                        ((screenWidth / screenHeight) / 0.55),
+                                        ((screenWidth / screenHeight) / 0.7),
                                     children: List.generate(
                                         (controller
                                                     .ironingmachinelist.length <

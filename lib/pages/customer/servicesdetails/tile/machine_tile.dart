@@ -28,7 +28,7 @@ class MachineTile extends StatelessWidget {
               style: TextStyle(fontSize: screenWidth / 23),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 8.0),
+              padding: const EdgeInsets.only(top: 4.0),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -59,29 +59,23 @@ class MachineTile extends StatelessWidget {
                   ),
                 ],
               ),
-            )
+            ),
+            Text(
+              machine.available.toString(),
+              style: TextStyle(
+                  fontSize: screenWidth / 23,
+                  fontWeight: FontWeight.bold,
+                  color: (machine.available == "Available")
+                      ? Colors.green
+                      : Colors.red),
+            ),
           ],
         ),
         Container(
-            color: (machine.available == "Not Available")
-                ? Color.fromRGBO(255, 255, 255, 0.7)
-                : Colors.transparent,
-            child: (machine.available == "Not Available")
-                ? Center(
-                    child: Card(
-                    elevation: 2,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        "Not Available",
-                        style: TextStyle(
-                            fontSize: screenWidth / 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.red),
-                      ),
-                    ),
-                  ))
-                : Container())
+          color: (machine.available == "Not Available")
+              ? Color.fromRGBO(255, 255, 255, 0.7)
+              : Colors.transparent,
+        )
       ],
     );
   }
