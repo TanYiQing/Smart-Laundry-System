@@ -90,36 +90,58 @@ class ServicesDetailsController extends GetxController {
   void viewServicesMachineDetails(index, String machineType) {
     if (machineType == "Washing Machine") {
       Machine machine = new Machine(
-          machineID: washingmachinelist[index].machineID,
-          machineType: washingmachinelist[index].machineType,
-          calculationBase: washingmachinelist[index].calculationBase,
-          minimumWeight: washingmachinelist[index].minimumWeight,
-          maximumWeight: washingmachinelist[index].maximumWeight,
-          price: washingmachinelist[index].price,
-          laundryID: washingmachinelist[index].laundryID,
-          available: washingmachinelist[index].available);
+        machineID: washingmachinelist[index].machineID,
+        machineType: washingmachinelist[index].machineType,
+        calculationBase: washingmachinelist[index].calculationBase,
+        minimumWeight: washingmachinelist[index].minimumWeight,
+        maximumWeight: washingmachinelist[index].maximumWeight,
+        price: washingmachinelist[index].price,
+        laundryID: washingmachinelist[index].laundryID,
+        available: washingmachinelist[index].available,
+        addOn1: washingmachinelist[index].addOn1,
+        addOn1Price: washingmachinelist[index].addOn1Price,
+        addOn2: washingmachinelist[index].addOn2,
+        addOn2Price: washingmachinelist[index].addOn2Price,
+        addOn3: washingmachinelist[index].addOn3,
+        addOn3Price: washingmachinelist[index].addOn3Price,
+      );
       Get.toNamed("/servicesmachinedetails", arguments: machine);
     } else if (machineType == "Dry Washing Machine") {
       Machine machine = new Machine(
-          machineID: drywashingmachinelist[index].machineID,
-          machineType: drywashingmachinelist[index].machineType,
-          calculationBase: drywashingmachinelist[index].calculationBase,
-          minimumWeight: drywashingmachinelist[index].minimumWeight,
-          maximumWeight: drywashingmachinelist[index].maximumWeight,
-          price: drywashingmachinelist[index].price,
-          laundryID: drywashingmachinelist[index].laundryID,
-          available: drywashingmachinelist[index].available);
+        machineID: drywashingmachinelist[index].machineID,
+        machineType: drywashingmachinelist[index].machineType,
+        calculationBase: drywashingmachinelist[index].calculationBase,
+        minimumWeight: drywashingmachinelist[index].minimumWeight,
+        maximumWeight: drywashingmachinelist[index].maximumWeight,
+        price: drywashingmachinelist[index].price,
+        laundryID: drywashingmachinelist[index].laundryID,
+        available: drywashingmachinelist[index].available,
+        addOn1: drywashingmachinelist[index].addOn1,
+        addOn1Price: drywashingmachinelist[index].addOn1Price,
+        addOn2: drywashingmachinelist[index].addOn2,
+        addOn2Price: drywashingmachinelist[index].addOn2Price,
+        addOn3: drywashingmachinelist[index].addOn3,
+        addOn3Price: drywashingmachinelist[index].addOn3Price,
+      );
       Get.toNamed("/servicesmachinedetails", arguments: machine);
     } else if (machineType == "Ironing Machine") {
       Machine machine = new Machine(
-          machineID: ironingmachinelist[index].machineID,
-          machineType: ironingmachinelist[index].machineType,
-          calculationBase: ironingmachinelist[index].calculationBase,
-          minimumWeight: ironingmachinelist[index].minimumWeight,
-          maximumWeight: ironingmachinelist[index].maximumWeight,
-          price: ironingmachinelist[index].price,
-          laundryID: ironingmachinelist[index].laundryID,
-          available: ironingmachinelist[index].available);
+        machineID: ironingmachinelist[index].machineID,
+        machineType: ironingmachinelist[index].machineType,
+        calculationBase: ironingmachinelist[index].calculationBase,
+        minimumWeight: ironingmachinelist[index].minimumWeight,
+        maximumWeight: ironingmachinelist[index].maximumWeight,
+        price: ironingmachinelist[index].price,
+        laundryID: ironingmachinelist[index].laundryID,
+        available: ironingmachinelist[index].available,
+        addOn1: ironingmachinelist[index].addOn1,
+        addOn1Price: ironingmachinelist[index].addOn1Price,
+        addOn2: ironingmachinelist[index].addOn2,
+        addOn2Price: ironingmachinelist[index].addOn2Price,
+        addOn3: ironingmachinelist[index].addOn3,
+        addOn3Price: ironingmachinelist[index].addOn3Price,
+      );
+
       Get.toNamed("/servicesmachinedetails", arguments: machine);
     }
   }
