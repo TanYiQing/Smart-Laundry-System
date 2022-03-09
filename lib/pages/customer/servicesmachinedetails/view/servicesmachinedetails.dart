@@ -139,17 +139,74 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                         ),
                       );
                     }),
-                    Text(
-                      "Add-On Services",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: screenWidth / 20),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          "Add-On Services",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: screenWidth / 20),
+                        ),
+                      ),
                     ),
-                    Text(
-                      "Note to laundry",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: screenWidth / 20),
+                    GetBuilder<ServicesMachineDetailsController>(
+                        builder: (controller) {
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: [
+                            (controller.machine.addOn1 != null)
+                                ? Container(
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(controller.machine.addOn1
+                                            .toString()),
+                                        Text("RM" +
+                                            controller.machine.addOn1Price
+                                                .toString())
+                                      ],
+                                    ),
+                                  )
+                                : Container(),
+                            (controller.machine.addOn2 != null)
+                                ? Container(
+                                    child: Row(
+                                      children: [
+                                        Text(controller.machine.addOn2
+                                            .toString())
+                                      ],
+                                    ),
+                                  )
+                                : Container(),
+                            (controller.machine.addOn3 != null)
+                                ? Container(
+                                    child: Row(
+                                      children: [
+                                        Text(controller.machine.addOn3
+                                            .toString())
+                                      ],
+                                    ),
+                                  )
+                                : Container(),
+                          ],
+                        ),
+                      );
+                    }),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          "Note to laundry",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: screenWidth / 20),
+                        ),
+                      ),
                     ),
                   ],
                 ),
