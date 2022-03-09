@@ -23,6 +23,7 @@ class AddDryWashingMachinePageLaundry extends StatelessWidget {
               child: Column(
             children: [
               Container(
+                height: screenWidth / 1.5,
                 child: Image.asset("assets/images/drywashingmachine.png"),
               ),
               Container(
@@ -326,7 +327,7 @@ class AddDryWashingMachinePageLaundry extends StatelessWidget {
                                         );
                                       }),
                                     ),
-                                   GetBuilder<AddMachineController>(
+                                    GetBuilder<AddMachineController>(
                                         builder: (controller) {
                                       return Padding(
                                         padding: const EdgeInsets.all(8.0),
@@ -408,45 +409,6 @@ class AddDryWashingMachinePageLaundry extends StatelessWidget {
                                         );
                                       }),
                                     ),
-                                    Align(
-                                      alignment: Alignment.centerRight,
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(
-                                            top: 10.0, left: 8.0, right: 8.0),
-                                        child: Container(
-                                          child:
-                                              GetBuilder<AddMachineController>(
-                                                  builder: (controller) {
-                                            return MaterialButton(
-                                              onPressed: () {
-                                                controller.addMachine("Dry Washing Machine");
-                                              },
-                                              child: Container(
-                                                child: Text(
-                                                  "Publish",
-                                                  style: TextStyle(
-                                                      fontSize:
-                                                          screenWidth / 30),
-                                                ),
-                                              ),
-                                            );
-                                          }),
-                                          decoration: BoxDecoration(
-                                              gradient: LinearGradient(
-                                                  begin: Alignment(-1.0, -4.0),
-                                                  end: Alignment(1.0, 4.0),
-                                                  colors: [
-                                                    Color.fromRGBO(
-                                                        0, 194, 203, 1),
-                                                    Colors.white
-                                                  ]),
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(10))),
-                                          width: screenWidth / 3.5,
-                                          height: screenHeight / 20,
-                                        ),
-                                      ),
-                                    ),
                                   ],
                                 ),
                               ),
@@ -455,7 +417,533 @@ class AddDryWashingMachinePageLaundry extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ))
+                  )),
+              Container(
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Card(
+                        color: Colors.white,
+                        shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(15))),
+                        elevation: 10,
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Container(
+                                      decoration: BoxDecoration(
+                                          gradient: LinearGradient(
+                                              begin: Alignment(-1.0, -4.0),
+                                              end: Alignment(1.0, 4.0),
+                                              colors: [
+                                                Color.fromRGBO(0, 194, 203, 1),
+                                                Colors.white
+                                              ]),
+                                          borderRadius:
+                                              BorderRadius.circular(50)),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Icon(Icons.add_reaction_rounded),
+                                      )),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Column(
+                                      children: [
+                                        Text("Add-On Services"),
+                                        Text("(Maximum 3)",
+                                            style: TextStyle(
+                                                color: Colors.grey,
+                                                fontSize: screenWidth / 35)),
+                                      ],
+                                    ),
+                                  ),
+                                  GetBuilder<AddMachineController>(
+                                      builder: (controller) {
+                                    return (controller.isShow1.value == true)
+                                        ? Container(
+                                            width: double.infinity,
+                                            color: Colors.grey[50],
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(8.0),
+                                                  child: Text(
+                                                    "Add-On Service 1",
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold),
+                                                  ),
+                                                ),
+                                                Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    Card(
+                                                      shape: RoundedRectangleBorder(
+                                                          side: BorderSide(
+                                                              color:
+                                                                  Colors.black,
+                                                              width: 1),
+                                                          borderRadius:
+                                                              BorderRadius.all(
+                                                                  Radius
+                                                                      .circular(
+                                                                          10))),
+                                                      child: Container(
+                                                        width: screenWidth / 2,
+                                                        child: Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                      .only(
+                                                                  left: 8.0,
+                                                                  right: 8.0),
+                                                          child: Container(
+                                                            child: TextField(
+                                                              controller: controller
+                                                                  .addon1controller,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .right,
+                                                              keyboardType:
+                                                                  TextInputType
+                                                                      .number,
+                                                              decoration: InputDecoration(
+                                                                  border:
+                                                                      InputBorder
+                                                                          .none,
+                                                                  isDense:
+                                                                      true),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              8.0),
+                                                      child: Row(
+                                                        children: [
+                                                          Text("RM"),
+                                                          Card(
+                                                            shape: RoundedRectangleBorder(
+                                                                side: BorderSide(
+                                                                    color: Colors
+                                                                        .black,
+                                                                    width: 1),
+                                                                borderRadius: BorderRadius
+                                                                    .all(Radius
+                                                                        .circular(
+                                                                            10))),
+                                                            child: Container(
+                                                              width:
+                                                                  screenWidth /
+                                                                      5,
+                                                              child: Padding(
+                                                                padding:
+                                                                    const EdgeInsets
+                                                                            .only(
+                                                                        left:
+                                                                            8.0,
+                                                                        right:
+                                                                            8.0),
+                                                                child:
+                                                                    Container(
+                                                                  child:
+                                                                      TextField(
+                                                                    controller:
+                                                                        controller
+                                                                            .addon1pricecontroller,
+                                                                    textAlign:
+                                                                        TextAlign
+                                                                            .right,
+                                                                    keyboardType:
+                                                                        TextInputType
+                                                                            .number,
+                                                                    decoration: InputDecoration(
+                                                                        border: InputBorder
+                                                                            .none,
+                                                                        isDense:
+                                                                            true),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          GestureDetector(
+                                                            onTap: () {
+                                                              controller
+                                                                  .clickDelete(
+                                                                      1);
+                                                            },
+                                                            child: Icon(
+                                                                Icons.delete,
+                                                                color:
+                                                                    Colors.red),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ],
+                                            ),
+                                          )
+                                        : Container();
+                                  }),
+                                  GetBuilder<AddMachineController>(
+                                      builder: (controller) {
+                                    return (controller.isShow2.value == true)
+                                        ? Container(
+                                            width: double.infinity,
+                                            color: Colors.grey[50],
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(8.0),
+                                                  child: Text(
+                                                    "Add-On Service 2",
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold),
+                                                  ),
+                                                ),
+                                                Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    Card(
+                                                      shape: RoundedRectangleBorder(
+                                                          side: BorderSide(
+                                                              color:
+                                                                  Colors.black,
+                                                              width: 1),
+                                                          borderRadius:
+                                                              BorderRadius.all(
+                                                                  Radius
+                                                                      .circular(
+                                                                          10))),
+                                                      child: Container(
+                                                        width: screenWidth / 2,
+                                                        child: Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                      .only(
+                                                                  left: 8.0,
+                                                                  right: 8.0),
+                                                          child: Container(
+                                                            child: TextField(
+                                                              controller: controller
+                                                                  .addon2controller,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .right,
+                                                              keyboardType:
+                                                                  TextInputType
+                                                                      .number,
+                                                              decoration: InputDecoration(
+                                                                  border:
+                                                                      InputBorder
+                                                                          .none,
+                                                                  isDense:
+                                                                      true),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              8.0),
+                                                      child: Row(
+                                                        children: [
+                                                          Text("RM"),
+                                                          Card(
+                                                            shape: RoundedRectangleBorder(
+                                                                side: BorderSide(
+                                                                    color: Colors
+                                                                        .black,
+                                                                    width: 1),
+                                                                borderRadius: BorderRadius
+                                                                    .all(Radius
+                                                                        .circular(
+                                                                            10))),
+                                                            child: Container(
+                                                              width:
+                                                                  screenWidth /
+                                                                      5,
+                                                              child: Padding(
+                                                                padding:
+                                                                    const EdgeInsets
+                                                                            .only(
+                                                                        left:
+                                                                            8.0,
+                                                                        right:
+                                                                            8.0),
+                                                                child:
+                                                                    Container(
+                                                                  child:
+                                                                      TextField(
+                                                                    controller:
+                                                                        controller
+                                                                            .addon2pricecontroller,
+                                                                    textAlign:
+                                                                        TextAlign
+                                                                            .right,
+                                                                    keyboardType:
+                                                                        TextInputType
+                                                                            .number,
+                                                                    decoration: InputDecoration(
+                                                                        border: InputBorder
+                                                                            .none,
+                                                                        isDense:
+                                                                            true),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          GestureDetector(
+                                                            onTap: () {
+                                                              controller
+                                                                  .clickDelete(
+                                                                      2);
+                                                            },
+                                                            child: Icon(
+                                                                Icons.delete,
+                                                                color:
+                                                                    Colors.red),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ],
+                                            ),
+                                          )
+                                        : Container();
+                                  }),
+                                  GetBuilder<AddMachineController>(
+                                      builder: (controller) {
+                                    return (controller.isShow3.value == true)
+                                        ? Container(
+                                            width: double.infinity,
+                                            color: Colors.grey[50],
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(8.0),
+                                                  child: Text(
+                                                    "Add-On Service 3",
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold),
+                                                  ),
+                                                ),
+                                                Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    Card(
+                                                      shape: RoundedRectangleBorder(
+                                                          side: BorderSide(
+                                                              color:
+                                                                  Colors.black,
+                                                              width: 1),
+                                                          borderRadius:
+                                                              BorderRadius.all(
+                                                                  Radius
+                                                                      .circular(
+                                                                          10))),
+                                                      child: Container(
+                                                        width: screenWidth / 2,
+                                                        child: Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                      .only(
+                                                                  left: 8.0,
+                                                                  right: 8.0),
+                                                          child: Container(
+                                                            child: TextField(
+                                                              controller: controller
+                                                                  .addon3controller,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .right,
+                                                              keyboardType:
+                                                                  TextInputType
+                                                                      .number,
+                                                              decoration: InputDecoration(
+                                                                  border:
+                                                                      InputBorder
+                                                                          .none,
+                                                                  isDense:
+                                                                      true),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              8.0),
+                                                      child: Row(
+                                                        children: [
+                                                          Text("RM"),
+                                                          Card(
+                                                            shape: RoundedRectangleBorder(
+                                                                side: BorderSide(
+                                                                    color: Colors
+                                                                        .black,
+                                                                    width: 1),
+                                                                borderRadius: BorderRadius
+                                                                    .all(Radius
+                                                                        .circular(
+                                                                            10))),
+                                                            child: Container(
+                                                              width:
+                                                                  screenWidth /
+                                                                      5,
+                                                              child: Padding(
+                                                                padding:
+                                                                    const EdgeInsets
+                                                                            .only(
+                                                                        left:
+                                                                            8.0,
+                                                                        right:
+                                                                            8.0),
+                                                                child:
+                                                                    Container(
+                                                                  child:
+                                                                      TextField(
+                                                                    controller:
+                                                                        controller
+                                                                            .addon3pricecontroller,
+                                                                    textAlign:
+                                                                        TextAlign
+                                                                            .right,
+                                                                    keyboardType:
+                                                                        TextInputType
+                                                                            .number,
+                                                                    decoration: InputDecoration(
+                                                                        border: InputBorder
+                                                                            .none,
+                                                                        isDense:
+                                                                            true),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          GestureDetector(
+                                                            onTap: () {
+                                                              controller
+                                                                  .clickDelete(
+                                                                      3);
+                                                            },
+                                                            child: Icon(
+                                                                Icons.delete,
+                                                                color:
+                                                                    Colors.red),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ],
+                                            ),
+                                          )
+                                        : Container();
+                                  }),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        top: 10.0, left: 8.0, right: 8.0),
+                                    child: Container(
+                                      child: GetBuilder<AddMachineController>(
+                                          builder: (controller) {
+                                        return MaterialButton(
+                                          onPressed: () {
+                                            controller.clickAddMore();
+                                          },
+                                          child: Container(
+                                            child: Text(
+                                              "Add More",
+                                              style: TextStyle(
+                                                  fontSize: screenWidth / 30),
+                                            ),
+                                          ),
+                                        );
+                                      }),
+                                      decoration: BoxDecoration(
+                                          color: Colors.grey[350],
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(10))),
+                                      width: double.infinity,
+                                      height: screenHeight / 20,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        )),
+                  )),
+              Align(
+                alignment: Alignment.centerRight,
+                child: Padding(
+                  padding:
+                      const EdgeInsets.only(top: 10.0, left: 8.0, right: 8.0),
+                  child: Container(
+                    child:
+                        GetBuilder<AddMachineController>(builder: (controller) {
+                      return MaterialButton(
+                        onPressed: () {
+                          controller.addMachine("Dry Washing Machine");
+                        },
+                        child: Container(
+                          child: Text(
+                            "Publish",
+                            style: TextStyle(fontSize: screenWidth / 30),
+                          ),
+                        ),
+                      );
+                    }),
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            begin: Alignment(-1.0, -4.0),
+                            end: Alignment(1.0, 4.0),
+                            colors: [
+                              Color.fromRGBO(0, 194, 203, 1),
+                              Colors.white
+                            ]),
+                        borderRadius: BorderRadius.all(Radius.circular(10))),
+                    width: screenWidth / 3.5,
+                    height: screenHeight / 20,
+                  ),
+                ),
+              ),
+              SizedBox(height: 20)
             ],
           )),
         ),
