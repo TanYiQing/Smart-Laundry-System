@@ -232,7 +232,7 @@ class HomePage extends StatelessWidget {
                                       Container(
                                           height: screenHeight / 15,
                                           child: Image.asset(
-                                              "assets/images/normalwash.png")),
+                                              "assets/icons/normalwash.png")),
                                       Text(
                                         "Normal Wash",
                                         textAlign: TextAlign.center,
@@ -246,7 +246,8 @@ class HomePage extends StatelessWidget {
                           GestureDetector(
                             onTap: () {
                               Get.toNamed("/normalwashandironing",
-                                  arguments: "Washing Machine and Ironing Machine");
+                                  arguments:
+                                      "Washing Machine and Ironing Machine");
                             },
                             child: Card(
                               elevation: 5,
@@ -264,7 +265,7 @@ class HomePage extends StatelessWidget {
                                       Container(
                                           height: screenHeight / 15,
                                           child: Image.asset(
-                                              "assets/images/normalwashiron.png")),
+                                              "assets/icons/normalwashiron.png")),
                                       Text(
                                         "Normal Wash & Ironing",
                                         textAlign: TextAlign.center,
@@ -296,7 +297,7 @@ class HomePage extends StatelessWidget {
                                       Container(
                                           height: screenHeight / 15,
                                           child: Image.asset(
-                                              "assets/images/drywash.png")),
+                                              "assets/icons/drywash.png")),
                                       Text(
                                         "Dry Wash",
                                         textAlign: TextAlign.center,
@@ -310,7 +311,8 @@ class HomePage extends StatelessWidget {
                           GestureDetector(
                             onTap: () {
                               Get.toNamed("/drywashandironing",
-                                  arguments: "Dry Washing Machine and Ironing Machine");
+                                  arguments:
+                                      "Dry Washing Machine and Ironing Machine");
                             },
                             child: Card(
                               elevation: 5,
@@ -328,7 +330,7 @@ class HomePage extends StatelessWidget {
                                       Container(
                                           height: screenHeight / 15,
                                           child: Image.asset(
-                                              "assets/images/drywashironing.png")),
+                                              "assets/icons/drywashironing.png")),
                                       Text(
                                         "Dry Wash & Ironing",
                                         textAlign: TextAlign.center,
@@ -360,7 +362,7 @@ class HomePage extends StatelessWidget {
                                       Container(
                                           height: screenHeight / 15,
                                           child: Image.asset(
-                                              "assets/images/ironing.png")),
+                                              "assets/icons/ironing.png")),
                                       Text(
                                         "Ironing",
                                         textAlign: TextAlign.center,
@@ -387,7 +389,7 @@ class HomePage extends StatelessWidget {
                                     Container(
                                         height: screenHeight / 15,
                                         child: Image.asset(
-                                            "assets/images/comingsoon.png")),
+                                            "assets/icons/comingsoon.png")),
                                     Text(
                                       "Coming Soon",
                                       textAlign: TextAlign.center,
