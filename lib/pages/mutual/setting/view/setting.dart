@@ -5,6 +5,8 @@ import 'package:get/get.dart';
 class SettingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -30,7 +32,11 @@ class SettingPage extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Icon(Icons.language, color: Colors.blue),
+                        Container(
+                          child: Image.asset("assets/icons/language.png",
+                              height: screenWidth / 15,
+                              width: screenWidth / 15),
+                        ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text("Language".tr),
@@ -65,7 +71,11 @@ class SettingPage extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Icon(Icons.help_center, color: Colors.blue),
+                        Container(
+                          child: Image.asset("assets/icons/question.png",
+                              height: screenWidth / 15,
+                              width: screenWidth / 15),
+                        ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text("Help Centre"),
@@ -90,8 +100,11 @@ class SettingPage extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Icon(Icons.local_laundry_service_outlined,
-                            color: Colors.blue),
+                        Container(
+                          child: Image.asset("assets/icons/information.png",
+                              height: screenWidth / 15,
+                              width: screenWidth / 15),
+                        ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text("About Us"),
@@ -116,8 +129,11 @@ class SettingPage extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Icon(Icons.my_library_books_outlined,
-                            color: Colors.blue),
+                        Container(
+                          child: Image.asset("assets/icons/shield.png",
+                              height: screenWidth / 15,
+                              width: screenWidth / 15),
+                        ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text("Terms and Conditions"),
