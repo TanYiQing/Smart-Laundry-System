@@ -139,15 +139,29 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                         ),
                       );
                     }),
+                    Divider(
+                      thickness: 6,
+                    ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Align(
                         alignment: Alignment.centerLeft,
-                        child: Text(
-                          "Add-On Services",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: screenWidth / 20),
+                        child: Row(
+                          children: [
+                            Text(
+                              "Add-On Services",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: screenWidth / 20),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                "Optional",
+                                style: TextStyle(color: Colors.grey),
+                              ),
+                            )
+                          ],
                         ),
                       ),
                     ),
@@ -157,57 +171,193 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
                           children: [
-                            (controller.machine.addOn1 != null)
-                                ? Container(
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(controller.machine.addOn1
+                            (controller.machine.addOn1 != "")
+                                ? CheckboxListTile(
+                                    title: Text(
+                                        controller.machine.addOn1.toString()),
+                                    subtitle: Text("RM" +
+                                        controller.machine.addOn1Price
                                             .toString()),
-                                        Text("RM" +
-                                            controller.machine.addOn1Price
-                                                .toString())
-                                      ],
-                                    ),
+                                    onChanged: (bool? value) {},
+                                    value: true,
                                   )
                                 : Container(),
-                            (controller.machine.addOn2 != null)
-                                ? Container(
-                                    child: Row(
-                                      children: [
-                                        Text(controller.machine.addOn2
-                                            .toString())
-                                      ],
-                                    ),
+                            (controller.machine.addOn2 != "")
+                                ? CheckboxListTile(
+                                    title: Text(
+                                        controller.machine.addOn2.toString()),
+                                    subtitle: Text("RM" +
+                                        controller.machine.addOn2Price
+                                            .toString()),
+                                    onChanged: (bool? value) {},
+                                    value: true,
                                   )
                                 : Container(),
-                            (controller.machine.addOn3 != null)
-                                ? Container(
-                                    child: Row(
-                                      children: [
-                                        Text(controller.machine.addOn3
-                                            .toString())
-                                      ],
-                                    ),
+                            (controller.machine.addOn3 != "")
+                                ? CheckboxListTile(
+                                    title: Text(
+                                        controller.machine.addOn3.toString()),
+                                    subtitle: Text("RM" +
+                                        controller.machine.addOn3Price
+                                            .toString()),
+                                    onChanged: (bool? value) {},
+                                    value: false,
                                   )
                                 : Container(),
                           ],
                         ),
                       );
                     }),
+                    Divider(
+                      thickness: 6,
+                    ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Align(
                         alignment: Alignment.centerLeft,
-                        child: Text(
-                          "Note to laundry",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: screenWidth / 20),
+                        child: Row(
+                          children: [
+                            Text(
+                              "Order Method",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: screenWidth / 20),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                "Required",
+                                style: TextStyle(color: Colors.grey),
+                              ),
+                            )
+                          ],
                         ),
                       ),
                     ),
+                    GetBuilder<ServicesMachineDetailsController>(
+                        builder: (controller) {
+                      return Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            width: screenWidth / 3,
+                            height: screenHeight / 6,
+                            child: Card(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(20))),
+                              elevation:
+                                  controller.orderMethod.value == "Reservation"
+                                      ? 8
+                                      : 1,
+                              child: Column(
+                                children: [
+                                  Radio(
+                                    value: "Reservation",
+                                    groupValue: controller.orderMethod.value,
+                                    onChanged: (value) {
+                                      // controller.handleRadioButton(value);
+                                    },
+                                    activeColor: Colors.teal,
+                                  ),
+                                  Text("Reservation"),
+                                  Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Container(
+                                          height: screenWidth / 10,
+                                          child: Image.asset(
+                                              "assets/icons/booking.png")))
+                                ],
+                              ),
+                            ),
+                          ),
+                          Container(
+                            width: screenWidth / 3,
+                            height: screenHeight / 6,
+                            child: Card(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(20))),
+                              elevation:
+                                  controller.orderMethod.value == "Delivery"
+                                      ? 8
+                                      : 1,
+                              child: Column(
+                                children: [
+                                  Radio(
+                                    value: "Delivery",
+                                    groupValue: controller.orderMethod.value,
+                                    onChanged: (value) {
+                                      // controller.handleRadioButton(value);
+                                    },
+                                    activeColor: Colors.teal,
+                                  ),
+                                  Text("Delivery"),
+                                  Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Container(
+                                          height: screenWidth / 10,
+                                          child: Image.asset(
+                                              "assets/icons/fooddelivery.png")))
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      );
+                    }),
+                    Divider(),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Row(
+                          children: [
+                            Text(
+                              "Note to laundry",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: screenWidth / 20),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                "Optional",
+                                style: TextStyle(color: Colors.grey),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    GetBuilder<ServicesMachineDetailsController>(
+                        builder: (controller) {
+                      return Padding(
+                        padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+                        child: Card(
+                          shape: RoundedRectangleBorder(
+                              side: BorderSide(color: Colors.black, width: 1),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10))),
+                          child: Container(
+                            width: double.infinity,
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 8.0, right: 8.0),
+                              child: Container(
+                                child: TextField(
+                                  controller: controller.notecontroller,
+                                  decoration: InputDecoration(
+                                      hintText: "Please input here",
+                                      border: InputBorder.none,
+                                      isDense: true),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      );
+                    }),
                   ],
                 ),
               )
