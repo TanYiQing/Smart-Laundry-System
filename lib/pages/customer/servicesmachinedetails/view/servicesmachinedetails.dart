@@ -127,6 +127,7 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                                   Text(
                                     controller.machine.available,
                                     style: TextStyle(
+                                        fontWeight: FontWeight.bold,
                                         color: (controller.machine.available ==
                                                 "Available")
                                             ? Colors.green
@@ -178,8 +179,11 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                                     subtitle: Text("RM" +
                                         controller.machine.addOn1Price
                                             .toString()),
-                                    onChanged: (bool? value) {},
-                                    value: true,
+                                    onChanged: (bool? value) {
+                                      controller.handleCheckBox(
+                                          value, "addon1");
+                                    },
+                                    value: controller.checked1.value,
                                   )
                                 : Container(),
                             (controller.machine.addOn2 != "")
@@ -189,8 +193,11 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                                     subtitle: Text("RM" +
                                         controller.machine.addOn2Price
                                             .toString()),
-                                    onChanged: (bool? value) {},
-                                    value: true,
+                                    onChanged: (bool? value) {
+                                      controller.handleCheckBox(
+                                          value, "addon2");
+                                    },
+                                    value: controller.checked2.value,
                                   )
                                 : Container(),
                             (controller.machine.addOn3 != "")
@@ -200,8 +207,11 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                                     subtitle: Text("RM" +
                                         controller.machine.addOn3Price
                                             .toString()),
-                                    onChanged: (bool? value) {},
-                                    value: false,
+                                    onChanged: (bool? value) {
+                                      controller.handleCheckBox(
+                                          value, "addon3");
+                                    },
+                                    value: controller.checked3.value,
                                   )
                                 : Container(),
                           ],
@@ -256,7 +266,7 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                                     value: "Reservation",
                                     groupValue: controller.orderMethod.value,
                                     onChanged: (value) {
-                                      // controller.handleRadioButton(value);
+                                      controller.handleRadioButton(value);
                                     },
                                     activeColor: Colors.teal,
                                   ),
@@ -288,7 +298,7 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                                     value: "Delivery",
                                     groupValue: controller.orderMethod.value,
                                     onChanged: (value) {
-                                      // controller.handleRadioButton(value);
+                                      controller.handleRadioButton(value);
                                     },
                                     activeColor: Colors.teal,
                                   ),
@@ -306,7 +316,9 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                         ],
                       );
                     }),
-                    Divider(),
+                    Divider(
+                      thickness: 6,
+                    ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Align(
@@ -348,7 +360,8 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                                 child: TextField(
                                   controller: controller.notecontroller,
                                   decoration: InputDecoration(
-                                      hintText: "Please input here",
+                                      hintText:
+                                          "Example: Bell the ring when reaching",
                                       border: InputBorder.none,
                                       isDense: true),
                                 ),
