@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ServicesMachineDetailsController extends GetxController {
@@ -10,6 +11,7 @@ class ServicesMachineDetailsController extends GetxController {
   var checked3 = false.obs;
   var totalPrice = 0.00.obs;
   var deliveryPrice = 0.00.obs;
+  TimeOfDay time = TimeOfDay.now().replacing(hour: 11, minute: 30);
 
   @override
   void onInit() {
@@ -21,9 +23,9 @@ class ServicesMachineDetailsController extends GetxController {
   void handleRadioButton(var method) {
     orderMethod.value = method;
     if (orderMethod.value == "Reservation") {
-       totalPrice.value -=5.00;
+      totalPrice.value -= 5.00;
     } else {
-      totalPrice.value +=5.00;
+      totalPrice.value += 5.00;
     }
     // totalPrice.value += deliveryPrice.value;
     update();
@@ -55,6 +57,11 @@ class ServicesMachineDetailsController extends GetxController {
       }
     }
 
+    update();
+  }
+
+  void onTimeChanged(TimeOfDay newTime) {
+    time = newTime;
     update();
   }
 

@@ -41,6 +41,7 @@ dependencies:
   intl: ^0.17.0
   syncfusion_flutter_charts: ^19.4.54
   date_picker_timeline: ^1.2.3
+  flutter_time_picker_spinner: ^2.0.0
 
 dev_dependencies:
   flutter_test:
