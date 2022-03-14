@@ -1,6 +1,7 @@
 import 'package:date_picker_timeline/date_picker_timeline.dart';
 import 'package:final_year_project/pages/customer/servicesmachinedetails/controller/servicesmachinedetails_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_time_picker_spinner/flutter_time_picker_spinner.dart';
 import 'package:get/get.dart';
 
 class ServicesMachineDetailsPage extends StatelessWidget {
@@ -124,7 +125,10 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Text((controller.machine.machineType!="Ironing Machine")?"Washing Time":"Ironing Time"),
+                                  Text((controller.machine.machineType !=
+                                          "Ironing Machine")
+                                      ? "Washing Time"
+                                      : "Ironing Time"),
                                   Text(controller.machine.duration + " mins")
                                 ],
                               ),
@@ -281,7 +285,7 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                         children: [
                           Container(
                             width: screenWidth / 3,
-                            height: screenHeight / 6,
+                            height: screenHeight / 5,
                             child: Card(
                               shape: RoundedRectangleBorder(
                                   borderRadius:
@@ -300,7 +304,10 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                                     },
                                     activeColor: Colors.teal,
                                   ),
-                                  Text("Reservation"),
+                                  Text(
+                                    "Make Reservation",
+                                    textAlign: TextAlign.center,
+                                  ),
                                   Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: Container(
@@ -313,7 +320,7 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                           ),
                           Container(
                             width: screenWidth / 3,
-                            height: screenHeight / 6,
+                            height: screenHeight / 5,
                             child: Card(
                               shape: RoundedRectangleBorder(
                                   borderRadius:
@@ -332,7 +339,10 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                                     },
                                     activeColor: Colors.teal,
                                   ),
-                                  Text("Delivery (RM5)"),
+                                  Text(
+                                    "Collect From Me (RM5)",
+                                    textAlign: TextAlign.center,
+                                  ),
                                   Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: Container(
@@ -350,7 +360,13 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: Align(
                           alignment: Alignment.centerLeft,
-                          child: Text("Pick a time")),
+                          child: GetBuilder<ServicesMachineDetailsController>(
+                              builder: (controller) {
+                            return Text(
+                                (controller.orderMethod.value == "Reservation")
+                                    ? "Pick a reservation time"
+                                    : "Pick a collection time");
+                          })),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 10.0, right: 10.0),
@@ -360,6 +376,24 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                         selectionColor: Colors.teal,
                       ),
                     ),
+                    GetBuilder<ServicesMachineDetailsController>(
+                        builder: (controller) {
+                      return Container(
+                        child: TimePickerSpinner(
+                          is24HourMode: false,
+                          normalTextStyle:
+                              TextStyle(fontSize: 24, color: Colors.grey),
+                          highlightedTextStyle:
+                              TextStyle(fontSize: 24, color: Colors.teal),
+                          spacing: 50,
+                          itemHeight: 50,
+                          isForce2Digits: true,
+                          minutesInterval:
+                              int.parse(controller.machine.duration),
+                          onTimeChange: (time) {},
+                        ),
+                      );
+                    }),
                     Divider(
                       thickness: 6,
                     ),
