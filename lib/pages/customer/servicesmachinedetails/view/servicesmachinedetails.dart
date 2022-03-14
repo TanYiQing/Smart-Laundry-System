@@ -101,7 +101,7 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text("Minimum Weight"),
-                                  Text(controller.machine.minimumWeight + "kg")
+                                  Text(controller.machine.minimumWeight + " kg")
                                 ],
                               ),
                             ),
@@ -113,7 +113,19 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text("Maximum Weight"),
-                                  Text(controller.machine.maximumWeight + "kg")
+                                  Text(controller.machine.maximumWeight + " kg")
+                                ],
+                              ),
+                            ),
+                            Divider(),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text((controller.machine.machineType!="Ironing Machine")?"Washing Time":"Ironing Time"),
+                                  Text(controller.machine.duration + " mins")
                                 ],
                               ),
                             ),
@@ -427,7 +439,7 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                             textAlign: TextAlign.center,
                           ),
                           Text(
-                            controller.totalPrice.value.toString(),
+                            controller.totalPrice.value.toStringAsFixed(2),
                             style: TextStyle(fontSize: screenWidth / 20),
                             textAlign: TextAlign.center,
                           ),

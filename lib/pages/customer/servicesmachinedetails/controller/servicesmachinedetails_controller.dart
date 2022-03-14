@@ -4,11 +4,12 @@ import 'package:get/get.dart';
 class ServicesMachineDetailsController extends GetxController {
   var machine = Get.arguments;
   TextEditingController notecontroller = new TextEditingController();
-  var orderMethod = "".obs;
+  var orderMethod = "Reservation".obs;
   var checked1 = false.obs;
   var checked2 = false.obs;
   var checked3 = false.obs;
   var totalPrice = 0.00.obs;
+  var deliveryPrice = 0.00.obs;
 
   @override
   void onInit() {
@@ -20,10 +21,11 @@ class ServicesMachineDetailsController extends GetxController {
   void handleRadioButton(var method) {
     orderMethod.value = method;
     if (orderMethod.value == "Reservation") {
-      totalPrice.value += 0;
+       totalPrice.value -=5.00;
     } else {
-      totalPrice.value += 5;
+      totalPrice.value +=5.00;
     }
+    // totalPrice.value += deliveryPrice.value;
     update();
     print(orderMethod.value);
   }
@@ -33,17 +35,23 @@ class ServicesMachineDetailsController extends GetxController {
       checked1.value = checkValue;
       if (checked1.value == true) {
         totalPrice.value += double.parse(machine.addOn1Price);
+      } else {
+        totalPrice.value -= double.parse(machine.addOn1Price);
       }
       print(checked1.value);
     } else if (addon == "addon2") {
       checked2.value = checkValue;
       if (checked1.value == true) {
         totalPrice.value += double.parse(machine.addOn2Price);
+      } else {
+        totalPrice.value -= double.parse(machine.addOn2Price);
       }
     } else {
       checked3.value = checkValue;
       if (checked1.value == true) {
         totalPrice.value += double.parse(machine.addOn3Price);
+      } else {
+        totalPrice.value -= double.parse(machine.addOn3Price);
       }
     }
 
