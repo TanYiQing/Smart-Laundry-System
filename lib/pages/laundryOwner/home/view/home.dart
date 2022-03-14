@@ -178,8 +178,11 @@ class HomePageLaundry extends StatelessWidget {
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
-                                          Icon(Icons.my_library_books_outlined,
-                                              color: Colors.blue),
+                                          Image.asset(
+                                            "assets/icons/new-order.png",
+                                            height: screenHeight / 20,
+                                            width: screenWidth / 20,
+                                          ),
                                           Text("New Orders")
                                         ],
                                       ),
@@ -192,8 +195,11 @@ class HomePageLaundry extends StatelessWidget {
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
-                                          Icon(Icons.assignment_outlined,
-                                              color: Colors.blue),
+                                          Image.asset(
+                                            "assets/icons/ongoing-order.png",
+                                            height: screenHeight / 20,
+                                            width: screenWidth / 20,
+                                          ),
                                           Text("On Going Orders")
                                         ],
                                       ),
@@ -206,8 +212,11 @@ class HomePageLaundry extends StatelessWidget {
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
-                                          Icon(Icons.auto_awesome_mosaic,
-                                              color: Colors.blue),
+                                          Image.asset(
+                                            "assets/icons/completed-order.png",
+                                            height: screenHeight / 20,
+                                            width: screenWidth / 20,
+                                          ),
                                           Text("Completed Orders")
                                         ],
                                       ),
