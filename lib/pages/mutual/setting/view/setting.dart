@@ -183,7 +183,7 @@ class SettingPage extends StatelessWidget {
                     title: Container(
                       decoration: BoxDecoration(
                           color: Colors.red,
-                          borderRadius: BorderRadius.all(Radius.circular(0))),
+                          borderRadius: BorderRadius.all(Radius.circular(10))),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
