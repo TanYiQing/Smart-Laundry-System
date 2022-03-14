@@ -1,5 +1,6 @@
 import 'package:final_year_project/pages/laundryOwner/home/controller/home_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 import 'package:get/get.dart';
 
 class HomePageLaundry extends StatelessWidget {
@@ -247,10 +248,65 @@ class HomePageLaundry extends StatelessWidget {
                                   width: screenWidth / 1.5,
                                   child: Card(
                                       shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(20))),
+                                          borderRadius:
+                                              BorderRadius.circular(20)),
                                       elevation: 8,
-                                      child: Text("Laundry")),
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                          gradient: LinearGradient(
+                                              begin: Alignment(-1.0, -4.0),
+                                              end: Alignment(1.0, 4.0),
+                                              colors: [
+                                                Color.fromRGBO(
+                                                    173, 236, 255, 1),
+                                                Colors.white
+                                              ]),
+                                        ),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(8.0),
+                                                  child: Image.asset(
+                                                    "assets/icons/validation.png",
+                                                    height: screenWidth / 12,
+                                                  ),
+                                                ),
+                                                Text(
+                                                  "80%",
+                                                  style: TextStyle(
+                                                      fontSize:
+                                                          screenWidth / 10),
+                                                ),
+                                                Text(" Approved",
+                                                    style: TextStyle(
+                                                        color: Colors.green,
+                                                        fontSize:
+                                                            screenWidth / 20,
+                                                        fontWeight:
+                                                            FontWeight.bold)),
+                                              ],
+                                            ),
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: FAProgressBar(
+                                                currentValue: 80,
+                                                displayText: '%',
+                                                backgroundColor: Colors.grey,
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      )),
                                 ),
                                 GetBuilder<HomeLaundryController>(
                                     builder: (controller) {
@@ -308,7 +364,55 @@ class HomePageLaundry extends StatelessWidget {
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(20))),
                                       elevation: 8,
-                                      child: Text("Laundry")),
+                                      child: Container(
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                            gradient: LinearGradient(
+                                                begin: Alignment(-1.0, -4.0),
+                                                end: Alignment(1.0, 4.0),
+                                                colors: [
+                                                  Color.fromRGBO(
+                                                      255, 199, 251, 1),
+                                                  Colors.white
+                                                ]),
+                                          ),
+                                          child: Stack(
+                                            children: [
+                                              Center(
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              8.0),
+                                                      child: Image.asset(
+                                                        "assets/icons/wallet.png",
+                                                        width: screenWidth / 12,
+                                                      ),
+                                                    ),
+                                                    Text(
+                                                      "RM1501.20",
+                                                      style: TextStyle(
+                                                          fontSize:
+                                                              screenWidth / 15),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Positioned(
+                                                  right: 10,
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            8.0),
+                                                    child: Icon(
+                                                        Icons.remove_red_eye),
+                                                  ))
+                                            ],
+                                          ))),
                                 ),
                                 GestureDetector(
                                   onTap: () {
@@ -359,7 +463,20 @@ class HomePageLaundry extends StatelessWidget {
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(20))),
                                       elevation: 8,
-                                      child: Text("Laundry")),
+                                      child: Container(
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                            gradient: LinearGradient(
+                                                begin: Alignment(-1.0, -4.0),
+                                                end: Alignment(1.0, 4.0),
+                                                colors: [
+                                                  Color.fromRGBO(
+                                                      255, 250, 201, 1),
+                                                  Colors.white
+                                                ]),
+                                          ),
+                                          child: Text("Laundry"))),
                                 ),
                                 GestureDetector(
                                   onTap: () {
@@ -410,7 +527,20 @@ class HomePageLaundry extends StatelessWidget {
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(20))),
                                       elevation: 8,
-                                      child: Text("Laundry")),
+                                      child: Container(
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                            gradient: LinearGradient(
+                                                begin: Alignment(-1.0, -4.0),
+                                                end: Alignment(1.0, 4.0),
+                                                colors: [
+                                                  Color.fromRGBO(
+                                                      233, 201, 255, 1),
+                                                  Colors.white
+                                                ]),
+                                          ),
+                                          child: Text("Laundry"))),
                                 ),
                                 GestureDetector(
                                   onTap: () {
