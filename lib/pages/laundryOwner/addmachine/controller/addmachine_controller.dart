@@ -54,7 +54,7 @@ class AddMachineController extends GetxController {
           (int.parse(pricecontroller.text.toString()) + 1).toString();
     } else {
       durationcontroller.text =
-          (int.parse(pricecontroller.text.toString()) + 1).toString();
+          (int.parse(durationcontroller.text.toString()) + 1).toString();
     }
     update();
   }
@@ -71,7 +71,7 @@ class AddMachineController extends GetxController {
           (int.parse(pricecontroller.text.toString()) - 1).toString();
     } else {
       durationcontroller.text =
-          (int.parse(pricecontroller.text.toString()) - 1).toString();
+          (int.parse(durationcontroller.text.toString()) - 1).toString();
     }
     update();
   }
