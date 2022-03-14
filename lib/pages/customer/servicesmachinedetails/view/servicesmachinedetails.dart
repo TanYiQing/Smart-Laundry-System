@@ -1,3 +1,4 @@
+import 'package:date_picker_timeline/date_picker_timeline.dart';
 import 'package:final_year_project/pages/customer/servicesmachinedetails/controller/servicesmachinedetails_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -168,55 +169,72 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                     ),
                     GetBuilder<ServicesMachineDetailsController>(
                         builder: (controller) {
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          children: [
-                            (controller.machine.addOn1 != "")
-                                ? CheckboxListTile(
-                                    title: Text(
-                                        controller.machine.addOn1.toString()),
-                                    subtitle: Text("RM" +
-                                        controller.machine.addOn1Price
-                                            .toString()),
-                                    onChanged: (bool? value) {
-                                      controller.handleCheckBox(
-                                          value, "addon1");
-                                    },
-                                    value: controller.checked1.value,
-                                  )
-                                : Container(),
-                            (controller.machine.addOn2 != "")
-                                ? CheckboxListTile(
-                                    title: Text(
-                                        controller.machine.addOn2.toString()),
-                                    subtitle: Text("RM" +
-                                        controller.machine.addOn2Price
-                                            .toString()),
-                                    onChanged: (bool? value) {
-                                      controller.handleCheckBox(
-                                          value, "addon2");
-                                    },
-                                    value: controller.checked2.value,
-                                  )
-                                : Container(),
-                            (controller.machine.addOn3 != "")
-                                ? CheckboxListTile(
-                                    title: Text(
-                                        controller.machine.addOn3.toString()),
-                                    subtitle: Text("RM" +
-                                        controller.machine.addOn3Price
-                                            .toString()),
-                                    onChanged: (bool? value) {
-                                      controller.handleCheckBox(
-                                          value, "addon3");
-                                    },
-                                    value: controller.checked3.value,
-                                  )
-                                : Container(),
-                          ],
-                        ),
-                      );
+                      return (controller.machine.addOn1 != "" ||
+                              controller.machine.addOn2 != "" ||
+                              controller.machine.addOn3 != "")
+                          ? Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                children: [
+                                  (controller.machine.addOn1 != "")
+                                      ? CheckboxListTile(
+                                          title: Text(controller.machine.addOn1
+                                              .toString()),
+                                          subtitle: Text("RM" +
+                                              controller.machine.addOn1Price
+                                                  .toString()),
+                                          onChanged: (bool? value) {
+                                            controller.handleCheckBox(
+                                                value, "addon1");
+                                          },
+                                          value: controller.checked1.value,
+                                        )
+                                      : Container(),
+                                  (controller.machine.addOn2 != "")
+                                      ? CheckboxListTile(
+                                          title: Text(controller.machine.addOn2
+                                              .toString()),
+                                          subtitle: Text("RM" +
+                                              controller.machine.addOn2Price
+                                                  .toString()),
+                                          onChanged: (bool? value) {
+                                            controller.handleCheckBox(
+                                                value, "addon2");
+                                          },
+                                          value: controller.checked2.value,
+                                        )
+                                      : Container(),
+                                  (controller.machine.addOn3 != "")
+                                      ? CheckboxListTile(
+                                          title: Text(controller.machine.addOn3
+                                              .toString()),
+                                          subtitle: Text("RM" +
+                                              controller.machine.addOn3Price
+                                                  .toString()),
+                                          onChanged: (bool? value) {
+                                            controller.handleCheckBox(
+                                                value, "addon3");
+                                          },
+                                          value: controller.checked3.value,
+                                        )
+                                      : Container(),
+                                ],
+                              ),
+                            )
+                          : Container(
+                              child: Column(
+                              children: [
+                                Container(
+                                    height: screenWidth / 5,
+                                    width: screenWidth / 5,
+                                    child: Image.asset(
+                                        "assets/icons/empty-box.png")),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text("No add-on available 😅"),
+                                )
+                              ],
+                            ));
                     }),
                     Divider(
                       thickness: 6,
@@ -302,7 +320,7 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                                     },
                                     activeColor: Colors.teal,
                                   ),
-                                  Text("Delivery"),
+                                  Text("Delivery (RM5)"),
                                   Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: Container(
@@ -316,6 +334,20 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                         ],
                       );
                     }),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text("Pick a time")),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+                      child: DatePicker(
+                        DateTime.now(),
+                        initialSelectedDate: DateTime.now(),
+                        selectionColor: Colors.teal,
+                      ),
+                    ),
                     Divider(
                       thickness: 6,
                     ),
@@ -361,7 +393,7 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                                   controller: controller.notecontroller,
                                   decoration: InputDecoration(
                                       hintText:
-                                          "Example: Bell the ring when reaching",
+                                          "Example: Bell the ring when reached",
                                       border: InputBorder.none,
                                       isDense: true),
                                 ),
@@ -383,22 +415,30 @@ class ServicesMachineDetailsPage extends StatelessWidget {
               child: Container(
                 child: MaterialButton(
                   onPressed: () {},
-                  child: Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Place Order",
-                          style: TextStyle(fontSize: screenWidth / 20),
-                          textAlign: TextAlign.center,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Icon(Icons.add_shopping_cart),
-                        )
-                      ],
-                    ),
-                  ),
+                  child: GetBuilder<ServicesMachineDetailsController>(
+                      builder: (controller) {
+                    return Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Place Order - RM",
+                            style: TextStyle(fontSize: screenWidth / 20),
+                            textAlign: TextAlign.center,
+                          ),
+                          Text(
+                            controller.totalPrice.value.toString(),
+                            style: TextStyle(fontSize: screenWidth / 20),
+                            textAlign: TextAlign.center,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Icon(Icons.add_shopping_cart),
+                          )
+                        ],
+                      ),
+                    );
+                  }),
                 ),
                 decoration: BoxDecoration(
                     color: Color.fromRGBO(0, 194, 203, 1),
