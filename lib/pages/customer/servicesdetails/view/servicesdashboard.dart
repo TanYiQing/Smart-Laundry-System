@@ -232,7 +232,7 @@ class ServicesDashboardPage extends StatelessWidget {
                                       xValueMapper: (Availability data, _) =>
                                           data.machineType,
                                       yValueMapper: (Availability data, _) =>
-                                          int.tryParse(data.percentage??""),
+                                          int.tryParse(data.percentage??"0"),
                                       dataLabelSettings:
                                           DataLabelSettings(isVisible: true),
                                       enableTooltip: true,
