@@ -412,6 +412,73 @@ class AddIroningMachinePageLaundry extends StatelessWidget {
                                         );
                                       }),
                                     ),
+                                    Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Text(
+                                          "Duration Per Slot (Minutes)",
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold),
+                                        )),
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: GetBuilder<AddMachineController>(
+                                          builder: (controller) {
+                                        return Row(
+                                          children: [
+                                            GestureDetector(
+                                              onTap: () {
+                                                controller.clickremovebutton(4);
+                                              },
+                                              child: Container(
+                                                child: Icon(Icons.remove),
+                                              ),
+                                            ),
+                                            Card(
+                                              shape: RoundedRectangleBorder(
+                                                  side: BorderSide(
+                                                      color: Colors.black,
+                                                      width: 1),
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(10))),
+                                              child: Container(
+                                                width: screenWidth / 3,
+                                                child: Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          left: 8.0,
+                                                          right: 8.0),
+                                                  child: Container(
+                                                    child: TextField(
+                                                      controller: controller
+                                                          .durationcontroller,
+                                                      textAlign:
+                                                          TextAlign.right,
+                                                      keyboardType:
+                                                          TextInputType.number,
+                                                      decoration:
+                                                          InputDecoration(
+                                                              border:
+                                                                  InputBorder
+                                                                      .none,
+                                                              isDense: true),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            GestureDetector(
+                                              onTap: () {
+                                                controller.clickaddbutton(4);
+                                              },
+                                              child: Container(
+                                                child: Icon(Icons.add),
+                                              ),
+                                            ),
+                                          ],
+                                        );
+                                      }),
+                                    ),
                                   ],
                                 ),
                               ),
