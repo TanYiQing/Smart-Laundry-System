@@ -8,12 +8,14 @@ class AddMachineController extends GetxController {
   TextEditingController minimumweightcontroller = new TextEditingController();
   TextEditingController maximumweightcontroller = new TextEditingController();
   TextEditingController pricecontroller = new TextEditingController();
+  TextEditingController durationcontroller = new TextEditingController();
   TextEditingController addon1controller = new TextEditingController();
   TextEditingController addon2controller = new TextEditingController();
   TextEditingController addon3controller = new TextEditingController();
   TextEditingController addon1pricecontroller = new TextEditingController();
   TextEditingController addon2pricecontroller = new TextEditingController();
   TextEditingController addon3pricecontroller = new TextEditingController();
+
   var isShow1 = false.obs;
   var isShow2 = false.obs;
   var isShow3 = false.obs;
@@ -24,6 +26,7 @@ class AddMachineController extends GetxController {
     minimumweightcontroller.text = "0";
     maximumweightcontroller.text = "0";
     pricecontroller.text = "0";
+    durationcontroller.text = "0";
     addon1controller.text = "";
     addon2controller.text = "";
     addon3controller.text = "";
@@ -46,8 +49,11 @@ class AddMachineController extends GetxController {
     } else if (id == 2) {
       maximumweightcontroller.text =
           (int.parse(maximumweightcontroller.text.toString()) + 1).toString();
-    } else {
+    } else if (id == 3) {
       pricecontroller.text =
+          (int.parse(pricecontroller.text.toString()) + 1).toString();
+    } else {
+      durationcontroller.text =
           (int.parse(pricecontroller.text.toString()) + 1).toString();
     }
     update();
@@ -60,8 +66,11 @@ class AddMachineController extends GetxController {
     } else if (id == 2) {
       maximumweightcontroller.text =
           (int.parse(maximumweightcontroller.text.toString()) - 1).toString();
-    } else {
+    } else if (id == 3) {
       pricecontroller.text =
+          (int.parse(pricecontroller.text.toString()) - 1).toString();
+    } else {
+      durationcontroller.text =
           (int.parse(pricecontroller.text.toString()) - 1).toString();
     }
     update();
@@ -71,9 +80,10 @@ class AddMachineController extends GetxController {
     if (selectedPriceBase.value == "" ||
         minimumweightcontroller.text == "0" ||
         maximumweightcontroller.text == "0" ||
-        pricecontroller.text == "0") {
+        pricecontroller.text == "0" ||
+        durationcontroller.text == "0") {
       Get.snackbar(
-          "Failed to add machine", "Please make sure all field is filled.");
+          "Failed to add machine", "Please make sure all required field is filled.");
     } else {
       RemoteServices.addMachine(
         machineType,
@@ -81,6 +91,7 @@ class AddMachineController extends GetxController {
         minimumweightcontroller.text.toString(),
         maximumweightcontroller.text.toString(),
         pricecontroller.text.toString(),
+        durationcontroller.text.toString(),
         laundry.laundryID.toString(),
         addon1controller.text.toString(),
         addon1pricecontroller.text.toString(),
@@ -88,6 +99,7 @@ class AddMachineController extends GetxController {
         addon2pricecontroller.text.toString(),
         addon3controller.text.toString(),
         addon3pricecontroller.text.toString(),
+        
       );
     }
   }
