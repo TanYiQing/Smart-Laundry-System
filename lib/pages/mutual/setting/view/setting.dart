@@ -20,7 +20,7 @@ class SettingPage extends StatelessWidget {
         ),
         backgroundColor: Colors.white,
         body: Center(
-            child: ListView(
+            child: ListView(physics: NeverScrollableScrollPhysics(),
           children: [
             GestureDetector(
               onTap: () {

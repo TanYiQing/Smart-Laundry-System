@@ -172,8 +172,8 @@ class AccountPageLaundry extends StatelessWidget {
               ),
               Container(
                   height: screenHeight / 1.5,
-                  // color: Colors.black,
                   child: ListView(
+                    physics: NeverScrollableScrollPhysics(),
                     children: [
                       GestureDetector(
                         onTap: () {
@@ -277,7 +277,10 @@ class AccountPageLaundry extends StatelessWidget {
                           ),
                         ),
                       ),
-                      GestureDetector(onTap:(){Get.toNamed("/birthday");},
+                      GestureDetector(
+                        onTap: () {
+                          Get.toNamed("/birthday");
+                        },
                         child: ListTile(
                           title: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -287,7 +290,8 @@ class AccountPageLaundry extends StatelessWidget {
                                 children: [
                                   GetBuilder<AccountController>(
                                       builder: (controller) {
-                                    return Text(controller.user.lname.toString());
+                                    return Text(
+                                        controller.user.lname.toString());
                                   }),
                                   Icon(
                                     Icons.arrow_forward_ios_outlined,
