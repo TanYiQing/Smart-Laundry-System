@@ -75,34 +75,40 @@ class ServicesDashboardPage extends StatelessWidget {
                             child: Container(
                               width: double.infinity,
                               child: Card(
-                                  color: Colors.blue[100],
                                   elevation: 10,
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(15)),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Column(children: [
-                                      Icon(
-                                        Icons.local_laundry_service_outlined,
-                                        size: screenWidth / 10,
-                                        color: Colors.teal,
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Text("TOTAL MACHINE",
-                                            style: TextStyle(
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(15),
+                                      gradient: LinearGradient(
+                                          begin: Alignment(-1.0, -4.0),
+                                          end: Alignment(1.0, 4.0),
+                                          colors: [Colors.blue, Colors.white]),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Column(children: [
+                                        Image.asset(
+                                          "assets/icons/washing.png",
+                                          height: screenWidth / 10,
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text("TOTAL MACHINE",
+                                              style: TextStyle(
                                                 fontSize: screenWidth / 15,
-                                                color: Colors.teal)),
-                                      ),
-                                      Text(
-                                        controller.machinelist.length
-                                            .toString(),
-                                        style: TextStyle(
-                                            fontSize: screenWidth / 15,
-                                            color: Colors.teal,
-                                            fontWeight: FontWeight.w900),
-                                      ),
-                                    ]),
+                                              )),
+                                        ),
+                                        Text(
+                                          controller.machinelist.length
+                                              .toString(),
+                                          style: TextStyle(
+                                              fontSize: screenWidth / 15,
+                                              fontWeight: FontWeight.w900),
+                                        ),
+                                      ]),
+                                    ),
                                   )),
                             ),
                           );
@@ -119,28 +125,39 @@ class ServicesDashboardPage extends StatelessWidget {
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(15)),
-                                    color: Colors.green[100],
                                     elevation: 8,
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Column(
-                                        children: [
-                                          Icon(
-                                            Icons.water_sharp,
-                                            size: screenWidth / 15,
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.all(8.0),
-                                            child: Text("Washing Machine"),
-                                          ),
-                                          Text(
-                                              controller
-                                                  .washingmachinelist.length
-                                                  .toString(),
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.w800,
-                                              ))
-                                        ],
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(15),
+                                        gradient: LinearGradient(
+                                            begin: Alignment(-1.0, -4.0),
+                                            end: Alignment(1.0, 4.0),
+                                            colors: [
+                                              Colors.greenAccent,
+                                              Colors.white
+                                            ]),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Column(
+                                          children: [
+                                            Image.asset(
+                                                "assets/icons/washing-machine.png",
+                                                height: screenWidth / 15),
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: Text("Washing Machine"),
+                                            ),
+                                            Text(
+                                                controller
+                                                    .washingmachinelist.length
+                                                    .toString(),
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.w800,
+                                                ))
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -148,28 +165,37 @@ class ServicesDashboardPage extends StatelessWidget {
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(15)),
-                                    color: Colors.purple[100],
                                     elevation: 8,
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Column(
-                                        children: [
-                                          Icon(
-                                            Icons.dry_cleaning_outlined,
-                                            size: screenWidth / 15,
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.all(8.0),
-                                            child: Text("Dry Washing Machine"),
-                                          ),
-                                          Text(
-                                              controller
-                                                  .drywashingmachinelist.length
-                                                  .toString(),
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.w800,
-                                              ))
-                                        ],
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(15),
+                                        gradient: LinearGradient(
+                                            begin: Alignment(-1.0, -4.0),
+                                            end: Alignment(1.0, 4.0),
+                                            colors: [Colors.red, Colors.white]),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Column(
+                                          children: [
+                                            Image.asset(
+                                                "assets/icons/drying-machine.png",
+                                                height: screenWidth / 15),
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child:
+                                                  Text("Dry Washing Machine"),
+                                            ),
+                                            Text(
+                                                controller.drywashingmachinelist
+                                                    .length
+                                                    .toString(),
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.w800,
+                                                ))
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -177,28 +203,40 @@ class ServicesDashboardPage extends StatelessWidget {
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(15)),
-                                    color: Colors.blue[200],
                                     elevation: 8,
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Column(
-                                        children: [
-                                          Icon(
-                                            Icons.iron_outlined,
-                                            size: screenWidth / 15,
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.all(8.0),
-                                            child: Text("Ironing Machine"),
-                                          ),
-                                          Text(
-                                              controller
-                                                  .ironingmachinelist.length
-                                                  .toString(),
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.w800,
-                                              ))
-                                        ],
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(15),
+                                        gradient: LinearGradient(
+                                            begin: Alignment(-1.0, -4.0),
+                                            end: Alignment(1.0, 4.0),
+                                            colors: [
+                                              Colors.amber,
+                                              Colors.white
+                                            ]),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Column(
+                                          children: [
+                                            Image.asset(
+                                              "assets/icons/iron.png",
+                                              height: screenWidth / 15,
+                                            ),
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: Text("Ironing Machine"),
+                                            ),
+                                            Text(
+                                                controller
+                                                    .ironingmachinelist.length
+                                                    .toString(),
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.w800,
+                                                ))
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   )
@@ -209,37 +247,57 @@ class ServicesDashboardPage extends StatelessWidget {
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            child: GetBuilder<ServicesDetailsController>(
-                                builder: (controller) {
-                              return SfCircularChart(
-                                palette: <Color>[
-                                  Color.fromRGBO(187, 222, 251, 1),
-                                  Color.fromRGBO(200, 230, 201, 1),
-                                  Color.fromRGBO(225, 190, 231, 1),
-                                  Color.fromRGBO(144, 202, 249, 1)
-                                ],
-                                title: ChartTitle(text: 'Occupied Level(%)'),
-                                legend: Legend(
-                                    isVisible: true,
-                                    overflowMode: LegendItemOverflowMode.scroll,
-                                    position: LegendPosition.bottom),
-                                tooltipBehavior: controller.tooltipBehavior,
-                                series: <CircularSeries>[
-                                  RadialBarSeries<Availability, String>(
-                                      dataSource:
-                                          controller.availabilityAllList,
-                                      xValueMapper: (Availability data, _) =>
-                                          data.machineType,
-                                      yValueMapper: (Availability data, _) =>
-                                          int.tryParse(data.percentage??"0"),
-                                      dataLabelSettings:
-                                          DataLabelSettings(isVisible: true),
-                                      enableTooltip: true,
-                                      maximumValue: 100)
-                                ],
-                              );
-                            }),
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15)),
+                            elevation: 10,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                      begin: Alignment(-1.0, -4.0),
+                                      end: Alignment(1.0, 4.0),
+                                      colors: [Colors.teal, Colors.white]),
+                                  borderRadius: BorderRadius.circular(15)),
+                              child: GetBuilder<ServicesDetailsController>(
+                                  builder: (controller) {
+                                return SfCircularChart(
+                                  palette: <Color>[
+                                    Colors.blue,
+                                    Colors.greenAccent,
+                                    Colors.red,
+                                    Colors.amber
+                                  ],
+                                  title: ChartTitle(
+                                      text: 'Occupied Level(%)',
+                                      textStyle: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold)),
+                                  legend: Legend(
+                                      isVisible: true,
+                                      overflowMode:
+                                          LegendItemOverflowMode.scroll,
+                                      position: LegendPosition.bottom),
+                                  tooltipBehavior: controller.tooltipBehavior,
+                                  series: <CircularSeries>[
+                                    RadialBarSeries<Availability, String>(
+                                        dataSource:
+                                            controller.availabilityAllList,
+                                        xValueMapper: (Availability data, _) =>
+                                            data.machineType,
+                                        yValueMapper: (Availability data, _) =>
+                                            int.tryParse(
+                                                data.percentage ?? "0"),
+                                        dataLabelSettings:
+                                            DataLabelSettings(isVisible: true),
+                                        enableTooltip: true,
+                                        maximumValue: 100,
+                                        gap: "4",
+                                        cornerStyle: CornerStyle.bothCurve,
+                                        trackColor: Colors.white)
+                                  ],
+                                );
+                              }),
+                            ),
                           ),
                         )
                       ],

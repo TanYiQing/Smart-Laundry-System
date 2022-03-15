@@ -224,20 +224,26 @@ class HomePage extends StatelessWidget {
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Container(
-                                  height: screenHeight / 7,
+                                  height: screenHeight / 8,
                                   width: screenWidth / 4,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                          height: screenHeight / 15,
-                                          child: Image.asset(
-                                              "assets/icons/normalwash.png")),
-                                      Text(
-                                        "Normal Wash",
-                                        textAlign: TextAlign.center,
-                                      ),
-                                    ],
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                            height: screenWidth / 10,
+                                            child: Image.asset(
+                                                "assets/icons/washing-machine.png")),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(top: 8.0),
+                                          child: Text(
+                                            "Normal Wash",
+                                            textAlign: TextAlign.center,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
@@ -257,20 +263,26 @@ class HomePage extends StatelessWidget {
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Container(
-                                  height: screenHeight / 7,
+                                  height: screenHeight / 8,
                                   width: screenWidth / 4,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                          height: screenHeight / 15,
-                                          child: Image.asset(
-                                              "assets/icons/normalwashiron.png")),
-                                      Text(
-                                        "Normal Wash & Ironing",
-                                        textAlign: TextAlign.center,
-                                      ),
-                                    ],
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                            height: screenWidth / 10,
+                                            child: Image.asset(
+                                                "assets/icons/normalwashironing.png")),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(top: 8.0),
+                                          child: Text(
+                                            "Normal Wash,Ironing",
+                                            textAlign: TextAlign.center,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
@@ -289,20 +301,26 @@ class HomePage extends StatelessWidget {
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Container(
-                                  height: screenHeight / 7,
+                                  height: screenHeight / 8,
                                   width: screenWidth / 4,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                          height: screenHeight / 15,
-                                          child: Image.asset(
-                                              "assets/icons/drywash.png")),
-                                      Text(
-                                        "Dry Wash",
-                                        textAlign: TextAlign.center,
-                                      ),
-                                    ],
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                            height: screenWidth / 10,
+                                            child: Image.asset(
+                                                "assets/icons/drying-machine.png")),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(top: 8.0),
+                                          child: Text(
+                                            "Dry Wash",
+                                            textAlign: TextAlign.center,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
@@ -322,20 +340,32 @@ class HomePage extends StatelessWidget {
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Container(
-                                  height: screenHeight / 7,
+                                  height: screenHeight / 8,
                                   width: screenWidth / 4,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                          height: screenHeight / 15,
-                                          child: Image.asset(
-                                              "assets/icons/drywashironing.png")),
-                                      Text(
-                                        "Dry Wash & Ironing",
-                                        textAlign: TextAlign.center,
-                                      ),
-                                    ],
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                            height: screenWidth / 10,
+                                            child: Stack(
+                                              children: [
+                                                Image.asset(
+                                                    "assets/icons/drying-machine.png"),
+                                                Image.asset(
+                                                    "assets/icons/drywash.png")
+                                              ],
+                                            )),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(top: 8.0),
+                                          child: Text(
+                                            "Dry Wash,Ironing",
+                                            textAlign: TextAlign.center,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
@@ -354,20 +384,26 @@ class HomePage extends StatelessWidget {
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Container(
-                                  height: screenHeight / 7,
+                                  height: screenHeight / 8,
                                   width: screenWidth / 4,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                          height: screenHeight / 15,
-                                          child: Image.asset(
-                                              "assets/icons/ironing.png")),
-                                      Text(
-                                        "Ironing",
-                                        textAlign: TextAlign.center,
-                                      ),
-                                    ],
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                            height: screenWidth / 10,
+                                            child: Image.asset(
+                                                "assets/icons/iron.png")),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(top: 8.0),
+                                          child: Text(
+                                            "Ironing",
+                                            textAlign: TextAlign.center,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
@@ -381,20 +417,26 @@ class HomePage extends StatelessWidget {
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Container(
-                                height: screenHeight / 7,
+                                height: screenHeight / 8,
                                 width: screenWidth / 4,
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                        height: screenHeight / 15,
-                                        child: Image.asset(
-                                            "assets/icons/comingsoon.png")),
-                                    Text(
-                                      "Coming Soon",
-                                      textAlign: TextAlign.center,
-                                    ),
-                                  ],
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                          height: screenWidth / 10,
+                                          child: Image.asset(
+                                              "assets/icons/comingsoon.png")),
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(top: 8.0),
+                                        child: Text(
+                                          "Coming Soon",
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
