@@ -232,10 +232,30 @@ class RemoteServices {
         });
 
     if (response.statusCode == 200) {
-      print("HEllo");
       print(response.body);
       var jsondata = response.body;
       return availabilityFromJson(jsondata);
+    } else {
+      return null;
+    }
+  }
+
+  static Future<String?> calculateApproval(
+    String email,
+  ) async {
+    var response = await client.post(
+        Uri.parse(
+            'https://hubbuddies.com/270607/onesource/php/calculateApprovedLaundry.php'),
+        body: {
+          "email": email,
+        });
+    print(response.body);
+    if (response.statusCode == 200) {
+      if (response.body == "Failed") {
+        return null;
+      } else {
+        return response.body.toString();
+      }
     } else {
       return null;
     }
