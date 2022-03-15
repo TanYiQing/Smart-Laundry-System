@@ -11,360 +11,246 @@ class HomePageLaundry extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
-        body: SingleChildScrollView(
-          child: Center(
-              child: Column(
-            children: [
-              Container(
-                height: screenHeight / 6,
-                child: Stack(children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(40),
-                          bottomRight: Radius.circular(40)),
-                      gradient: LinearGradient(
-                          begin: Alignment(-1.0, -4.0),
-                          end: Alignment(1.0, 4.0),
-                          colors: [
-                            Color.fromRGBO(0, 194, 203, 1),
-                            Colors.white
-                          ]),
-                    ),
-                    width: screenWidth,
-                    height: screenHeight / 6,
+        body: Center(
+            child: Column(
+          children: [
+            Container(
+              height: screenHeight / 6,
+              child: Stack(children: [
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(40),
+                        bottomRight: Radius.circular(40)),
+                    gradient: LinearGradient(
+                        begin: Alignment(-1.0, -4.0),
+                        end: Alignment(1.0, 4.0),
+                        colors: [Color.fromRGBO(0, 194, 203, 1), Colors.white]),
                   ),
-                  Positioned(
-                    left: screenWidth / 20,
-                    child: Row(
-                      children: [
-                        Container(
-                            height: screenHeight / 6,
-                            width: screenWidth / 4,
+                  width: screenWidth,
+                  height: screenHeight / 6,
+                ),
+                Positioned(
+                  left: screenWidth / 20,
+                  child: Row(
+                    children: [
+                      Container(
+                          height: screenHeight / 6,
+                          width: screenWidth / 4,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image:
+                                      AssetImage("assets/images/people.jpg")),
+                              shape: BoxShape.circle)),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            GetBuilder<HomeLaundryController>(
+                                builder: (controller) {
+                              return Text(
+                                controller.user.fname.toString() +
+                                    " " +
+                                    controller.user.lname.toString(),
+                                style: TextStyle(fontSize: screenWidth / 20),
+                              );
+                            }),
+                            Text(
+                              "UID: MYR0000054543121012135",
+                              style: TextStyle(fontSize: 8),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                Positioned(
+                  right: screenWidth / 20,
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: GestureDetector(
+                          onTap: () {
+                            Get.toNamed("/notification");
+                          },
+                          child: Container(
+                            height: screenHeight / 12,
+                            width: screenWidth / 12,
                             decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image:
-                                        AssetImage("assets/images/people.jpg")),
-                                shape: BoxShape.circle)),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              GetBuilder<HomeLaundryController>(
-                                  builder: (controller) {
-                                return Text(
-                                  controller.user.fname.toString() +
-                                      " " +
-                                      controller.user.lname.toString(),
-                                  style: TextStyle(fontSize: screenWidth / 20),
-                                );
-                              }),
-                              Text(
-                                "UID: MYR0000054543121012135",
-                                style: TextStyle(fontSize: 8),
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  Positioned(
-                    right: screenWidth / 20,
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: GestureDetector(
-                            onTap: () {
-                              Get.toNamed("/notification");
-                            },
-                            child: Container(
-                              height: screenHeight / 12,
-                              width: screenWidth / 12,
-                              decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Color.fromRGBO(0, 194, 203, 1)),
-                              child: Icon(
-                                Icons.notifications_active,
-                                size: screenWidth / 20,
-                              ),
+                                shape: BoxShape.circle,
+                                color: Color.fromRGBO(0, 194, 203, 1)),
+                            child: Icon(
+                              Icons.notifications_active,
+                              size: screenWidth / 20,
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: GestureDetector(
-                            onTap: () {
-                              Get.toNamed("/setting");
-                            },
-                            child: Container(
-                              height: screenHeight / 12,
-                              width: screenWidth / 12,
-                              decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Color.fromRGBO(0, 194, 203, 1)),
-                              child: Icon(
-                                Icons.settings,
-                                size: screenWidth / 20,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: GetBuilder<HomeLaundryController>(
-                              builder: (controller) {
-                            return GestureDetector(
-                              onTap: () {
-                                Get.toNamed("/accountlaundry",
-                                    arguments: controller.user);
-                              },
-                              child: Container(
-                                height: screenHeight / 12,
-                                width: screenWidth / 12,
-                                decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: Color.fromRGBO(0, 194, 203, 1)),
-                                child: Icon(
-                                  Icons.person,
-                                  size: screenWidth / 20,
-                                ),
-                              ),
-                            );
-                          }),
-                        ),
-                      ],
-                    ),
-                  ),
-                ]),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 8.0),
-                child: Container(
-                    height: screenHeight / 1.35,
-                    child: ListView(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            "My Orders",
-                            style: TextStyle(
-                                fontSize: screenWidth / 20,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Card(
-                            shape: RoundedRectangleBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(20))),
-                            elevation: 8,
-                            child: Container(
-                              height: screenHeight / 8,
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    GestureDetector(
-                                      onTap: () {
-                                        Get.toNamed("/neworderlaundry");
-                                      },
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Image.asset(
-                                            "assets/icons/new-order.png",
-                                            height: screenHeight / 20,
-                                            width: screenWidth / 20,
-                                          ),
-                                          Text("New Orders")
-                                        ],
-                                      ),
-                                    ),
-                                    GestureDetector(
-                                      onTap: () {
-                                        Get.toNamed("/ongoingorderlaundry");
-                                      },
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Image.asset(
-                                            "assets/icons/ongoing-order.png",
-                                            height: screenHeight / 20,
-                                            width: screenWidth / 20,
-                                          ),
-                                          Text("On Going Orders")
-                                        ],
-                                      ),
-                                    ),
-                                    GestureDetector(
-                                      onTap: () {
-                                        Get.toNamed("/completedorderlaundry");
-                                      },
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Image.asset(
-                                            "assets/icons/completed-order.png",
-                                            height: screenHeight / 20,
-                                            width: screenWidth / 20,
-                                          ),
-                                          Text("Completed Orders")
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            "My Laundry",
-                            style: TextStyle(
-                                fontSize: screenWidth / 20,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: GestureDetector(
+                          onTap: () {
+                            Get.toNamed("/setting");
+                          },
                           child: Container(
-                            height: screenHeight / 5,
-                            child: Row(
-                              children: [
-                                Container(
-                                  height: double.infinity,
-                                  width: screenWidth / 1.5,
-                                  child: Card(
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(20)),
-                                      elevation: 8,
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(20),
-                                          gradient: LinearGradient(
-                                              begin: Alignment(-1.0, -4.0),
-                                              end: Alignment(1.0, 4.0),
-                                              colors: [
-                                                Color.fromRGBO(
-                                                    173, 236, 255, 1),
-                                                Colors.white
-                                              ]),
-                                        ),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.all(8.0),
-                                                  child: Image.asset(
-                                                    "assets/icons/validation.png",
-                                                    height: screenWidth / 12,
-                                                  ),
-                                                ),
-                                                Text(
-                                                  "80%",
-                                                  style: TextStyle(
-                                                      fontSize:
-                                                          screenWidth / 10),
-                                                ),
-                                                Text(" Approved",
-                                                    style: TextStyle(
-                                                        color: Colors.green,
-                                                        fontSize:
-                                                            screenWidth / 20,
-                                                        fontWeight:
-                                                            FontWeight.bold)),
-                                              ],
-                                            ),
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.all(8.0),
-                                              child: FAProgressBar(
-                                                currentValue: 80,
-                                                displayText: '%',
-                                                backgroundColor: Colors.grey,
-                                              ),
-                                            )
-                                          ],
-                                        ),
-                                      )),
-                                ),
-                                GetBuilder<HomeLaundryController>(
-                                    builder: (controller) {
-                                  return GestureDetector(
+                            height: screenHeight / 12,
+                            width: screenWidth / 12,
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Color.fromRGBO(0, 194, 203, 1)),
+                            child: Icon(
+                              Icons.settings,
+                              size: screenWidth / 20,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: GetBuilder<HomeLaundryController>(
+                            builder: (controller) {
+                          return GestureDetector(
+                            onTap: () {
+                              Get.toNamed("/accountlaundry",
+                                  arguments: controller.user);
+                            },
+                            child: Container(
+                              height: screenHeight / 12,
+                              width: screenWidth / 12,
+                              decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Color.fromRGBO(0, 194, 203, 1)),
+                              child: Icon(
+                                Icons.person,
+                                size: screenWidth / 20,
+                              ),
+                            ),
+                          );
+                        }),
+                      ),
+                    ],
+                  ),
+                ),
+              ]),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 8.0),
+              child: Container(
+                  height: screenHeight / 1.35,
+                  child: ListView(
+                    physics: NeverScrollableScrollPhysics(),
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          "My Orders",
+                          style: TextStyle(
+                              fontSize: screenWidth / 20,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20))),
+                          elevation: 8,
+                          child: Container(
+                            height: screenHeight / 8,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  GestureDetector(
                                     onTap: () {
-                                      Get.toNamed("/mylaundrylaundry",
-                                          arguments: controller.user);
+                                      Get.toNamed("/neworderlaundry");
                                     },
-                                    child: Container(
-                                        height: double.infinity,
-                                        width:
-                                            screenWidth - (screenWidth / 1.4),
-                                        child: Card(
-                                          elevation: 8,
-                                          shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(60)),
-                                          child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Icon(
-                                                  Icons.arrow_forward_outlined),
-                                              Text("View More")
-                                            ],
-                                          ),
-                                        )),
-                                  );
-                                }),
-                              ],
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Image.asset(
+                                          "assets/icons/new-order.png",
+                                          height: screenHeight / 20,
+                                          width: screenWidth / 20,
+                                        ),
+                                        Text("New Orders")
+                                      ],
+                                    ),
+                                  ),
+                                  GestureDetector(
+                                    onTap: () {
+                                      Get.toNamed("/ongoingorderlaundry");
+                                    },
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Image.asset(
+                                          "assets/icons/ongoing-order.png",
+                                          height: screenHeight / 20,
+                                          width: screenWidth / 20,
+                                        ),
+                                        Text("On Going Orders")
+                                      ],
+                                    ),
+                                  ),
+                                  GestureDetector(
+                                    onTap: () {
+                                      Get.toNamed("/completedorderlaundry");
+                                    },
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Image.asset(
+                                          "assets/icons/completed-order.png",
+                                          height: screenHeight / 20,
+                                          width: screenWidth / 20,
+                                        ),
+                                        Text("Completed Orders")
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            "My Wallet",
-                            style: TextStyle(
-                                fontSize: screenWidth / 20,
-                                fontWeight: FontWeight.bold),
-                          ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          "Basic Functions",
+                          style: TextStyle(
+                              fontSize: screenWidth / 20,
+                              fontWeight: FontWeight.bold),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            height: screenHeight / 5,
-                            width: screenWidth / 1.1,
-                            child: Row(
-                              children: [
-                                Container(
-                                  height: double.infinity,
-                                  width: screenWidth / 1.5,
-                                  child: Card(
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(20))),
-                                      elevation: 8,
-                                      child: Container(
+                      ),
+                      Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              height: screenHeight / 4.5,
+                              child: Row(
+                                children: [
+                                  Container(
+                                    height: double.infinity,
+                                    width: screenWidth / 2.2,
+                                    child: Card(
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(20)),
+                                        elevation: 8,
+                                        child: Container(
                                           decoration: BoxDecoration(
                                             borderRadius:
                                                 BorderRadius.circular(20),
@@ -373,207 +259,503 @@ class HomePageLaundry extends StatelessWidget {
                                                 end: Alignment(1.0, 4.0),
                                                 colors: [
                                                   Color.fromRGBO(
-                                                      255, 199, 251, 1),
+                                                      173, 236, 255, 1),
                                                   Colors.white
                                                 ]),
                                           ),
                                           child: Stack(
                                             children: [
-                                              Center(
-                                                child: Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
+                                              Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            8.0),
+                                                    child: Row(
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                      .only(
+                                                                  right: 8.0),
+                                                          child: Image.asset(
+                                                            "assets/icons/washing.png",
+                                                            height:
+                                                                screenWidth /
+                                                                    20,
+                                                          ),
+                                                        ),
+                                                        Text(
+                                                          "My Laundry",
+                                                          style: TextStyle(
+                                                              fontSize:
+                                                                  screenWidth /
+                                                                      20,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      GetBuilder<
+                                                              HomeLaundryController>(
+                                                          builder:
+                                                              (controller) {
+                                                        return Text(
+                                                          controller.approval
+                                                                  .value
+                                                                  .toString() +
+                                                              "%",
+                                                          style: TextStyle(
+                                                              fontSize:
+                                                                  screenWidth /
+                                                                      15),
+                                                        );
+                                                      }),
+                                                      Text(" Approved",
+                                                          style: TextStyle(
+                                                              color:
+                                                                  Colors.green,
+                                                              fontSize:
+                                                                  screenWidth /
+                                                                      25,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold)),
+                                                    ],
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            8.0),
+                                                    child: GetBuilder<
+                                                            HomeLaundryController>(
+                                                        builder: (controller) {
+                                                      return FAProgressBar(
+                                                        currentValue: int.parse(
+                                                            controller.approval
+                                                                .value),
+                                                        displayText: '%',
+                                                        backgroundColor:
+                                                            Colors.grey,
+                                                        size: 12,
+                                                        animatedDuration:
+                                                            Duration(
+                                                                seconds: 3),
+                                                        progressColor: (controller
+                                                                    .approval
+                                                                    .value ==
+                                                                "100")
+                                                            ? Colors.green
+                                                            : Colors
+                                                                .amberAccent,
+                                                      );
+                                                    }),
+                                                  )
+                                                ],
+                                              ),
+                                              Positioned(
+                                                bottom: 10,
+                                                right: 10,
+                                                child: GetBuilder<
+                                                        HomeLaundryController>(
+                                                    builder: (controller) {
+                                                  return Container(
+                                                    width: screenWidth / 5,
+                                                    height: screenHeight / 35,
+                                                    child: MaterialButton(
+                                                      onPressed: () {
+                                                        Get.toNamed(
+                                                            "/mylaundrylaundry",
+                                                            arguments:
+                                                                controller
+                                                                    .user);
+                                                      },
+                                                      child: Text(
+                                                        "View More",
+                                                        style: TextStyle(
+                                                            fontSize:
+                                                                screenWidth /
+                                                                    45),
+                                                      ),
+                                                    ),
+                                                    decoration: BoxDecoration(
+                                                        color: Colors.white,
+                                                        borderRadius:
+                                                            BorderRadius.all(
+                                                                Radius.circular(
+                                                                    10))),
+                                                  );
+                                                }),
+                                              ),
+                                            ],
+                                          ),
+                                        )),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              height: screenHeight / 4.5,
+                              child: Row(
+                                children: [
+                                  Container(
+                                    height: double.infinity,
+                                    width: screenWidth / 2.2,
+                                    child: Card(
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(20))),
+                                        elevation: 8,
+                                        child: Container(
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(20),
+                                              gradient: LinearGradient(
+                                                  begin: Alignment(-1.0, -4.0),
+                                                  end: Alignment(1.0, 4.0),
+                                                  colors: [
+                                                    Color.fromRGBO(
+                                                        255, 199, 251, 1),
+                                                    Colors.white
+                                                  ]),
+                                            ),
+                                            child: Stack(
+                                              children: [
+                                                Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
                                                   children: [
                                                     Padding(
                                                       padding:
                                                           const EdgeInsets.all(
                                                               8.0),
-                                                      child: Image.asset(
-                                                        "assets/icons/wallet.png",
-                                                        width: screenWidth / 12,
+                                                      child: Row(
+                                                        children: [
+                                                          Padding(
+                                                            padding:
+                                                                const EdgeInsets
+                                                                        .only(
+                                                                    right: 8.0),
+                                                            child: Image.asset(
+                                                              "assets/icons/wallet.png",
+                                                              height:
+                                                                  screenWidth /
+                                                                      20,
+                                                            ),
+                                                          ),
+                                                          Text(
+                                                            "My Wallet",
+                                                            style: TextStyle(
+                                                                fontSize:
+                                                                    screenWidth /
+                                                                        20,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold),
+                                                          ),
+                                                        ],
                                                       ),
                                                     ),
-                                                    Text(
-                                                      "RM1501.20",
-                                                      style: TextStyle(
-                                                          fontSize:
-                                                              screenWidth / 15),
+                                                    Center(
+                                                      child: Row(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        children: [
+                                                          Text(
+                                                            "RM15010.20",
+                                                            style: TextStyle(
+                                                              fontSize:
+                                                                  screenWidth /
+                                                                      15,
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
                                                     ),
                                                   ],
                                                 ),
-                                              ),
-                                              Positioned(
+                                                Positioned(
+                                                    right: 10,
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              8.0),
+                                                      child: Icon(
+                                                        Icons.remove_red_eye,
+                                                        size: 15,
+                                                      ),
+                                                    )),
+                                                Positioned(
+                                                  bottom: 10,
                                                   right: 10,
-                                                  child: Padding(
+                                                  child: GetBuilder<
+                                                          HomeLaundryController>(
+                                                      builder: (controller) {
+                                                    return Container(
+                                                      width: screenWidth / 5,
+                                                      height: screenHeight / 35,
+                                                      child: MaterialButton(
+                                                        onPressed: () {
+                                                          Get.toNamed(
+                                                              "/mywalletlaundry");
+                                                        },
+                                                        child: Text(
+                                                          "View More",
+                                                          style: TextStyle(
+                                                              fontSize:
+                                                                  screenWidth /
+                                                                      45),
+                                                        ),
+                                                      ),
+                                                      decoration: BoxDecoration(
+                                                          color: Colors.white,
+                                                          borderRadius:
+                                                              BorderRadius.all(
+                                                                  Radius
+                                                                      .circular(
+                                                                          10))),
+                                                    );
+                                                  }),
+                                                ),
+                                              ],
+                                            ))),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              height: screenHeight / 4.5,
+                              child: Row(
+                                children: [
+                                  Container(
+                                    height: double.infinity,
+                                    width: screenWidth / 2.2,
+                                    child: Card(
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(20))),
+                                        elevation: 8,
+                                        child: Container(
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(20),
+                                              gradient: LinearGradient(
+                                                  begin: Alignment(-1.0, -4.0),
+                                                  end: Alignment(1.0, 4.0),
+                                                  colors: [
+                                                    Color.fromRGBO(
+                                                        255, 250, 201, 1),
+                                                    Colors.white
+                                                  ]),
+                                            ),
+                                            child: Stack(children: [
+                                              Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Padding(
                                                     padding:
                                                         const EdgeInsets.all(
                                                             8.0),
-                                                    child: Icon(
-                                                        Icons.remove_red_eye),
-                                                  ))
-                                            ],
-                                          ))),
-                                ),
-                                GestureDetector(
-                                  onTap: () {
-                                    Get.toNamed("/mywalletlaundry");
-                                  },
-                                  child: Container(
-                                      height: double.infinity,
-                                      width: screenWidth - (screenWidth / 1.4),
-                                      child: Card(
-                                        elevation: 8,
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(60)),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Icon(Icons.arrow_forward_outlined),
-                                            Text("View More")
-                                          ],
-                                        ),
-                                      )),
-                                ),
-                              ],
+                                                    child: Row(
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                      .only(
+                                                                  right: 8.0),
+                                                          child: Image.asset(
+                                                            "assets/icons/growth.png",
+                                                            height:
+                                                                screenWidth /
+                                                                    20,
+                                                          ),
+                                                        ),
+                                                        Text(
+                                                          "My Business",
+                                                          style: TextStyle(
+                                                              fontSize:
+                                                                  screenWidth /
+                                                                      20,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  Text("Laundry"),
+                                                ],
+                                              ),
+                                              Positioned(
+                                                bottom: 10,
+                                                right: 10,
+                                                child: GetBuilder<
+                                                        HomeLaundryController>(
+                                                    builder: (controller) {
+                                                  return Container(
+                                                    width: screenWidth / 5,
+                                                    height: screenHeight / 35,
+                                                    child: MaterialButton(
+                                                      onPressed: () {
+                                                        Get.toNamed(
+                                                            "/mybusinesslaundry");
+                                                      },
+                                                      child: Text(
+                                                        "View More",
+                                                        style: TextStyle(
+                                                            fontSize:
+                                                                screenWidth /
+                                                                    45),
+                                                      ),
+                                                    ),
+                                                    decoration: BoxDecoration(
+                                                        color: Colors.white,
+                                                        borderRadius:
+                                                            BorderRadius.all(
+                                                                Radius.circular(
+                                                                    10))),
+                                                  );
+                                                }),
+                                              ),
+                                            ]))),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            "My Business",
-                            style: TextStyle(
-                                fontSize: screenWidth / 20,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            height: screenHeight / 5,
-                            child: Row(
-                              children: [
-                                Container(
-                                  height: double.infinity,
-                                  width: screenWidth / 1.5,
-                                  child: Card(
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(20))),
-                                      elevation: 8,
-                                      child: Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(20),
-                                            gradient: LinearGradient(
-                                                begin: Alignment(-1.0, -4.0),
-                                                end: Alignment(1.0, 4.0),
-                                                colors: [
-                                                  Color.fromRGBO(
-                                                      255, 250, 201, 1),
-                                                  Colors.white
-                                                ]),
-                                          ),
-                                          child: Text("Laundry"))),
-                                ),
-                                GestureDetector(
-                                  onTap: () {
-                                    Get.toNamed("/mybusinesslaundry");
-                                  },
-                                  child: Container(
-                                      height: double.infinity,
-                                      width: screenWidth - (screenWidth / 1.4),
-                                      child: Card(
-                                        elevation: 8,
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              height: screenHeight / 4.5,
+                              child: Row(
+                                children: [
+                                  Container(
+                                    height: double.infinity,
+                                    width: screenWidth / 2.2,
+                                    child: Card(
                                         shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(60)),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Icon(Icons.arrow_forward_outlined),
-                                            Text("View More")
-                                          ],
-                                        ),
-                                      )),
-                                ),
-                              ],
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(20))),
+                                        elevation: 8,
+                                        child: Container(
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(20),
+                                              gradient: LinearGradient(
+                                                  begin: Alignment(-1.0, -4.0),
+                                                  end: Alignment(1.0, 4.0),
+                                                  colors: [
+                                                    Color.fromRGBO(
+                                                        233, 201, 255, 1),
+                                                    Colors.white
+                                                  ]),
+                                            ),
+                                            child: Stack(children: [
+                                              Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            8.0),
+                                                    child: Row(
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                      .only(
+                                                                  right: 8.0),
+                                                          child: Image.asset(
+                                                            "assets/icons/report.png",
+                                                            height:
+                                                                screenWidth /
+                                                                    20,
+                                                          ),
+                                                        ),
+                                                        Expanded(
+                                                          child: Text(
+                                                            "Business Report",
+                                                            style: TextStyle(
+                                                                fontSize:
+                                                                    screenWidth /
+                                                                        20,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  Text("Laundry"),
+                                                ],
+                                              ),
+                                              Positioned(
+                                                bottom: 10,
+                                                right: 10,
+                                                child: GetBuilder<
+                                                        HomeLaundryController>(
+                                                    builder: (controller) {
+                                                  return Container(
+                                                    width: screenWidth / 5,
+                                                    height: screenHeight / 35,
+                                                    child: MaterialButton(
+                                                      onPressed: () {
+                                                        Get.toNamed(
+                                                            "/businessreportlaundry");
+                                                      },
+                                                      child: Text(
+                                                        "View More",
+                                                        style: TextStyle(
+                                                            fontSize:
+                                                                screenWidth /
+                                                                    45),
+                                                      ),
+                                                    ),
+                                                    decoration: BoxDecoration(
+                                                        color: Colors.white,
+                                                        borderRadius:
+                                                            BorderRadius.all(
+                                                                Radius.circular(
+                                                                    10))),
+                                                  );
+                                                }),
+                                              ),
+                                            ]))),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            "Business Report",
-                            style: TextStyle(
-                                fontSize: screenWidth / 20,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            height: screenHeight / 5,
-                            child: Row(
-                              children: [
-                                Container(
-                                  height: double.infinity,
-                                  width: screenWidth / 1.5,
-                                  child: Card(
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(20))),
-                                      elevation: 8,
-                                      child: Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(20),
-                                            gradient: LinearGradient(
-                                                begin: Alignment(-1.0, -4.0),
-                                                end: Alignment(1.0, 4.0),
-                                                colors: [
-                                                  Color.fromRGBO(
-                                                      233, 201, 255, 1),
-                                                  Colors.white
-                                                ]),
-                                          ),
-                                          child: Text("Laundry"))),
-                                ),
-                                GestureDetector(
-                                  onTap: () {
-                                    Get.toNamed("/businessreportlaundry");
-                                  },
-                                  child: Container(
-                                      height: double.infinity,
-                                      width: screenWidth - (screenWidth / 1.4),
-                                      child: Card(
-                                        elevation: 8,
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(60)),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Icon(Icons.arrow_forward_outlined),
-                                            Text("View More")
-                                          ],
-                                        ),
-                                      )),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    )),
-              )
-            ],
-          )),
-        ),
+                        ],
+                      ),
+                    ],
+                  )),
+            )
+          ],
+        )),
       ),
     );
   }
