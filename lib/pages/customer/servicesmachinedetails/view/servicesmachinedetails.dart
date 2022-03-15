@@ -142,7 +142,10 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                                 children: [
                                   Text("Machine Status"),
                                   Text(
-                                    controller.machine.available,
+                                    (controller.machine.available ==
+                                            "Available")
+                                        ? "Available"
+                                        : "Occupied Now",
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         color: (controller.machine.available ==

@@ -107,6 +107,10 @@ class ServicesDetailsController extends GetxController {
         addOn3Price: washingmachinelist[index].addOn3Price,
       );
       Get.toNamed("/servicesmachinedetails", arguments: machine);
+      if (machine.available == "Not Available") {
+        Get.snackbar(
+            "Machine is occupied now", "You may still place order for later.");
+      }
     } else if (machineType == "Dry Washing Machine") {
       Machine machine = new Machine(
         machineID: drywashingmachinelist[index].machineID,
@@ -126,6 +130,10 @@ class ServicesDetailsController extends GetxController {
         addOn3Price: drywashingmachinelist[index].addOn3Price,
       );
       Get.toNamed("/servicesmachinedetails", arguments: machine);
+      if (machine.available == "Not Available") {
+        Get.snackbar(
+            "Machine is occupied now", "You may still place order for later.");
+      }
     } else if (machineType == "Ironing Machine") {
       Machine machine = new Machine(
         machineID: ironingmachinelist[index].machineID,
@@ -144,8 +152,11 @@ class ServicesDetailsController extends GetxController {
         addOn3: ironingmachinelist[index].addOn3,
         addOn3Price: ironingmachinelist[index].addOn3Price,
       );
-
       Get.toNamed("/servicesmachinedetails", arguments: machine);
+      if (machine.available == "Not Available") {
+        Get.snackbar(
+            "Machine is occupied now", "You may still place order for later.");
+      }
     }
   }
 }
