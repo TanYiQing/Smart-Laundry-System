@@ -201,66 +201,57 @@ class AddWashingMachinePageLaundry extends GetView<AddMachineController> {
                                             fontWeight: FontWeight.bold),
                                       ),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: GetBuilder<AddMachineController>(
-                                          builder: (controller) {
-                                        return Row(
-                                          children: [
-                                            GestureDetector(
-                                              onTap: () {
-                                                controller.clickremovebutton(1);
-                                              },
-                                              child: Container(
-                                                child: Icon(Icons.remove),
-                                              ),
+                                    GetBuilder<AddMachineController>(
+                                        builder: (controller) {
+                                      return Row(
+                                        children: [
+                                          GestureDetector(
+                                            onTap: () {
+                                              controller.clickremovebutton(1);
+                                            },
+                                            child: Container(
+                                              child: Icon(Icons.remove),
                                             ),
-                                            Card(
-                                              shape: RoundedRectangleBorder(
-                                                  side: BorderSide(
-                                                      color: Colors.black,
-                                                      width: 1),
-                                                  borderRadius:
-                                                      BorderRadius.all(
-                                                          Radius.circular(10))),
-                                              child: Container(
-                                                width: screenWidth / 3,
-                                                child: Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          left: 8.0,
-                                                          right: 8.0),
-                                                  child: Container(
-                                                    child: TextField(
-                                                      controller: controller
-                                                          .minimumweightcontroller,
-                                                      textAlign:
-                                                          TextAlign.right,
-                                                      keyboardType:
-                                                          TextInputType.number,
-                                                      decoration:
-                                                          InputDecoration(
-                                                              border:
-                                                                  InputBorder
-                                                                      .none,
-                                                              isDense: true),
-                                                    ),
+                                          ),
+                                          Card(
+                                            shape: RoundedRectangleBorder(
+                                                side: BorderSide(
+                                                    color: Colors.black,
+                                                    width: 1),
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(10))),
+                                            child: Container(
+                                              width: screenWidth / 3,
+                                              child: Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 8.0, right: 8.0),
+                                                child: Container(
+                                                  child: TextField(
+                                                    controller: controller
+                                                        .minimumweightcontroller,
+                                                    textAlign: TextAlign.right,
+                                                    keyboardType:
+                                                        TextInputType.number,
+                                                    decoration: InputDecoration(
+                                                        border:
+                                                            InputBorder.none,
+                                                        isDense: true),
                                                   ),
                                                 ),
                                               ),
                                             ),
-                                            GestureDetector(
-                                              onTap: () {
-                                                controller.clickaddbutton(1);
-                                              },
-                                              child: Container(
-                                                child: Icon(Icons.add),
-                                              ),
+                                          ),
+                                          GestureDetector(
+                                            onTap: () {
+                                              controller.clickaddbutton(1);
+                                            },
+                                            child: Container(
+                                              child: Icon(Icons.add),
                                             ),
-                                          ],
-                                        );
-                                      }),
-                                    ),
+                                          ),
+                                        ],
+                                      );
+                                    }),
                                     Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: Text(
@@ -269,66 +260,57 @@ class AddWashingMachinePageLaundry extends GetView<AddMachineController> {
                                             fontWeight: FontWeight.bold),
                                       ),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: GetBuilder<AddMachineController>(
-                                          builder: (controller) {
-                                        return Row(
-                                          children: [
-                                            GestureDetector(
-                                              onTap: () {
-                                                controller.clickremovebutton(2);
-                                              },
-                                              child: Container(
-                                                child: Icon(Icons.remove),
-                                              ),
+                                    GetBuilder<AddMachineController>(
+                                        builder: (controller) {
+                                      return Row(
+                                        children: [
+                                          GestureDetector(
+                                            onTap: () {
+                                              controller.clickremovebutton(2);
+                                            },
+                                            child: Container(
+                                              child: Icon(Icons.remove),
                                             ),
-                                            Card(
-                                              shape: RoundedRectangleBorder(
-                                                  side: BorderSide(
-                                                      color: Colors.black,
-                                                      width: 1),
-                                                  borderRadius:
-                                                      BorderRadius.all(
-                                                          Radius.circular(10))),
-                                              child: Container(
-                                                width: screenWidth / 3,
-                                                child: Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          left: 8.0,
-                                                          right: 8.0),
-                                                  child: Container(
-                                                    child: TextField(
-                                                      controller: controller
-                                                          .maximumweightcontroller,
-                                                      textAlign:
-                                                          TextAlign.right,
-                                                      keyboardType:
-                                                          TextInputType.number,
-                                                      decoration:
-                                                          InputDecoration(
-                                                              border:
-                                                                  InputBorder
-                                                                      .none,
-                                                              isDense: true),
-                                                    ),
+                                          ),
+                                          Card(
+                                            shape: RoundedRectangleBorder(
+                                                side: BorderSide(
+                                                    color: Colors.black,
+                                                    width: 1),
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(10))),
+                                            child: Container(
+                                              width: screenWidth / 3,
+                                              child: Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 8.0, right: 8.0),
+                                                child: Container(
+                                                  child: TextField(
+                                                    controller: controller
+                                                        .maximumweightcontroller,
+                                                    textAlign: TextAlign.right,
+                                                    keyboardType:
+                                                        TextInputType.number,
+                                                    decoration: InputDecoration(
+                                                        border:
+                                                            InputBorder.none,
+                                                        isDense: true),
                                                   ),
                                                 ),
                                               ),
                                             ),
-                                            GestureDetector(
-                                              onTap: () {
-                                                controller.clickaddbutton(2);
-                                              },
-                                              child: Container(
-                                                child: Icon(Icons.add),
-                                              ),
+                                          ),
+                                          GestureDetector(
+                                            onTap: () {
+                                              controller.clickaddbutton(2);
+                                            },
+                                            child: Container(
+                                              child: Icon(Icons.add),
                                             ),
-                                          ],
-                                        );
-                                      }),
-                                    ),
+                                          ),
+                                        ],
+                                      );
+                                    }),
                                     GetBuilder<AddMachineController>(
                                         builder: (controller) {
                                       return Padding(
@@ -351,66 +333,57 @@ class AddWashingMachinePageLaundry extends GetView<AddMachineController> {
                                               ),
                                       );
                                     }),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: GetBuilder<AddMachineController>(
-                                          builder: (controller) {
-                                        return Row(
-                                          children: [
-                                            GestureDetector(
-                                              onTap: () {
-                                                controller.clickremovebutton(3);
-                                              },
-                                              child: Container(
-                                                child: Icon(Icons.remove),
-                                              ),
+                                    GetBuilder<AddMachineController>(
+                                        builder: (controller) {
+                                      return Row(
+                                        children: [
+                                          GestureDetector(
+                                            onTap: () {
+                                              controller.clickremovebutton(3);
+                                            },
+                                            child: Container(
+                                              child: Icon(Icons.remove),
                                             ),
-                                            Card(
-                                              shape: RoundedRectangleBorder(
-                                                  side: BorderSide(
-                                                      color: Colors.black,
-                                                      width: 1),
-                                                  borderRadius:
-                                                      BorderRadius.all(
-                                                          Radius.circular(10))),
-                                              child: Container(
-                                                width: screenWidth / 3,
-                                                child: Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          left: 8.0,
-                                                          right: 8.0),
-                                                  child: Container(
-                                                    child: TextField(
-                                                      controller: controller
-                                                          .pricecontroller,
-                                                      textAlign:
-                                                          TextAlign.right,
-                                                      keyboardType:
-                                                          TextInputType.number,
-                                                      decoration:
-                                                          InputDecoration(
-                                                              border:
-                                                                  InputBorder
-                                                                      .none,
-                                                              isDense: true),
-                                                    ),
+                                          ),
+                                          Card(
+                                            shape: RoundedRectangleBorder(
+                                                side: BorderSide(
+                                                    color: Colors.black,
+                                                    width: 1),
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(10))),
+                                            child: Container(
+                                              width: screenWidth / 3,
+                                              child: Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 8.0, right: 8.0),
+                                                child: Container(
+                                                  child: TextField(
+                                                    controller: controller
+                                                        .pricecontroller,
+                                                    textAlign: TextAlign.right,
+                                                    keyboardType:
+                                                        TextInputType.number,
+                                                    decoration: InputDecoration(
+                                                        border:
+                                                            InputBorder.none,
+                                                        isDense: true),
                                                   ),
                                                 ),
                                               ),
                                             ),
-                                            GestureDetector(
-                                              onTap: () {
-                                                controller.clickaddbutton(3);
-                                              },
-                                              child: Container(
-                                                child: Icon(Icons.add),
-                                              ),
+                                          ),
+                                          GestureDetector(
+                                            onTap: () {
+                                              controller.clickaddbutton(3);
+                                            },
+                                            child: Container(
+                                              child: Icon(Icons.add),
                                             ),
-                                          ],
-                                        );
-                                      }),
-                                    ),
+                                          ),
+                                        ],
+                                      );
+                                    }),
                                     Padding(
                                         padding: const EdgeInsets.all(8.0),
                                         child: Text(
@@ -418,66 +391,57 @@ class AddWashingMachinePageLaundry extends GetView<AddMachineController> {
                                           style: TextStyle(
                                               fontWeight: FontWeight.bold),
                                         )),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: GetBuilder<AddMachineController>(
-                                          builder: (controller) {
-                                        return Row(
-                                          children: [
-                                            GestureDetector(
-                                              onTap: () {
-                                                controller.clickremovebutton(4);
-                                              },
-                                              child: Container(
-                                                child: Icon(Icons.remove),
-                                              ),
+                                    GetBuilder<AddMachineController>(
+                                        builder: (controller) {
+                                      return Row(
+                                        children: [
+                                          GestureDetector(
+                                            onTap: () {
+                                              controller.clickremovebutton(4);
+                                            },
+                                            child: Container(
+                                              child: Icon(Icons.remove),
                                             ),
-                                            Card(
-                                              shape: RoundedRectangleBorder(
-                                                  side: BorderSide(
-                                                      color: Colors.black,
-                                                      width: 1),
-                                                  borderRadius:
-                                                      BorderRadius.all(
-                                                          Radius.circular(10))),
-                                              child: Container(
-                                                width: screenWidth / 3,
-                                                child: Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          left: 8.0,
-                                                          right: 8.0),
-                                                  child: Container(
-                                                    child: TextField(
-                                                      controller: controller
-                                                          .durationcontroller,
-                                                      textAlign:
-                                                          TextAlign.right,
-                                                      keyboardType:
-                                                          TextInputType.number,
-                                                      decoration:
-                                                          InputDecoration(
-                                                              border:
-                                                                  InputBorder
-                                                                      .none,
-                                                              isDense: true),
-                                                    ),
+                                          ),
+                                          Card(
+                                            shape: RoundedRectangleBorder(
+                                                side: BorderSide(
+                                                    color: Colors.black,
+                                                    width: 1),
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(10))),
+                                            child: Container(
+                                              width: screenWidth / 3,
+                                              child: Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 8.0, right: 8.0),
+                                                child: Container(
+                                                  child: TextField(
+                                                    controller: controller
+                                                        .durationcontroller,
+                                                    textAlign: TextAlign.right,
+                                                    keyboardType:
+                                                        TextInputType.number,
+                                                    decoration: InputDecoration(
+                                                        border:
+                                                            InputBorder.none,
+                                                        isDense: true),
                                                   ),
                                                 ),
                                               ),
                                             ),
-                                            GestureDetector(
-                                              onTap: () {
-                                                controller.clickaddbutton(4);
-                                              },
-                                              child: Container(
-                                                child: Icon(Icons.add),
-                                              ),
+                                          ),
+                                          GestureDetector(
+                                            onTap: () {
+                                              controller.clickaddbutton(4);
+                                            },
+                                            child: Container(
+                                              child: Icon(Icons.add),
                                             ),
-                                          ],
-                                        );
-                                      }),
-                                    ),
+                                          ),
+                                        ],
+                                      );
+                                    }),
                                   ],
                                 ),
                               ),
@@ -598,8 +562,8 @@ class AddWashingMachinePageLaundry extends GetView<AddMachineController> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsets.all(
-                                                              8.0),
+                                                          const EdgeInsets.only(
+                                                              left: 8.0),
                                                       child: Row(
                                                         children: [
                                                           Text("RM"),
@@ -736,8 +700,8 @@ class AddWashingMachinePageLaundry extends GetView<AddMachineController> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsets.all(
-                                                              8.0),
+                                                          const EdgeInsets.only(
+                                                              left: 8.0),
                                                       child: Row(
                                                         children: [
                                                           Text("RM"),
@@ -874,8 +838,8 @@ class AddWashingMachinePageLaundry extends GetView<AddMachineController> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsets.all(
-                                                              8.0),
+                                                          const EdgeInsets.only(
+                                                              left: 8.0),
                                                       child: Row(
                                                         children: [
                                                           Text("RM"),
