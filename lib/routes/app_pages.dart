@@ -1,4 +1,7 @@
 import 'package:final_year_project/middleware/router_auth.dart';
+import 'package:final_year_project/pages/customer/addlocation/binding/addlocation_binding.dart';
+import 'package:final_year_project/pages/customer/addlocation/view/addlocation.dart';
+import 'package:final_year_project/pages/customer/addlocation/view/map.dart';
 import 'package:final_year_project/pages/customer/bottombar/binding/bottombar_binding.dart';
 import 'package:final_year_project/pages/customer/cart/view/cart.dart';
 import 'package:final_year_project/pages/customer/services/binding/services_binding.dart';
@@ -157,6 +160,16 @@ class AppPages {
     GetPage(
         name: "/location",
         page: () => LocationPage(),
+        middlewares: [RouterAuthMiddleware()]),
+    GetPage(
+        name: "/addnewlocation",
+        page: () => AddLocationPage(),
+        binding: AddLocationBindings(),
+        middlewares: [RouterAuthMiddleware()]),
+    GetPage(
+        name: "/map",
+        page: () => MapPage(),
+        binding: AddLocationBindings(),
         middlewares: [RouterAuthMiddleware()]),
     GetPage(
         name: "/notification",

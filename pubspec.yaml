@@ -43,6 +43,9 @@ dependencies:
   date_picker_timeline: ^1.2.3
   flutter_time_picker_spinner: ^2.0.0
   flutter_animation_progress_bar: ^2.0.1
+  geolocator: ^8.2.0
+  geocoding: ^2.0.4
+  google_maps_flutter: ^2.1.2
 
 dev_dependencies:
   flutter_test:
