@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class LocationPage extends StatelessWidget {
   @override
@@ -15,17 +16,31 @@ class LocationPage extends StatelessWidget {
           elevation: 0,
           iconTheme: IconThemeData(color: Colors.black),
           actions: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Image.asset(
-                "assets/icons/add-point.png",
-                width: screenWidth / 15,
+            GestureDetector(
+              onTap: () {
+                Get.toNamed("/addnewlocation");
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Image.asset(
+                  "assets/icons/add-point.png",
+                  width: screenWidth / 15,
+                ),
               ),
             )
           ]),
       body: Center(
-        child: Container(
-          child: Text('Location'),
+        child: Column(
+          children: [
+            Container(
+              child: Image.asset("assets/images/noaddress.png"),
+            ),
+            Text("NO ADDRESS FOUND",
+                style: TextStyle(
+                    fontSize: screenWidth / 18, fontWeight: FontWeight.bold)),
+            Text("Please add your address now",
+                style: TextStyle(fontSize: screenWidth / 25))
+          ],
         ),
       ),
     );
