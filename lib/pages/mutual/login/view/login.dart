@@ -62,9 +62,8 @@ class LoginPage extends StatelessWidget {
                               builder: (controller) {
                                 return Container(
                                     child: Card(
+                                  elevation: 5,
                                   shape: RoundedRectangleBorder(
-                                      side: BorderSide(
-                                          color: Colors.black, width: 1),
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(30))),
                                   child: Container(
@@ -90,9 +89,8 @@ class LoginPage extends StatelessWidget {
                               builder: (controller) {
                                 return Container(
                                     child: Card(
+                                  elevation: 5,
                                   shape: RoundedRectangleBorder(
-                                      side: BorderSide(
-                                          color: Colors.black, width: 1),
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(30))),
                                   child: Container(

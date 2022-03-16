@@ -105,8 +105,8 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
                             alignment: Alignment.centerLeft,
                             child: Text('Laundry Owner\'s Name')),
                         Card(
+                          elevation: 5,
                           shape: RoundedRectangleBorder(
-                              side: BorderSide(color: Colors.black, width: 1),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10))),
                           child: Container(
@@ -132,8 +132,8 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
                             alignment: Alignment.centerLeft,
                             child: Text('Laundry Owner\'s Contact')),
                         Card(
+                          elevation: 5,
                           shape: RoundedRectangleBorder(
-                              side: BorderSide(color: Colors.black, width: 1),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10))),
                           child: Container(
@@ -210,8 +210,8 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
                             alignment: Alignment.centerLeft,
                             child: Text('Laundry Name')),
                         Card(
+                          elevation: 5,
                           shape: RoundedRectangleBorder(
-                              side: BorderSide(color: Colors.black, width: 1),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10))),
                           child: Container(
@@ -237,8 +237,8 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
                             alignment: Alignment.centerLeft,
                             child: Text('Laundry Address 1')),
                         Card(
+                          elevation: 5,
                           shape: RoundedRectangleBorder(
-                              side: BorderSide(color: Colors.black, width: 1),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10))),
                           child: Container(
@@ -264,8 +264,8 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
                             alignment: Alignment.centerLeft,
                             child: Text('Laundry Address 2')),
                         Card(
+                          elevation: 5,
                           shape: RoundedRectangleBorder(
-                              side: BorderSide(color: Colors.black, width: 1),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10))),
                           child: Container(
@@ -291,8 +291,8 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
                             alignment: Alignment.centerLeft,
                             child: Text('ZIP')),
                         Card(
+                          elevation: 5,
                           shape: RoundedRectangleBorder(
-                              side: BorderSide(color: Colors.black, width: 1),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10))),
                           child: Container(
@@ -318,8 +318,8 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
                             alignment: Alignment.centerLeft,
                             child: Text('City')),
                         Card(
+                          elevation: 5,
                           shape: RoundedRectangleBorder(
-                              side: BorderSide(color: Colors.black, width: 1),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10))),
                           child: Container(
@@ -345,8 +345,8 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
                             alignment: Alignment.centerLeft,
                             child: Text('State')),
                         Card(
+                          elevation: 5,
                           shape: RoundedRectangleBorder(
-                              side: BorderSide(color: Colors.black, width: 1),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10))),
                           child: Container(

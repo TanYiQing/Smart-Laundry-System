@@ -53,8 +53,8 @@ class SignupPage extends StatelessWidget {
                         padding: const EdgeInsets.only(top: 12.0),
                         child: Container(
                             child: Card(
+                          elevation: 5,
                           shape: RoundedRectangleBorder(
-                              side: BorderSide(color: Colors.black, width: 1),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(30))),
                           child: Container(
@@ -76,8 +76,8 @@ class SignupPage extends StatelessWidget {
                         padding: const EdgeInsets.only(top: 10.0),
                         child: Container(
                             child: Card(
+                          elevation: 5,
                           shape: RoundedRectangleBorder(
-                              side: BorderSide(color: Colors.black, width: 1),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(30))),
                           child: Container(
@@ -99,8 +99,8 @@ class SignupPage extends StatelessWidget {
                         padding: const EdgeInsets.only(top: 10.0),
                         child: Container(
                             child: Card(
+                          elevation: 5,
                           shape: RoundedRectangleBorder(
-                              side: BorderSide(color: Colors.black, width: 1),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(30))),
                           child: Container(
@@ -122,8 +122,8 @@ class SignupPage extends StatelessWidget {
                         padding: const EdgeInsets.only(top: 10.0),
                         child: Container(
                             child: Card(
+                          elevation: 5,
                           shape: RoundedRectangleBorder(
-                              side: BorderSide(color: Colors.black, width: 1),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(30))),
                           child: Container(
@@ -154,8 +154,8 @@ class SignupPage extends StatelessWidget {
                         padding: const EdgeInsets.only(top: 10.0),
                         child: Container(
                             child: Card(
+                          elevation: 5,
                           shape: RoundedRectangleBorder(
-                              side: BorderSide(color: Colors.black, width: 1),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(30))),
                           child: Container(
