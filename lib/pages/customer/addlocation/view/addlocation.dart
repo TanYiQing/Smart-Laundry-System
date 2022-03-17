@@ -34,7 +34,8 @@ class AddLocationPage extends StatelessWidget {
               GetBuilder<AddLocationController>(builder: (controller) {
                 return GestureDetector(
                   onTap: () async {
-                    controller.gmaplocation = await Get.toNamed("/map");
+                    // controller.gmaplocation = await Get.toNamed("/map");
+                    Get.toNamed("/map");
                   },
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
