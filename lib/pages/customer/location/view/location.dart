@@ -1,3 +1,4 @@
+import 'package:final_year_project/pages/customer/location/controller/location_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,18 +17,20 @@ class LocationPage extends StatelessWidget {
           elevation: 0,
           iconTheme: IconThemeData(color: Colors.black),
           actions: [
-            GestureDetector(
-              onTap: () {
-                Get.toNamed("/addnewlocation");
-              },
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Image.asset(
-                  "assets/icons/add-point.png",
-                  width: screenWidth / 15,
+            GetBuilder<LocationController>(builder: (controller) {
+              return GestureDetector(
+                onTap: () {
+                  Get.toNamed("/addnewlocation", arguments: controller.user);
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Image.asset(
+                    "assets/icons/add-point.png",
+                    width: screenWidth / 15,
+                  ),
                 ),
-              ),
-            )
+              );
+            })
           ]),
       body: Center(
         child: Column(

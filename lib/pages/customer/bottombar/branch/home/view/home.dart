@@ -93,25 +93,28 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: GestureDetector(
-                            onTap: () {
-                              Get.toNamed("/location");
-                            },
-                            child: Container(
-                              height: screenHeight / 12,
-                              width: screenWidth / 12,
-                              decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Color.fromRGBO(0, 194, 203, 1)),
-                              child: Icon(
-                                Icons.location_on,
-                                size: screenWidth / 20,
+                        GetBuilder<BottomBarController>(builder: (controller) {
+                          return Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: GestureDetector(
+                              onTap: () {
+                                Get.toNamed("/location",
+                                    arguments: controller.user);
+                              },
+                              child: Container(
+                                height: screenHeight / 12,
+                                width: screenWidth / 12,
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Color.fromRGBO(0, 194, 203, 1)),
+                                child: Icon(
+                                  Icons.location_on,
+                                  size: screenWidth / 20,
+                                ),
                               ),
                             ),
-                          ),
-                        ),
+                          );
+                        }),
                         Padding(
                           padding: const EdgeInsets.all(4.0),
                           child: GestureDetector(
