@@ -57,7 +57,7 @@ class AddNewLaundryController extends GetxController {
         citycontroller.text == "" ||
         statecontroller.text == "") {
       Get.snackbar(
-          "Failed to add laundry", "Please make sure all field is filled.");
+          "Failed to add laundry", "Please make sure all required field is filled.");
     } else if (laundryshopimage == null ||
         ssmimage == null ||
         businesslicenseimage == null ||
