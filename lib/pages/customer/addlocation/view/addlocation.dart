@@ -1,4 +1,6 @@
+import 'package:final_year_project/models/gmapLocation.dart';
 import 'package:final_year_project/pages/customer/addlocation/controller/addlocation_controller.dart';
+import 'package:final_year_project/pages/customer/map/view/map.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -34,8 +36,22 @@ class AddLocationPage extends StatelessWidget {
               GetBuilder<AddLocationController>(builder: (controller) {
                 return GestureDetector(
                   onTap: () async {
-                    // controller.gmaplocation = await Get.toNamed("/map");
-                    Get.toNamed("/map");
+                    GMapLocation? gmaplocation =
+                        await Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => MapPage(),
+                      ),
+                    );
+                    controller.address1controller.text =
+                        (gmaplocation?.locationNumber ?? "") +
+                            (", ") +
+                            (gmaplocation?.subLocality ?? "");
+                    controller.zipcontroller.text =
+                        (gmaplocation?.postalCode ?? "");
+                    controller.citycontroller.text =
+                        (gmaplocation?.locality ?? "");
+                    controller.statecontroller.text =
+                        (gmaplocation?.administrativeArea ?? "");
                   },
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),

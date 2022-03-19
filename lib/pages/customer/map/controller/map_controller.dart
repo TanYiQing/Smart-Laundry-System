@@ -10,22 +10,21 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 class MapController extends GetxController {
   double dis = 0;
   String address = "No location selected";
-  CameraPosition shopPosition = CameraPosition(
-    target: LatLng(5.363793, 100.459687),
-    zoom: 17
-  );
+  CameraPosition shopPosition = CameraPosition(target: LatLng(0, 0), zoom: 17);
   Set<Marker> markers = Set();
   Completer<GoogleMapController> completercontroller = Completer();
-
-  late GMapLocation gmaplocation;
+  LatLng? currentLatLng;
+  GMapLocation? gmaplocation;
 
   @override
   void onInit() {
     showUserMarker();
+    update();
     super.onInit();
   }
 
   void loadAdd(LatLng newLatLng) async {
+    currentLatLng = newLatLng;
     MarkerId markerId1 = MarkerId("12");
 
     List<Placemark> newPlace =
@@ -64,6 +63,7 @@ class MapController extends GetxController {
     dis = calculateDistance(newLatLng.latitude, newLatLng.longitude);
     gmaplocation = GMapLocation(name, subLocality, locality, administrativeArea,
         postalCode, country, newLatLng);
+    print(name);
     update();
   }
 
@@ -72,7 +72,10 @@ class MapController extends GetxController {
         desiredAccuracy: LocationAccuracy.high);
     LatLng latLatPosition = LatLng(position.latitude, position.longitude);
     MarkerId markerId1 = MarkerId("13");
-
+    shopPosition = CameraPosition(
+      target: LatLng(position.latitude, position.longitude),
+      zoom: 17,
+    );
     List<Placemark> newPlace =
         await placemarkFromCoordinates(position.latitude, position.longitude);
 
@@ -107,11 +110,31 @@ class MapController extends GetxController {
       icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
     ));
 
+    update();
+  }
+
+  void clickSave() async {
+    Position position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high);
+    LatLng latLatPosition = LatLng(position.latitude, position.longitude);
+    MarkerId markerId1 = MarkerId("13");
     shopPosition = CameraPosition(
       target: LatLng(position.latitude, position.longitude),
       zoom: 17,
     );
-print("HElllo");
+    List<Placemark> newPlace =
+        await placemarkFromCoordinates(position.latitude, position.longitude);
+
+    // this is all you need
+    Placemark placeMark = newPlace[0];
+    String name = placeMark.name.toString();
+    String subLocality = placeMark.thoroughfare.toString();
+    String locality = placeMark.locality.toString();
+    String administrativeArea = placeMark.administrativeArea.toString();
+    String postalCode = placeMark.postalCode.toString();
+    String country = placeMark.country.toString();
+    gmaplocation = GMapLocation(name, subLocality, locality, administrativeArea,
+        postalCode, country, currentLatLng);
     update();
   }
 

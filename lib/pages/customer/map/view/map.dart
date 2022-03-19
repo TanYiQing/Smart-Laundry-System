@@ -1,9 +1,12 @@
+import 'dart:async';
+
 import 'package:final_year_project/pages/customer/map/controller/map_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class MapPage extends StatelessWidget {
+  final Completer<GoogleMapController> completercontroller = Completer();
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
@@ -29,8 +32,8 @@ class MapPage extends StatelessWidget {
                       mapType: MapType.normal,
                       initialCameraPosition: _.shopPosition,
                       markers: _.markers.toSet(),
-                      onMapCreated: (controller) {
-                        _.completercontroller.complete(controller);
+                      onMapCreated: (GoogleMapController controller) {
+                        completercontroller.complete(controller);
                       },
                       onTap: (newLatLng) {
                         _.loadAdd(newLatLng);
@@ -77,14 +80,9 @@ class MapPage extends StatelessWidget {
                                               primary: Colors.orange[800],
                                             ),
                                             onPressed: () {
-                                              Get.toNamed("/addnewlocation",
-                                                  arguments:
-                                                      controller.gmaplocation);
-                                              // Get.back(result: {
-                                              //   "address": controller.address
-                                              // });
-                                              // Navigator.pop(
-                                              //     context, _delivery);
+                                              controller.clickSave();
+                                              Navigator.pop(context,
+                                                  controller.gmaplocation);
                                             },
                                             child: Text("Save"));
                                       })))

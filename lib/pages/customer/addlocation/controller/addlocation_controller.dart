@@ -14,6 +14,7 @@ class AddLocationController extends GetxController {
   TextEditingController citycontroller = new TextEditingController();
   TextEditingController statecontroller = new TextEditingController();
   var addressType = "".obs;
+  GMapLocation? gmaplocation;
 
   void handleRadioButton(var type) {
     addressType.value = type;
@@ -69,19 +70,4 @@ class AddLocationController extends GetxController {
         desiredAccuracy: LocationAccuracy.best);
   }
 
-  Future<void> getMapLocation() async {
-    GMapLocation gmapLocation = await Get.toNamed("/mappage");
-
-    String locationNumber = gmapLocation.locationNumber.toString();
-    String subLocality = gmapLocation.subLocality.toString();
-    String locality = gmapLocation.locality.toString();
-    String administrativeArea = gmapLocation.administrativeArea.toString();
-    String postalCode = gmapLocation.postalCode.toString();
-    String country = gmapLocation.country.toString();
-
-    address1controller.text = locationNumber + ", " + subLocality;
-    zipcontroller.text = postalCode;
-    citycontroller.text = locality;
-    statecontroller.text = administrativeArea;
-  }
 }

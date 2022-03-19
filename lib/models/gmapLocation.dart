@@ -8,6 +8,8 @@ class GMapLocation {
       postalCode,
       country;
   LatLng? latlng;
+
   GMapLocation(this.locationNumber, this.subLocality, this.locality,
       this.administrativeArea, this.postalCode, this.country, this.latlng);
+
 }
