@@ -472,7 +472,7 @@ class AddLocationPage extends StatelessWidget {
                         GetBuilder<AddLocationController>(builder: (controller) {
                       return MaterialButton(
                         onPressed: () {
-                          controller.saveAddress();
+                          controller.addAddress();
                         },
                         child: Container(
                           child: Text(

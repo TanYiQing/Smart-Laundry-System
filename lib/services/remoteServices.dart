@@ -260,4 +260,40 @@ class RemoteServices {
       return null;
     }
   }
+
+  static Future<String?> addAddress(
+      String name,
+      String contact,
+      String address1,
+      String address2,
+      String zip,
+      String city,
+      String state,
+      String addressType,
+      email) async {
+    var response = await client.post(
+        Uri.parse('https://hubbuddies.com/270607/onesource/php/addAddress.php'),
+        body: {
+          "name": name,
+          "contact": contact,
+          "address1": address1,
+          "address2": address2,
+          "zip": zip,
+          "city": city,
+          "state": state,
+          "addressType": addressType,
+          "email": email
+        });
+    print(response.body);
+    if (response.statusCode == 200) {
+      if (response.body == "Failed") {
+        return null;
+      } else {
+        Get.snackbar("Hooray!", "Address has been saved.");
+        Get.offAndToNamed("/location");
+      }
+    } else {
+      return null;
+    }
+  }
 }

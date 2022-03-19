@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:final_year_project/models/gmapLocation.dart';
+import 'package:final_year_project/services/remoteServices.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
@@ -14,6 +15,7 @@ class AddLocationController extends GetxController {
   TextEditingController citycontroller = new TextEditingController();
   TextEditingController statecontroller = new TextEditingController();
   var addressType = "".obs;
+  var user = Get.arguments;
   GMapLocation? gmaplocation;
 
   void handleRadioButton(var type) {
@@ -70,4 +72,27 @@ class AddLocationController extends GetxController {
         desiredAccuracy: LocationAccuracy.best);
   }
 
+  void addAddress() {
+    if (namecontroller.text == "" ||
+        contactcontroller.text == "" ||
+        address1controller.text == "" ||
+        zipcontroller.text == "" ||
+        citycontroller.text == "" ||
+        statecontroller.text == "" ||
+        addressType.value == "") {
+      Get.snackbar("Failed to save address",
+          "Please make sure all required field is filled.");
+    } else {
+      RemoteServices.addAddress(
+          namecontroller.text,
+          contactcontroller.text,
+          address1controller.text,
+          address2controller.text,
+          zipcontroller.text,
+          citycontroller.text,
+          statecontroller.text,
+          addressType.value.toString(),
+          user.email);
+    }
+  }
 }
