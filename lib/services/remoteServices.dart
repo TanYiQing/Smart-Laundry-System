@@ -1,5 +1,6 @@
 // ignore_for_file: non_constant_identifier_names
 
+import 'package:final_year_project/models/address.dart';
 import 'package:final_year_project/models/availability.dart';
 import 'package:final_year_project/models/laundry.dart';
 import 'package:final_year_project/models/machine.dart';
@@ -293,6 +294,25 @@ class RemoteServices {
         Get.offAndToNamed("/location");
       }
     } else {
+      return null;
+    }
+  }
+
+  static Future<List<Address>?> loadAddress(String email) async {
+    var response = await client.post(
+        Uri.parse(
+            'https://hubbuddies.com/270607/onesource/php/loadAddress.php'),
+        body: {"email": email});
+    // print(response.body);
+    if (response.statusCode == 200) {
+      if (response.body == "nodata") {
+        return null;
+      } else {
+        var jsondata = response.body;
+        return addressFromJson(jsondata);
+      }
+    } else {
+      Get.snackbar("Opps", "Error in loading service...");
       return null;
     }
   }

@@ -25,6 +25,7 @@ class SettingController extends GetxController {
       language.value = 'English';
       print("English Here");
     }
+    
   }
 
   void clickLanguage(Locale locale) {
