@@ -173,7 +173,7 @@ class HomePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "Services",
+                        "Services".tr,
                         style: TextStyle(
                             fontSize: screenWidth / 20,
                             fontWeight: FontWeight.bold),
@@ -187,7 +187,7 @@ class HomePage extends StatelessWidget {
                           },
                           child: Container(
                             child: Text(
-                              "View All",
+                              "View All".tr,
                               style: TextStyle(fontSize: screenWidth / 35),
                             ),
                           ),
@@ -241,7 +241,7 @@ class HomePage extends StatelessWidget {
                                           padding:
                                               const EdgeInsets.only(top: 8.0),
                                           child: Text(
-                                            "Normal Wash",
+                                            "Normal Wash".tr,
                                             textAlign: TextAlign.center,
                                           ),
                                         ),
@@ -280,7 +280,7 @@ class HomePage extends StatelessWidget {
                                           padding:
                                               const EdgeInsets.only(top: 8.0),
                                           child: Text(
-                                            "Normal Wash,Ironing",
+                                            "Normal Wash,Ironing".tr,
                                             textAlign: TextAlign.center,
                                           ),
                                         ),
@@ -318,7 +318,7 @@ class HomePage extends StatelessWidget {
                                           padding:
                                               const EdgeInsets.only(top: 8.0),
                                           child: Text(
-                                            "Dry Wash",
+                                            "Dry Wash".tr,
                                             textAlign: TextAlign.center,
                                           ),
                                         ),
@@ -363,7 +363,7 @@ class HomePage extends StatelessWidget {
                                           padding:
                                               const EdgeInsets.only(top: 8.0),
                                           child: Text(
-                                            "Dry Wash,Ironing",
+                                            "Dry Wash,Ironing".tr,
                                             textAlign: TextAlign.center,
                                           ),
                                         ),
@@ -401,7 +401,7 @@ class HomePage extends StatelessWidget {
                                           padding:
                                               const EdgeInsets.only(top: 8.0),
                                           child: Text(
-                                            "Ironing",
+                                            "Ironing".tr,
                                             textAlign: TextAlign.center,
                                           ),
                                         ),
@@ -434,7 +434,7 @@ class HomePage extends StatelessWidget {
                                         padding:
                                             const EdgeInsets.only(top: 8.0),
                                         child: Text(
-                                          "Coming Soon",
+                                          "Coming Soon".tr,
                                           textAlign: TextAlign.center,
                                         ),
                                       ),
@@ -456,7 +456,7 @@ class HomePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "Active Order(s)",
+                        "Active Order(s)".tr,
                         style: TextStyle(
                             fontSize: screenWidth / 20,
                             fontWeight: FontWeight.bold),
@@ -468,7 +468,7 @@ class HomePage extends StatelessWidget {
                           onPressed: () {},
                           child: Container(
                             child: Text(
-                              "View All",
+                              "View All".tr,
                               style: TextStyle(fontSize: screenWidth / 35),
                             ),
                           ),
@@ -503,7 +503,7 @@ class HomePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "Laundry Near You",
+                        "Laundry Near You".tr,
                         style: TextStyle(
                             fontSize: screenWidth / 20,
                             fontWeight: FontWeight.bold),
@@ -515,7 +515,7 @@ class HomePage extends StatelessWidget {
                           onPressed: () {},
                           child: Container(
                             child: Text(
-                              "View All",
+                              "View All".tr,
                               style: TextStyle(fontSize: screenWidth / 35),
                             ),
                           ),

@@ -21,7 +21,6 @@ class OneSource extends StatelessWidget {
       initialRoute: "/splash",
       getPages: AppPages.routes,
       unknownRoute: AppPages.notfound,
-      // locale: Locale(language),
       locale: language == '' ? TranslationService.locale : Locale(language),
       fallbackLocale: TranslationService.fallbackLocale,
       translations: TranslationService(),

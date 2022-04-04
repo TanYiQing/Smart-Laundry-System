@@ -78,7 +78,7 @@ class SettingPage extends StatelessWidget {
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Text("Help Centre"),
+                          child: Text("Help Centre".tr),
                         ),
                       ],
                     ),
@@ -107,7 +107,7 @@ class SettingPage extends StatelessWidget {
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Text("About Us"),
+                          child: Text("About Us".tr),
                         ),
                       ],
                     ),
@@ -136,7 +136,7 @@ class SettingPage extends StatelessWidget {
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Text("Terms and Conditions"),
+                          child: Text("Terms and Conditions".tr),
                         ),
                       ],
                     ),
