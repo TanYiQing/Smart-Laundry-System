@@ -1,4 +1,5 @@
 import 'package:final_year_project/pages/customer/location/controller/location_controller.dart';
+import 'package:final_year_project/pages/customer/location/tile/address_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -32,20 +33,42 @@ class LocationPage extends StatelessWidget {
               );
             })
           ]),
-      body: Center(
-        child: Column(
-          children: [
-            Container(
-              child: Image.asset("assets/images/noaddress.png"),
-            ),
-            Text("NO ADDRESS FOUND",
-                style: TextStyle(
-                    fontSize: screenWidth / 18, fontWeight: FontWeight.bold)),
-            Text("Please add your address now",
-                style: TextStyle(fontSize: screenWidth / 25))
-          ],
-        ),
-      ),
+      body: GetBuilder<LocationController>(builder: (controller) {
+        return (controller.addressList.length == 0)
+            ? Center(
+                child: Column(
+                  children: [
+                    Container(
+                      child: Image.asset("assets/images/noaddress.png"),
+                    ),
+                    Text("NO ADDRESS FOUND",
+                        style: TextStyle(
+                            fontSize: screenWidth / 18,
+                            fontWeight: FontWeight.bold)),
+                    Text("Please add your address now",
+                        style: TextStyle(fontSize: screenWidth / 25))
+                  ],
+                ),
+              )
+            : Column(
+              children: [
+                Container(
+                    child: Flexible(
+                        child: Center(
+                            child: GridView.count(
+                    crossAxisCount: 1,
+                    childAspectRatio: ((screenWidth / screenHeight) / 0.23),
+                    children: List.generate(controller.addressList.length, (index) {
+                      return GestureDetector(
+                          onTap: () {
+                            // controller.viewLaundryDetails(index);
+                          },
+                          child: AddressTile(controller.addressList[index]));
+                    }),
+                  )))),
+              ],
+            );
+      }),
     );
   }
 }
