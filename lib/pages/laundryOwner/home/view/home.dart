@@ -147,7 +147,7 @@ class HomePageLaundry extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
-                          "My Orders",
+                          "My Orders".tr,
                           style: TextStyle(
                               fontSize: screenWidth / 20,
                               fontWeight: FontWeight.bold),
@@ -181,7 +181,7 @@ class HomePageLaundry extends StatelessWidget {
                                           height: screenHeight / 20,
                                           width: screenWidth / 20,
                                         ),
-                                        Text("New Orders")
+                                        Text("New Orders".tr)
                                       ],
                                     ),
                                   ),
@@ -198,7 +198,7 @@ class HomePageLaundry extends StatelessWidget {
                                           height: screenHeight / 20,
                                           width: screenWidth / 20,
                                         ),
-                                        Text("On Going Orders")
+                                        Text("On Going Orders".tr)
                                       ],
                                     ),
                                   ),
@@ -215,7 +215,7 @@ class HomePageLaundry extends StatelessWidget {
                                           height: screenHeight / 20,
                                           width: screenWidth / 20,
                                         ),
-                                        Text("Completed Orders")
+                                        Text("Completed Orders".tr)
                                       ],
                                     ),
                                   ),
@@ -228,7 +228,7 @@ class HomePageLaundry extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
-                          "Basic Functions",
+                          "Basic Functions".tr,
                           style: TextStyle(
                               fontSize: screenWidth / 20,
                               fontWeight: FontWeight.bold),
@@ -288,7 +288,7 @@ class HomePageLaundry extends StatelessWidget {
                                                           ),
                                                         ),
                                                         Text(
-                                                          "My Laundry",
+                                                          "My Laundry".tr,
                                                           style: TextStyle(
                                                               fontSize:
                                                                   screenWidth /
@@ -320,7 +320,7 @@ class HomePageLaundry extends StatelessWidget {
                                                                       15),
                                                         );
                                                       }),
-                                                      Text(" Approved",
+                                                      Text(" Approved".tr,
                                                           style: TextStyle(
                                                               color:
                                                                   Colors.green,
@@ -380,7 +380,7 @@ class HomePageLaundry extends StatelessWidget {
                                                                     .user);
                                                       },
                                                       child: Text(
-                                                        "View More",
+                                                        "View More".tr,
                                                         style: TextStyle(
                                                             fontSize:
                                                                 screenWidth /
@@ -456,7 +456,7 @@ class HomePageLaundry extends StatelessWidget {
                                                             ),
                                                           ),
                                                           Text(
-                                                            "My Wallet",
+                                                            "My Wallet".tr,
                                                             style: TextStyle(
                                                                 fontSize:
                                                                     screenWidth /
@@ -513,7 +513,7 @@ class HomePageLaundry extends StatelessWidget {
                                                               "/mywalletlaundry");
                                                         },
                                                         child: Text(
-                                                          "View More",
+                                                          "View More".tr,
                                                           style: TextStyle(
                                                               fontSize:
                                                                   screenWidth /
@@ -592,7 +592,7 @@ class HomePageLaundry extends StatelessWidget {
                                                           ),
                                                         ),
                                                         Text(
-                                                          "My Business",
+                                                          "My Business".tr,
                                                           style: TextStyle(
                                                               fontSize:
                                                                   screenWidth /
@@ -622,7 +622,7 @@ class HomePageLaundry extends StatelessWidget {
                                                             "/mybusinesslaundry");
                                                       },
                                                       child: Text(
-                                                        "View More",
+                                                        "View More".tr,
                                                         style: TextStyle(
                                                             fontSize:
                                                                 screenWidth /
@@ -696,7 +696,7 @@ class HomePageLaundry extends StatelessWidget {
                                                         ),
                                                         Expanded(
                                                           child: Text(
-                                                            "Business Report",
+                                                            "Business Report".tr,
                                                             style: TextStyle(
                                                                 fontSize:
                                                                     screenWidth /
@@ -727,7 +727,7 @@ class HomePageLaundry extends StatelessWidget {
                                                             "/businessreportlaundry");
                                                       },
                                                       child: Text(
-                                                        "View More",
+                                                        "View More".tr,
                                                         style: TextStyle(
                                                             fontSize:
                                                                 screenWidth /

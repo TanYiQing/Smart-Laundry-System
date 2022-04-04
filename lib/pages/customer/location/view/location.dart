@@ -12,7 +12,7 @@ class LocationPage extends StatelessWidget {
       appBar: AppBar(
           backgroundColor: Colors.transparent,
           title: Text(
-            "Location",
+            "Location".tr,
             style: TextStyle(color: Colors.black),
           ),
           elevation: 0,

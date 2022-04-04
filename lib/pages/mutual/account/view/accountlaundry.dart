@@ -74,7 +74,7 @@ class AccountPageLaundry extends StatelessWidget {
                                             MainAxisAlignment.spaceAround,
                                         children: [
                                           Text(
-                                            "Edit",
+                                            "Edit".tr,
                                             style: TextStyle(
                                                 fontSize: screenWidth / 35),
                                           ),
@@ -183,7 +183,7 @@ class AccountPageLaundry extends StatelessWidget {
                           title: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text("First Name"),
+                              Text("First Name".tr),
                               Row(
                                 children: [
                                   GetBuilder<AccountController>(
@@ -209,7 +209,7 @@ class AccountPageLaundry extends StatelessWidget {
                           title: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text("Last Name"),
+                              Text("Last Name".tr),
                               Row(
                                 children: [
                                   GetBuilder<AccountController>(
@@ -235,7 +235,7 @@ class AccountPageLaundry extends StatelessWidget {
                           title: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text("Change Password"),
+                              Text("Change Password".tr),
                               Row(
                                 children: [
                                   Icon(
@@ -259,7 +259,7 @@ class AccountPageLaundry extends StatelessWidget {
                           title: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text("Gender"),
+                              Text("Gender".tr),
                               Row(
                                 children: [
                                   GetBuilder<AccountController>(
@@ -285,7 +285,7 @@ class AccountPageLaundry extends StatelessWidget {
                           title: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text("Birthday"),
+                              Text("Birthday".tr),
                               Row(
                                 children: [
                                   GetBuilder<AccountController>(
@@ -310,7 +310,7 @@ class AccountPageLaundry extends StatelessWidget {
                         title: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("Phone"),
+                            Text("Phone".tr),
                             Row(
                               children: [
                                 GetBuilder<AccountController>(
@@ -330,7 +330,7 @@ class AccountPageLaundry extends StatelessWidget {
                         title: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("Email"),
+                            Text("Email".tr),
                             Row(
                               children: [
                                 GetBuilder<AccountController>(

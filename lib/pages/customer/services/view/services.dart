@@ -46,7 +46,7 @@ class ServicesPage extends StatelessWidget {
                               ),
                               child: Center(
                                   child: Text(
-                                "Normal Wash",
+                                "Normal Wash".tr,
                                 style: TextStyle(
                                     fontSize: screenWidth / 15,
                                     fontWeight: FontWeight.bold),
@@ -81,7 +81,7 @@ class ServicesPage extends StatelessWidget {
                               ),
                               child: Center(
                                   child: Text(
-                                "Normal Wash & Ironing",
+                                "Normal Wash,Ironing".tr,
                                 style: TextStyle(
                                     fontSize: screenWidth / 15,
                                     fontWeight: FontWeight.bold),
@@ -115,7 +115,7 @@ class ServicesPage extends StatelessWidget {
                               ),
                               child: Center(
                                   child: Text(
-                                "Dry Wash",
+                                "Dry Wash".tr,
                                 style: TextStyle(
                                     fontSize: screenWidth / 15,
                                     fontWeight: FontWeight.bold),
@@ -150,7 +150,7 @@ class ServicesPage extends StatelessWidget {
                               ),
                               child: Center(
                                   child: Text(
-                                "Dry Wash & Ironing",
+                                "Dry Wash,Ironing".tr,
                                 style: TextStyle(
                                     fontSize: screenWidth / 15,
                                     fontWeight: FontWeight.bold),
@@ -184,7 +184,7 @@ class ServicesPage extends StatelessWidget {
                               ),
                               child: Center(
                                   child: Text(
-                                "Ironing",
+                                "Ironing".tr,
                                 style: TextStyle(
                                     fontSize: screenWidth / 15,
                                     fontWeight: FontWeight.bold),

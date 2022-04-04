@@ -34,24 +34,24 @@ class BottomBar extends StatelessWidget {
             items: [
               BottomNavigationBarItem(
                   icon: Icon(Icons.home_outlined),
-                  label: "Home",
-                  activeIcon: Text("Home")),
+                  label: "Home".tr,
+                  activeIcon: Text("Home".tr)),
               BottomNavigationBarItem(
                   icon: Icon(Icons.favorite_border_outlined),
-                  label: 'Favorite',
-                  activeIcon: Text("Favorite")),
+                  label: 'Favorite'.tr,
+                  activeIcon: Text("Favorite".tr)),
               BottomNavigationBarItem(
                   icon: Icon(Icons.list_alt_rounded),
-                  label: 'On Going Order',
-                  activeIcon: Text("On Going Order")),
+                  label: 'Active Order'.tr,
+                  activeIcon: Text("Active Order".tr)),
               BottomNavigationBarItem(
                   icon: Icon(Icons.history_toggle_off_rounded),
-                  label: 'Purchase History',
-                  activeIcon: Text("Purchase History")),
+                  label: 'Purchase History'.tr,
+                  activeIcon: Text("Purchase History".tr)),
               BottomNavigationBarItem(
                   icon: Icon(Icons.person_outline_rounded),
-                  label: 'Account',
-                  activeIcon: Text("Account")),
+                  label: 'Account'.tr,
+                  activeIcon: Text("Account".tr)),
             ]),
       );
     });

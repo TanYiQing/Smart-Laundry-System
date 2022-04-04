@@ -12,7 +12,7 @@ class SettingPage extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           title: Text(
-            "Settings",
+            "Settings".tr,
             style: TextStyle(color: Colors.black),
           ),
           elevation: 0,

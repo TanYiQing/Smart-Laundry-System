@@ -74,7 +74,7 @@ class AccountPageCustomer extends StatelessWidget {
                                             MainAxisAlignment.spaceAround,
                                         children: [
                                           Text(
-                                            "Edit",
+                                            "Edit".tr,
                                             style: TextStyle(
                                                 fontSize: screenWidth / 35),
                                           ),
@@ -127,25 +127,28 @@ class AccountPageCustomer extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: GestureDetector(
-                            onTap: () {
-                              Get.toNamed("/location");
-                            },
-                            child: Container(
-                              height: screenHeight / 12,
-                              width: screenWidth / 12,
-                              decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Color.fromRGBO(0, 194, 203, 1)),
-                              child: Icon(
-                                Icons.location_on,
-                                size: screenWidth / 20,
+                        GetBuilder<BottomBarController>(builder: (controller) {
+                          return Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: GestureDetector(
+                              onTap: () {
+                                Get.toNamed("/location",
+                                    arguments: controller.user);
+                              },
+                              child: Container(
+                                height: screenHeight / 12,
+                                width: screenWidth / 12,
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Color.fromRGBO(0, 194, 203, 1)),
+                                child: Icon(
+                                  Icons.location_on,
+                                  size: screenWidth / 20,
+                                ),
                               ),
                             ),
-                          ),
-                        ),
+                          );
+                        }),
                         Padding(
                           padding: const EdgeInsets.all(4.0),
                           child: GestureDetector(
@@ -179,7 +182,7 @@ class AccountPageCustomer extends StatelessWidget {
                         title: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("First Name"),
+                            Text("First Name".tr),
                             Row(
                               children: [
                                 GetBuilder<BottomBarController>(
@@ -199,7 +202,7 @@ class AccountPageCustomer extends StatelessWidget {
                         title: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("Last Name"),
+                            Text("Last Name".tr),
                             Row(
                               children: [
                                 GetBuilder<BottomBarController>(
@@ -219,7 +222,7 @@ class AccountPageCustomer extends StatelessWidget {
                         title: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("Bio"),
+                            Text("Bio".tr),
                             Row(
                               children: [
                                 Icon(
@@ -235,7 +238,7 @@ class AccountPageCustomer extends StatelessWidget {
                         title: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("Change Password"),
+                            Text("Change Password".tr),
                             Row(
                               children: [
                                 Icon(
@@ -254,7 +257,7 @@ class AccountPageCustomer extends StatelessWidget {
                         title: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("Gender"),
+                            Text("Gender".tr),
                             Row(
                               children: [
                                 GetBuilder<BottomBarController>(
@@ -274,7 +277,7 @@ class AccountPageCustomer extends StatelessWidget {
                         title: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("Birthday"),
+                            Text("Birthday".tr),
                             Row(
                               children: [
                                 GetBuilder<BottomBarController>(
@@ -297,7 +300,7 @@ class AccountPageCustomer extends StatelessWidget {
                         title: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("Phone"),
+                            Text("Phone".tr),
                             Row(
                               children: [
                                 GetBuilder<BottomBarController>(
@@ -317,7 +320,7 @@ class AccountPageCustomer extends StatelessWidget {
                         title: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("Email"),
+                            Text("Email".tr),
                             Row(
                               children: [
                                 GetBuilder<BottomBarController>(
