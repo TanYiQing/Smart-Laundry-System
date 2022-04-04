@@ -3,6 +3,7 @@ import 'package:final_year_project/pages/customer/servicesmachinedetails/control
 import 'package:flutter/material.dart';
 import 'package:flutter_time_picker_spinner/flutter_time_picker_spinner.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 
 class ServicesMachineDetailsPage extends StatelessWidget {
   @override
@@ -246,11 +247,11 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                                 Container(
                                     height: screenWidth / 5,
                                     width: screenWidth / 5,
-                                    child: Image.asset(
-                                        "assets/icons/empty-box.png")),
+                                    child: Lottie.asset(
+                                        "assets/lottie/addon-not-available.json",)),
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: Text("No add-on available 😅"),
+                                  child: Text("No add-on available"),
                                 )
                               ],
                             ));
