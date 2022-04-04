@@ -2,6 +2,7 @@ import 'package:final_year_project/pages/customer/location/controller/location_c
 import 'package:final_year_project/pages/customer/location/tile/address_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 
 class LocationPage extends StatelessWidget {
   @override
@@ -37,9 +38,11 @@ class LocationPage extends StatelessWidget {
         return (controller.addressList.length == 0)
             ? Center(
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      child: Image.asset("assets/images/noaddress.png"),
+                    Container(height: screenHeight/3,
+                      child:
+                          Lottie.asset("assets/lottie/address-not-found.json"),
                     ),
                     Text("NO ADDRESS FOUND",
                         style: TextStyle(
@@ -51,14 +54,15 @@ class LocationPage extends StatelessWidget {
                 ),
               )
             : Column(
-              children: [
-                Container(
-                    child: Flexible(
-                        child: Center(
-                            child: GridView.count(
+                children: [
+                  Container(
+                      child: Flexible(
+                          child: Center(
+                              child: GridView.count(
                     crossAxisCount: 1,
                     childAspectRatio: ((screenWidth / screenHeight) / 0.23),
-                    children: List.generate(controller.addressList.length, (index) {
+                    children:
+                        List.generate(controller.addressList.length, (index) {
                       return GestureDetector(
                           onTap: () {
                             // controller.viewLaundryDetails(index);
@@ -66,8 +70,8 @@ class LocationPage extends StatelessWidget {
                           child: AddressTile(controller.addressList[index]));
                     }),
                   )))),
-              ],
-            );
+                ],
+              );
       }),
     );
   }
