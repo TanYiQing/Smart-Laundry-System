@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 
 class IntroPage extends StatelessWidget {
   @override
@@ -29,116 +30,109 @@ class IntroPage extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    child: Column(children: [
-                      CarouselSlider(
-                          options: CarouselOptions(
+                    height: screenWidth / 1.5,
+                    child: CarouselSlider(
+                        options: CarouselOptions(
                             autoPlay: true,
                             aspectRatio: 2.0,
                             enlargeCenterPage: true,
+                            height: screenWidth / 1.5),
+                        items: [
+                          Container(
+                            height: screenWidth / 1.5,
+                            child: Column(
+                              children: [
+                                Container(
+                                    height: screenHeight / 5,
+                                    width: screenWidth / 5,
+                                    child: Lottie.asset(
+                                        'assets/lottie/online-shopping.json')),
+                                Text("WIDE SELECTION OF LAUNDRY",
+                                    style: GoogleFonts.getFont('Lato',
+                                        textStyle: TextStyle(
+                                            fontSize: screenWidth / 25,
+                                            fontWeight: FontWeight.bold))),
+                                Text(
+                                    "We provide a wide selection of laundry, choose the laundry that you like!",
+                                    textAlign: TextAlign.center,
+                                    style: GoogleFonts.getFont('Lato',
+                                        textStyle: TextStyle(
+                                          fontSize: screenWidth / 30,
+                                        ))),
+                              ],
+                            ),
                           ),
-                          items: [
-                            Container(
-                              height: screenHeight / 1.8,
-                              width: screenWidth / 1.2,
-                              child: Column(
-                                children: [
-                                  Container(
-                                      height: screenHeight / 7,
-                                      width: screenWidth / 7,
-                                      child: Image.asset(
-                                          'assets/images/wideselection.png')),
-                                  Text("Wide Selection of Laundry",
-                                      style: GoogleFonts.getFont('Lato',
-                                          textStyle: TextStyle(
-                                              fontSize: screenWidth / 25,
-                                              fontWeight: FontWeight.bold))),
-                                  Text(
-                                      "We provide a wide selection of laundry, choose the laundry that you like!",
-                                      textAlign: TextAlign.center,
-                                      style: GoogleFonts.getFont('Lato',
-                                          textStyle: TextStyle(
-                                            fontSize: screenWidth / 30,
-                                          ))),
-                                ],
-                              ),
+                          Container(
+                            height: screenWidth / 1.5,
+                            child: Column(
+                              children: [
+                                Container(
+                                    height: screenHeight / 5,
+                                    width: screenWidth / 5,
+                                    child: Lottie.asset(
+                                        'assets/lottie/rocket.json')),
+                                Text("FAST",
+                                    style: GoogleFonts.getFont('Lato',
+                                        textStyle: TextStyle(
+                                            fontSize: screenWidth / 25,
+                                            fontWeight: FontWeight.bold))),
+                                Text("Fast and efficient laundry service ever!",
+                                    textAlign: TextAlign.center,
+                                    style: GoogleFonts.getFont('Lato',
+                                        textStyle: TextStyle(
+                                          fontSize: screenWidth / 30,
+                                        ))),
+                              ],
                             ),
-                            Container(
-                              height: screenHeight / 1.8,
-                              width: screenWidth / 1.2,
-                              child: Column(
-                                children: [
-                                  Container(
-                                      height: screenHeight / 8,
-                                      width: screenWidth / 8,
-                                      child: Image.asset(
-                                          'assets/images/fast.png')),
-                                  Text("Fast",
-                                      style: GoogleFonts.getFont('Lato',
-                                          textStyle: TextStyle(
-                                              fontSize: screenWidth / 25,
-                                              fontWeight: FontWeight.bold))),
-                                  Text(
-                                      "Fast and efficient laundry service ever!",
-                                      textAlign: TextAlign.center,
-                                      style: GoogleFonts.getFont('Lato',
-                                          textStyle: TextStyle(
-                                            fontSize: screenWidth / 30,
-                                          ))),
-                                ],
-                              ),
+                          ),
+                          Container(
+                            height: screenWidth / 1.5,
+                            child: Column(
+                              children: [
+                                Container(
+                                    height: screenHeight / 5,
+                                    width: screenWidth / 5,
+                                    child: Lottie.asset(
+                                        'assets/lottie/loundary-app-interaction.json')),
+                                Text("CLEAN AND FRESH",
+                                    style: GoogleFonts.getFont('Lato',
+                                        textStyle: TextStyle(
+                                            fontSize: screenWidth / 25,
+                                            fontWeight: FontWeight.bold))),
+                                Text(
+                                    "Get your clothes back with clean and fresh in seconds!",
+                                    textAlign: TextAlign.center,
+                                    style: GoogleFonts.getFont('Lato',
+                                        textStyle: TextStyle(
+                                          fontSize: screenWidth / 30,
+                                        ))),
+                              ],
                             ),
-                            Container(
-                              height: screenHeight / 1.8,
-                              width: screenWidth / 1.2,
-                              child: Column(
-                                children: [
-                                  Container(
-                                      height: screenHeight / 7,
-                                      width: screenWidth / 7,
-                                      child: Image.asset(
-                                          'assets/images/clean.png')),
-                                  Text("Clean and Fresh",
-                                      style: GoogleFonts.getFont('Lato',
-                                          textStyle: TextStyle(
-                                              fontSize: screenWidth / 25,
-                                              fontWeight: FontWeight.bold))),
-                                  Text(
-                                      "Get your clothes back with clean and fresh in seconds!",
-                                      textAlign: TextAlign.center,
-                                      style: GoogleFonts.getFont('Lato',
-                                          textStyle: TextStyle(
-                                            fontSize: screenWidth / 30,
-                                          ))),
-                                ],
-                              ),
+                          ),
+                          Container(
+                            child: Column(
+                              children: [
+                                Container(
+                                    height: screenHeight / 5,
+                                    width: screenWidth / 5,
+                                    child: Lottie.asset(
+                                        'assets/lottie/online-payments.json')),
+                                Text("EASY PAYMENT",
+                                    style: GoogleFonts.getFont('Lato',
+                                        textStyle: TextStyle(
+                                            fontSize: screenWidth / 25,
+                                            fontWeight: FontWeight.bold))),
+                                Text(
+                                    "Easy payment with online banking instead of traditional token payment method!",
+                                    textAlign: TextAlign.center,
+                                    style: GoogleFonts.getFont('Lato',
+                                        textStyle: TextStyle(
+                                          fontSize: screenWidth / 30,
+                                        ))),
+                              ],
                             ),
-                            Container(
-                              height: screenHeight / 1.8,
-                              width: screenWidth / 1.2,
-                              child: Column(
-                                children: [
-                                  Container(
-                                      height: screenHeight / 7,
-                                      width: screenWidth / 7,
-                                      child: Image.asset(
-                                          'assets/images/easypayment.png')),
-                                  Text("Easy Payment",
-                                      style: GoogleFonts.getFont('Lato',
-                                          textStyle: TextStyle(
-                                              fontSize: screenWidth / 25,
-                                              fontWeight: FontWeight.bold))),
-                                  Text(
-                                      "Easy payment with online banking instead of traditional token payment method!",
-                                      textAlign: TextAlign.center,
-                                      style: GoogleFonts.getFont('Lato',
-                                          textStyle: TextStyle(
-                                            fontSize: screenWidth / 30,
-                                          ))),
-                                ],
-                              ),
-                            ),
-                          ])
-                    ]),
+                          ),
+                        ]),
                   ),
                   Padding(
                     padding:
