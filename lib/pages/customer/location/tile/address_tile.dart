@@ -1,5 +1,6 @@
 import 'package:final_year_project/models/address.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class AddressTile extends StatelessWidget {
   final Address address;
@@ -57,7 +58,42 @@ class AddressTile extends StatelessWidget {
                         Icons.edit_location_alt_sharp,
                         color: Colors.blue,
                       )),
-                  Icon(Icons.delete, color: Colors.red),
+                  GestureDetector(
+                      onTap: () {
+                        Get.defaultDialog(
+                          title: "Confirm Delete?",
+                          middleText: "",
+                          cancel: GestureDetector(
+                            onTap: () {
+                              Get.back();
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.black),
+                                  borderRadius: BorderRadius.circular(10)),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text("Cancel"),
+                              ),
+                            ),
+                          ),
+                          confirm: GestureDetector(
+                            onTap: () {
+                              print("Delete");
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.red,
+                                  borderRadius: BorderRadius.circular(10)),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text("Delete"),
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                      child: Icon(Icons.delete, color: Colors.red)),
                 ],
               ),
             )
