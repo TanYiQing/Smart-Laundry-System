@@ -21,4 +21,9 @@ class LocationController extends GetxController {
     }
     update();
   }
+
+  void deleteAddress(String? addressID) {
+    RemoteServices.deleteAddress(addressID!);
+    // print(addressID);
+  }
 }

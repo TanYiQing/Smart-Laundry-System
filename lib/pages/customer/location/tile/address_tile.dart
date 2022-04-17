@@ -1,6 +1,8 @@
 import 'package:final_year_project/models/address.dart';
+import 'package:final_year_project/pages/customer/location/controller/location_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 
 class AddressTile extends StatelessWidget {
   final Address address;
@@ -8,6 +10,7 @@ class AddressTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // final controller = Get.lazyPut<LocationController>(() => LocationController());
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     return Padding(
@@ -62,7 +65,9 @@ class AddressTile extends StatelessWidget {
                       onTap: () {
                         Get.defaultDialog(
                           title: "Confirm Delete?",
-                          middleText: "",
+                          content: Container(
+                              height: 50,
+                              child: Lottie.asset("assets/lottie/delete.json")),
                           cancel: GestureDetector(
                             onTap: () {
                               Get.back();
@@ -77,19 +82,25 @@ class AddressTile extends StatelessWidget {
                               ),
                             ),
                           ),
-                          confirm: GestureDetector(
-                            onTap: () {
-                              print("Delete");
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.red,
-                                  borderRadius: BorderRadius.circular(10)),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text("Delete"),
-                              ),
-                            ),
+                          confirm: GetBuilder<LocationController>(
+                            builder: (controller) {
+                              return GestureDetector(
+                                onTap: () {
+                                  print("Delete");
+                                  // print(this.address.addressID);
+                                  controller.deleteAddress(this.address.addressID);
+                                },
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      color: Colors.red,
+                                      borderRadius: BorderRadius.circular(10)),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text("Delete"),
+                                  ),
+                                ),
+                              );
+                            }
                           ),
                         );
                       },

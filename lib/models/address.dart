@@ -4,34 +4,39 @@
 
 import 'dart:convert';
 
-List<Address> addressFromJson(String str) => List<Address>.from(json.decode(str).map((x) => Address.fromJson(x)));
+List<Address> addressFromJson(String str) =>
+    List<Address>.from(json.decode(str).map((x) => Address.fromJson(x)));
 
-String addressToJson(List<Address> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String addressToJson(List<Address> data) =>
+    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class Address {
-    Address({
-        this.name,
-        this.contact,
-        this.address1,
-        this.address2,
-        this.zip,
-        this.city,
-        this.state,
-        this.addressType,
-        this.email,
-    });
+  Address({
+    this.addressID,
+    this.name,
+    this.contact,
+    this.address1,
+    this.address2,
+    this.zip,
+    this.city,
+    this.state,
+    this.addressType,
+    this.email,
+  });
 
-    String? name;
-    String? contact;
-    String? address1;
-    String? address2;
-    String? zip;
-    String? city;
-    String? state;
-    String? addressType;
-    String? email;
+  String? addressID;
+  String? name;
+  String? contact;
+  String? address1;
+  String? address2;
+  String? zip;
+  String? city;
+  String? state;
+  String? addressType;
+  String? email;
 
-    factory Address.fromJson(Map<String, dynamic> json) => Address(
+  factory Address.fromJson(Map<String, dynamic> json) => Address(
+        addressID: json["addressID"],
         name: json["name"],
         contact: json["contact"],
         address1: json["address1"],
@@ -41,9 +46,10 @@ class Address {
         state: json["state"],
         addressType: json["addressType"],
         email: json["email"],
-    );
+      );
 
-    Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toJson() => {
+        "addressID": addressID,
         "name": name,
         "contact": contact,
         "address1": address1,
@@ -53,5 +59,5 @@ class Address {
         "state": state,
         "addressType": addressType,
         "email": email,
-    };
+      };
 }

@@ -316,4 +316,24 @@ class RemoteServices {
       return null;
     }
   }
+
+  static Future<String?> deleteAddress(String addressID) async {
+    print(addressID);
+    var response = await client.post(
+        Uri.parse('https://hubbuddies.com/270607/onesource/php/deleteAddress.php'),
+        body: {
+          "addressID": addressID,
+        });
+    print(response.body);
+    if (response.statusCode == 200) {
+      if (response.body == "Failed") {
+        return null;
+      } else {
+        Get.snackbar("Address Removed", "Address has been removed.");
+        Get.offAndToNamed("/location");
+      }
+    } else {
+      return null;
+    }
+  }
 }
