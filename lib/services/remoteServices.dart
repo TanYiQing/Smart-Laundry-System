@@ -320,7 +320,8 @@ class RemoteServices {
   static Future<String?> deleteAddress(String addressID) async {
     print(addressID);
     var response = await client.post(
-        Uri.parse('https://hubbuddies.com/270607/onesource/php/deleteAddress.php'),
+        Uri.parse(
+            'https://hubbuddies.com/270607/onesource/php/deleteAddress.php'),
         body: {
           "addressID": addressID,
         });

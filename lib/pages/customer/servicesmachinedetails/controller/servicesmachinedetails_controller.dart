@@ -1,8 +1,11 @@
-import 'package:flutter/cupertino.dart';
+import 'package:final_year_project/models/address.dart';
+import 'package:final_year_project/services/remoteServices.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 class ServicesMachineDetailsController extends GetxController {
+  var user = Get.arguments;
   var machine = Get.arguments;
   TextEditingController notecontroller = new TextEditingController();
   var orderMethod = "Reservation".obs;
@@ -12,9 +15,12 @@ class ServicesMachineDetailsController extends GetxController {
   var totalPrice = 0.00.obs;
   var deliveryPrice = 0.00.obs;
   TimeOfDay time = TimeOfDay.now().replacing(hour: 11, minute: 30);
+  var addressList = <Address>[].obs;
+  static final appData = GetStorage();
 
   @override
   void onInit() {
+    loadAddress();
     totalPrice.value = double.parse(machine.price);
     print(machine.addOn1);
     super.onInit();
@@ -66,4 +72,14 @@ class ServicesMachineDetailsController extends GetxController {
   }
 
   void clickPlaceOrder() {}
+
+  Future<void> loadAddress() async {
+    var address = await RemoteServices.loadAddress(appData.read("email"));
+
+    if (address != null) {
+      addressList.assignAll(address);
+      print(addressList);
+    }
+    update();
+  }
 }

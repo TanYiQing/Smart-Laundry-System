@@ -248,7 +248,8 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                                     height: screenWidth / 5,
                                     width: screenWidth / 5,
                                     child: Lottie.asset(
-                                        "assets/lottie/addon-not-available.json",)),
+                                      "assets/lottie/addon-not-available.json",
+                                    )),
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: Text("No add-on available"),
@@ -360,6 +361,105 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                         ],
                       );
                     }),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: GetBuilder<ServicesMachineDetailsController>(
+                              builder: (controller) {
+                            return (controller.orderMethod.value !=
+                                    "Reservation")
+                                ? Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text("Choose your location"),
+                                      GestureDetector(onTap: ()async{var index=await Get.toNamed("/location");},
+                                          child: Text("Change location"))
+                                    ],
+                                  )
+                                : Container();
+                          })),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+                      child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: GetBuilder<ServicesMachineDetailsController>(
+                              builder: (controller) {
+                            return (controller.orderMethod.value !=
+                                    "Reservation")
+                                ? Container(
+                                    height: screenWidth / 2.4,
+                                    width: double.infinity,
+                                    child: Card(
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(10)),
+                                      elevation: 10,
+                                      child: Stack(
+                                        children: [
+                                          ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            child: Container(
+                                                width: double.infinity,
+                                                child: Image.asset(
+                                                    "assets/images/map.png",
+                                                    fit: BoxFit.fill)),
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  controller.addressList[0]
+                                                      .addressType
+                                                      .toString(),
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize:
+                                                          screenWidth / 20),
+                                                ),
+                                                Text(controller
+                                                    .addressList[0].name
+                                                    .toString()),
+                                                Text(controller
+                                                    .addressList[0].contact
+                                                    .toString()),
+                                                Text(""),
+                                                Text(controller
+                                                    .addressList[0].address1
+                                                    .toString()),
+                                                (controller.addressList[0]
+                                                            .address2
+                                                            .toString() ==
+                                                        "")
+                                                    ? Text(controller
+                                                        .addressList[0].address2
+                                                        .toString())
+                                                    : Container(),
+                                                Text(controller
+                                                        .addressList[0].zip
+                                                        .toString() +
+                                                    controller
+                                                        .addressList[0].city
+                                                        .toString()),
+                                                Text(controller
+                                                    .addressList[0].state
+                                                    .toString()),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ))
+                                : Container();
+                          })),
+                    ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Align(

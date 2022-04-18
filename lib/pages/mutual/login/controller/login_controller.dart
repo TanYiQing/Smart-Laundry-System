@@ -17,6 +17,8 @@ class LoginController extends GetxController {
   Future<void> clickLogin() async {
     user = await RemoteServices.loginUser(emailController.text.toString(),
         passwordController.text.toString(), selectedRole.value.toString());
+    String email = emailController.text.toString();
+    appData.write("email", email);
   }
 
   void handleRadioButton(var role) {
