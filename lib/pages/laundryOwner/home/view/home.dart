@@ -481,7 +481,7 @@ class HomePageLaundry extends StatelessWidget {
                                                             return Text(
                                                               controller
                                                                   .checkWalletAmount(
-                                                                      "RM15010.20"),
+                                                                      controller.walletAmount.value),
                                                               style: TextStyle(
                                                                 fontSize:
                                                                     screenWidth /
@@ -496,15 +496,30 @@ class HomePageLaundry extends StatelessWidget {
                                                 ),
                                                 Positioned(
                                                     right: 10,
-                                                    child: Padding(
-                                                      padding:
-                                                          const EdgeInsets.all(
-                                                              8.0),
-                                                      child: Icon(
-                                                        Icons.remove_red_eye,
-                                                        size: 15,
-                                                      ),
-                                                    )),
+                                                    child: GetBuilder<
+                                                            HomeLaundryController>(
+                                                        builder: (controller) {
+                                                      return GestureDetector(
+                                                        onTap: () {
+                                                          controller
+                                                              .toggleWalletAmount();
+                                                        },
+                                                        child: Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .all(8.0),
+                                                          child: Icon(
+                                                            controller.ishidden
+                                                                    .value
+                                                                ? Icons
+                                                                    .visibility
+                                                                : Icons
+                                                                    .visibility_off,
+                                                            size: 15,
+                                                          ),
+                                                        ),
+                                                      );
+                                                    })),
                                                 Positioned(
                                                   bottom: 10,
                                                   right: 10,

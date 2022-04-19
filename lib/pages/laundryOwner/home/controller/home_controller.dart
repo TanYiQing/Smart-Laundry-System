@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 class HomeLaundryController extends GetxController {
   var user = Get.arguments;
   var approval = "0".obs;
+  var ishidden = true.obs;
+  var walletAmount = "RM15010.20".obs;
 
   @override
   void onInit() {
@@ -25,5 +27,19 @@ class HomeLaundryController extends GetxController {
     } else {
       return arr[0].substring(0, 8) + "...";
     }
+  }
+
+  void toggleWalletAmount() {
+    if (ishidden.isTrue) {
+      ishidden.toggle();
+    } else {
+      ishidden.value = true;
+    }
+    if (ishidden.isTrue) {
+      walletAmount.value = "RM-----";
+    }else{
+      walletAmount.value = "RM15010.20";
+    }
+    update();
   }
 }
