@@ -35,6 +35,7 @@ const Map<String, String> zh_Hans = {
   "Email": "电邮",
   //Location (Customer)
   "Location": "地址",
+  "Choose Location":"选择地址",
   //Home Page (Laundry Owner)
   "New Orders": "新订单",
   "On Going Orders": "进行中订单",

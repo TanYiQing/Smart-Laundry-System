@@ -374,7 +374,10 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text("Choose your location"),
-                                      GestureDetector(onTap: ()async{var index=await Get.toNamed("/location");},
+                                      GestureDetector(
+                                          onTap: () async {
+                                            controller.updateAdress();
+                                          },
                                           child: Text("Change location"))
                                     ],
                                   )
@@ -415,7 +418,7 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  controller.addressList[0]
+                                                  controller.addressList[controller.index.value]
                                                       .addressType
                                                       .toString(),
                                                   style: TextStyle(
@@ -425,31 +428,31 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                                                           screenWidth / 20),
                                                 ),
                                                 Text(controller
-                                                    .addressList[0].name
+                                                    .addressList[controller.index.value].name
                                                     .toString()),
                                                 Text(controller
-                                                    .addressList[0].contact
+                                                    .addressList[controller.index.value].contact
                                                     .toString()),
                                                 Text(""),
                                                 Text(controller
-                                                    .addressList[0].address1
+                                                    .addressList[controller.index.value].address1
                                                     .toString()),
-                                                (controller.addressList[0]
+                                                (controller.addressList[controller.index.value]
                                                             .address2
                                                             .toString() ==
                                                         "")
                                                     ? Text(controller
-                                                        .addressList[0].address2
+                                                        .addressList[controller.index.value].address2
                                                         .toString())
                                                     : Container(),
                                                 Text(controller
-                                                        .addressList[0].zip
+                                                        .addressList[controller.index.value].zip
                                                         .toString() +
                                                     controller
-                                                        .addressList[0].city
+                                                        .addressList[controller.index.value].city
                                                         .toString()),
                                                 Text(controller
-                                                    .addressList[0].state
+                                                    .addressList[controller.index.value].state
                                                     .toString()),
                                               ],
                                             ),

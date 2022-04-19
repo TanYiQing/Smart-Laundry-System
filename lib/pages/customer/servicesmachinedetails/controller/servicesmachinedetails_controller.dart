@@ -17,6 +17,7 @@ class ServicesMachineDetailsController extends GetxController {
   TimeOfDay time = TimeOfDay.now().replacing(hour: 11, minute: 30);
   var addressList = <Address>[].obs;
   static final appData = GetStorage();
+  var index = 0.obs;
 
   @override
   void onInit() {
@@ -79,6 +80,17 @@ class ServicesMachineDetailsController extends GetxController {
     if (address != null) {
       addressList.assignAll(address);
       print(addressList);
+    }
+    update();
+  }
+
+  Future<void> updateAdress() async {
+    var result = await Get.toNamed("/chooselocation");
+    if (result == null) {
+      print("null");
+    } else {
+      print(result["index"]);
+      index.value = result["index"];
     }
     update();
   }

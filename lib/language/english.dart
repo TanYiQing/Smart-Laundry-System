@@ -35,6 +35,7 @@ const Map<String, String> en_US = {
   "Email": "Email",
   //Location (Customer)
   "Location": "Location",
+  "Choose Location":"Choose Location",
   //Home Page (Laundry Owner)
   "New Orders": "New Orders",
   "On Going Orders": "On Going Orders",

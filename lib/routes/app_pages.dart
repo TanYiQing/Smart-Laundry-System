@@ -3,6 +3,8 @@ import 'package:final_year_project/pages/customer/addlocation/binding/addlocatio
 import 'package:final_year_project/pages/customer/addlocation/view/addlocation.dart';
 import 'package:final_year_project/pages/customer/bottombar/binding/bottombar_binding.dart';
 import 'package:final_year_project/pages/customer/cart/view/cart.dart';
+import 'package:final_year_project/pages/customer/chooselocation/binding/chooselocation_binding.dart';
+import 'package:final_year_project/pages/customer/chooselocation/view/chooselocation.dart';
 import 'package:final_year_project/pages/customer/location/binding/location_binding.dart';
 import 'package:final_year_project/pages/customer/map/binding/map_binding.dart';
 import 'package:final_year_project/pages/customer/map/view/map.dart';
@@ -226,6 +228,11 @@ class AppPages {
     GetPage(
         name: "/cart",
         page: () => CartPage(),
+        middlewares: [RouterAuthMiddleware()]),
+    GetPage(
+        name: "/chooselocation",
+        page: () => ChooseLocationPage(),
+        binding: ChooseLocationBindings(),
         middlewares: [RouterAuthMiddleware()]),
 
     //Laundry Owner Page
