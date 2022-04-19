@@ -337,4 +337,20 @@ class RemoteServices {
       return null;
     }
   }
+
+  static Future addFavourite(String laundryID, email) async {
+    var response = await client.post(
+        Uri.parse(
+            'https://hubbuddies.com/270607/onesource/php/addFavourite.php'),
+        body: {"laundryID": laundryID, "email": email});
+    print(response.body);
+  }
+
+  static Future deleteFavourite(String laundryID, email) async {
+    var response = await client.post(
+        Uri.parse(
+            'https://hubbuddies.com/270607/onesource/php/deleteFavourite.php'),
+        body: {"laundryID": laundryID, "email": email});
+    print(response.body);
+  }
 }

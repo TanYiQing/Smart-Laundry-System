@@ -1,3 +1,4 @@
+import 'package:final_year_project/main.dart';
 import 'package:final_year_project/models/laundry.dart';
 import 'package:final_year_project/services/remoteServices.dart';
 import 'package:get/get.dart';
@@ -45,5 +46,10 @@ class ServicesController extends GetxController {
         approve: serviceList[index].approve);
 
     Get.toNamed("/servicesdetails", arguments: laundry);
+  }
+
+  void handlefavourite(String laundryID) {
+    // RemoteServices.addFavourite(laundryID, appData.read("email"));
+    RemoteServices.deleteFavourite(laundryID, appData.read("email"));
   }
 }
