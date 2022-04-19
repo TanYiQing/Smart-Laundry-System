@@ -474,14 +474,21 @@ class HomePageLaundry extends StatelessWidget {
                                                             MainAxisAlignment
                                                                 .center,
                                                         children: [
-                                                          Text(
-                                                            "RM15010.20",
-                                                            style: TextStyle(
-                                                              fontSize:
-                                                                  screenWidth /
-                                                                      15,
-                                                            ),
-                                                          ),
+                                                          GetBuilder<
+                                                                  HomeLaundryController>(
+                                                              builder:
+                                                                  (controller) {
+                                                            return Text(
+                                                              controller
+                                                                  .checkWalletAmount(
+                                                                      "RM15010.20"),
+                                                              style: TextStyle(
+                                                                fontSize:
+                                                                    screenWidth /
+                                                                        15,
+                                                              ),
+                                                            );
+                                                          }),
                                                         ],
                                                       ),
                                                     ),
@@ -696,7 +703,8 @@ class HomePageLaundry extends StatelessWidget {
                                                         ),
                                                         Expanded(
                                                           child: Text(
-                                                            "Business Report".tr,
+                                                            "Business Report"
+                                                                .tr,
                                                             style: TextStyle(
                                                                 fontSize:
                                                                     screenWidth /

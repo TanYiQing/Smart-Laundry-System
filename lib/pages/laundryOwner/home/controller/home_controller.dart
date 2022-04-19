@@ -17,4 +17,13 @@ class HomeLaundryController extends GetxController {
 
     update();
   }
+
+  String checkWalletAmount(String walletAmount) {
+    var arr = walletAmount.split('.');
+    if (arr[0].length < 8) {
+      return arr[0];
+    } else {
+      return arr[0].substring(0, 8) + "...";
+    }
+  }
 }
