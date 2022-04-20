@@ -176,7 +176,7 @@ class AccountPageCustomer extends StatelessWidget {
               Container(
                   height: screenHeight / 1.5,
                   // color: Colors.black,
-                  child: ListView(
+                  child: ListView(physics: NeverScrollableScrollPhysics(),
                     children: [
                       ListTile(
                         title: Row(
