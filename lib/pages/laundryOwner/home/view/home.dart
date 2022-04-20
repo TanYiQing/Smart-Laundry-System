@@ -626,7 +626,7 @@ class HomePageLaundry extends StatelessWidget {
                                                       ],
                                                     ),
                                                   ),
-                                                  Text("Laundry"),
+                                                  
                                                 ],
                                               ),
                                               Positioned(
@@ -732,7 +732,7 @@ class HomePageLaundry extends StatelessWidget {
                                                       ],
                                                     ),
                                                   ),
-                                                  Text("Laundry"),
+                                                 
                                                 ],
                                               ),
                                               Positioned(
