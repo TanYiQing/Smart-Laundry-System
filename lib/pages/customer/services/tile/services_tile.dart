@@ -6,7 +6,8 @@ import 'package:get/get.dart';
 
 class ServicesTile extends StatelessWidget {
   final Laundry laundry;
-  ServicesTile(this.laundry);
+  final int index;
+  ServicesTile(this.laundry, this.index);
   final servicesController = Get.put(ServicesController());
 
   @override
@@ -69,24 +70,24 @@ class ServicesTile extends StatelessWidget {
             GetBuilder<ServicesController>(builder: (controller) {
               return GestureDetector(
                 onTap: () {
-                  controller.handlefavourite(laundry.laundryID.toString());
+                  if (laundry.favourite.toString() == "unfavourite") {
+                    controller.handlefavourite(
+                        index, laundry.laundryID.toString());
+                  } else {
+                    controller.handlefavourite(
+                        index, laundry.laundryID.toString());
+                  }
                 },
                 child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Icon(Icons.favorite_border)),
+                    child: (controller.favouriteList[index].toString()=="unfavourite")
+                        ? Icon(Icons.favorite_border)
+                        : Icon(
+                            Icons.favorite_outlined,
+                            color: Colors.red,
+                          )),
               );
             })
-            // Padding(
-            //   padding: const EdgeInsets.all(8.0),
-            //   child: Text(
-            //     (laundry.approve.toString() == "1") ? "Approved" : "Pending",
-            //     style: TextStyle(
-            //         color: ((laundry.approve.toString() == "1")
-            //             ? Colors.green
-            //             : Colors.orange[700]),
-            //         fontSize: screenWidth / 22),
-            //   ),
-            // )
           ],
         ),
       ),

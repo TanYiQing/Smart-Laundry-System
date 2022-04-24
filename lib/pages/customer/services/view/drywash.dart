@@ -34,7 +34,7 @@ class DryWashPage extends StatelessWidget {
                       onTap: () {
                         _.viewServicesDetails(index);
                       },
-                      child: ServicesTile(_.serviceList[index]));
+                      child: ServicesTile(_.serviceList[index],index));
                 }),
               ))));
             }),

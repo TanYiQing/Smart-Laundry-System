@@ -2,7 +2,7 @@
 
 import 'package:final_year_project/models/address.dart';
 import 'package:final_year_project/models/availability.dart';
-import 'package:final_year_project/models/favourite.dart';
+
 import 'package:final_year_project/models/laundry.dart';
 import 'package:final_year_project/models/machine.dart';
 import 'package:final_year_project/models/user.dart';
@@ -204,12 +204,12 @@ class RemoteServices {
     }
   }
 
-  static Future<List<Laundry>?> loadService(String machineType) async {
+  static Future<List<Laundry>?> loadService(String machineType, email) async {
     var response = await client.post(
         Uri.parse(
             'https://hubbuddies.com/270607/onesource/php/loadService.php'),
-        body: {"machineType": machineType});
-
+        body: {"machineType": machineType, "email": email});
+    print(response.body);
     if (response.statusCode == 200) {
       if (response.body == "nodata") {
         return null;
@@ -353,24 +353,5 @@ class RemoteServices {
             'https://hubbuddies.com/270607/onesource/php/deleteFavourite.php'),
         body: {"laundryID": laundryID, "email": email});
     print(response.body);
-  }
-
-  static Future<List<Favourite>?> loadFavourite(String email) async {
-    var response = await client.post(
-        Uri.parse(
-            'https://hubbuddies.com/270607/onesource/php/loadFavourite.php'),
-        body: {"email": email});
-    // print(response.body);
-    if (response.statusCode == 200) {
-      if (response.body == "nodata") {
-        return null;
-      } else {
-        var jsondata = response.body;
-        return favouriteFromJson(jsondata);
-      }
-    } else {
-      Get.snackbar("Opps", "Error in loading service...");
-      return null;
-    }
   }
 }

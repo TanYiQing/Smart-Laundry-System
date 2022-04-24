@@ -18,8 +18,9 @@ class Laundry {
       laundryState,
       dateLaunch,
       email,
-      approve;
-      
+      approve,
+      favourite;
+
   Laundry(
       {this.laundryID,
       this.laundryOwnerName,
@@ -32,7 +33,8 @@ class Laundry {
       this.laundryState,
       this.dateLaunch,
       this.email,
-      this.approve});
+      this.approve,
+      this.favourite});
 
   factory Laundry.fromJson(Map<String, dynamic> json) => Laundry(
         laundryID: json["laundryID"],
@@ -47,6 +49,7 @@ class Laundry {
         dateLaunch: json["dateLaunch"],
         email: json["email"],
         approve: json["approve"],
+        favourite: json["favourite"],
       );
 
   Map<String, dynamic> toJson() => {
@@ -61,6 +64,7 @@ class Laundry {
         "laundryState": laundryState,
         "dateLaunch": dateLaunch,
         "email": email,
-        "approve": approve
+        "approve": approve,
+        "favourite": favourite
       };
 }

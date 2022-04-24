@@ -1,4 +1,3 @@
-import 'package:final_year_project/models/favourite.dart';
 import 'package:final_year_project/models/laundry.dart';
 import 'package:final_year_project/services/remoteServices.dart';
 import 'package:get/get.dart';
@@ -6,23 +5,32 @@ import 'package:get_storage/get_storage.dart';
 
 class ServicesController extends GetxController {
   var serviceList = <Laundry>[].obs;
-  var favouriteList = <Favourite>[].obs;
+  var favouriteList = [].obs;
+
   var serviceType = Get.arguments;
   final appData = GetStorage();
 
   @override
   void onInit() {
     loadServices();
-    loadFavourite();
     super.onInit();
   }
 
   Future<void> loadServices() async {
-    var service = await RemoteServices.loadService(serviceType.toString());
+    var service = await RemoteServices.loadService(
+        serviceType.toString(), appData.read("email"));
     if (service != null) {
       serviceList.assignAll(service);
       print(serviceList);
+      for (int i = 0; i < serviceList.length; i++) {
+        if (serviceList[i].favourite == "unfavourite") {
+          favouriteList.insert(i, "unfavourite");
+        } else {
+          favouriteList.insert(i, "favourite");
+        }
+      }
     }
+    print(favouriteList);
     update();
   }
 
@@ -48,21 +56,19 @@ class ServicesController extends GetxController {
         dateLaunch: serviceList[index].dateLaunch,
         email: serviceList[index].email,
         approve: serviceList[index].approve);
-
     Get.toNamed("/servicesdetails", arguments: laundry);
   }
 
-  void handlefavourite(String laundryID) {
-    RemoteServices.addFavourite(laundryID, appData.read("email"));
-    // RemoteServices.deleteFavourite(laundryID, appData.read("email"));
-  }
-
-  Future<void> loadFavourite() async {
-    var favourite = await RemoteServices.loadFavourite(appData.read("email"));
-    if (favourite != null) {
-      favouriteList.assignAll(favourite);
-      print(favouriteList);
+  void handlefavourite(int index, String laundryID) {
+    if (favouriteList[index] == "unfavourite") {
+      RemoteServices.addFavourite(laundryID, appData.read("email"));
+      favouriteList[index] = "favourite";
+    } else {
+      RemoteServices.deleteFavourite(laundryID, appData.read("email"));
+      favouriteList[index] = "unfavourite";
     }
+
     update();
+    print(favouriteList);
   }
 }
