@@ -141,7 +141,7 @@ class AppPages {
     GetPage(
         name: "/favourite",
         page: () => FavouritePage(),
-        binding: BottomBarBindings(),
+        // binding: BottomBarBindings(),
         middlewares: [RouterAuthMiddleware()]),
     GetPage(
         name: "/ongoingorder",

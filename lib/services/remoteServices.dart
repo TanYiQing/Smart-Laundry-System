@@ -354,4 +354,23 @@ class RemoteServices {
         body: {"laundryID": laundryID, "email": email});
     print(response.body);
   }
+
+  static Future<List<Laundry>?> loadFavourite(String email) async {
+    var response = await client.post(
+        Uri.parse(
+            'https://hubbuddies.com/270607/onesource/php/loadFavourite.php'),
+        body: {"email": email});
+    print(response.body);
+    if (response.statusCode == 200) {
+      if (response.body == "nodata") {
+        return null;
+      } else {
+        var jsondata = response.body;
+        return laundryFromJson(jsondata);
+      }
+    } else {
+      Get.snackbar("Opps", "Error in loading service...");
+      return null;
+    }
+  }
 }
