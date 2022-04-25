@@ -19,7 +19,7 @@ const Map<String, String> zh_Hans = {
   "Logout": "登出",
   //Bottom Navigation Bar (Customer)
   "Home": "主页",
-  "Favorite": "收藏",
+  "Favourite": "收藏",
   "Active Order": "活页订单",
   "Purchase History": "付款记录",
   "Account": "账号",

@@ -15,7 +15,7 @@ class FavouritePage extends StatelessWidget {
             appBar: AppBar(
               backgroundColor: Colors.transparent,
               title: Text(
-                "Favorite",
+                "Favourite",
                 style: TextStyle(color: Colors.black),
               ),
               elevation: 0,

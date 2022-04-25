@@ -19,7 +19,7 @@ const Map<String, String> en_US = {
   "Logout": "Logout",
   //Bottom Navigation Bar (Customer)
   "Home": "Home",
-  "Favorite": "Favorite",
+  "Favourite": "Favourite",
   "Active Order": "Active Order",
   "Purchase History": "Purchase History",
   "Account": "Account",

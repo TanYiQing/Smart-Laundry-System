@@ -38,8 +38,8 @@ class BottomBar extends StatelessWidget {
                   activeIcon: Text("Home".tr)),
               BottomNavigationBarItem(
                   icon: Icon(Icons.favorite_border_outlined),
-                  label: 'Favorite'.tr,
-                  activeIcon: Text("Favorite".tr)),
+                  label: 'Favourite'.tr,
+                  activeIcon: Text("Favourite".tr)),
               BottomNavigationBarItem(
                   icon: Icon(Icons.list_alt_rounded),
                   label: 'Active Order'.tr,
