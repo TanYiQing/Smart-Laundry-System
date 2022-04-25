@@ -22,7 +22,7 @@ class FavouritePage extends StatelessWidget {
               iconTheme: IconThemeData(color: Colors.black),
             ),
             body: GetBuilder<BottomBarController>(builder: (controller) {
-              return (controller.favouriteList.contains("favourite"))
+              return (controller.serviceList.length!=0)
                   ? Column(
                       children: [
                         Container(
