@@ -306,7 +306,10 @@ class ServicesDetailsPage extends StatelessWidget {
                                         width: screenWidth / 5,
                                         height: screenHeight / 35,
                                         child: MaterialButton(
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            controller.viewAllServicesDetails(
+                                                "normalwash");
+                                          },
                                           child: Container(
                                             child: Text(
                                               "View All",
@@ -398,7 +401,10 @@ class ServicesDetailsPage extends StatelessWidget {
                                         width: screenWidth / 5,
                                         height: screenHeight / 35,
                                         child: MaterialButton(
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            controller.viewAllServicesDetails(
+                                                "drywash");
+                                          },
                                           child: Container(
                                             child: Text(
                                               "View All",
@@ -492,7 +498,10 @@ class ServicesDetailsPage extends StatelessWidget {
                                         width: screenWidth / 5,
                                         height: screenHeight / 35,
                                         child: MaterialButton(
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            controller.viewAllServicesDetails(
+                                                "ironing");
+                                          },
                                           child: Container(
                                             child: Text(
                                               "View All",

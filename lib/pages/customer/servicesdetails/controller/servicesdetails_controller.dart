@@ -18,6 +18,7 @@ class ServicesDetailsController extends GetxController {
   final ironingKey = GlobalKey();
   final topKey = GlobalKey();
   late TooltipBehavior tooltipBehavior;
+  var servicesdetailstype = "".obs;
 
   BuildContext? get context => null;
 
@@ -158,5 +159,17 @@ class ServicesDetailsController extends GetxController {
             "Machine is occupied now", "You may still place order for later.");
       }
     }
+  }
+
+  void viewAllServicesDetails(String machineType) {
+    if (machineType == "normalwash") {
+      servicesdetailstype.value = "Normal Washing Service";
+    } else if (machineType == "drywash") {
+      servicesdetailstype.value = "Dry Washing Service";
+    } else {
+      servicesdetailstype.value = "Ironing Service";
+    }
+    Get.toNamed("viewallservicesdetails");
+    update();
   }
 }

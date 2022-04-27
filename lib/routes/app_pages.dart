@@ -17,6 +17,7 @@ import 'package:final_year_project/pages/customer/services/view/normalwashandiro
 import 'package:final_year_project/pages/customer/servicesdetails/binding/servicesdetails_binding.dart';
 import 'package:final_year_project/pages/customer/servicesdetails/view/servicesdashboard.dart';
 import 'package:final_year_project/pages/customer/servicesdetails/view/servicesdetails.dart';
+import 'package:final_year_project/pages/customer/servicesdetails/view/viewallservicesdetails.dart';
 import 'package:final_year_project/pages/customer/servicesmachinedetails/binding/servicesmachinedetails_binding.dart';
 import 'package:final_year_project/pages/customer/servicesmachinedetails/view/servicesmachinedetails.dart';
 import 'package:final_year_project/pages/laundryOwner/addmachine/binding/addmachine_binding.dart';
@@ -138,9 +139,7 @@ class AppPages {
         page: () => HomePage(),
         binding: BottomBarBindings(),
         middlewares: [RouterAuthMiddleware()]),
-    GetPage(
-        name: "/favourite",
-        page: () => FavouritePage(),
+    GetPage(name: "/favourite", page: () => FavouritePage(),
         // binding: BottomBarBindings(),
         middlewares: [RouterAuthMiddleware()]),
     GetPage(
@@ -233,6 +232,11 @@ class AppPages {
         name: "/chooselocation",
         page: () => ChooseLocationPage(),
         binding: ChooseLocationBindings(),
+        middlewares: [RouterAuthMiddleware()]),
+    GetPage(
+        name: "/viewallservicesdetails",
+        page: () => ViewAllServicesDetailsPage(),
+        binding: ServicesDetailsBindings(),
         middlewares: [RouterAuthMiddleware()]),
 
     //Laundry Owner Page
