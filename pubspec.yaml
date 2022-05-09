@@ -47,6 +47,7 @@ dependencies:
   geocoding: ^2.0.4
   google_maps_flutter: ^2.1.2
   lottie: ^1.2.2
+  webview_flutter: ^3.0.2
 
 dev_dependencies:
   flutter_test:

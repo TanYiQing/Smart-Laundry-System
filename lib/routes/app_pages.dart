@@ -8,6 +8,8 @@ import 'package:final_year_project/pages/customer/chooselocation/view/chooseloca
 import 'package:final_year_project/pages/customer/location/binding/location_binding.dart';
 import 'package:final_year_project/pages/customer/map/binding/map_binding.dart';
 import 'package:final_year_project/pages/customer/map/view/map.dart';
+import 'package:final_year_project/pages/customer/payment/binding/payment_binding.dart';
+import 'package:final_year_project/pages/customer/payment/view/payment.dart';
 import 'package:final_year_project/pages/customer/services/binding/services_binding.dart';
 import 'package:final_year_project/pages/customer/services/view/drywash.dart';
 import 'package:final_year_project/pages/customer/services/view/drywashandironing.dart';
@@ -237,6 +239,11 @@ class AppPages {
         name: "/viewallservicesdetails",
         page: () => ViewAllServicesDetailsPage(),
         binding: ServicesDetailsBindings(),
+        middlewares: [RouterAuthMiddleware()]),
+    GetPage(
+        name: "/payment",
+        page: () => PaymentPage(),
+        binding: PaymentBindings(),
         middlewares: [RouterAuthMiddleware()]),
 
     //Laundry Owner Page

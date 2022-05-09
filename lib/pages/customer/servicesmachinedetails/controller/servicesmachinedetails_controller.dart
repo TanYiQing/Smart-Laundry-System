@@ -1,4 +1,5 @@
 import 'package:final_year_project/models/address.dart';
+import 'package:final_year_project/models/order.dart';
 import 'package:final_year_project/services/remoteServices.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -8,16 +9,22 @@ class ServicesMachineDetailsController extends GetxController {
   var user = Get.arguments;
   var machine = Get.arguments;
   TextEditingController notecontroller = new TextEditingController();
+
   var orderMethod = "Reservation".obs;
   var checked1 = false.obs;
   var checked2 = false.obs;
   var checked3 = false.obs;
   var totalPrice = 0.00.obs;
   var deliveryPrice = 0.00.obs;
+  var collectTime = "".obs;
+  var notetoLaundry = "".obs;
   TimeOfDay time = TimeOfDay.now().replacing(hour: 11, minute: 30);
   var addressList = <Address>[].obs;
   static final appData = GetStorage();
   var index = 0.obs;
+  var addon1 = "".obs;
+  var addon2 = "".obs;
+  var addon3 = "".obs;
 
   @override
   void onInit() {
@@ -92,6 +99,50 @@ class ServicesMachineDetailsController extends GetxController {
       print(result["index"]);
       index.value = result["index"];
     }
+    print(addressList[index.value].name);
     update();
+  }
+
+  void getTime(DateTime time) {
+    collectTime.value = time.toString();
+    print(collectTime.value);
+  }
+
+  void getNote(String note) {
+    notetoLaundry.value = note.toString();
+  }
+
+  void placeorder() {
+    if (checked1.value == true) {
+      addon1.value = machine.addOn1;
+    } else {
+      addon1.value = "";
+    }
+    if (checked2.value == true) {
+      addon2.value = machine.addOn2;
+    } else {
+      addon2.value = "";
+    }
+    if (checked3.value == true) {
+      addon3.value = machine.addOn3;
+    } else {
+      addon3.value = "";
+    }
+    Order order = new Order(
+        laundryID: machine.laundryID,
+        machineID: machine.machineID,
+        price: machine.price,
+        addon1: addon1.value,
+        addon2: addon2.value,
+        addon3: addon3.value,
+        email: appData.read("email"),
+        name: addressList[0].name,
+        orderMethod: orderMethod.value,
+        addressID: addressList[0].addressID,
+        collectTime: collectTime.value,
+        note: notetoLaundry.value,
+        totalPrice: totalPrice.value.toString());
+
+    Get.toNamed("/payment", arguments: order);
   }
 }

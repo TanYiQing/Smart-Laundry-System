@@ -418,7 +418,9 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  controller.addressList[controller.index.value]
+                                                  controller
+                                                      .addressList[controller
+                                                          .index.value]
                                                       .addressType
                                                       .toString(),
                                                   style: TextStyle(
@@ -428,31 +430,48 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                                                           screenWidth / 20),
                                                 ),
                                                 Text(controller
-                                                    .addressList[controller.index.value].name
+                                                    .addressList[
+                                                        controller.index.value]
+                                                    .name
                                                     .toString()),
                                                 Text(controller
-                                                    .addressList[controller.index.value].contact
+                                                    .addressList[
+                                                        controller.index.value]
+                                                    .contact
                                                     .toString()),
                                                 Text(""),
                                                 Text(controller
-                                                    .addressList[controller.index.value].address1
+                                                    .addressList[
+                                                        controller.index.value]
+                                                    .address1
                                                     .toString()),
-                                                (controller.addressList[controller.index.value]
+                                                (controller
+                                                            .addressList[
+                                                                controller.index
+                                                                    .value]
                                                             .address2
                                                             .toString() ==
                                                         "")
                                                     ? Text(controller
-                                                        .addressList[controller.index.value].address2
+                                                        .addressList[controller
+                                                            .index.value]
+                                                        .address2
                                                         .toString())
                                                     : Container(),
                                                 Text(controller
-                                                        .addressList[controller.index.value].zip
+                                                        .addressList[controller
+                                                            .index.value]
+                                                        .zip
                                                         .toString() +
                                                     controller
-                                                        .addressList[controller.index.value].city
+                                                        .addressList[controller
+                                                            .index.value]
+                                                        .city
                                                         .toString()),
                                                 Text(controller
-                                                    .addressList[controller.index.value].state
+                                                    .addressList[
+                                                        controller.index.value]
+                                                    .state
                                                     .toString()),
                                               ],
                                             ),
@@ -497,7 +516,9 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                           isForce2Digits: true,
                           minutesInterval:
                               int.parse(controller.machine.duration),
-                          onTimeChange: (time) {},
+                          onTimeChange: (time) {
+                            controller.getTime(time);
+                          },
                         ),
                       );
                     }),
@@ -543,6 +564,9 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                                   const EdgeInsets.only(left: 8.0, right: 8.0),
                               child: Container(
                                 child: TextField(
+                                  onChanged: (text) {
+                                    print(text);
+                                  },
                                   controller: controller.notecontroller,
                                   decoration: InputDecoration(
                                       hintText:
@@ -566,33 +590,38 @@ class ServicesMachineDetailsPage extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                child: MaterialButton(
-                  onPressed: () {},
-                  child: GetBuilder<ServicesMachineDetailsController>(
-                      builder: (controller) {
-                    return Container(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "Place Order - RM",
-                            style: TextStyle(fontSize: screenWidth / 20),
-                            textAlign: TextAlign.center,
-                          ),
-                          Text(
-                            controller.totalPrice.value.toStringAsFixed(2),
-                            style: TextStyle(fontSize: screenWidth / 20),
-                            textAlign: TextAlign.center,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Icon(Icons.add_shopping_cart),
-                          )
-                        ],
-                      ),
-                    );
-                  }),
-                ),
+                child: GetBuilder<ServicesMachineDetailsController>(
+                    builder: (controller) {
+                  return MaterialButton(
+                    onPressed: () {
+                      controller.placeorder();
+                    },
+                    child: GetBuilder<ServicesMachineDetailsController>(
+                        builder: (controller) {
+                      return Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Place Order - RM",
+                              style: TextStyle(fontSize: screenWidth / 20),
+                              textAlign: TextAlign.center,
+                            ),
+                            Text(
+                              controller.totalPrice.value.toStringAsFixed(2),
+                              style: TextStyle(fontSize: screenWidth / 20),
+                              textAlign: TextAlign.center,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Icon(Icons.add_shopping_cart),
+                            )
+                          ],
+                        ),
+                      );
+                    }),
+                  );
+                }),
                 decoration: BoxDecoration(
                     color: Color.fromRGBO(0, 194, 203, 1),
                     borderRadius: BorderRadius.all(Radius.circular(10))),
