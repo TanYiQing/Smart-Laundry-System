@@ -141,7 +141,7 @@ class ServicesMachineDetailsController extends GetxController {
         addressID: addressList[0].addressID,
         collectTime: collectTime.value,
         note: notetoLaundry.value,
-        totalPrice: totalPrice.value.toString());
+        totalPrice: totalPrice.value.toStringAsFixed(2));
 
     Get.toNamed("/payment", arguments: order);
   }
