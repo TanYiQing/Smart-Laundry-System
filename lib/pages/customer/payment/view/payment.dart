@@ -56,6 +56,8 @@ class PaymentPage extends StatelessWidget {
                       child: Container(
                         width: double.infinity,
                         child: Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15)),
                           elevation: 10,
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -122,6 +124,23 @@ class PaymentPage extends StatelessWidget {
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
+                                            "Contact:",
+                                            style: TextStyle(
+                                                fontSize: screenWidth / 22),
+                                          ),
+                                          Text(
+                                            controller.order.phone,
+                                            style: TextStyle(
+                                                fontSize: screenWidth / 22),
+                                          )
+                                        ],
+                                      ),
+                                      SizedBox(height: 3),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(
                                             "Order Method:",
                                             style: TextStyle(
                                                 fontSize: screenWidth / 22),
@@ -175,7 +194,28 @@ class PaymentPage extends StatelessWidget {
                           ),
                         ),
                       ),
-                    )
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Container(
+                        child: MaterialButton(
+                          onPressed: () {
+                            controller.proceedtoHomePage();
+                          },
+                          child: Container(
+                            child: Text(
+                              "Proceed to home page",
+                              style: TextStyle(fontSize: screenWidth / 20),
+                            ),
+                          ),
+                        ),
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.black),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10))),
+                        width: screenWidth / 1.5,
+                      ),
+                    ),
                     // Text(controller.order.email),
                     // Expanded(
                     //   child: WebView(

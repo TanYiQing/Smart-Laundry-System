@@ -19,6 +19,8 @@ class LoginController extends GetxController {
         passwordController.text.toString(), selectedRole.value.toString());
     String email = emailController.text.toString();
     appData.write("email", email);
+    appData.write("password", password);
+    appData.write("role", selectedRole.value);
   }
 
   void handleRadioButton(var role) {

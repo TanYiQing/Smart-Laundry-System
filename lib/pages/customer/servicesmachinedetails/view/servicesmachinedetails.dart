@@ -580,6 +580,131 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                         ),
                       );
                     }),
+                    Divider(
+                      thickness: 6,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Row(
+                          children: [
+                            Text(
+                              "Payment Method",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: screenWidth / 20),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                "Required",
+                                style: TextStyle(color: Colors.grey),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    GetBuilder<ServicesMachineDetailsController>(
+                        builder: (controller) {
+                      return Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              child: Card(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10)),
+                                elevation: (controller.paymentMethod.value ==
+                                        "Cash On Delivery")
+                                    ? 8
+                                    : 1,
+                                child: Container(
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Radio(
+                                              value: "Cash On Delivery",
+                                              groupValue: controller
+                                                  .paymentMethod.value,
+                                              onChanged: (value) {
+                                                controller
+                                                    .handleRadioButtonPayment(
+                                                        value);
+                                              },
+                                              activeColor: Colors.teal),
+                                          Text(
+                                            "Cash On Delivery",
+                                            style: TextStyle(
+                                                fontSize: screenWidth / 25),
+                                          ),
+                                        ],
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Container(
+                                            width: screenWidth / 15,
+                                            child: Image.asset(
+                                                "assets/icons/cod.png")),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              child: Card(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10)),
+                                elevation: (controller.paymentMethod.value ==
+                                        "Online Payment")
+                                    ? 8
+                                    : 1,
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Radio(
+                                            value: "Online Payment",
+                                            groupValue:
+                                                controller.paymentMethod.value,
+                                            onChanged: (value) {
+                                              controller
+                                                  .handleRadioButtonPayment(
+                                                      value);
+                                            },
+                                            activeColor: Colors.teal),
+                                        Text(
+                                          "Online Payment",
+                                          style: TextStyle(
+                                              fontSize: screenWidth / 25),
+                                        ),
+                                      ],
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Container(
+                                          width: screenWidth / 12,
+                                          child: Image.asset(
+                                              "assets/icons/fpx.png")),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      );
+                    }),
                   ],
                 ),
               )

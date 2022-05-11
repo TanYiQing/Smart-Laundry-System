@@ -373,4 +373,72 @@ class RemoteServices {
       return null;
     }
   }
+
+  static Future<String?> makePaymentCOD(
+      String email,
+      name,
+      phone,
+      orderMethod,
+      addressID,
+      collecTime,
+      note,
+      laundryID,
+      machineID,
+      price,
+      addon1,
+      addon2,
+      addon3,
+      totalPrice) async {
+    print(email);
+    // var response = await client.post(
+    //     Uri.parse(
+    //         'https://hubbuddies.com/270607/onesource/php/registerUser.php'),
+    //     body: {
+    //       // "firstName": firstname,
+    //       // "lastName": lastname,
+    //       // "email": email,
+    //       // "password": password,
+    //       // "role": role
+    //     });
+    // if (response.statusCode == 200) {
+    //   print(response.body);
+    //   if (response.body == "Success") {
+    //     Get.snackbar("Hooray!", "Account registered successfully, login now.");
+    //   } else {
+    //     Get.snackbar("Sign Up Failed", "Please try again...");
+    //     Get.offAllNamed('/intro');
+    //   }
+    // } else {
+    //   return null;
+    // }
+  }
+
+  static Future<User?> proceedtoHomePage(String email, password, role) async {
+    var response = await client.post(
+        Uri.parse('https://hubbuddies.com/270607/onesource/php/loginUser.php'),
+        body: {"role": role, "email": email, "password": password});
+    print(response.body);
+    if (response.statusCode == 200) {
+      if (response.body == "Failed") {
+        return null;
+      } else {
+        List userdata = response.body.split('#');
+        User user = new User(
+          fname: userdata[1],
+          lname: userdata[2],
+          email: userdata[3],
+          dateregister: userdata[4],
+        );
+        print(user.lname);
+        if (role == "Customer") {
+          Get.offAllNamed('/bottombar', arguments: user);
+        } else {
+          Get.offAllNamed('/homelaundry', arguments: user);
+        }
+      }
+    } else {
+      Get.snackbar("Opps", "Something went wrong...");
+      return null;
+    }
+  }
 }

@@ -11,6 +11,7 @@ class ServicesMachineDetailsController extends GetxController {
   TextEditingController notecontroller = new TextEditingController();
 
   var orderMethod = "Reservation".obs;
+  var paymentMethod = "Cash On Delivery".obs;
   var checked1 = false.obs;
   var checked2 = false.obs;
   var checked3 = false.obs;
@@ -41,9 +42,14 @@ class ServicesMachineDetailsController extends GetxController {
     } else {
       totalPrice.value += 5.00;
     }
-    // totalPrice.value += deliveryPrice.value;
     update();
     print(orderMethod.value);
+  }
+
+  void handleRadioButtonPayment(var method) {
+    paymentMethod.value = method;
+    update();
+    print(paymentMethod.value);
   }
 
   void handleCheckBox(var checkValue, String addon) {
@@ -78,8 +84,6 @@ class ServicesMachineDetailsController extends GetxController {
     time = newTime;
     update();
   }
-
-  void clickPlaceOrder() {}
 
   Future<void> loadAddress() async {
     var address = await RemoteServices.loadAddress(appData.read("email"));
@@ -136,13 +140,31 @@ class ServicesMachineDetailsController extends GetxController {
         addon2: addon2.value,
         addon3: addon3.value,
         email: appData.read("email"),
-        name: addressList[0].name,
+        name: addressList[index.value].name,
+        phone: addressList[index.value].contact,
         orderMethod: orderMethod.value,
-        addressID: addressList[0].addressID,
+        addressID: addressList[index.value].addressID,
         collectTime: collectTime.value,
         note: notetoLaundry.value,
         totalPrice: totalPrice.value.toStringAsFixed(2));
 
-    Get.toNamed("/payment", arguments: order);
+    if (paymentMethod.value == "Cash On Delivery") {
+      RemoteServices.makePaymentCOD(
+          appData.read("email").toString(),
+          addressList[index.value].name.toString(),
+          addressList[index.value].contact.toString(),
+          orderMethod.value.toString(),
+          addressList[index.value].addressID.toString(),
+          collectTime.value.toString(),
+          notetoLaundry.value.toString(),
+          machine.laundryID.toString(),
+          machine.machineID.toString(),
+          machine.price.toString(),
+          addon1.value.toString(),
+          addon2.value.toString(),
+          addon3.value.toString(),
+          totalPrice.value.toStringAsFixed(2));
+      Get.offAllNamed("/payment", arguments: order);
+    }
   }
 }
