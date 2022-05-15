@@ -5,6 +5,7 @@ import 'package:final_year_project/models/availability.dart';
 
 import 'package:final_year_project/models/laundry.dart';
 import 'package:final_year_project/models/machine.dart';
+import 'package:final_year_project/models/order.dart';
 import 'package:final_year_project/models/user.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -380,37 +381,46 @@ class RemoteServices {
       phone,
       orderMethod,
       addressID,
-      collecTime,
+      collectTime,
       note,
       laundryID,
       machineID,
+      machineType,
       price,
       addon1,
       addon2,
       addon3,
       totalPrice) async {
-    print(email);
-    // var response = await client.post(
-    //     Uri.parse(
-    //         'https://hubbuddies.com/270607/onesource/php/registerUser.php'),
-    //     body: {
-    //       // "firstName": firstname,
-    //       // "lastName": lastname,
-    //       // "email": email,
-    //       // "password": password,
-    //       // "role": role
-    //     });
-    // if (response.statusCode == 200) {
-    //   print(response.body);
-    //   if (response.body == "Success") {
-    //     Get.snackbar("Hooray!", "Account registered successfully, login now.");
-    //   } else {
-    //     Get.snackbar("Sign Up Failed", "Please try again...");
-    //     Get.offAllNamed('/intro');
-    //   }
-    // } else {
-    //   return null;
-    // }
+    var response = await client.post(
+        Uri.parse('https://hubbuddies.com/270607/onesource/php/paymentCOD.php'),
+        body: {
+          "email": email,
+          "name": name,
+          "phone": phone,
+          "orderMethod": orderMethod,
+          "addressID": addressID,
+          "collectTime": collectTime,
+          "note": note,
+          "laundryID": laundryID,
+          "machineID": machineID,
+          "machineType": machineType,
+          "price": price,
+          "addon1": addon1,
+          "addon2": addon2,
+          "addon3": addon3,
+          "totalPrice": totalPrice,
+        });
+    if (response.statusCode == 200) {
+      print(response.body);
+      if (response.body == "Success") {
+        Get.snackbar("Hooray!", "Order placed!");
+      } else {
+        Get.snackbar(
+            "Opps", "Something wrong in placing order, please try again...");
+      }
+    } else {
+      return null;
+    }
   }
 
   static Future<User?> proceedtoHomePage(String email, password, role) async {
@@ -438,6 +448,121 @@ class RemoteServices {
       }
     } else {
       Get.snackbar("Opps", "Something went wrong...");
+      return null;
+    }
+  }
+
+  static Future<List<Order>?> loadOnGoingOrder(String email) async {
+    var response = await client.post(
+        Uri.parse(
+            'https://hubbuddies.com/270607/onesource/php/loadOnGoingOrder.php'),
+        body: {"email": email});
+    print(response.body);
+    if (response.statusCode == 200) {
+      if (response.body == "nodata") {
+        return null;
+      } else {
+        var jsondata = response.body;
+        return orderFromJson(jsondata);
+      }
+    } else {
+      Get.snackbar("Opps", "Error in loading service...");
+      return null;
+    }
+  }
+
+  static Future<List<Order>?> loadNewAndConfirmedOrder() async {
+    var response = await client.post(
+      Uri.parse(
+          'https://hubbuddies.com/270607/onesource/php/loadNewAndConfirmedOrder.php'),
+    );
+
+    if (response.statusCode == 200) {
+      if (response.body == "nodata") {
+        return null;
+      } else {
+        var jsondata = response.body;
+        return orderFromJson(jsondata);
+      }
+    } else {
+      Get.snackbar("Opps", "Error in loading service...");
+      return null;
+    }
+  }
+
+  static Future<List<Order>?> loadOnGoingOrderLaundry() async {
+    var response = await client.post(
+      Uri.parse(
+          'https://hubbuddies.com/270607/onesource/php/loadOnGoingOrderLaundry.php'),
+    );
+    print("Hello");
+    print(response.body);
+    if (response.statusCode == 200) {
+      if (response.body == "nodata") {
+        return null;
+      } else {
+        var jsondata = response.body;
+        return orderFromJson(jsondata);
+      }
+    } else {
+      Get.snackbar("Opps", "Error in loading service...");
+      return null;
+    }
+  }
+
+  static Future<List<Order>?> loadCompletedOrderLaundry() async {
+    var response = await client.post(
+      Uri.parse(
+          'https://hubbuddies.com/270607/onesource/php/loadCompletedOrder.php'),
+    );
+    if (response.statusCode == 200) {
+      if (response.body == "nodata") {
+        return null;
+      } else {
+        var jsondata = response.body;
+        return orderFromJson(jsondata);
+      }
+    } else {
+      Get.snackbar("Opps", "Error in loading service...");
+      return null;
+    }
+  }
+
+  static Future<List<Order>?> loadProcessingOrderLaundryOwner() async {
+    var response = await client.post(
+      Uri.parse(
+          'https://hubbuddies.com/270607/onesource/php/loadConfirmedOrder.php'),
+    );
+    print(response.body);
+    if (response.statusCode == 200) {
+      if (response.body == "nodata") {
+        return null;
+      } else {
+        var jsondata = response.body;
+        return orderFromJson(jsondata);
+      }
+    } else {
+      Get.snackbar("Opps", "Error in loading service...");
+      return null;
+    }
+  }
+
+  static Future<String?> updateOrderStatus(
+      String orderId, String status) async {
+    print(orderId);
+    var response = await client.post(
+        Uri.parse(
+            'https://hubbuddies.com/270607/onesource/php/updateOrderStatus.php'),
+        body: {"orderId": orderId, "status": status});
+    if (response.statusCode == 200) {
+      print(response.body);
+      if (response.body == "Success") {
+        Get.snackbar("Hooray!", "Order status updated!");
+      } else {
+        Get.snackbar("Opps",
+            "Something wrong in updating order status, please try again...");
+      }
+    } else {
       return null;
     }
   }

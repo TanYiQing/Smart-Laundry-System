@@ -8,7 +8,7 @@ const Map<String, String> en_US = {
   "Dry Wash,Ironing": "Dry Wash,Ironing",
   "Ironing": "Ironing",
   "Coming Soon": "Coming Soon",
-  "Active Order(s)": "Active Order(s)",
+  "Active Order(s)": "On Going Order(s)",
   "Laundry Near You": "Laundry Near You",
   //Setting Page
   "Settings": "Setting",
@@ -20,7 +20,7 @@ const Map<String, String> en_US = {
   //Bottom Navigation Bar (Customer)
   "Home": "Home",
   "Favourite": "Favourite",
-  "Active Order": "Active Order",
+  "On Going Order": "On Going Order",
   "Purchase History": "Purchase History",
   "Account": "Account",
   //Account (Customer)

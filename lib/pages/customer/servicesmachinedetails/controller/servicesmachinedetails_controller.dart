@@ -133,8 +133,9 @@ class ServicesMachineDetailsController extends GetxController {
       addon3.value = "";
     }
     Order order = new Order(
-        laundryID: machine.laundryID,
-        machineID: machine.machineID,
+        laundryId: machine.laundryID,
+        machineId: machine.machineID,
+        machineType: machine.machineType,
         price: machine.price,
         addon1: addon1.value,
         addon2: addon2.value,
@@ -142,10 +143,10 @@ class ServicesMachineDetailsController extends GetxController {
         email: appData.read("email"),
         name: addressList[index.value].name,
         phone: addressList[index.value].contact,
-        orderMethod: orderMethod.value,
-        addressID: addressList[index.value].addressID,
-        collectTime: collectTime.value,
-        note: notetoLaundry.value,
+        ordermethod: orderMethod.value,
+        addressId: addressList[index.value].addressID,
+        collecttime: collectTime.value,
+        notetolaundry: notetoLaundry.value,
         totalPrice: totalPrice.value.toStringAsFixed(2));
 
     if (paymentMethod.value == "Cash On Delivery") {
@@ -159,6 +160,7 @@ class ServicesMachineDetailsController extends GetxController {
           notetoLaundry.value.toString(),
           machine.laundryID.toString(),
           machine.machineID.toString(),
+          machine.machineType.toString(),
           machine.price.toString(),
           addon1.value.toString(),
           addon2.value.toString(),

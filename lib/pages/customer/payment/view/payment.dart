@@ -146,7 +146,7 @@ class PaymentPage extends StatelessWidget {
                                                 fontSize: screenWidth / 22),
                                           ),
                                           Text(
-                                            controller.order.orderMethod,
+                                            controller.order.ordermethod??"",
                                             style: TextStyle(
                                                 fontSize: screenWidth / 22),
                                           )
@@ -163,7 +163,7 @@ class PaymentPage extends StatelessWidget {
                                                 fontSize: screenWidth / 22),
                                           ),
                                           Text(
-                                            controller.order.collectTime,
+                                            controller.order.collecttime,
                                             style: TextStyle(
                                                 fontSize: screenWidth / 22),
                                           )

@@ -8,14 +8,24 @@ class BottomBarController extends GetxController {
   final appData = GetStorage();
   var serviceList = <Laundry>[].obs;
   var favouriteList = [].obs;
+  var onGoingOrderList = [].obs;
   var user = Get.arguments;
   var tabIndex = 0;
   late PageController pagecontroller = new PageController();
 
+  @override
+  void onInit() {
+    loadOnGoingOrder();
+    super.onInit();
+  }
   void changeTab(int index) {
     tabIndex = index;
-    if (tabIndex == 1) {
+    if (tabIndex == 0) {
+      loadOnGoingOrder();
+    } else if (tabIndex == 1) {
       loadFavourite();
+    } else if (tabIndex == 2) {
+      loadOnGoingOrder();
     }
     update();
   }
@@ -47,6 +57,21 @@ class BottomBarController extends GetxController {
   void handlefavourite(int index, String laundryID) {
     RemoteServices.deleteFavourite(laundryID, appData.read("email"));
     serviceList.removeAt(index);
+    update();
+  }
+
+  Future<void> loadOnGoingOrder() async {
+    var onGoingOrder =
+        await RemoteServices.loadOnGoingOrder(appData.read("email"));
+    if (onGoingOrder != null) {
+      onGoingOrderList.assignAll(onGoingOrder);
+    }
+    print(onGoingOrderList);
+    update();
+  }
+
+  void viewAllOnGoingOrder() {
+    tabIndex = 2;
     update();
   }
 }

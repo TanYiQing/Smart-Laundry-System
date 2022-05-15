@@ -20,7 +20,7 @@ const Map<String, String> zh_Hans = {
   //Bottom Navigation Bar (Customer)
   "Home": "主页",
   "Favourite": "收藏",
-  "Active Order": "活页订单",
+  "On Going Order": "活页订单",
   "Purchase History": "付款记录",
   "Account": "账号",
   //Account (Customer)
