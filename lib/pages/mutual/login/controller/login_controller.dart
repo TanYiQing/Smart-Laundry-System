@@ -18,6 +18,7 @@ class LoginController extends GetxController {
     user = await RemoteServices.loginUser(emailController.text.toString(),
         passwordController.text.toString(), selectedRole.value.toString());
     String email = emailController.text.toString();
+    String password = passwordController.text.toString();
     appData.write("email", email);
     appData.write("password", password);
     appData.write("role", selectedRole.value);
@@ -41,17 +42,18 @@ class LoginController extends GetxController {
   void rememberMe(var remember) {
     String email = emailController.text.toString();
     String password = passwordController.text.toString();
+    print(password);
     if (email.isEmpty || password.isEmpty) {
       Get.snackbar("Empty Field",
           "Please make sure the email and password is filled in.");
       return;
     } else {
       rememberme.value = remember;
-      update();
       appData.write("staySignedIn", rememberme.value);
       appData.write("email", email);
       appData.write("password", password);
       appData.write("role", selectedRole.value);
+      update();
     }
   }
 }
