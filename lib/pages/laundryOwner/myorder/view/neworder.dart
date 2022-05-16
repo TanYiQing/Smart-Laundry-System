@@ -13,7 +13,7 @@ class NewOrderPageLaundry extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           title: Text(
-            "New Order",
+            "New and Confirmed Order",
             style: TextStyle(color: Colors.black),
           ),
           elevation: 0,

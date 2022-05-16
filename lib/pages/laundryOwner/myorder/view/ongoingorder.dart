@@ -51,7 +51,7 @@ class OnGoingOrderPageLaundry extends StatelessWidget {
                           "assets/lottie/order-not-found.json",
                         ),
                       ),
-                      Text("NO CONFIRMED ORDER",
+                      Text("NO ON GOING ORDER",
                           style: TextStyle(
                               fontSize: screenWidth / 18,
                               fontWeight: FontWeight.bold)),

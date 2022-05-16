@@ -13,7 +13,7 @@ class CompleteOrderPageLaundry extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           title: Text(
-            "New Order",
+            "Completed Order",
             style: TextStyle(color: Colors.black),
           ),
           elevation: 0,
@@ -52,7 +52,7 @@ class CompleteOrderPageLaundry extends StatelessWidget {
                           "assets/lottie/order-not-found.json",
                         ),
                       ),
-                      Text("NO NEW ORDER",
+                      Text("NO COMPLETED ORDER",
                           style: TextStyle(
                               fontSize: screenWidth / 18,
                               fontWeight: FontWeight.bold)),

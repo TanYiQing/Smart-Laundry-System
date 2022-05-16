@@ -78,8 +78,16 @@ class CompletedOrderTile extends StatelessWidget {
                     ),
                     GetBuilder<MyOrderLaundryController>(builder: (controller) {
                       return Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
+                          Row(
+                            children: [
+                              Text("Time "),
+                              Text(order.collecttime.toString(),
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold)),
+                            ],
+                          ),
                           GestureDetector(
                             onTap: () {
                               Get.defaultDialog(
@@ -114,7 +122,8 @@ class CompletedOrderTile extends StatelessWidget {
                                 textConfirm: "Update".tr,
                                 textCancel: "Cancel".tr,
                                 onConfirm: () => controller.updateOrderStatus(
-                                    controller.newandconfirmedorderList[index].orderId),
+                                    controller.newandconfirmedorderList[index]
+                                        .orderId),
                                 onCancel: () => Get.back(),
                                 cancelTextColor: Colors.black,
                                 confirmTextColor: Colors.white,
