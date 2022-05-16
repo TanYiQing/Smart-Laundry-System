@@ -256,7 +256,7 @@ class ServicesDashboardPage extends StatelessWidget {
                                   gradient: LinearGradient(
                                       begin: Alignment(-1.0, -4.0),
                                       end: Alignment(1.0, 4.0),
-                                      colors: [Colors.teal, Colors.white]),
+                                      colors: [Colors.grey, Colors.white]),
                                   borderRadius: BorderRadius.circular(15)),
                               child: GetBuilder<ServicesDetailsController>(
                                   builder: (controller) {

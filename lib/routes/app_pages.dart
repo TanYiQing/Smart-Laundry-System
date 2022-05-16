@@ -5,6 +5,8 @@ import 'package:final_year_project/pages/customer/bottombar/binding/bottombar_bi
 import 'package:final_year_project/pages/customer/cart/view/cart.dart';
 import 'package:final_year_project/pages/customer/chooselocation/binding/chooselocation_binding.dart';
 import 'package:final_year_project/pages/customer/chooselocation/view/chooselocation.dart';
+import 'package:final_year_project/pages/customer/errorreport/binding/errorreport_binding.dart';
+import 'package:final_year_project/pages/customer/errorreport/view/errorreport.dart';
 import 'package:final_year_project/pages/customer/location/binding/location_binding.dart';
 import 'package:final_year_project/pages/customer/map/binding/map_binding.dart';
 import 'package:final_year_project/pages/customer/map/view/map.dart';
@@ -245,6 +247,11 @@ class AppPages {
         name: "/payment",
         page: () => PaymentPage(),
         binding: PaymentBindings(),
+        middlewares: [RouterAuthMiddleware()]),
+    GetPage(
+        name: "/error",
+        page: () => ErrorReportPage(),
+        binding: ErrorReportBindings(),
         middlewares: [RouterAuthMiddleware()]),
 
     //Laundry Owner Page

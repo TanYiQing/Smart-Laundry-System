@@ -34,24 +34,47 @@ class ServicesDetailsPage extends StatelessWidget {
                     );
                   }),
                   centerTitle: true,
-                  background: Container(
-                    decoration: BoxDecoration(
+                  background: Stack(children: [
+                    Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(20),
+                              bottomRight: Radius.circular(20))),
+                      key: controller.topKey,
+                      width: double.infinity,
+                      height: screenHeight / 2,
+                      child: ClipRRect(
                         borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(20),
-                            bottomRight: Radius.circular(20))),
-                    key: controller.topKey,
-                    width: double.infinity,
-                    height: screenHeight / 2,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(20),
-                          bottomRight: Radius.circular(20)),
-                      child: CachedNetworkImage(
-                          fit: BoxFit.cover,
-                          imageUrl:
-                              "https://hubbuddies.com/270607/onesource/images/laundry/${controller.laundry.laundryID}/laundryshopimage.png"),
+                            bottomRight: Radius.circular(20)),
+                        child: CachedNetworkImage(
+                            fit: BoxFit.cover,
+                            imageUrl:
+                                "https://hubbuddies.com/270607/onesource/images/laundry/${controller.laundry.laundryID}/laundryshopimage.png"),
+                      ),
                     ),
-                  ),
+                    Positioned(
+                      top: 0,
+                      right: 0,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: GestureDetector(
+                          onTap: () {
+                            Get.toNamed("/error");
+                          },
+                          child: Container(
+                            child: Card(
+                                elevation: 10,
+                                color: Colors.yellow,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Center(child: Text("Error Report")),
+                                )),
+                          ),
+                        ),
+                      ),
+                    )
+                  ]),
                 );
               }),
             ),
