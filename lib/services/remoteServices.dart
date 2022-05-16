@@ -7,6 +7,7 @@ import 'package:final_year_project/models/laundry.dart';
 import 'package:final_year_project/models/machine.dart';
 import 'package:final_year_project/models/order.dart';
 import 'package:final_year_project/models/user.dart';
+import 'package:final_year_project/models/wallet.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:http/http.dart' as http;
@@ -563,6 +564,41 @@ class RemoteServices {
             "Something wrong in updating order status, please try again...");
       }
     } else {
+      return null;
+    }
+  }
+
+  static Future<List<Wallet>?> loadWallet(String email) async {
+    var response = await client.post(
+        Uri.parse('https://hubbuddies.com/270607/onesource/php/loadWallet.php'),
+        body: {"email": email});
+    // print(response.body);
+    if (response.statusCode == 200) {
+      if (response.body == "nodata") {
+        return null;
+      } else {
+        var jsondata = response.body;
+        return walletFromJson(jsondata);
+      }
+    } else {
+      Get.snackbar("Opps", "Error in loading wallet...");
+      return null;
+    }
+  }
+
+  static Future<String?> calculateWallet(String email) async {
+    var response = await client.post(
+        Uri.parse('https://hubbuddies.com/270607/onesource/php/calculateWallet.php'),
+        body: {"email": email});
+    print(response.body);
+    if (response.statusCode == 200) {
+      if (response.body == "nodata") {
+        return null;
+      } else {
+        return response.body;
+      }
+    } else {
+      Get.snackbar("Opps", "Error in loading wallet...");
       return null;
     }
   }
