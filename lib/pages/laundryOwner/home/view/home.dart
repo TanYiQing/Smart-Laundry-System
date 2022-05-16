@@ -1,4 +1,5 @@
 import 'package:final_year_project/pages/laundryOwner/home/controller/home_controller.dart';
+import 'package:final_year_project/pages/laundryOwner/mywallet/controller/mywallet_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 import 'package:get/get.dart';
@@ -192,7 +193,7 @@ class HomePageLaundry extends StatelessWidget {
                                     child: Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
-                                     children: [
+                                      children: [
                                         Image.asset(
                                           "assets/icons/ongoing-order.png",
                                           height: screenHeight / 20,
@@ -475,13 +476,21 @@ class HomePageLaundry extends StatelessWidget {
                                                                 .center,
                                                         children: [
                                                           GetBuilder<
-                                                                  HomeLaundryController>(
+                                                                  MyWalletController>(
                                                               builder:
                                                                   (controller) {
-                                                            return Text(
-                                                              controller
-                                                                  .checkWalletAmount(
-                                                                      controller.walletAmount.value),
+                                                            return (controller.ishidden.value==false)?Text("RM"+
+                                                              controller.checkWalletAmount(
+                                                                  controller
+                                                                      .walletvalue
+                                                                      .value),
+                                                              style: TextStyle(
+                                                                fontSize:
+                                                                    screenWidth /
+                                                                        15,
+                                                              ),
+                                                            ):Text(
+                                                              "-----",
                                                               style: TextStyle(
                                                                 fontSize:
                                                                     screenWidth /
@@ -497,7 +506,7 @@ class HomePageLaundry extends StatelessWidget {
                                                 Positioned(
                                                     right: 10,
                                                     child: GetBuilder<
-                                                            HomeLaundryController>(
+                                                            MyWalletController>(
                                                         builder: (controller) {
                                                       return GestureDetector(
                                                         onTap: () {
@@ -532,9 +541,10 @@ class HomePageLaundry extends StatelessWidget {
                                                       child: MaterialButton(
                                                         onPressed: () {
                                                           Get.toNamed(
-                                                              "/mywalletlaundry",arguments:
-                                                                controller
-                                                                    .user);
+                                                              "/mywalletlaundry",
+                                                              arguments:
+                                                                  controller
+                                                                      .user);
                                                         },
                                                         child: Text(
                                                           "View More".tr,
@@ -628,7 +638,6 @@ class HomePageLaundry extends StatelessWidget {
                                                       ],
                                                     ),
                                                   ),
-                                                  
                                                 ],
                                               ),
                                               Positioned(
@@ -734,7 +743,6 @@ class HomePageLaundry extends StatelessWidget {
                                                       ],
                                                     ),
                                                   ),
-                                                 
                                                 ],
                                               ),
                                               Positioned(

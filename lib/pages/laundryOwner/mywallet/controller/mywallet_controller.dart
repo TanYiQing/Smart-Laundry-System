@@ -6,6 +6,8 @@ class MyWalletController extends GetxController {
   var user = Get.arguments;
   var walletvalue = "0.00".obs;
   var walletList = <Wallet>[].obs;
+  var ishidden = false.obs;
+
   @override
   void onInit() {
     loadWallet();
@@ -24,6 +26,25 @@ class MyWalletController extends GetxController {
   Future<void> calculateWallet() async {
     var walletValue = await RemoteServices.calculateWallet(user.email);
     walletvalue.value = walletValue.toString();
+    update();
+  }
+
+  String checkWalletAmount(String walletAmount) {
+    var arr = walletAmount.split('.');
+    if (arr[0].length < 8) {
+      return arr[0];
+    } else {
+      return arr[0].substring(0, 8) + "...";
+    }
+  }
+
+  void toggleWalletAmount() {
+    if (ishidden.isTrue) {
+      ishidden.toggle();
+    } else {
+      ishidden.value = true;
+    }
+
     update();
   }
 }

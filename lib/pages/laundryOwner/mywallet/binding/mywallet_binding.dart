@@ -5,6 +5,5 @@ class MyWalletBindings extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut<MyWalletController>(() => MyWalletController());
-    // Get.lazyPut<MyLaundryController>(() => MyLaundryController());
   }
 }
