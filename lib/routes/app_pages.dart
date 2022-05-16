@@ -35,6 +35,7 @@ import 'package:final_year_project/pages/laundryOwner/managemachine/view/managem
 import 'package:final_year_project/pages/laundryOwner/mylaundry/binding/mylaundry_binding.dart';
 import 'package:final_year_project/pages/laundryOwner/mylaundrydetails/binding/mylaundrydetails_binding.dart';
 import 'package:final_year_project/pages/laundryOwner/mylaundrydetails/view/mylaundrydetails.dart';
+import 'package:final_year_project/pages/laundryOwner/mywallet/binding/mywallet_binding.dart';
 import 'package:final_year_project/pages/mutual/account/binding/account_binding.dart';
 import 'package:final_year_project/pages/customer/bottombar/branch/accountcustomer.dart';
 import 'package:final_year_project/pages/customer/bottombar/branch/favourite/view/favourite.dart';
@@ -319,8 +320,10 @@ class AppPages {
         page: () => AddIroningMachinePageLaundry(),
         binding: AddMachineBindings(),
         middlewares: [RouterAuthMiddleware()]),
-    GetPage(name: "/mywalletlaundry", page: () => MyWalletPageLaundry(),
-        // binding: MyOrderLaundryBindings(),
+    GetPage(
+        name: "/mywalletlaundry",
+        page: () => MyWalletPageLaundry(),
+        binding: MyWalletBindings(),
         middlewares: [RouterAuthMiddleware()]),
   ];
 

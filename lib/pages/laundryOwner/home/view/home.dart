@@ -192,7 +192,7 @@ class HomePageLaundry extends StatelessWidget {
                                     child: Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
-                                      children: [
+                                     children: [
                                         Image.asset(
                                           "assets/icons/ongoing-order.png",
                                           height: screenHeight / 20,
@@ -532,7 +532,9 @@ class HomePageLaundry extends StatelessWidget {
                                                       child: MaterialButton(
                                                         onPressed: () {
                                                           Get.toNamed(
-                                                              "/mywalletlaundry");
+                                                              "/mywalletlaundry",arguments:
+                                                                controller
+                                                                    .user);
                                                         },
                                                         child: Text(
                                                           "View More".tr,
