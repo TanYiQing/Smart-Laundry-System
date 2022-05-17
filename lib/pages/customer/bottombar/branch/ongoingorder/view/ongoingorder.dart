@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 class OnGoingOrderPage extends StatelessWidget {
+   final controller = Get.lazyPut<BottomBarController>(() => BottomBarController(), fenix: true);
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -29,8 +30,8 @@ class OnGoingOrderPage extends StatelessWidget {
                                 child: GridView.count(
                       crossAxisCount: 1,
                       childAspectRatio: ((screenWidth / screenHeight) / 0.21),
-                      children:
-                          List.generate(controller.onGoingOrderList.length, (index) {
+                      children: List.generate(
+                          controller.onGoingOrderList.length, (index) {
                         return GestureDetector(
                             onTap: () {
                               // controller.viewServicesDetails(index);

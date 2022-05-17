@@ -2,7 +2,6 @@
 
 import 'package:final_year_project/models/address.dart';
 import 'package:final_year_project/models/availability.dart';
-
 import 'package:final_year_project/models/laundry.dart';
 import 'package:final_year_project/models/machine.dart';
 import 'package:final_year_project/models/order.dart';
@@ -454,21 +453,25 @@ class RemoteServices {
   }
 
   static Future<List<Order>?> loadOnGoingOrder(String email) async {
-    var response = await client.post(
-        Uri.parse(
-            'https://hubbuddies.com/270607/onesource/php/loadOnGoingOrder.php'),
-        body: {"email": email});
-    print(response.body);
-    if (response.statusCode == 200) {
-      if (response.body == "nodata") {
-        return null;
+    try {
+      var response = await client.post(
+          Uri.parse(
+              'https://hubbuddies.com/270607/onesource/php/loadOnGoingOrder.php'),
+          body: {"email": email});
+      print(response.body);
+      if (response.statusCode == 200) {
+        if (response.body == "nodata") {
+          return null;
+        } else {
+          var jsondata = response.body;
+          return orderFromJson(jsondata);
+        }
       } else {
-        var jsondata = response.body;
-        return orderFromJson(jsondata);
+        Get.snackbar("Opps", "Error in loading service...");
+        return null;
       }
-    } else {
-      Get.snackbar("Opps", "Error in loading service...");
-      return null;
+    } on Exception catch (_) {
+      print("Error");
     }
   }
 
@@ -588,7 +591,8 @@ class RemoteServices {
 
   static Future<String?> calculateWallet(String email) async {
     var response = await client.post(
-        Uri.parse('https://hubbuddies.com/270607/onesource/php/calculateWallet.php'),
+        Uri.parse(
+            'https://hubbuddies.com/270607/onesource/php/calculateWallet.php'),
         body: {"email": email});
     print(response.body);
     if (response.statusCode == 200) {

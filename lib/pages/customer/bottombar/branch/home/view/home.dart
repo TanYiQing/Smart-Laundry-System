@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
+  final controller = Get.lazyPut<BottomBarController>(() => BottomBarController(), fenix: true);
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -494,20 +495,26 @@ class HomePage extends StatelessWidget {
                         ),
                       ]),
                 ),
-                (controller.onGoingOrderList.length!=0)?
-                Container(
-                  height: screenWidth / 1.8,
-                  child: Center(
-                      child: GridView.count(
-                    physics: NeverScrollableScrollPhysics(),
-                    crossAxisCount: 1,
-                    childAspectRatio: ((screenWidth / screenHeight) / 0.26),
-                    children: List.generate(1, (index) {
-                      return OnGoingOrderTile(
-                          controller.onGoingOrderList[index]);
-                    }),
-                  )),
-                ):Container(),
+                (controller.onGoingOrderList.length != 0)
+                    ? Container(
+                        height: screenWidth / 1.8,
+                        child: Center(
+                            child: GridView.count(
+                          physics: NeverScrollableScrollPhysics(),
+                          crossAxisCount: 1,
+                          childAspectRatio:
+                              ((screenWidth / screenHeight) / 0.26),
+                          children: List.generate(1, (index) {
+                            return OnGoingOrderTile(
+                                controller.onGoingOrderList[index]);
+                          }),
+                        )),
+                      )
+                    : Container(
+                        height: screenHeight / 3,
+                        width: screenWidth / 2,
+                        child: Image.asset("assets/icons/noorder.png"),
+                      ),
 
                 // Padding(
                 //   padding: const EdgeInsets.all(8.0),

@@ -6,7 +6,6 @@ class SplashScreenBinding extends Bindings {
   @override
   void dependencies() {
     Get.put(SplashScreenController());
-    Get.put(BottomBarController());
-    // Get.lazyPut<BottomBarController>(() => BottomBarController());
+    Get.lazyPut<BottomBarController>(() => BottomBarController(), fenix: true);
   }
 }

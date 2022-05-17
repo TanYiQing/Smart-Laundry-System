@@ -5,7 +5,9 @@ import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 class FavouritePage extends StatelessWidget {
-  final controller = Get.put(BottomBarController());
+  final controller = Get.lazyPut<BottomBarController>(
+      () => BottomBarController(),
+      fenix: true);
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -22,7 +24,7 @@ class FavouritePage extends StatelessWidget {
               iconTheme: IconThemeData(color: Colors.black),
             ),
             body: GetBuilder<BottomBarController>(builder: (controller) {
-              return (controller.serviceList.length!=0)
+              return (controller.serviceList.length != 0)
                   ? Column(
                       children: [
                         Container(

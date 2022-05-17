@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class BottomBar extends StatelessWidget {
+  final controller = Get.put<BottomBarController>(BottomBarController());
   @override
   Widget build(BuildContext context) {
     return GetBuilder<BottomBarController>(builder: (controller) {

@@ -1,7 +1,10 @@
+import 'package:final_year_project/pages/customer/bottombar/controller/bottombar_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 class PurchaseHistoryPage extends StatelessWidget {
+   final controller = Get.lazyPut<BottomBarController>(() => BottomBarController(), fenix: true);
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
