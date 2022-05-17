@@ -606,4 +606,37 @@ class RemoteServices {
       return null;
     }
   }
+
+  static Future<String?> sendReport(
+      String name,
+      String email,
+      String phone,
+      String laundryID,
+      String machineID,
+      String machineType,
+      String error) async {
+    var response = await client.post(
+        Uri.parse('https://hubbuddies.com/270607/onesource/php/sendReport.php'),
+        body: {
+          "name": name,
+          "email": email,
+          "phone": phone,
+          "laundryID": laundryID,
+          "machineID": machineID,
+          "machineType": machineType,
+          "error": error
+        });
+    print(response.body);
+    if (response.statusCode == 200) {
+      if (response.body == "Success") {
+        Get.back();
+        Get.snackbar("Error Reported", "We will reach you ASAP.");
+      } else {
+        Get.snackbar("Error Report Failed", "Please try again later...");
+      }
+    } else {
+      Get.snackbar("Error Report Failed", "Please try again later...");
+      return null;
+    }
+  }
 }

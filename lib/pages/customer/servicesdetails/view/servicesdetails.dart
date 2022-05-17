@@ -60,7 +60,8 @@ class ServicesDetailsPage extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: GestureDetector(
                           onTap: () {
-                            Get.toNamed("/error");
+                            Get.toNamed("/error",
+                                arguments: controller.laundry);
                           },
                           child: Container(
                             child: Card(

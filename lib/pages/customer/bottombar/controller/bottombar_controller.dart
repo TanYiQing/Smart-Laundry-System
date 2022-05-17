@@ -12,12 +12,18 @@ class BottomBarController extends GetxController {
   var user = Get.arguments;
   var tabIndex = 0;
   late PageController pagecontroller = new PageController();
+  final List<String> orderStatus = [
+    "Washing Machine",
+    "Dry Washing Machine",
+    "Ironing Machine",
+  ];
 
   @override
   void onInit() {
     loadOnGoingOrder();
     super.onInit();
   }
+
   void changeTab(int index) {
     tabIndex = index;
     if (tabIndex == 0) {
