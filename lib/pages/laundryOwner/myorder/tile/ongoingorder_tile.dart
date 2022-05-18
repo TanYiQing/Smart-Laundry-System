@@ -98,6 +98,7 @@ class OnGoingOrderTile extends StatelessWidget {
                                     GetBuilder<MyOrderLaundryController>(
                                         builder: (controller) {
                                       return DropdownButton(
+                                          value: controller.selectOrderStatus,
                                           style: TextStyle(
                                               fontSize: screenWidth / 20,
                                               color: Colors.red),
