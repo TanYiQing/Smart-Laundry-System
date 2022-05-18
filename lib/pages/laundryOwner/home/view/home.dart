@@ -255,14 +255,7 @@ class HomePageLaundry extends StatelessWidget {
                                           decoration: BoxDecoration(
                                             borderRadius:
                                                 BorderRadius.circular(20),
-                                            gradient: LinearGradient(
-                                                begin: Alignment(-1.0, -4.0),
-                                                end: Alignment(1.0, 4.0),
-                                                colors: [
-                                                  Color.fromRGBO(
-                                                      173, 236, 255, 1),
-                                                  Colors.white
-                                                ]),
+                                            color: Colors.white,
                                           ),
                                           child: Stack(
                                             children: [
@@ -370,22 +363,25 @@ class HomePageLaundry extends StatelessWidget {
                                                         HomeLaundryController>(
                                                     builder: (controller) {
                                                   return Container(
-                                                    width: screenWidth / 5,
-                                                    height: screenHeight / 35,
-                                                    child: MaterialButton(
-                                                      onPressed: () {
-                                                        Get.toNamed(
-                                                            "/mylaundrylaundry",
-                                                            arguments:
-                                                                controller
-                                                                    .user);
-                                                      },
-                                                      child: Text(
-                                                        "View More".tr,
-                                                        style: TextStyle(
-                                                            fontSize:
-                                                                screenWidth /
-                                                                    45),
+                                                    width: screenWidth / 4.5,
+                                                    height: screenHeight / 30,
+                                                    child: Card(
+                                                      elevation: 10,
+                                                      child: MaterialButton(
+                                                        onPressed: () {
+                                                          Get.toNamed(
+                                                              "/mylaundrylaundry",
+                                                              arguments:
+                                                                  controller
+                                                                      .user);
+                                                        },
+                                                        child: Text(
+                                                          "View More".tr,
+                                                          style: TextStyle(
+                                                              fontSize:
+                                                                  screenWidth /
+                                                                      45),
+                                                        ),
                                                       ),
                                                     ),
                                                     decoration: BoxDecoration(
@@ -421,17 +417,9 @@ class HomePageLaundry extends StatelessWidget {
                                         elevation: 8,
                                         child: Container(
                                             decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(20),
-                                              gradient: LinearGradient(
-                                                  begin: Alignment(-1.0, -4.0),
-                                                  end: Alignment(1.0, 4.0),
-                                                  colors: [
-                                                    Color.fromRGBO(
-                                                        255, 199, 251, 1),
-                                                    Colors.white
-                                                  ]),
-                                            ),
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
+                                                color: Colors.white),
                                             child: Stack(
                                               children: [
                                                 Column(
@@ -479,24 +467,31 @@ class HomePageLaundry extends StatelessWidget {
                                                                   MyWalletController>(
                                                               builder:
                                                                   (controller) {
-                                                            return (controller.ishidden.value==false)?Text("RM"+
-                                                              controller.checkWalletAmount(
-                                                                  controller
-                                                                      .walletvalue
-                                                                      .value),
-                                                              style: TextStyle(
-                                                                fontSize:
-                                                                    screenWidth /
-                                                                        15,
-                                                              ),
-                                                            ):Text(
-                                                              "-----",
-                                                              style: TextStyle(
-                                                                fontSize:
-                                                                    screenWidth /
-                                                                        15,
-                                                              ),
-                                                            );
+                                                            return (controller
+                                                                        .ishidden
+                                                                        .value ==
+                                                                    false)
+                                                                ? Text(
+                                                                    "RM" +
+                                                                        controller.checkWalletAmount(controller
+                                                                            .walletvalue
+                                                                            .value),
+                                                                    style:
+                                                                        TextStyle(
+                                                                      fontSize:
+                                                                          screenWidth /
+                                                                              15,
+                                                                    ),
+                                                                  )
+                                                                : Text(
+                                                                    "-----",
+                                                                    style:
+                                                                        TextStyle(
+                                                                      fontSize:
+                                                                          screenWidth /
+                                                                              15,
+                                                                    ),
+                                                                  );
                                                           }),
                                                         ],
                                                       ),
@@ -536,22 +531,25 @@ class HomePageLaundry extends StatelessWidget {
                                                           HomeLaundryController>(
                                                       builder: (controller) {
                                                     return Container(
-                                                      width: screenWidth / 5,
-                                                      height: screenHeight / 35,
-                                                      child: MaterialButton(
-                                                        onPressed: () {
-                                                          Get.toNamed(
-                                                              "/mywalletlaundry",
-                                                              arguments:
-                                                                  controller
-                                                                      .user);
-                                                        },
-                                                        child: Text(
-                                                          "View More".tr,
-                                                          style: TextStyle(
-                                                              fontSize:
-                                                                  screenWidth /
-                                                                      45),
+                                                      width: screenWidth / 4.5,
+                                                      height: screenHeight / 30,
+                                                      child: Card(
+                                                        elevation: 10,
+                                                        child: MaterialButton(
+                                                          onPressed: () {
+                                                            Get.toNamed(
+                                                                "/mywalletlaundry",
+                                                                arguments:
+                                                                    controller
+                                                                        .user);
+                                                          },
+                                                          child: Text(
+                                                            "View More".tr,
+                                                            style: TextStyle(
+                                                                fontSize:
+                                                                    screenWidth /
+                                                                        45),
+                                                          ),
                                                         ),
                                                       ),
                                                       decoration: BoxDecoration(
@@ -593,14 +591,7 @@ class HomePageLaundry extends StatelessWidget {
                                             decoration: BoxDecoration(
                                               borderRadius:
                                                   BorderRadius.circular(20),
-                                              gradient: LinearGradient(
-                                                  begin: Alignment(-1.0, -4.0),
-                                                  end: Alignment(1.0, 4.0),
-                                                  colors: [
-                                                    Color.fromRGBO(
-                                                        255, 250, 201, 1),
-                                                    Colors.white
-                                                  ]),
+                                              color: Colors.white,
                                             ),
                                             child: Stack(children: [
                                               Column(
@@ -647,19 +638,22 @@ class HomePageLaundry extends StatelessWidget {
                                                         HomeLaundryController>(
                                                     builder: (controller) {
                                                   return Container(
-                                                    width: screenWidth / 5,
-                                                    height: screenHeight / 35,
-                                                    child: MaterialButton(
-                                                      onPressed: () {
-                                                        Get.toNamed(
-                                                            "/mybusinesslaundry");
-                                                      },
-                                                      child: Text(
-                                                        "View More".tr,
-                                                        style: TextStyle(
-                                                            fontSize:
-                                                                screenWidth /
-                                                                    45),
+                                                    width: screenWidth / 4.5,
+                                                    height: screenHeight / 30,
+                                                    child: Card(
+                                                      elevation: 10,
+                                                      child: MaterialButton(
+                                                        onPressed: () {
+                                                          Get.toNamed(
+                                                              "/mybusinesslaundry");
+                                                        },
+                                                        child: Text(
+                                                          "View More".tr,
+                                                          style: TextStyle(
+                                                              fontSize:
+                                                                  screenWidth /
+                                                                      45),
+                                                        ),
                                                       ),
                                                     ),
                                                     decoration: BoxDecoration(
@@ -695,14 +689,7 @@ class HomePageLaundry extends StatelessWidget {
                                             decoration: BoxDecoration(
                                               borderRadius:
                                                   BorderRadius.circular(20),
-                                              gradient: LinearGradient(
-                                                  begin: Alignment(-1.0, -4.0),
-                                                  end: Alignment(1.0, 4.0),
-                                                  colors: [
-                                                    Color.fromRGBO(
-                                                        233, 201, 255, 1),
-                                                    Colors.white
-                                                  ]),
+                                              color: Colors.white,
                                             ),
                                             child: Stack(children: [
                                               Column(
@@ -752,19 +739,25 @@ class HomePageLaundry extends StatelessWidget {
                                                         HomeLaundryController>(
                                                     builder: (controller) {
                                                   return Container(
-                                                    width: screenWidth / 5,
-                                                    height: screenHeight / 35,
-                                                    child: MaterialButton(
-                                                      onPressed: () {
-                                                        Get.toNamed(
-                                                            "/businessreportlaundry");
-                                                      },
-                                                      child: Text(
-                                                        "View More".tr,
-                                                        style: TextStyle(
-                                                            fontSize:
-                                                                screenWidth /
-                                                                    45),
+                                                    width: screenWidth / 4.5,
+                                                    height: screenHeight / 30,
+                                                    child: Card(
+                                                      elevation: 10,
+                                                      child: MaterialButton(
+                                                        onPressed: () {
+                                                          Get.toNamed(
+                                                              "/businessreportlaundry",
+                                                              arguments:
+                                                                  controller
+                                                                      .user);
+                                                        },
+                                                        child: Text(
+                                                          "View More".tr,
+                                                          style: TextStyle(
+                                                              fontSize:
+                                                                  screenWidth /
+                                                                      45),
+                                                        ),
                                                       ),
                                                     ),
                                                     decoration: BoxDecoration(

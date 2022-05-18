@@ -31,7 +31,9 @@ import 'package:final_year_project/pages/laundryOwner/addmachine/view/adddrywash
 import 'package:final_year_project/pages/laundryOwner/addmachine/view/addironingmachine.dart';
 import 'package:final_year_project/pages/laundryOwner/addnewlaundry/view/addnewlaundry.dart';
 import 'package:final_year_project/pages/laundryOwner/addmachine/view/addwashingmachine.dart';
+import 'package:final_year_project/pages/laundryOwner/businessreport/binding/businessreport_binding.dart';
 import 'package:final_year_project/pages/laundryOwner/businessreport/view/businessreport.dart';
+import 'package:final_year_project/pages/laundryOwner/businessreport/view/businessreportcategory.dart';
 import 'package:final_year_project/pages/laundryOwner/managemachine/binding/managemachine_binding.dart';
 import 'package:final_year_project/pages/laundryOwner/managemachine/view/managemachine.dart';
 import 'package:final_year_project/pages/laundryOwner/mylaundry/binding/mylaundry_binding.dart';
@@ -144,7 +146,9 @@ class AppPages {
         page: () => HomePage(),
         binding: BottomBarBindings(),
         middlewares: [RouterAuthMiddleware()]),
-    GetPage(name: "/favourite", page: () => FavouritePage(),
+    GetPage(
+        name: "/favourite",
+        page: () => FavouritePage(),
         binding: BottomBarBindings(),
         middlewares: [RouterAuthMiddleware()]),
     GetPage(
@@ -286,8 +290,14 @@ class AppPages {
         binding: AddNewLaundryBindings(),
         middlewares: [RouterAuthMiddleware()]),
     GetPage(
-        name: "/businessreportlaundry", page: () => BusinessReportPageLaundry(),
-        // binding: MyOrderLaundryBindings(),
+        name: "/businessreportlaundry",
+        page: () => BusinessReportPageLaundry(),
+        binding: BusinessReportBindings(),
+        middlewares: [RouterAuthMiddleware()]),
+    GetPage(
+        name: "/businessreportcategorylaundry",
+        page: () => BusinessReportCategory(),
+        binding: BusinessReportBindings(),
         middlewares: [RouterAuthMiddleware()]),
     GetPage(name: "/mybusinesslaundry", page: () => MyBusinessPageLaundry(),
         // binding: MyOrderLaundryBindings(),
