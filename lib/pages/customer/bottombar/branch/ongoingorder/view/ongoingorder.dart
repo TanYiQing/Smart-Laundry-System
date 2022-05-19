@@ -29,7 +29,7 @@ class OnGoingOrderPage extends StatelessWidget {
                             child: Center(
                                 child: GridView.count(
                       crossAxisCount: 1,
-                      childAspectRatio: ((screenWidth / screenHeight) / 0.21),
+                      childAspectRatio: ((screenWidth / screenHeight) / 0.23),
                       children: List.generate(
                           controller.onGoingOrderList.length, (index) {
                         return GestureDetector(

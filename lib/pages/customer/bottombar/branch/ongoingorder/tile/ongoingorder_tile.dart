@@ -27,6 +27,7 @@ class OnGoingOrderTile extends StatelessWidget {
                 Text("Order ID " + "#" + order.orderId.toString()),
                 Text("Receipt ID " + "#" + order.receiptId.toString()),
                 Divider(color: Colors.black),
+                Text("Machine ID " + "#" + order.machineId.toString()),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
