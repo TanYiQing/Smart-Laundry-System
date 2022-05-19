@@ -33,7 +33,8 @@ class MyWalletPageLaundry extends StatelessWidget {
                               style: TextStyle(
                                   fontSize: screenWidth / 10,
                                   fontWeight: FontWeight.bold)),
-                        ),SizedBox(height:20),
+                        ),
+                        SizedBox(height: 20),
                         Container(
                           width: screenWidth / 3,
                           height: screenHeight / 25,
@@ -48,7 +49,13 @@ class MyWalletPageLaundry extends StatelessWidget {
                             ),
                           ),
                           decoration: BoxDecoration(
-                              color: Colors.teal[300],
+                              gradient: LinearGradient(
+                                  begin: Alignment(-1.0, -4.0),
+                                  end: Alignment(1.0, 4.0),
+                                  colors: [
+                                    Color.fromRGBO(0, 194, 203, 1),
+                                    Colors.white
+                                  ]),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10))),
                         )
