@@ -281,15 +281,17 @@ class HomePageLaundry extends StatelessWidget {
                                                                     20,
                                                           ),
                                                         ),
-                                                        Text(
-                                                          "My Laundry".tr,
-                                                          style: TextStyle(
-                                                              fontSize:
-                                                                  screenWidth /
-                                                                      20,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .bold),
+                                                        Expanded(
+                                                          child: Text(
+                                                            "Manage Laundry".tr,
+                                                            style: TextStyle(
+                                                                fontSize:
+                                                                    screenWidth /
+                                                                        20,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold),
+                                                          ),
                                                         ),
                                                       ],
                                                     ),
@@ -610,21 +612,23 @@ class HomePageLaundry extends StatelessWidget {
                                                                       .only(
                                                                   right: 8.0),
                                                           child: Image.asset(
-                                                            "assets/icons/growth.png",
+                                                            "assets/icons/errormachine.png",
                                                             height:
                                                                 screenWidth /
                                                                     20,
                                                           ),
                                                         ),
-                                                        Text(
-                                                          "My Business".tr,
-                                                          style: TextStyle(
-                                                              fontSize:
-                                                                  screenWidth /
-                                                                      20,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .bold),
+                                                        Expanded(
+                                                          child: Text(
+                                                            "Error Machines".tr,
+                                                            style: TextStyle(
+                                                                fontSize:
+                                                                    screenWidth /
+                                                                        20,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold),
+                                                          ),
                                                         ),
                                                       ],
                                                     ),
@@ -645,7 +649,7 @@ class HomePageLaundry extends StatelessWidget {
                                                       child: MaterialButton(
                                                         onPressed: () {
                                                           Get.toNamed(
-                                                              "/mybusinesslaundry");
+                                                              "/errormachines");
                                                         },
                                                         child: Text(
                                                           "View More".tr,

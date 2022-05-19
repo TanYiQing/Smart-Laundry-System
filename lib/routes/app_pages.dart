@@ -34,6 +34,7 @@ import 'package:final_year_project/pages/laundryOwner/addmachine/view/addwashing
 import 'package:final_year_project/pages/laundryOwner/businessreport/binding/businessreport_binding.dart';
 import 'package:final_year_project/pages/laundryOwner/businessreport/view/businessreport.dart';
 import 'package:final_year_project/pages/laundryOwner/businessreport/view/businessreportcategory.dart';
+import 'package:final_year_project/pages/laundryOwner/errorReports/view/errorReports.dart';
 import 'package:final_year_project/pages/laundryOwner/managemachine/binding/managemachine_binding.dart';
 import 'package:final_year_project/pages/laundryOwner/managemachine/view/managemachine.dart';
 import 'package:final_year_project/pages/laundryOwner/mylaundry/binding/mylaundry_binding.dart';
@@ -53,7 +54,6 @@ import 'package:final_year_project/pages/customer/search/view/search.dart';
 import 'package:final_year_project/pages/customer/services/view/services.dart';
 import 'package:final_year_project/pages/laundryOwner/home/binding/home_binding.dart';
 import 'package:final_year_project/pages/laundryOwner/home/view/home.dart';
-import 'package:final_year_project/pages/laundryOwner/mybusiness/view/mybusiness.dart';
 import 'package:final_year_project/pages/laundryOwner/mylaundry/view/mylaundry.dart';
 import 'package:final_year_project/pages/laundryOwner/myorder/binding/myorder_binding.dart';
 import 'package:final_year_project/pages/laundryOwner/myorder/view/completedorder.dart';
@@ -299,7 +299,7 @@ class AppPages {
         page: () => BusinessReportCategory(),
         binding: BusinessReportBindings(),
         middlewares: [RouterAuthMiddleware()]),
-    GetPage(name: "/mybusinesslaundry", page: () => MyBusinessPageLaundry(),
+    GetPage(name: "/errormachines", page: () => ErrorMachinesPageLaundry(),
         // binding: MyOrderLaundryBindings(),
         middlewares: [RouterAuthMiddleware()]),
     GetPage(

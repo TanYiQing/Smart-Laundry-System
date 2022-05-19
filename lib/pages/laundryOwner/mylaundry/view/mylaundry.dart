@@ -13,7 +13,7 @@ class MyLaundryPageLaundry extends StatelessWidget {
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             title: Text(
-              "My Laundry",
+              "Manage Laundry",
               style: TextStyle(color: Colors.black),
             ),
             actions: [

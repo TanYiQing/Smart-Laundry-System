@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class MyBusinessPageLaundry extends StatelessWidget {
+class ErrorMachinesPageLaundry extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -8,7 +8,7 @@ class MyBusinessPageLaundry extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           title: Text(
-            "My Business",
+            "Error Machines",
             style: TextStyle(color: Colors.black),
           ),
           elevation: 0,
