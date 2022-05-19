@@ -157,8 +157,15 @@ class OnGoingOrderTile extends StatelessWidget {
                     padding: const EdgeInsets.only(top: 3.0),
                     child: Container(
                         decoration: BoxDecoration(
-                            color: Colors.teal[100],
-                            borderRadius: BorderRadius.circular(10)),
+                              gradient: LinearGradient(
+                                  begin: Alignment(-1.0, -4.0),
+                                  end: Alignment(1.0, 4.0),
+                                  colors: [
+                                    Color.fromRGBO(0, 194, 203, 1),
+                                    Colors.white
+                                  ]),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10))),
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
