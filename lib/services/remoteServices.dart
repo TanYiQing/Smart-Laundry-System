@@ -2,6 +2,7 @@
 
 import 'package:final_year_project/models/address.dart';
 import 'package:final_year_project/models/availability.dart';
+import 'package:final_year_project/models/errorMachine.dart';
 import 'package:final_year_project/models/laundry.dart';
 import 'package:final_year_project/models/machine.dart';
 import 'package:final_year_project/models/order.dart';
@@ -28,7 +29,6 @@ class RemoteServices {
           "role": role
         });
     if (response.statusCode == 200) {
-      print(response.body);
       if (response.body == "Success") {
         Get.snackbar("Hooray!", "Account registered successfully, login now.");
       } else {
@@ -44,7 +44,6 @@ class RemoteServices {
     var response = await client.post(
         Uri.parse('https://hubbuddies.com/270607/onesource/php/loginUser.php'),
         body: {"role": role, "email": email, "password": password});
-    print(response.body);
     if (response.statusCode == 200) {
       if (response.body == "Failed") {
         Get.snackbar("Opps", "Wrong username or password...");
@@ -60,7 +59,6 @@ class RemoteServices {
           email: userdata[3],
           dateregister: userdata[4],
         );
-        print(user.lname);
         if (role == "Customer") {
           Get.offAllNamed('/bottombar', arguments: user);
         } else {
@@ -105,7 +103,6 @@ class RemoteServices {
           "encoded_bankheaderimage": encoded_bankheaderimage
         });
     if (response.statusCode == 200) {
-      print(response.body);
       if (response.body == "Success") {
         Get.snackbar(
             "Hooray!", "Laundry has been submited, please wait for approval.");
@@ -171,7 +168,6 @@ class RemoteServices {
         });
 
     if (response.statusCode == 200) {
-      print(response.body);
       if (response.body == "Success") {
         Get.snackbar("Hooray!", "Machine has been submited.");
         Get.offAndToNamed("/addmachinelaundry");
@@ -186,7 +182,6 @@ class RemoteServices {
 
   static Future<List<Machine>?> loadMachine(
       String laundryID, String machineType) async {
-    print(machineType);
     var response = await client.post(
         Uri.parse(
             'https://hubbuddies.com/270607/onesource/php/loadMachine.php'),
@@ -210,7 +205,6 @@ class RemoteServices {
         Uri.parse(
             'https://hubbuddies.com/270607/onesource/php/loadService.php'),
         body: {"machineType": machineType, "email": email});
-    print(response.body);
     if (response.statusCode == 200) {
       if (response.body == "nodata") {
         return null;
@@ -235,7 +229,6 @@ class RemoteServices {
         });
 
     if (response.statusCode == 200) {
-      print(response.body);
       var jsondata = response.body;
       return availabilityFromJson(jsondata);
     } else {
@@ -252,7 +245,6 @@ class RemoteServices {
         body: {
           "email": email,
         });
-    print(response.body);
     if (response.statusCode == 200) {
       if (response.body == "Failed") {
         return null;
@@ -287,7 +279,6 @@ class RemoteServices {
           "addressType": addressType,
           "email": email
         });
-    print(response.body);
     if (response.statusCode == 200) {
       if (response.body == "Failed") {
         return null;
@@ -305,7 +296,6 @@ class RemoteServices {
         Uri.parse(
             'https://hubbuddies.com/270607/onesource/php/loadAddress.php'),
         body: {"email": email});
-    // print(response.body);
     if (response.statusCode == 200) {
       if (response.body == "nodata") {
         return null;
@@ -320,14 +310,12 @@ class RemoteServices {
   }
 
   static Future<String?> deleteAddress(String addressID) async {
-    print(addressID);
     var response = await client.post(
         Uri.parse(
             'https://hubbuddies.com/270607/onesource/php/deleteAddress.php'),
         body: {
           "addressID": addressID,
         });
-    print(response.body);
     if (response.statusCode == 200) {
       if (response.body == "Failed") {
         return null;
@@ -345,7 +333,6 @@ class RemoteServices {
         Uri.parse(
             'https://hubbuddies.com/270607/onesource/php/addFavourite.php'),
         body: {"laundryID": laundryID, "email": email});
-    print(response.body);
   }
 
   static Future deleteFavourite(String laundryID, email) async {
@@ -353,7 +340,6 @@ class RemoteServices {
         Uri.parse(
             'https://hubbuddies.com/270607/onesource/php/deleteFavourite.php'),
         body: {"laundryID": laundryID, "email": email});
-    print(response.body);
   }
 
   static Future<List<Laundry>?> loadFavourite(String email) async {
@@ -361,7 +347,6 @@ class RemoteServices {
         Uri.parse(
             'https://hubbuddies.com/270607/onesource/php/loadFavourite.php'),
         body: {"email": email});
-    print(response.body);
     if (response.statusCode == 200) {
       if (response.body == "nodata") {
         return null;
@@ -411,7 +396,6 @@ class RemoteServices {
           "totalPrice": totalPrice,
         });
     if (response.statusCode == 200) {
-      print(response.body);
       if (response.body == "Success") {
         Get.snackbar("Hooray!", "Order placed!");
       } else {
@@ -427,7 +411,6 @@ class RemoteServices {
     var response = await client.post(
         Uri.parse('https://hubbuddies.com/270607/onesource/php/loginUser.php'),
         body: {"role": role, "email": email, "password": password});
-    print(response.body);
     if (response.statusCode == 200) {
       if (response.body == "Failed") {
         return null;
@@ -439,7 +422,6 @@ class RemoteServices {
           email: userdata[3],
           dateregister: userdata[4],
         );
-        print(user.lname);
         if (role == "Customer") {
           Get.offAllNamed('/bottombar', arguments: user);
         } else {
@@ -458,7 +440,6 @@ class RemoteServices {
           Uri.parse(
               'https://hubbuddies.com/270607/onesource/php/loadOnGoingOrder.php'),
           body: {"email": email});
-      print(response.body);
       if (response.statusCode == 200) {
         if (response.body == "nodata") {
           return null;
@@ -470,9 +451,7 @@ class RemoteServices {
         Get.snackbar("Opps", "Error in loading service...");
         return null;
       }
-    } on Exception catch (_) {
-      print("Error");
-    }
+    } on Exception catch (_) {}
   }
 
   static Future<List<Order>?> loadNewAndConfirmedOrder() async {
@@ -499,8 +478,6 @@ class RemoteServices {
       Uri.parse(
           'https://hubbuddies.com/270607/onesource/php/loadOnGoingOrderLaundry.php'),
     );
-    print("Hello");
-    print(response.body);
     if (response.statusCode == 200) {
       if (response.body == "nodata") {
         return null;
@@ -537,7 +514,6 @@ class RemoteServices {
       Uri.parse(
           'https://hubbuddies.com/270607/onesource/php/loadConfirmedOrder.php'),
     );
-    print(response.body);
     if (response.statusCode == 200) {
       if (response.body == "nodata") {
         return null;
@@ -553,13 +529,11 @@ class RemoteServices {
 
   static Future<String?> updateOrderStatus(
       String orderId, String status) async {
-    print(orderId);
     var response = await client.post(
         Uri.parse(
             'https://hubbuddies.com/270607/onesource/php/updateOrderStatus.php'),
         body: {"orderId": orderId, "status": status});
     if (response.statusCode == 200) {
-      print(response.body);
       if (response.body == "Success") {
         Get.snackbar("Hooray!", "Order status updated!");
       } else {
@@ -575,7 +549,6 @@ class RemoteServices {
     var response = await client.post(
         Uri.parse('https://hubbuddies.com/270607/onesource/php/loadWallet.php'),
         body: {"email": email});
-    // print(response.body);
     if (response.statusCode == 200) {
       if (response.body == "nodata") {
         return null;
@@ -594,7 +567,6 @@ class RemoteServices {
         Uri.parse(
             'https://hubbuddies.com/270607/onesource/php/calculateWallet.php'),
         body: {"email": email});
-    print(response.body);
     if (response.statusCode == 200) {
       if (response.body == "nodata") {
         return null;
@@ -626,7 +598,6 @@ class RemoteServices {
           "machineType": machineType,
           "error": error
         });
-    print(response.body);
     if (response.statusCode == 200) {
       if (response.body == "Success") {
         Get.back();
@@ -636,6 +607,61 @@ class RemoteServices {
       }
     } else {
       Get.snackbar("Error Report Failed", "Please try again later...");
+      return null;
+    }
+  }
+
+  static Future<List<ErrorMachine>?> loadError(String laundryID) async {
+    var response = await client.post(
+        Uri.parse('https://hubbuddies.com/270607/onesource/php/loadError.php'),
+        body: {"laundryID": laundryID});
+    if (response.statusCode == 200) {
+      if (response.body == "nodata") {
+        return null;
+      } else {
+        var jsondata = response.body;
+        return errorMachineFromJson(jsondata);
+      }
+    } else {
+      Get.snackbar("Opps", "Error in loading wallet...");
+      return null;
+    }
+  }
+
+  static Future<String?> resolvedError(String errorID) async {
+    var response = await client.post(
+        Uri.parse(
+            'https://hubbuddies.com/270607/onesource/php/resolvedError.php'),
+        body: {
+          "errorID": errorID,
+        });
+    if (response.statusCode == 200) {
+      if (response.body == "Failed") {
+        return null;
+      } else {
+        Get.back();
+        Get.back();
+        Get.snackbar("Error Resolved", "Error has been resolved.");
+      }
+    } else {
+      return null;
+    }
+  }
+
+  static Future<String?> calculateNumberError(String email) async {
+    var response = await client.post(
+        Uri.parse(
+            'https://hubbuddies.com/270607/onesource/php/calculateNumberError.php'),
+        body: {"email": email});
+
+    if (response.statusCode == 200) {
+      if (response.body == "nodata") {
+        return null;
+      } else {
+        return response.body;
+      }
+    } else {
+      Get.snackbar("Opps", "Error in calculating error...");
       return null;
     }
   }

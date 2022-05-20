@@ -1,3 +1,4 @@
+import 'package:final_year_project/pages/laundryOwner/errorMachines/controller/errorMachines_controller.dart';
 import 'package:final_year_project/pages/laundryOwner/home/controller/home_controller.dart';
 import 'package:final_year_project/pages/laundryOwner/mywallet/controller/mywallet_controller.dart';
 import 'package:flutter/material.dart';
@@ -584,92 +585,130 @@ class HomePageLaundry extends StatelessWidget {
                                   Container(
                                     height: double.infinity,
                                     width: screenWidth / 2.2,
-                                    child: Card(
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(20))),
-                                        elevation: 8,
-                                        child: Container(
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(20),
-                                              color: Colors.white,
-                                            ),
-                                            child: Stack(children: [
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Padding(
-                                                    padding:
-                                                        const EdgeInsets.all(
-                                                            8.0),
-                                                    child: Row(
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsets
-                                                                      .only(
-                                                                  right: 8.0),
-                                                          child: Image.asset(
-                                                            "assets/icons/errormachine.png",
-                                                            height:
-                                                                screenWidth /
-                                                                    20,
+                                    child: GetBuilder<ErrorMachinesController>(
+                                        builder: (controller) {
+                                      return Card(
+                                          shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(20))),
+                                          elevation: 8,
+                                          child: Container(
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
+                                                color: Colors.white,
+                                              ),
+                                              child: Stack(children: [
+                                                Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              8.0),
+                                                      child: Row(
+                                                        children: [
+                                                          Padding(
+                                                            padding:
+                                                                const EdgeInsets
+                                                                        .only(
+                                                                    right: 8.0),
+                                                            child: Image.asset(
+                                                              "assets/icons/errormachine.png",
+                                                              height:
+                                                                  screenWidth /
+                                                                      20,
+                                                            ),
                                                           ),
-                                                        ),
-                                                        Expanded(
+                                                          Expanded(
+                                                            child: Text(
+                                                              "Error Machines"
+                                                                  .tr,
+                                                              style: TextStyle(
+                                                                  fontSize:
+                                                                      screenWidth /
+                                                                          20,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    Center(
+                                                      child: Row(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        children: [
+                                                          Text(
+                                                              controller
+                                                                  .errorMachines
+                                                                  .value
+                                                                  .toString(),
+                                                              style: TextStyle(
+                                                                  fontSize:
+                                                                      screenWidth /
+                                                                          10,
+                                                                  color: (controller
+                                                                              .errorMachines
+                                                                              .value
+                                                                              .toString() !=
+                                                                          "0")
+                                                                      ? Colors
+                                                                          .red
+                                                                      : Colors
+                                                                          .green)),
+                                                          Text(
+                                                            "Error(s) Reported",
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                                Positioned(
+                                                  bottom: 10,
+                                                  right: 10,
+                                                  child: GetBuilder<
+                                                          HomeLaundryController>(
+                                                      builder: (controller) {
+                                                    return Container(
+                                                      width: screenWidth / 4.5,
+                                                      height: screenHeight / 30,
+                                                      child: Card(
+                                                        elevation: 10,
+                                                        child: MaterialButton(
+                                                          onPressed: () {
+                                                            Get.toNamed(
+                                                                "/errormachines",
+                                                                arguments:
+                                                                    controller
+                                                                        .user);
+                                                          },
                                                           child: Text(
-                                                            "Error Machines".tr,
+                                                            "View More".tr,
                                                             style: TextStyle(
                                                                 fontSize:
                                                                     screenWidth /
-                                                                        20,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold),
+                                                                        45),
                                                           ),
                                                         ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                              Positioned(
-                                                bottom: 10,
-                                                right: 10,
-                                                child: GetBuilder<
-                                                        HomeLaundryController>(
-                                                    builder: (controller) {
-                                                  return Container(
-                                                    width: screenWidth / 4.5,
-                                                    height: screenHeight / 30,
-                                                    child: Card(
-                                                      elevation: 10,
-                                                      child: MaterialButton(
-                                                        onPressed: () {
-                                                          Get.toNamed(
-                                                              "/errormachines");
-                                                        },
-                                                        child: Text(
-                                                          "View More".tr,
-                                                          style: TextStyle(
-                                                              fontSize:
-                                                                  screenWidth /
-                                                                      45),
-                                                        ),
                                                       ),
-                                                    ),
-                                                    decoration: BoxDecoration(
-                                                        color: Colors.white,
-                                                        borderRadius:
-                                                            BorderRadius.all(
-                                                                Radius.circular(
-                                                                    10))),
-                                                  );
-                                                }),
-                                              ),
-                                            ]))),
+                                                      decoration: BoxDecoration(
+                                                          color: Colors.white,
+                                                          borderRadius:
+                                                              BorderRadius.all(
+                                                                  Radius
+                                                                      .circular(
+                                                                          10))),
+                                                    );
+                                                  }),
+                                                ),
+                                              ])));
+                                    }),
                                   ),
                                 ],
                               ),

@@ -34,7 +34,9 @@ import 'package:final_year_project/pages/laundryOwner/addmachine/view/addwashing
 import 'package:final_year_project/pages/laundryOwner/businessreport/binding/businessreport_binding.dart';
 import 'package:final_year_project/pages/laundryOwner/businessreport/view/businessreport.dart';
 import 'package:final_year_project/pages/laundryOwner/businessreport/view/businessreportcategory.dart';
-import 'package:final_year_project/pages/laundryOwner/errorReports/view/errorReports.dart';
+import 'package:final_year_project/pages/laundryOwner/errorMachines/errorMachines_binding/errorMachines_bindings.dart';
+import 'package:final_year_project/pages/laundryOwner/errorMachines/view/errorMachines.dart';
+import 'package:final_year_project/pages/laundryOwner/errorMachines/view/errorMachinesDetails.dart';
 import 'package:final_year_project/pages/laundryOwner/managemachine/binding/managemachine_binding.dart';
 import 'package:final_year_project/pages/laundryOwner/managemachine/view/managemachine.dart';
 import 'package:final_year_project/pages/laundryOwner/mylaundry/binding/mylaundry_binding.dart';
@@ -299,8 +301,15 @@ class AppPages {
         page: () => BusinessReportCategory(),
         binding: BusinessReportBindings(),
         middlewares: [RouterAuthMiddleware()]),
-    GetPage(name: "/errormachines", page: () => ErrorMachinesPageLaundry(),
-        // binding: MyOrderLaundryBindings(),
+    GetPage(
+        name: "/errormachines",
+        page: () => ErrorMachinesPageLaundry(),
+        binding: ErrorMachinesBindings(),
+        middlewares: [RouterAuthMiddleware()]),
+    GetPage(
+        name: "/errormachinesdetails",
+        page: () => ErrorMachinesDetailsPageLaundry(),
+        binding: ErrorMachinesBindings(),
         middlewares: [RouterAuthMiddleware()]),
     GetPage(
         name: "/mylaundrylaundry",
