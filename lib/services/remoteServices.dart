@@ -477,6 +477,25 @@ class RemoteServices {
     }
   }
 
+  static Future<List<Order>?> loadCompletedOrderCustomer(String email) async {
+    var response = await client.post(
+        Uri.parse(
+            'https://hubbuddies.com/270607/onesource/php/loadCompletedOrderCustomer.php'),
+        body: {"email": email});
+    print(response.body);
+    if (response.statusCode == 200) {
+      if (response.body == "nodata") {
+        return null;
+      } else {
+        var jsondata = response.body;
+        return orderFromJson(jsondata);
+      }
+    } else {
+      Get.snackbar("Opps", "Error in loading service...");
+      return null;
+    }
+  }
+
   static Future<List<Order>?> loadOnGoingOrderLaundry() async {
     var response = await client.post(
       Uri.parse(

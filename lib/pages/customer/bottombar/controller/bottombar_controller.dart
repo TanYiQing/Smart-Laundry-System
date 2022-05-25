@@ -9,6 +9,7 @@ class BottomBarController extends GetxController {
   var serviceList = <Laundry>[].obs;
   var favouriteList = [].obs;
   var onGoingOrderList = [].obs;
+  var completedOrderList = [].obs;
   var user = Get.arguments;
   var tabIndex = 0;
   late PageController pagecontroller = new PageController();
@@ -32,6 +33,8 @@ class BottomBarController extends GetxController {
       loadFavourite();
     } else if (tabIndex == 2) {
       loadOnGoingOrder();
+    } else if (tabIndex == 3) {
+      loadCompletedOrderCustomer();
     }
     update();
   }
@@ -78,6 +81,16 @@ class BottomBarController extends GetxController {
 
   void viewAllOnGoingOrder() {
     tabIndex = 2;
+    update();
+  }
+
+  Future<void> loadCompletedOrderCustomer() async {
+    var completedOrder =
+        await RemoteServices.loadCompletedOrderCustomer(appData.read("email"));
+    if (completedOrder != null) {
+      completedOrderList.assignAll(completedOrder);
+    }
+    print(completedOrderList);
     update();
   }
 }

@@ -16,14 +16,14 @@ class PurchaseHistoryPage extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           title: Text(
-            "Purchase History",
+            "Order History",
             style: TextStyle(color: Colors.black),
           ),
           elevation: 0,
           iconTheme: IconThemeData(color: Colors.black),
         ),
         body: GetBuilder<BottomBarController>(builder: (controller) {
-          return (controller.onGoingOrderList.length != 0)
+          return (controller.completedOrderList.length != 0)
               ? Column(
                   children: [
                     Container(
@@ -33,13 +33,13 @@ class PurchaseHistoryPage extends StatelessWidget {
                       crossAxisCount: 1,
                       childAspectRatio: ((screenWidth / screenHeight) / 0.23),
                       children: List.generate(
-                          controller.onGoingOrderList.length, (index) {
+                          controller.completedOrderList.length, (index) {
                         return GestureDetector(
                             onTap: () {
                               // controller.viewServicesDetails(index);
                             },
                             child: PurchaseHistoryTile(
-                                controller.onGoingOrderList[index]));
+                                controller.completedOrderList[index]));
                       }),
                     )))),
                   ],

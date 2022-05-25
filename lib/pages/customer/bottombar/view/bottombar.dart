@@ -47,8 +47,8 @@ class BottomBar extends StatelessWidget {
                   activeIcon: Text("On Going Order".tr)),
               BottomNavigationBarItem(
                   icon: Icon(Icons.history_toggle_off_rounded),
-                  label: 'Purchase History'.tr,
-                  activeIcon: Text("Purchase History".tr)),
+                  label: 'Order History'.tr,
+                  activeIcon: Text("Order History".tr)),
               BottomNavigationBarItem(
                   icon: Icon(Icons.person_outline_rounded),
                   label: 'Account'.tr,
