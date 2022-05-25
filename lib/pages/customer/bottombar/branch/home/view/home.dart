@@ -506,7 +506,7 @@ class HomePage extends StatelessWidget {
                               ((screenWidth / screenHeight) / 0.26),
                           children: List.generate(1, (index) {
                             return OnGoingOrderTile(
-                                controller.onGoingOrderList[index]);
+                                controller.onGoingOrderList[index],index);
                           }),
                         )),
                       )

@@ -37,7 +37,7 @@ class OnGoingOrderPage extends StatelessWidget {
                               // controller.viewServicesDetails(index);
                             },
                             child: OnGoingOrderTile(
-                                controller.onGoingOrderList[index]));
+                                controller.onGoingOrderList[index],index));
                       }),
                     )))),
                   ],

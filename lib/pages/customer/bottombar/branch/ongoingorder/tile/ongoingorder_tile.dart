@@ -5,8 +5,9 @@ import 'package:get/get.dart';
 
 class OnGoingOrderTile extends StatelessWidget {
   final Order order;
+  final int index;
 
-  OnGoingOrderTile(this.order);
+  OnGoingOrderTile(this.order, this.index);
   final bottombarController = Get.put(BottomBarController());
   @override
   Widget build(BuildContext context) {
@@ -79,25 +80,33 @@ class OnGoingOrderTile extends StatelessWidget {
               Positioned(
                 top: 0,
                 right: 0,
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 3.0),
-                  child: Container(
-                      decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              begin: Alignment(-1.0, -4.0),
-                              end: Alignment(1.0, 4.0),
-                              colors: [
-                                Color.fromRGBO(0, 194, 203, 1),
-                                Colors.white
-                              ]),
-                          borderRadius: BorderRadius.all(Radius.circular(10))),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          order.status.toString(),
-                        ),
-                      )),
-                ),
+                child: GetBuilder<BottomBarController>(builder: (controller) {
+                  return Padding(
+                    padding: const EdgeInsets.only(top: 3.0),
+                    child: GestureDetector(
+                      onTap: () {
+                        controller.trackOrder(index);
+                      },
+                      child: Container(
+                          decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                  begin: Alignment(-1.0, -4.0),
+                                  end: Alignment(1.0, 4.0),
+                                  colors: [
+                                    Color.fromRGBO(0, 194, 203, 1),
+                                    Colors.white
+                                  ]),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10))),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              "Track Order",
+                            ),
+                          )),
+                    ),
+                  );
+                }),
               )
             ]),
           ),

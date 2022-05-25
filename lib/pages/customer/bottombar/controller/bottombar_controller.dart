@@ -1,4 +1,5 @@
 import 'package:final_year_project/models/laundry.dart';
+import 'package:final_year_project/models/order.dart';
 import 'package:final_year_project/services/remoteServices.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -92,5 +93,11 @@ class BottomBarController extends GetxController {
     }
     print(completedOrderList);
     update();
+  }
+
+  void trackOrder(index) {
+    print(index);
+    Order order = new Order(status: onGoingOrderList[index].status);
+    Get.toNamed('/track', arguments: order);
   }
 }

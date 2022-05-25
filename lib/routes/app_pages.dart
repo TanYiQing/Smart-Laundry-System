@@ -24,6 +24,8 @@ import 'package:final_year_project/pages/customer/servicesdetails/view/servicesd
 import 'package:final_year_project/pages/customer/servicesdetails/view/viewallservicesdetails.dart';
 import 'package:final_year_project/pages/customer/servicesmachinedetails/binding/servicesmachinedetails_binding.dart';
 import 'package:final_year_project/pages/customer/servicesmachinedetails/view/servicesmachinedetails.dart';
+import 'package:final_year_project/pages/customer/trackorder/binding/trackorder_binding.dart';
+import 'package:final_year_project/pages/customer/trackorder/view/trackorder.dart';
 import 'package:final_year_project/pages/laundryOwner/addmachine/binding/addmachine_binding.dart';
 import 'package:final_year_project/pages/laundryOwner/addmachine/view/addmachine.dart';
 import 'package:final_year_project/pages/laundryOwner/addnewlaundry/binding/addnewlaundry_binding.dart';
@@ -259,6 +261,11 @@ class AppPages {
         name: "/error",
         page: () => ErrorReportPage(),
         binding: ErrorReportBindings(),
+        middlewares: [RouterAuthMiddleware()]),
+    GetPage(
+        name: "/track",
+        page: () => TrackOrderPage(),
+        binding: TrackOrderBindings(),
         middlewares: [RouterAuthMiddleware()]),
 
     //Laundry Owner Page
