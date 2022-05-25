@@ -82,7 +82,7 @@ class OrderTile extends StatelessWidget {
                         children: [
                           Row(
                             children: [
-                              Text("Time "),
+                              Text("Collect Time "),
                               Text(order.collecttime.toString(),
                                   style:
                                       TextStyle(fontWeight: FontWeight.bold)),

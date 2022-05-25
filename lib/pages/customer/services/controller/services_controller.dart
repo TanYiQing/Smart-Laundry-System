@@ -56,6 +56,7 @@ class ServicesController extends GetxController {
         dateLaunch: serviceList[index].dateLaunch,
         email: serviceList[index].email,
         approve: serviceList[index].approve);
+
     Get.toNamed("/servicesdetails", arguments: laundry);
   }
 
@@ -67,8 +68,12 @@ class ServicesController extends GetxController {
       RemoteServices.deleteFavourite(laundryID, appData.read("email"));
       favouriteList[index] = "unfavourite";
     }
-
     update();
-    print(favouriteList);
+  }
+
+  void countClick(index, String date) {
+    print(date);
+    print(serviceList[index].laundryID);
+    RemoteServices.countClick(date,serviceList[index].laundryID);
   }
 }

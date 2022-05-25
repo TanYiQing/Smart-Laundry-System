@@ -3,6 +3,7 @@ import 'package:final_year_project/pages/customer/servicesmachinedetails/control
 import 'package:flutter/material.dart';
 import 'package:flutter_time_picker_spinner/flutter_time_picker_spinner.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:lottie/lottie.dart';
 
 class ServicesMachineDetailsPage extends StatelessWidget {
@@ -10,6 +11,8 @@ class ServicesMachineDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
+    var now = new DateTime.now();
+    var date = DateFormat('yyyy-MM-dd').format(now);
     return SafeArea(
       child: Scaffold(
           backgroundColor: Colors.white,
@@ -719,7 +722,7 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                     builder: (controller) {
                   return MaterialButton(
                     onPressed: () {
-                      controller.placeorder();
+                      controller.placeorder(date);
                     },
                     child: GetBuilder<ServicesMachineDetailsController>(
                         builder: (controller) {
