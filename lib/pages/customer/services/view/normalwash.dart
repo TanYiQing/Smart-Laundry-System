@@ -2,12 +2,15 @@ import 'package:final_year_project/pages/customer/services/controller/services_c
 import 'package:final_year_project/pages/customer/services/tile/services_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 class NormalWashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
+    var now = new DateTime.now();
+    var date = DateFormat('yyyy-MM-dd').format(now);
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
@@ -32,9 +35,10 @@ class NormalWashPage extends StatelessWidget {
                 children: List.generate(_.serviceList.length, (index) {
                   return GestureDetector(
                       onTap: () {
+                        _.countClick(index,date);
                         _.viewServicesDetails(index);
                       },
-                      child: ServicesTile(_.serviceList[index],index));
+                      child: ServicesTile(_.serviceList[index], index));
                 }),
               ))));
             }),
