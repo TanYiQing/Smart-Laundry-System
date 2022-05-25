@@ -34,6 +34,7 @@ import 'package:final_year_project/pages/laundryOwner/addmachine/view/addwashing
 import 'package:final_year_project/pages/laundryOwner/businessreport/binding/businessreport_binding.dart';
 import 'package:final_year_project/pages/laundryOwner/businessreport/view/businessreport.dart';
 import 'package:final_year_project/pages/laundryOwner/businessreport/view/businessreportcategory.dart';
+import 'package:final_year_project/pages/laundryOwner/businessreport/view/report.dart';
 import 'package:final_year_project/pages/laundryOwner/errorMachines/errorMachines_binding/errorMachines_bindings.dart';
 import 'package:final_year_project/pages/laundryOwner/errorMachines/view/errorMachines.dart';
 import 'package:final_year_project/pages/laundryOwner/errorMachines/view/errorMachinesDetails.dart';
@@ -350,6 +351,11 @@ class AppPages {
         name: "/mywalletlaundry",
         page: () => MyWalletPageLaundry(),
         binding: MyWalletBindings(),
+        middlewares: [RouterAuthMiddleware()]),
+    GetPage(
+        name: "/report",
+        page: () => ReportPage(),
+        binding: BusinessReportBindings(),
         middlewares: [RouterAuthMiddleware()]),
   ];
 

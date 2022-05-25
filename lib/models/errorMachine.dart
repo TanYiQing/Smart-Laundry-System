@@ -11,16 +11,16 @@ String errorMachineToJson(List<ErrorMachine> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class ErrorMachine {
-  ErrorMachine({
-    this.errorId,
-    this.name,
-    this.phone,
-    this.email,
-    this.laundryId,
-    this.machineId,
-    this.machineType,
-    this.error,
-  });
+  ErrorMachine(
+      {this.errorId,
+      this.name,
+      this.phone,
+      this.email,
+      this.laundryId,
+      this.machineId,
+      this.machineType,
+      this.error,
+      this.errorCreated});
 
   String? errorId;
   String? name;
@@ -30,6 +30,7 @@ class ErrorMachine {
   String? machineId;
   String? machineType;
   String? error;
+  String? errorCreated;
 
   factory ErrorMachine.fromJson(Map<String, dynamic> json) => ErrorMachine(
         errorId: json["error_ID"],
@@ -40,6 +41,7 @@ class ErrorMachine {
         machineId: json["machineID"],
         machineType: json["machineType"],
         error: json["error"],
+        errorCreated: json["errorCreated"],
       );
 
   Map<String, dynamic> toJson() => {
@@ -51,5 +53,6 @@ class ErrorMachine {
         "machineID": machineId,
         "machineType": machineType,
         "error": error,
+        "errorCreated": errorCreated,
       };
 }

@@ -2,6 +2,7 @@
 
 import 'package:final_year_project/models/address.dart';
 import 'package:final_year_project/models/availability.dart';
+import 'package:final_year_project/models/customerReport.dart';
 import 'package:final_year_project/models/errorMachine.dart';
 import 'package:final_year_project/models/laundry.dart';
 import 'package:final_year_project/models/machine.dart';
@@ -375,7 +376,8 @@ class RemoteServices {
       addon1,
       addon2,
       addon3,
-      totalPrice) async {
+      totalPrice,
+      date) async {
     var response = await client.post(
         Uri.parse('https://hubbuddies.com/270607/onesource/php/paymentCOD.php'),
         body: {
@@ -394,7 +396,9 @@ class RemoteServices {
           "addon2": addon2,
           "addon3": addon3,
           "totalPrice": totalPrice,
+          "date": date,
         });
+    print(response.body);
     if (response.statusCode == 200) {
       if (response.body == "Success") {
         Get.snackbar("Hooray!", "Order placed!");
@@ -623,7 +627,7 @@ class RemoteServices {
         return errorMachineFromJson(jsondata);
       }
     } else {
-      Get.snackbar("Opps", "Error in loading wallet...");
+      Get.snackbar("Opps", "Error in loading error machines...");
       return null;
     }
   }
@@ -662,6 +666,102 @@ class RemoteServices {
       }
     } else {
       Get.snackbar("Opps", "Error in calculating error...");
+      return null;
+    }
+  }
+
+  static Future<List<Order>?> generateIncomeReport(
+      String datestart, String dateend, laundryID) async {
+    try {
+      var response = await client.post(
+          Uri.parse(
+              'https://hubbuddies.com/270607/onesource/php/generateIncomeReport.php'),
+          body: {
+            "datestart": datestart,
+            "dateend": dateend,
+            "laundryID": laundryID
+          });
+
+      if (response.statusCode == 200) {
+        if (response.body == "nodata") {
+          return null;
+        } else {
+          var jsondata = response.body;
+          return orderFromJson(jsondata);
+        }
+      } else {
+        Get.snackbar("Opps", "Error in loading report...");
+        return null;
+      }
+    } on Exception catch (_) {}
+  }
+
+  static Future<List<ErrorMachine>?> generateErrorReport(
+      String datestart, String dateend, laundryID) async {
+    print(datestart);
+    try {
+      var response = await client.post(
+          Uri.parse(
+              'https://hubbuddies.com/270607/onesource/php/generateErrorReport.php'),
+          body: {
+            "datestart": datestart,
+            "dateend": dateend,
+            "laundryID": laundryID
+          });
+      print(response.body);
+      if (response.statusCode == 200) {
+        if (response.body == "nodata") {
+          return null;
+        } else {
+          var jsondata = response.body;
+          return errorMachineFromJson(jsondata);
+        }
+      } else {
+        Get.snackbar("Opps", "Error in loading report...");
+        return null;
+      }
+    } on Exception catch (_) {}
+  }
+
+  static Future<List<CustomerReport>?> generateCustomerReport(
+      String datestart, String dateend, laundryID) async {
+    print(datestart);
+    try {
+      var response = await client.post(
+          Uri.parse(
+              'https://hubbuddies.com/270607/onesource/php/generateCustomerReport.php'),
+          body: {
+            "datestart": datestart,
+            "dateend": dateend,
+            "laundryID": laundryID
+          });
+      print(response.body);
+      if (response.statusCode == 200) {
+        if (response.body == "nodata") {
+          return null;
+        } else {
+          var jsondata = response.body;
+          return customerReportFromJson(jsondata);
+        }
+      } else {
+        Get.snackbar("Opps", "Error in loading report...");
+        return null;
+      }
+    } on Exception catch (_) {}
+  }
+
+  static Future<String?> countClick(String date, String? laundryID) async {
+    var response = await client.post(
+        Uri.parse('https://hubbuddies.com/270607/onesource/php/countClick.php'),
+        body: {"date": date, "laundryID": laundryID});
+    print(response.body);
+    if (response.statusCode == 200) {
+      if (response.body == "Failed") {
+        return null;
+      } else {
+        return response.body;
+      }
+    } else {
       return null;
     }
   }

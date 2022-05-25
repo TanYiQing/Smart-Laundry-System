@@ -1,5 +1,6 @@
 import 'package:date_time_picker/date_time_picker.dart';
 import 'package:final_year_project/pages/laundryOwner/businessreport/controller/businessreport_controller.dart';
+import 'package:final_year_project/pages/laundryOwner/businessreport/controller/report_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,7 +21,7 @@ class BusinessReportCategory extends StatelessWidget {
           elevation: 0,
           iconTheme: IconThemeData(color: Colors.black),
         ),
-        body: GetBuilder<BusinessReportController>(builder: (controller) {
+        body: GetBuilder<ReportController>(builder: (controller) {
           return Center(
               child: Padding(
             padding: const EdgeInsets.all(8.0),
