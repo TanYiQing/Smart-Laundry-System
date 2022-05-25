@@ -3,10 +3,10 @@ import 'package:final_year_project/pages/customer/bottombar/controller/bottombar
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class OnGoingOrderTile extends StatelessWidget {
+class PurchaseHistoryTile extends StatelessWidget {
   final Order order;
 
-  OnGoingOrderTile(this.order);
+  PurchaseHistoryTile(this.order);
   final bottombarController = Get.put(BottomBarController());
   @override
   Widget build(BuildContext context) {

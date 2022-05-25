@@ -80,7 +80,8 @@ class ServicesTile extends StatelessWidget {
                 },
                 child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: (controller.favouriteList[index].toString()=="unfavourite")
+                    child: (controller.favouriteList[index].toString() ==
+                            "unfavourite")
                         ? Icon(Icons.favorite_border)
                         : Icon(
                             Icons.favorite_outlined,
