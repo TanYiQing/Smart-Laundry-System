@@ -3,7 +3,7 @@ import 'package:final_year_project/pages/customer/bottombar/branch/home/view/hom
 import 'package:final_year_project/pages/customer/bottombar/branch/ongoingorder/view/ongoingorder.dart';
 import 'package:final_year_project/pages/customer/bottombar/branch/purchasehistory/view/purchasehistory.dart';
 import 'package:final_year_project/pages/customer/bottombar/controller/bottombar_controller.dart';
-import 'package:final_year_project/pages/customer/bottombar/branch/accountcustomer.dart';
+import 'package:final_year_project/pages/customer/bottombar/branch/accountcustomer/view/accountcustomer.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

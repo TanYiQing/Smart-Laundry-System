@@ -8,6 +8,7 @@ import 'package:final_year_project/models/laundry.dart';
 import 'package:final_year_project/models/machine.dart';
 import 'package:final_year_project/models/order.dart';
 import 'package:final_year_project/models/user.dart';
+import 'package:final_year_project/models/userprofile.dart';
 import 'package:final_year_project/models/wallet.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -783,5 +784,142 @@ class RemoteServices {
     } else {
       return null;
     }
+  }
+
+  static Future<String?> saveFirstName(
+      String email, String firstName, String role) async {
+    var response = await client.post(
+        Uri.parse(
+            'https://hubbuddies.com/270607/onesource/php/saveFirstName.php'),
+        body: {"email": email, "firstName": firstName, "role": role});
+    if (response.statusCode == 200) {
+      if (response.body == "Failed") {
+        return null;
+      } else {
+        return response.body;
+      }
+    } else {
+      return null;
+    }
+  }
+
+  static Future<String?> saveLastName(
+      String email, String lastName, String role) async {
+    var response = await client.post(
+        Uri.parse(
+            'https://hubbuddies.com/270607/onesource/php/saveLastName.php'),
+        body: {"email": email, "lastName": lastName, "role": role});
+    print(response.body);
+    if (response.statusCode == 200) {
+      if (response.body == "Failed") {
+        return null;
+      } else {
+        return response.body;
+      }
+    } else {
+      return null;
+    }
+  }
+
+  static Future<String?> saveChangePassword(String email, String newpassword,
+      String confirmpassword, String role) async {
+    if (newpassword == confirmpassword) {
+      var response = await client.post(
+          Uri.parse(
+              'https://hubbuddies.com/270607/onesource/php/saveChangePassword.php'),
+          body: {
+            "email": email,
+            "newpassword": newpassword,
+            "confirmpassword": confirmpassword,
+            "role": role
+          });
+      print(response.body);
+      if (response.statusCode == 200) {
+        if (response.body == "Failed") {
+          return null;
+        } else {
+          return response.body;
+        }
+      } else {
+        return null;
+      }
+    } else {
+      Get.snackbar("Opps", "Password mismatch");
+    }
+  }
+
+  static Future<String?> saveGender(
+      String email, String gender, String role) async {
+    var response = await client.post(
+        Uri.parse('https://hubbuddies.com/270607/onesource/php/saveGender.php'),
+        body: {"email": email, "gender": gender, "role": role});
+    print(response.body);
+    if (response.statusCode == 200) {
+      if (response.body == "Failed") {
+        return null;
+      } else {
+        return response.body;
+      }
+    } else {
+      return null;
+    }
+  }
+
+  static Future<String?> saveBirthday(
+      String email, String birthday, String role) async {
+    var response = await client.post(
+        Uri.parse(
+            'https://hubbuddies.com/270607/onesource/php/saveBirthday.php'),
+        body: {"email": email, "birthday": birthday, "role": role});
+    print(response.body);
+    if (response.statusCode == 200) {
+      if (response.body == "Failed") {
+        return null;
+      } else {
+        return response.body;
+      }
+    } else {
+      return null;
+    }
+  }
+
+  static Future<String?> savePhone(
+      String email, String phone, String role) async {
+    var response = await client.post(
+        Uri.parse('https://hubbuddies.com/270607/onesource/php/savePhone.php'),
+        body: {"email": email, "phone": phone, "role": role});
+    print(response.body);
+    if (response.statusCode == 200) {
+      if (response.body == "Failed") {
+        return null;
+      } else {
+        return response.body;
+      }
+    } else {
+      return null;
+    }
+  }
+
+  static Future<List<UserProfile>?> loadUser(String email, String role) async {
+    try {
+      var response = await client.post(
+          Uri.parse('https://hubbuddies.com/270607/onesource/php/loadUser.php'),
+          body: {
+            "email": email,
+            "role": role,
+          });
+      print(response.body);
+      if (response.statusCode == 200) {
+        if (response.body == "nodata") {
+          return null;
+        } else {
+          var jsondata = response.body;
+          return userProfileFromJson(jsondata);
+        }
+      } else {
+        Get.snackbar("Opps", "Error in loading user...");
+        return null;
+      }
+    } on Exception catch (_) {}
   }
 }

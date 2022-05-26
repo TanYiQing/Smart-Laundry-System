@@ -47,7 +47,7 @@ import 'package:final_year_project/pages/laundryOwner/mylaundrydetails/binding/m
 import 'package:final_year_project/pages/laundryOwner/mylaundrydetails/view/mylaundrydetails.dart';
 import 'package:final_year_project/pages/laundryOwner/mywallet/binding/mywallet_binding.dart';
 import 'package:final_year_project/pages/mutual/account/binding/account_binding.dart';
-import 'package:final_year_project/pages/customer/bottombar/branch/accountcustomer.dart';
+import 'package:final_year_project/pages/customer/bottombar/branch/accountcustomer/view/accountcustomer.dart';
 import 'package:final_year_project/pages/customer/bottombar/branch/favourite/view/favourite.dart';
 import 'package:final_year_project/pages/customer/bottombar/branch/home/view/home.dart';
 import 'package:final_year_project/pages/customer/bottombar/branch/ongoingorder/view/ongoingorder.dart';
@@ -71,6 +71,7 @@ import 'package:final_year_project/pages/mutual/account/view/changepassword.dart
 import 'package:final_year_project/pages/mutual/account/view/firstname.dart';
 import 'package:final_year_project/pages/mutual/account/view/gender.dart';
 import 'package:final_year_project/pages/mutual/account/view/lastname.dart';
+import 'package:final_year_project/pages/mutual/account/view/phone.dart';
 import 'package:final_year_project/pages/mutual/intro/binding/intro_binding.dart';
 import 'package:final_year_project/pages/mutual/intro/view/intro.dart';
 import 'package:final_year_project/pages/mutual/login/binding/login_binding.dart';
@@ -138,6 +139,11 @@ class AppPages {
     GetPage(
         name: "/birthday",
         page: () => BirthdayPage(),
+        binding: AccountBindings(),
+        middlewares: [RouterAuthMiddleware()]),
+         GetPage(
+        name: "/phone",
+        page: () => PhonePage(),
         binding: AccountBindings(),
         middlewares: [RouterAuthMiddleware()]),
 

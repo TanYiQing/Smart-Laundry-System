@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
-  final controller = Get.lazyPut<BottomBarController>(() => BottomBarController(), fenix: true);
+  final controller = Get.lazyPut<BottomBarController>(
+      () => BottomBarController(),
+      fenix: true);
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -57,9 +59,13 @@ class HomePage extends StatelessWidget {
                                 GetBuilder<BottomBarController>(
                                     builder: (controller) {
                                   return Text(
-                                    controller.user.fname.toString() +
-                                        " " +
-                                        controller.user.lname.toString(),
+                                    (controller.userList.length != 0)
+                                        ? controller.userList[0].firstName
+                                                .toString() +
+                                            " " +
+                                            controller.userList[0].lastName
+                                                .toString()
+                                        : "",
                                     style:
                                         TextStyle(fontSize: screenWidth / 20),
                                   );
@@ -506,7 +512,7 @@ class HomePage extends StatelessWidget {
                               ((screenWidth / screenHeight) / 0.26),
                           children: List.generate(1, (index) {
                             return OnGoingOrderTile(
-                                controller.onGoingOrderList[index],index);
+                                controller.onGoingOrderList[index], index);
                           }),
                         )),
                       )

@@ -52,10 +52,10 @@ class HomePageLaundry extends StatelessWidget {
                           children: [
                             GetBuilder<HomeLaundryController>(
                                 builder: (controller) {
-                              return Text(
-                                controller.user.fname.toString() +
+                              return Text((controller.userList.length != 0) ?
+                                controller.userList[0].firstName.toString() +
                                     " " +
-                                    controller.user.lname.toString(),
+                                    controller.userList[0].lastName.toString():"",
                                 style: TextStyle(fontSize: screenWidth / 20),
                               );
                             }),
@@ -119,6 +119,7 @@ class HomePageLaundry extends StatelessWidget {
                             onTap: () {
                               Get.toNamed("/accountlaundry",
                                   arguments: controller.user);
+                                  Get.delete<HomeLaundryController>();
                             },
                             child: Container(
                               height: screenHeight / 12,

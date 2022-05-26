@@ -4,6 +4,6 @@ import 'package:get/get.dart';
 class AccountBindings extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<AccountController>(() => AccountController());
+    Get.lazyPut<AccountController>(() => AccountController(), fenix: true);
   }
 }

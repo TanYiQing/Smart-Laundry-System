@@ -44,27 +44,32 @@ class FirstNamePage extends StatelessWidget {
             alignment: Alignment.centerRight,
             child: Padding(
               padding: const EdgeInsets.only(top: 10.0, left: 8.0, right: 8.0),
-              child: Container(
-                child: MaterialButton(
-                  onPressed: () {
-                    // _.clickLogin();
-                  },
-                  child: Container(
-                    child: Text(
-                      "Save",
-                      style: TextStyle(fontSize: screenWidth / 30),
+              child: GetBuilder<AccountController>(builder: (controller) {
+                return Container(
+                  child: MaterialButton(
+                    onPressed: () {
+                      controller.saveFirstName();
+                    },
+                    child: Container(
+                      child: Text(
+                        "Save",
+                        style: TextStyle(fontSize: screenWidth / 30),
+                      ),
                     ),
                   ),
-                ),
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                        begin: Alignment(-1.0, -4.0),
-                        end: Alignment(1.0, 4.0),
-                        colors: [Color.fromRGBO(0, 194, 203, 1), Colors.white]),
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
-                width: screenWidth / 3.5,
-                height: screenHeight / 20,
-              ),
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          begin: Alignment(-1.0, -4.0),
+                          end: Alignment(1.0, 4.0),
+                          colors: [
+                            Color.fromRGBO(0, 194, 203, 1),
+                            Colors.white
+                          ]),
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                  width: screenWidth / 3.5,
+                  height: screenHeight / 20,
+                );
+              }),
             ),
           ),
         ],

@@ -51,9 +51,13 @@ class AccountPageCustomer extends StatelessWidget {
                               GetBuilder<BottomBarController>(
                                   builder: (controller) {
                                 return Text(
-                                  controller.user.fname.toString() +
-                                      " " +
-                                      controller.user.lname.toString(),
+                                  (controller.userList.length != 0)
+                                      ? controller.userList[0].firstName
+                                              .toString() +
+                                          " " +
+                                          controller.userList[0].lastName
+                                              .toString()
+                                      : "" + "" + "",
                                   style: TextStyle(fontSize: screenWidth / 20),
                                 );
                               }),
@@ -176,144 +180,179 @@ class AccountPageCustomer extends StatelessWidget {
               Container(
                   height: screenHeight / 1.5,
                   // color: Colors.black,
-                  child: ListView(physics: NeverScrollableScrollPhysics(),
+                  child: ListView(
+                    physics: NeverScrollableScrollPhysics(),
                     children: [
-                      ListTile(
-                        title: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text("First Name".tr),
-                            Row(
-                              children: [
-                                GetBuilder<BottomBarController>(
-                                    builder: (controller) {
-                                  return Text(controller.user.fname.toString());
-                                }),
-                                Icon(
-                                  Icons.arrow_forward_ios_outlined,
-                                  size: 15,
-                                )
-                              ],
-                            )
-                          ],
+                      GestureDetector(
+                        onTap: () {
+                          Get.toNamed('/firstname');
+                        },
+                        child: ListTile(
+                          title: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("First Name".tr),
+                              Row(
+                                children: [
+                                  GetBuilder<BottomBarController>(
+                                      builder: (controller) {
+                                    return Text(
+                                        (controller.userList.length != 0)
+                                            ? controller.userList[0].firstName
+                                                .toString()
+                                            : "");
+                                  }),
+                                  Icon(
+                                    Icons.arrow_forward_ios_outlined,
+                                    size: 15,
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
                         ),
                       ),
-                      ListTile(
-                        title: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text("Last Name".tr),
-                            Row(
-                              children: [
-                                GetBuilder<BottomBarController>(
-                                    builder: (controller) {
-                                  return Text(controller.user.lname.toString());
-                                }),
-                                Icon(
-                                  Icons.arrow_forward_ios_outlined,
-                                  size: 15,
-                                )
-                              ],
-                            )
-                          ],
+                      GestureDetector(
+                        onTap: () {
+                          Get.toNamed('/lastname');
+                        },
+                        child: ListTile(
+                          title: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Last Name".tr),
+                              Row(
+                                children: [
+                                  GetBuilder<BottomBarController>(
+                                      builder: (controller) {
+                                    return Text(
+                                        (controller.userList.length != 0)
+                                            ? controller.userList[0].lastName
+                                                .toString()
+                                            : "");
+                                  }),
+                                  Icon(
+                                    Icons.arrow_forward_ios_outlined,
+                                    size: 15,
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
                         ),
                       ),
-                      ListTile(
-                        title: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text("Bio".tr),
-                            Row(
-                              children: [
-                                Icon(
-                                  Icons.arrow_forward_ios_outlined,
-                                  size: 15,
-                                )
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
-                      ListTile(
-                        title: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text("Change Password".tr),
-                            Row(
-                              children: [
-                                Icon(
-                                  Icons.arrow_forward_ios_outlined,
-                                  size: 15,
-                                )
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
-                      Divider(
-                        thickness: 5,
-                      ),
-                      ListTile(
-                        title: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text("Gender".tr),
-                            Row(
-                              children: [
-                                GetBuilder<BottomBarController>(
-                                    builder: (controller) {
-                                  return Text(controller.user.lname.toString());
-                                }),
-                                Icon(
-                                  Icons.arrow_forward_ios_outlined,
-                                  size: 15,
-                                )
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
-                      ListTile(
-                        title: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text("Birthday".tr),
-                            Row(
-                              children: [
-                                GetBuilder<BottomBarController>(
-                                    builder: (controller) {
-                                  return Text(controller.user.lname.toString());
-                                }),
-                                Icon(
-                                  Icons.arrow_forward_ios_outlined,
-                                  size: 15,
-                                )
-                              ],
-                            )
-                          ],
+                      GestureDetector(
+                        onTap: () {
+                          Get.toNamed('/password');
+                        },
+                        child: ListTile(
+                          title: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Change Password".tr),
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.arrow_forward_ios_outlined,
+                                    size: 15,
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
                         ),
                       ),
                       Divider(
                         thickness: 5,
                       ),
-                      ListTile(
-                        title: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text("Phone".tr),
-                            Row(
-                              children: [
-                                GetBuilder<BottomBarController>(
-                                    builder: (controller) {
-                                  return Text(controller.user.lname.toString());
-                                }),
-                                Icon(
-                                  Icons.arrow_forward_ios_outlined,
-                                  size: 15,
-                                )
-                              ],
-                            )
-                          ],
+                      GestureDetector(
+                        onTap: () {
+                          Get.toNamed('/gender');
+                        },
+                        child: ListTile(
+                          title: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Gender".tr),
+                              Row(
+                                children: [
+                                  GetBuilder<BottomBarController>(
+                                      builder: (controller) {
+                                    return Text(
+                                        (controller.userList.length != 0)
+                                            ? controller.userList[0].gender
+                                                .toString()
+                                            : "");
+                                  }),
+                                  Icon(
+                                    Icons.arrow_forward_ios_outlined,
+                                    size: 15,
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Get.toNamed('birthday');
+                        },
+                        child: ListTile(
+                          title: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Birthday".tr),
+                              Row(
+                                children: [
+                                  GetBuilder<BottomBarController>(
+                                      builder: (controller) {
+                                    return Text(
+                                        (controller.userList.length != 0)
+                                            ? controller.userList[0].birthday
+                                                .toString()
+                                            : "");
+                                  }),
+                                  Icon(
+                                    Icons.arrow_forward_ios_outlined,
+                                    size: 15,
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      Divider(
+                        thickness: 5,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Get.toNamed('/phone');
+                        },
+                        child: ListTile(
+                          title: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Phone".tr),
+                              Row(
+                                children: [
+                                  GetBuilder<BottomBarController>(
+                                      builder: (controller) {
+                                    return Text(
+                                        (controller.userList.length != 0)
+                                            ? controller.userList[0].phone
+                                                .toString()
+                                            : "");
+                                  }),
+                                  Icon(
+                                    Icons.arrow_forward_ios_outlined,
+                                    size: 15,
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
                         ),
                       ),
                       ListTile(
@@ -327,10 +366,6 @@ class AccountPageCustomer extends StatelessWidget {
                                     builder: (controller) {
                                   return Text(controller.user.email.toString());
                                 }),
-                                Icon(
-                                  Icons.arrow_forward_ios_outlined,
-                                  size: 15,
-                                )
                               ],
                             )
                           ],

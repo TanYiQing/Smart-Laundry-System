@@ -1,5 +1,6 @@
 import 'package:final_year_project/models/laundry.dart';
 import 'package:final_year_project/models/order.dart';
+import 'package:final_year_project/models/userprofile.dart';
 import 'package:final_year_project/services/remoteServices.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -11,6 +12,7 @@ class BottomBarController extends GetxController {
   var favouriteList = [].obs;
   var onGoingOrderList = [].obs;
   var completedOrderList = [].obs;
+  var userList = <UserProfile>[].obs;
   var user = Get.arguments;
   var tabIndex = 0;
   late PageController pagecontroller = new PageController();
@@ -30,12 +32,15 @@ class BottomBarController extends GetxController {
     tabIndex = index;
     if (tabIndex == 0) {
       loadOnGoingOrder();
+      loadUser();
     } else if (tabIndex == 1) {
       loadFavourite();
     } else if (tabIndex == 2) {
       loadOnGoingOrder();
     } else if (tabIndex == 3) {
       loadCompletedOrderCustomer();
+    } else {
+      loadUser();
     }
     update();
   }
@@ -99,5 +104,15 @@ class BottomBarController extends GetxController {
     print(index);
     Order order = new Order(status: onGoingOrderList[index].status);
     Get.toNamed('/track', arguments: order);
+  }
+
+  Future<void> loadUser() async {
+    String email = appData.read("email");
+    String role = appData.read("role");
+    var userProfile = await RemoteServices.loadUser(email, role);
+    if (userProfile != null) {
+      userList.assignAll(userProfile);
+    }
+    update();
   }
 }

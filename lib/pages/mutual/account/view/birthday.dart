@@ -1,3 +1,4 @@
+import 'package:date_time_picker/date_time_picker.dart';
 import 'package:final_year_project/pages/mutual/account/controller/account_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -31,41 +32,49 @@ class BirthdayPage extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.only(left: 8.0, right: 8.0),
                     child: GetBuilder<AccountController>(builder: (controller) {
-                      return TextField(
-                        controller: controller.birthdaycontroller,
-                        decoration: InputDecoration(
-                            border: InputBorder.none, hintText: 'Birthday'),
-                      );
+                      return DateTimePicker(
+                          controller: controller.birthdaycontroller,
+                          dateHintText: "Birth Date",
+                          icon: Icon(Icons.date_range_outlined),
+                          type: DateTimePickerType.date,
+                          firstDate: DateTime(2000),
+                          lastDate: DateTime(2100));
                     }),
                   ),
                 ),
               ))),
           Align(
             alignment: Alignment.centerRight,
-            child: Padding(
-              padding: const EdgeInsets.only(top: 10.0, left: 8.0, right: 8.0),
-              child: Container(
-                child: MaterialButton(
-                  onPressed: () {
-                    // _.clickLogin();
-                  },
-                  child: Container(
-                    child: Text(
-                      "Save",
-                      style: TextStyle(fontSize: screenWidth / 30),
+            child: GetBuilder<AccountController>(builder: (controller) {
+              return Padding(
+                padding:
+                    const EdgeInsets.only(top: 10.0, left: 8.0, right: 8.0),
+                child: Container(
+                  child: MaterialButton(
+                    onPressed: () {
+                      controller.saveBirthday();
+                    },
+                    child: Container(
+                      child: Text(
+                        "Save",
+                        style: TextStyle(fontSize: screenWidth / 30),
+                      ),
                     ),
                   ),
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          begin: Alignment(-1.0, -4.0),
+                          end: Alignment(1.0, 4.0),
+                          colors: [
+                            Color.fromRGBO(0, 194, 203, 1),
+                            Colors.white
+                          ]),
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                  width: screenWidth / 3.5,
+                  height: screenHeight / 20,
                 ),
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                        begin: Alignment(-1.0, -4.0),
-                        end: Alignment(1.0, 4.0),
-                        colors: [Color.fromRGBO(0, 194, 203, 1), Colors.white]),
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
-                width: screenWidth / 3.5,
-                height: screenHeight / 20,
-              ),
-            ),
+              );
+            }),
           ),
         ],
       ),

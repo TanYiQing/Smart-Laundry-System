@@ -1,3 +1,4 @@
+import 'package:final_year_project/main.dart';
 import 'package:final_year_project/pages/mutual/account/controller/account_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -51,9 +52,13 @@ class AccountPageLaundry extends StatelessWidget {
                               GetBuilder<AccountController>(
                                   builder: (controller) {
                                 return Text(
-                                  controller.user.fname.toString() +
-                                      " " +
-                                      controller.user.lname.toString(),
+                                  (controller.userList.length != 0)
+                                      ? controller.userList[0].firstName
+                                              .toString() +
+                                          " " +
+                                          controller.userList[0].lastName
+                                              .toString()
+                                      : "" + "" + "",
                                   style: TextStyle(fontSize: screenWidth / 20),
                                 );
                               }),
@@ -151,6 +156,7 @@ class AccountPageLaundry extends StatelessWidget {
                           child: GestureDetector(
                             onTap: () {
                               Get.toNamed("/homelaundry");
+                              Get.delete<AccountController>();
                             },
                             child: Container(
                               height: screenHeight / 12,
@@ -189,7 +195,10 @@ class AccountPageLaundry extends StatelessWidget {
                                   GetBuilder<AccountController>(
                                       builder: (controller) {
                                     return Text(
-                                        controller.user.fname.toString());
+                                        (controller.userList.length != 0)
+                                            ? controller.userList[0].firstName
+                                                .toString()
+                                            : "");
                                   }),
                                   Icon(
                                     Icons.arrow_forward_ios_outlined,
@@ -215,7 +224,10 @@ class AccountPageLaundry extends StatelessWidget {
                                   GetBuilder<AccountController>(
                                       builder: (controller) {
                                     return Text(
-                                        controller.user.lname.toString());
+                                        (controller.userList.length != 0)
+                                            ? controller.userList[0].lastName
+                                                .toString()
+                                            : "");
                                   }),
                                   Icon(
                                     Icons.arrow_forward_ios_outlined,
@@ -265,7 +277,10 @@ class AccountPageLaundry extends StatelessWidget {
                                   GetBuilder<AccountController>(
                                       builder: (controller) {
                                     return Text(
-                                        controller.user.lname.toString());
+                                        (controller.userList.length != 0)
+                                            ? controller.userList[0].gender
+                                                .toString()
+                                            : "");
                                   }),
                                   Icon(
                                     Icons.arrow_forward_ios_outlined,
@@ -291,7 +306,10 @@ class AccountPageLaundry extends StatelessWidget {
                                   GetBuilder<AccountController>(
                                       builder: (controller) {
                                     return Text(
-                                        controller.user.lname.toString());
+                                        (controller.userList.length != 0)
+                                            ? controller.userList[0].birthday
+                                                .toString()
+                                            : "");
                                   }),
                                   Icon(
                                     Icons.arrow_forward_ios_outlined,
@@ -315,7 +333,9 @@ class AccountPageLaundry extends StatelessWidget {
                               children: [
                                 GetBuilder<AccountController>(
                                     builder: (controller) {
-                                  return Text(controller.user.lname.toString());
+                                  return Text((controller.userList.length != 0)
+                                      ? controller.userList[0].phone.toString()
+                                      : "");
                                 }),
                                 Icon(
                                   Icons.arrow_forward_ios_outlined,
@@ -335,7 +355,7 @@ class AccountPageLaundry extends StatelessWidget {
                               children: [
                                 GetBuilder<AccountController>(
                                     builder: (controller) {
-                                  return Text(controller.user.email.toString());
+                                  return Text(appData.read("email"));
                                 }),
                                 Icon(
                                   Icons.arrow_forward_ios_outlined,
