@@ -75,6 +75,7 @@ class AccountController extends GetxController {
 
     update();
     Get.back();
+    Get.delete<AccountController>();
   }
 
   void saveGender() {
@@ -84,6 +85,7 @@ class AccountController extends GetxController {
     RemoteServices.saveGender(email, gEnder, role);
     update();
     Get.back();
+    Get.delete<AccountController>();
   }
 
   void saveBirthday() {
@@ -93,6 +95,7 @@ class AccountController extends GetxController {
     RemoteServices.saveBirthday(email, birthday, role);
     update();
     Get.back();
+    Get.delete<AccountController>();
   }
 
   void savePhone() {
@@ -103,5 +106,6 @@ class AccountController extends GetxController {
     RemoteServices.savePhone(email, phone, role);
     update();
     Get.back();
+    Get.delete<AccountController>();
   }
 }

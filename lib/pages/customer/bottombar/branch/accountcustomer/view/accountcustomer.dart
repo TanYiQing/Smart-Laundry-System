@@ -186,6 +186,7 @@ class AccountPageCustomer extends StatelessWidget {
                       GestureDetector(
                         onTap: () {
                           Get.toNamed('/firstname');
+                          Get.delete<BottomBarController>();
                         },
                         child: ListTile(
                           title: Row(

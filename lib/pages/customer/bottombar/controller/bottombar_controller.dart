@@ -25,6 +25,7 @@ class BottomBarController extends GetxController {
   @override
   void onInit() {
     loadOnGoingOrder();
+    loadUser();
     super.onInit();
   }
 
