@@ -12,6 +12,7 @@ import 'package:final_year_project/pages/customer/map/binding/map_binding.dart';
 import 'package:final_year_project/pages/customer/map/view/map.dart';
 import 'package:final_year_project/pages/customer/payment/binding/payment_binding.dart';
 import 'package:final_year_project/pages/customer/payment/view/payment.dart';
+import 'package:final_year_project/pages/customer/search/binding/search_binding.dart';
 import 'package:final_year_project/pages/customer/services/binding/services_binding.dart';
 import 'package:final_year_project/pages/customer/services/view/drywash.dart';
 import 'package:final_year_project/pages/customer/services/view/drywashandironing.dart';
@@ -175,10 +176,12 @@ class AppPages {
     GetPage(
         name: "/account",
         page: () => AccountPageCustomer(),
+        binding: BottomBarBindings(),
         middlewares: [RouterAuthMiddleware()]),
     GetPage(
         name: "/search",
         page: () => SearchPage(),
+        binding: SearchBindings(),
         middlewares: [RouterAuthMiddleware()]),
     GetPage(
         name: "/location",

@@ -922,4 +922,23 @@ class RemoteServices {
       }
     } on Exception catch (_) {}
   }
+
+  static Future<List<Laundry>?> searchLaundry(String laundryName) async {
+    var response = await client.post(
+        Uri.parse(
+            'https://hubbuddies.com/270607/onesource/php/searchLaundry.php'),
+        body: {"laundryName": laundryName});
+
+    if (response.statusCode == 200) {
+      if (response.body == "nodata") {
+        return null;
+      } else {
+        var jsondata = response.body;
+        return laundryFromJson(jsondata);
+      }
+    } else {
+      Get.snackbar("Opps", "Error in loading laundry...");
+      return null;
+    }
+  }
 }
