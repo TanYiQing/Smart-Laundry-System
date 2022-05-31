@@ -2,7 +2,6 @@ import 'package:final_year_project/middleware/router_auth.dart';
 import 'package:final_year_project/pages/customer/addlocation/binding/addlocation_binding.dart';
 import 'package:final_year_project/pages/customer/addlocation/view/addlocation.dart';
 import 'package:final_year_project/pages/customer/bottombar/binding/bottombar_binding.dart';
-import 'package:final_year_project/pages/customer/cart/view/cart.dart';
 import 'package:final_year_project/pages/customer/chooselocation/binding/chooselocation_binding.dart';
 import 'package:final_year_project/pages/customer/chooselocation/view/chooselocation.dart';
 import 'package:final_year_project/pages/customer/errorreport/binding/errorreport_binding.dart';
@@ -248,10 +247,7 @@ class AppPages {
         page: () => ServicesMachineDetailsPage(),
         binding: ServicesMachineDetailsBindings(),
         middlewares: [RouterAuthMiddleware()]),
-    GetPage(
-        name: "/cart",
-        page: () => CartPage(),
-        middlewares: [RouterAuthMiddleware()]),
+
     GetPage(
         name: "/chooselocation",
         page: () => ChooseLocationPage(),

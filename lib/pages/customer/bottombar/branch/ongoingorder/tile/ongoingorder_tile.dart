@@ -81,21 +81,14 @@ class OnGoingOrderTile extends StatelessWidget {
                 top: 0,
                 right: 0,
                 child: GetBuilder<BottomBarController>(builder: (controller) {
-                  return Padding(
-                    padding: const EdgeInsets.only(top: 3.0),
-                    child: GestureDetector(
-                      onTap: () {
-                        controller.trackOrder(index);
-                      },
+                  return GestureDetector(
+                    onTap: () {
+                      controller.trackOrder(index);
+                    },
+                    child: Card(
+                      elevation: 5,
                       child: Container(
                           decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                  begin: Alignment(-1.0, -4.0),
-                                  end: Alignment(1.0, 4.0),
-                                  colors: [
-                                    Color.fromRGBO(0, 194, 203, 1),
-                                    Colors.white
-                                  ]),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10))),
                           child: Padding(

@@ -87,7 +87,7 @@ class PurchaseHistoryTile extends StatelessWidget {
                               begin: Alignment(-1.0, -4.0),
                               end: Alignment(1.0, 4.0),
                               colors: [
-                                Color.fromRGBO(0, 194, 203, 1),
+                                Color.fromRGBO(135, 245, 66, 1),
                                 Colors.white
                               ]),
                           borderRadius: BorderRadius.all(Radius.circular(10))),

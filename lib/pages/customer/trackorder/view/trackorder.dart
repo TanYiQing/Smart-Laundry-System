@@ -51,6 +51,10 @@ class TrackOrderPage extends GetView<TrackOrderController> {
                   }),
                 ),
               ),
+              Text(
+                "Order placed, wait for confirmation from laundry! Please wait patiently.",
+                textAlign: TextAlign.center,
+              )
             ],
           ),
         ),
@@ -70,6 +74,10 @@ class TrackOrderPage extends GetView<TrackOrderController> {
                   }),
                 ),
               ),
+              Text(
+                "Order confirmed, order will be process soon!",
+                textAlign: TextAlign.center,
+              )
             ],
           ),
         ),
@@ -89,6 +97,10 @@ class TrackOrderPage extends GetView<TrackOrderController> {
                   }),
                 ),
               ),
+              Text(
+                "Order processing, your order will be complete soon.",
+                textAlign: TextAlign.center,
+              )
             ],
           ),
         ),
@@ -108,6 +120,10 @@ class TrackOrderPage extends GetView<TrackOrderController> {
                   }),
                 ),
               ),
+              Text(
+                "Congratulations! You have successfully completed an order.",
+                textAlign: TextAlign.center,
+              )
             ],
           ),
         ),
