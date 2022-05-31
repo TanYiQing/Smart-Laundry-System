@@ -50,7 +50,6 @@ class PaymentPage extends StatelessWidget {
                       progressColor: Colors.green,
                     ),
                     SizedBox(height: 25),
-
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
@@ -146,7 +145,7 @@ class PaymentPage extends StatelessWidget {
                                                 fontSize: screenWidth / 22),
                                           ),
                                           Text(
-                                            controller.order.ordermethod??"",
+                                            controller.order.ordermethod ?? "",
                                             style: TextStyle(
                                                 fontSize: screenWidth / 22),
                                           )
@@ -216,42 +215,6 @@ class PaymentPage extends StatelessWidget {
                         width: screenWidth / 1.5,
                       ),
                     ),
-                    // Text(controller.order.email),
-                    // Expanded(
-                    //   child: WebView(
-                    //     initialUrl:
-                    //         'https://hubbuddies.com/270607/onesource/php/generateBill.php?email=' +
-                    //             controller.order.email.toString() +
-                    //             '&name=' +
-                    //             controller.order.name.toString() +
-                    //             '&ordermethod=' +
-                    //             controller.order.orderMethod.toString() +
-                    //             '&addressID=' +
-                    //             controller.order.addressID.toString() +
-                    //             '&collecttime=' +
-                    //             controller.order.collectTime.toString() +
-                    //             '&notetolaundry=' +
-                    //             controller.order.note.toString() +
-                    //             '&laundryID=' +
-                    //             controller.order.laundryID.toString() +
-                    //             '&machineID=' +
-                    //             controller.order.machineID.toString() +
-                    //             '&price=' +
-                    //             controller.order.price.toString() +
-                    //             '&addon1=' +
-                    //             controller.order.addon1.toString() +
-                    //             '&addon2=' +
-                    //             controller.order.addon2.toString() +
-                    //             '&addon3=' +
-                    //             controller.order.addon3.toString() +
-                    //             '&totalPrice=' +
-                    //             controller.order.totalPrice.toString(),
-                    //     javascriptMode: JavascriptMode.unrestricted,
-                    //     onWebViewCreated: (WebViewController webViewController) {
-                    //       _controller.complete(webViewController);
-                    //     },
-                    //   ),
-                    // )
                   ],
                 ),
               ),

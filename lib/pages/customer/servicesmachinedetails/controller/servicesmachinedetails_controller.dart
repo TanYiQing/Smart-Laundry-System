@@ -11,7 +11,7 @@ class ServicesMachineDetailsController extends GetxController {
   TextEditingController notecontroller = new TextEditingController();
 
   var orderMethod = "Reservation".obs;
-  var paymentMethod = "Cash On Delivery".obs;
+  var paymentMethod = "".obs;
   var checked1 = false.obs;
   var checked2 = false.obs;
   var checked3 = false.obs;
@@ -165,8 +165,11 @@ class ServicesMachineDetailsController extends GetxController {
           addon1.value.toString(),
           addon2.value.toString(),
           addon3.value.toString(),
-          totalPrice.value.toStringAsFixed(2),date);
+          totalPrice.value.toStringAsFixed(2),
+          date);
       Get.offAllNamed("/payment", arguments: order);
+    } else {
+      Get.toNamed("/paymentonline", arguments: order);
     }
   }
 }

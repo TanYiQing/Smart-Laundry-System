@@ -12,6 +12,7 @@ import 'package:final_year_project/pages/customer/map/binding/map_binding.dart';
 import 'package:final_year_project/pages/customer/map/view/map.dart';
 import 'package:final_year_project/pages/customer/payment/binding/payment_binding.dart';
 import 'package:final_year_project/pages/customer/payment/view/payment.dart';
+import 'package:final_year_project/pages/customer/payment/view/paymentonline.dart';
 import 'package:final_year_project/pages/customer/search/binding/search_binding.dart';
 import 'package:final_year_project/pages/customer/services/binding/services_binding.dart';
 import 'package:final_year_project/pages/customer/services/view/drywash.dart';
@@ -142,7 +143,7 @@ class AppPages {
         page: () => BirthdayPage(),
         binding: AccountBindings(),
         middlewares: [RouterAuthMiddleware()]),
-         GetPage(
+    GetPage(
         name: "/phone",
         page: () => PhonePage(),
         binding: AccountBindings(),
@@ -264,6 +265,11 @@ class AppPages {
     GetPage(
         name: "/payment",
         page: () => PaymentPage(),
+        binding: PaymentBindings(),
+        middlewares: [RouterAuthMiddleware()]),
+    GetPage(
+        name: "/paymentonline",
+        page: () => PaymenOnlinePage(),
         binding: PaymentBindings(),
         middlewares: [RouterAuthMiddleware()]),
     GetPage(
