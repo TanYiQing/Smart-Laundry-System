@@ -1,5 +1,4 @@
 import 'package:final_year_project/pages/laundryOwner/errorMachines/controller/errorMachinesDetails_controller.dart';
-import 'package:final_year_project/pages/laundryOwner/errorMachines/controller/errorMachines_controller.dart';
 import 'package:final_year_project/pages/laundryOwner/errorMachines/tile/errorMachines_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,7 +13,7 @@ class ErrorMachinesDetailsPageLaundry extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           title: Text(
-            "Error Machines",
+            "Error Machines".tr,
             style: TextStyle(color: Colors.black),
           ),
           elevation: 0,
@@ -50,7 +49,7 @@ class ErrorMachinesDetailsPageLaundry extends StatelessWidget {
                               style: TextStyle(
                                   fontSize: screenWidth / 18,
                                   fontWeight: FontWeight.bold)),
-                          Text("THERE ARE NO ERROR REPORTED",
+                          Text("THERE ARE NO ERROR REPORTED".tr,
                               style: TextStyle(fontSize: screenWidth / 25))
                         ],
                       ),

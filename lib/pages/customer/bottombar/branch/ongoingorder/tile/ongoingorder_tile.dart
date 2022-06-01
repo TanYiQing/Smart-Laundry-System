@@ -94,7 +94,7 @@ class OnGoingOrderTile extends StatelessWidget {
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Text(
-                              "Track Order",
+                              "Track Order".tr,
                             ),
                           )),
                     ),

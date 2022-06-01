@@ -13,6 +13,6 @@ class TranslationService extends Translations {
   Map<String, Map<String, String>> get keys => {
         'en_US': en_US,
         'zh_Hans': zh_Hans,
-        'malay': my_Mls,
+        'hi_IN': hi_IN,
       };
 }

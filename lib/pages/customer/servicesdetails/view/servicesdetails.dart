@@ -69,7 +69,7 @@ class ServicesDetailsPage extends StatelessWidget {
                                 color: Colors.yellow,
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: Center(child: Text("Error Report")),
+                                  child: Center(child: Text("Error Report".tr)),
                                 )),
                           ),
                         ),
@@ -139,7 +139,7 @@ class ServicesDetailsPage extends StatelessWidget {
                                                     "/servicesdashboard");
                                               },
                                               child: Text(
-                                                "See details",
+                                                "See details".tr,
                                                 style: TextStyle(
                                                     decoration: TextDecoration
                                                         .underline),
@@ -177,7 +177,7 @@ class ServicesDetailsPage extends StatelessWidget {
                             width: screenWidth / 2.5,
                             child: Image.asset("assets/images/search.png")),
                         Text(
-                          "What services are you looking at?",
+                          "What services are you looking at?".tr,
                           style: TextStyle(fontSize: screenWidth / 20),
                         ),
                         GetBuilder<ServicesDetailsController>(
@@ -204,7 +204,7 @@ class ServicesDetailsPage extends StatelessWidget {
                                             : null,
                                         child: Container(
                                           child: Text(
-                                            "Normal Wash",
+                                            "Normal Wash".tr,
                                             style: TextStyle(
                                                 fontSize: screenWidth / 30),
                                             textAlign: TextAlign.center,
@@ -240,7 +240,7 @@ class ServicesDetailsPage extends StatelessWidget {
                                             : null,
                                         child: Container(
                                           child: Text(
-                                            "Dry Wash",
+                                            "Dry Wash".tr,
                                             style: TextStyle(
                                                 fontSize: screenWidth / 30),
                                             textAlign: TextAlign.center,
@@ -276,7 +276,7 @@ class ServicesDetailsPage extends StatelessWidget {
                                             : null,
                                         child: Container(
                                           child: Text(
-                                            "Ironing",
+                                            "Ironing".tr,
                                             style: TextStyle(
                                                 fontSize: screenWidth / 30),
                                             textAlign: TextAlign.center,
@@ -316,7 +316,7 @@ class ServicesDetailsPage extends StatelessWidget {
                                         child: Padding(
                                           padding: const EdgeInsets.all(8.0),
                                           child: Text(
-                                            "Normal Washing Service",
+                                            "Normal Washing Service".tr,
                                             style: TextStyle(
                                                 fontSize: screenWidth / 20,
                                                 fontWeight: FontWeight.bold),
@@ -336,7 +336,7 @@ class ServicesDetailsPage extends StatelessWidget {
                                           },
                                           child: Container(
                                             child: Text(
-                                              "View All",
+                                              "View All".tr,
                                               style: TextStyle(
                                                   fontSize: screenWidth / 35),
                                             ),
@@ -411,7 +411,7 @@ class ServicesDetailsPage extends StatelessWidget {
                                         child: Padding(
                                           padding: const EdgeInsets.all(8.0),
                                           child: Text(
-                                            "Dry Washing Service",
+                                            "Dry Washing Service".tr,
                                             style: TextStyle(
                                                 fontSize: screenWidth / 20,
                                                 fontWeight: FontWeight.bold),
@@ -431,7 +431,7 @@ class ServicesDetailsPage extends StatelessWidget {
                                           },
                                           child: Container(
                                             child: Text(
-                                              "View All",
+                                              "View All".tr,
                                               style: TextStyle(
                                                   fontSize: screenWidth / 35),
                                             ),
@@ -508,7 +508,7 @@ class ServicesDetailsPage extends StatelessWidget {
                                         child: Padding(
                                           padding: const EdgeInsets.all(8.0),
                                           child: Text(
-                                            "Ironing Service",
+                                            "Ironing Service".tr,
                                             style: TextStyle(
                                                 fontSize: screenWidth / 20,
                                                 fontWeight: FontWeight.bold),
@@ -528,7 +528,7 @@ class ServicesDetailsPage extends StatelessWidget {
                                           },
                                           child: Container(
                                             child: Text(
-                                              "View All",
+                                              "View All".tr,
                                               style: TextStyle(
                                                   fontSize: screenWidth / 35),
                                             ),

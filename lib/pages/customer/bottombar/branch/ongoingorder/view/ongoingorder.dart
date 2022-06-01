@@ -14,7 +14,7 @@ class OnGoingOrderPage extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           title: Text(
-            "On Going Order",
+            "On Going Order".tr,
             style: TextStyle(color: Colors.black),
           ),
           elevation: 0,

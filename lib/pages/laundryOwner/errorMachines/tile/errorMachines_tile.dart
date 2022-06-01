@@ -1,6 +1,4 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:final_year_project/models/errorMachine.dart';
-import 'package:final_year_project/models/laundry.dart';
 import 'package:final_year_project/pages/laundryOwner/errorMachines/controller/errorMachinesDetails_controller.dart';
 import 'package:final_year_project/pages/laundryOwner/mylaundry/controller/mylaundry_controller.dart';
 import 'package:flutter/material.dart';
@@ -30,13 +28,13 @@ class ErrorMachinesTile extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Error ID #" + errorMachines.errorId.toString(),
+                      "Error ID #".tr + errorMachines.errorId.toString(),
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                     GestureDetector(
                       onTap: () {
                         Get.defaultDialog(
-                          title: "Error Resolved?",
+                          title: "Error Resolved?".tr,
                           content: Container(
                               height: 50,
                               child: Lottie.asset(
@@ -51,7 +49,7 @@ class ErrorMachinesTile extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(10)),
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Text("Cancel"),
+                                child: Text("Cancel".tr),
                               ),
                             ),
                           ),
@@ -59,8 +57,6 @@ class ErrorMachinesTile extends StatelessWidget {
                               builder: (controller) {
                             return GestureDetector(
                               onTap: () {
-                                print("Delete");
-                                // print(this.address.addressID);
                                 controller
                                     .resolvedError(this.errorMachines.errorId);
                               },
@@ -70,7 +66,7 @@ class ErrorMachinesTile extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(10)),
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: Text("Resolved"),
+                                  child: Text("Resolved".tr),
                                 ),
                               ),
                             );
@@ -88,7 +84,7 @@ class ErrorMachinesTile extends StatelessWidget {
                               elevation: 10,
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Text("Resolved"),
+                                child: Text("Resolved".tr),
                               ),
                             )),
                       ),
@@ -99,14 +95,14 @@ class ErrorMachinesTile extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Reporter Phone"),
+                    Text("Reporter Phone".tr),
                     Text(errorMachines.phone.toString()),
                   ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Reporter Email"),
+                    Text("Reporter Email".tr),
                     Text(errorMachines.email.toString()),
                   ],
                 ),
@@ -117,7 +113,7 @@ class ErrorMachinesTile extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
-                      "Machine ID #" + errorMachines.machineId.toString(),
+                      "Machine ID #".tr + errorMachines.machineId.toString(),
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                   ],
@@ -125,7 +121,7 @@ class ErrorMachinesTile extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Machine Type"),
+                    Text("Machine Type".tr),
                     Text(errorMachines.machineType.toString()),
                   ],
                 ),
@@ -134,7 +130,7 @@ class ErrorMachinesTile extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Error:",
+                      "Error:".tr,
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                   ],

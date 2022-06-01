@@ -17,7 +17,7 @@ class NormalWashPage extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           title: Text(
-            "Normal Wash",
+            "Normal Wash".tr,
             style: TextStyle(color: Colors.black),
           ),
           elevation: 0,

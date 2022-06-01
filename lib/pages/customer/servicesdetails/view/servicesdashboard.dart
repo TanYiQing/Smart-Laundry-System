@@ -95,7 +95,7 @@ class ServicesDashboardPage extends StatelessWidget {
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.all(8.0),
-                                          child: Text("TOTAL MACHINE",
+                                          child: Text("TOTAL MACHINE".tr,
                                               style: TextStyle(
                                                 fontSize: screenWidth / 15,
                                               )),
@@ -147,7 +147,7 @@ class ServicesDashboardPage extends StatelessWidget {
                                             Padding(
                                               padding:
                                                   const EdgeInsets.all(8.0),
-                                              child: Text("Washing Machine"),
+                                              child: Text("Washing Machine".tr),
                                             ),
                                             Text(
                                                 controller
@@ -185,7 +185,7 @@ class ServicesDashboardPage extends StatelessWidget {
                                               padding:
                                                   const EdgeInsets.all(8.0),
                                               child:
-                                                  Text("Dry Washing Machine"),
+                                                  Text("Dry Washing Machine".tr),
                                             ),
                                             Text(
                                                 controller.drywashingmachinelist
@@ -226,7 +226,7 @@ class ServicesDashboardPage extends StatelessWidget {
                                             Padding(
                                               padding:
                                                   const EdgeInsets.all(8.0),
-                                              child: Text("Ironing Machine"),
+                                              child: Text("Ironing Machine".tr),
                                             ),
                                             Text(
                                                 controller
@@ -268,7 +268,7 @@ class ServicesDashboardPage extends StatelessWidget {
                                     Colors.amber
                                   ],
                                   title: ChartTitle(
-                                      text: 'Occupied Level(%)',
+                                      text: 'Occupied Level(%)'.tr,
                                       textStyle: TextStyle(
                                           color: Colors.black,
                                           fontWeight: FontWeight.bold)),

@@ -13,7 +13,7 @@ class ManageMachinePageLaundry extends StatelessWidget {
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             title: Text(
-              "Manage Machine",
+              "Manage Machine".tr,
               style: TextStyle(color: Colors.black),
             ),
             elevation: 0,
@@ -52,7 +52,7 @@ class ManageMachinePageLaundry extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(20)),
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: Text("All"),
+                                  child: Text("All".tr),
                                 )),
                           ),
                           GestureDetector(
@@ -66,7 +66,7 @@ class ManageMachinePageLaundry extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(20)),
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: Text("Washing Machine"),
+                                  child: Text("Washing Machine".tr),
                                 )),
                           ),
                           GestureDetector(
@@ -80,7 +80,7 @@ class ManageMachinePageLaundry extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(20)),
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: Text("Dry Washing Machine"),
+                                  child: Text("Dry Washing Machine".tr),
                                 )),
                           ),
                           GestureDetector(
@@ -94,7 +94,7 @@ class ManageMachinePageLaundry extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(20)),
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: Text("Ironing Machine"),
+                                  child: Text("Ironing Machine".tr),
                                 )),
                           )
                         ],

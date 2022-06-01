@@ -14,7 +14,7 @@ class ErrorReportPage extends StatelessWidget {
           foregroundColor: Colors.black,
           iconTheme: IconThemeData(color: Colors.black),
           backgroundColor: Colors.yellow,
-          title: Text("Error Report"),
+          title: Text("Error Report".tr),
         ),
         body: SingleChildScrollView(
           child: GetBuilder<ErrorReportController>(builder: (controller) {
@@ -33,7 +33,7 @@ class ErrorReportPage extends StatelessWidget {
                         child: TextField(
                           controller: controller.namecontroller,
                           decoration: InputDecoration(
-                              hintText: "Name (Required)",
+                              hintText: "Name (Required)".tr,
                               border: InputBorder.none,
                               isDense: true),
                         ),
@@ -45,7 +45,7 @@ class ErrorReportPage extends StatelessWidget {
                         child: TextField(
                           controller: controller.phonecontroller,
                           decoration: InputDecoration(
-                              hintText: "Phone (Required)",
+                              hintText: "Phone (Required)".tr,
                               border: InputBorder.none,
                               isDense: true),
                         ),
@@ -57,7 +57,7 @@ class ErrorReportPage extends StatelessWidget {
                         child: TextField(
                           controller: controller.emailcontroller,
                           decoration: InputDecoration(
-                              hintText: "Email (Required)",
+                              hintText: "Email (Required)".tr,
                               border: InputBorder.none,
                               isDense: true),
                         ),
@@ -69,7 +69,7 @@ class ErrorReportPage extends StatelessWidget {
                         child: TextField(
                           controller: controller.machineIDcontroller,
                           decoration: InputDecoration(
-                              hintText: "Machine ID (Required)",
+                              hintText: "Machine ID (Required)".tr,
                               border: InputBorder.none,
                               isDense: true),
                         ),
@@ -87,7 +87,7 @@ class ErrorReportPage extends StatelessWidget {
                                       child: Container()),
                                   value: controller.selectMachineType,
                                   isExpanded: true,
-                                  hint: Text("Machine Type (Required)"),
+                                  hint: Text("Machine Type (Required)".tr),
                                   isDense: true,
                                   style: TextStyle(
                                       fontSize: screenWidth / 20,
@@ -114,7 +114,7 @@ class ErrorReportPage extends StatelessWidget {
                         child: TextField(
                           controller: controller.errorcontroller,
                           decoration: InputDecoration(
-                              hintText: "What error that you faced? (Required)",
+                              hintText: "What error that you faced? (Required)".tr,
                               border: InputBorder.none,
                               isDense: true),
                         ),
@@ -132,7 +132,7 @@ class ErrorReportPage extends StatelessWidget {
                                 color: Colors.yellow,
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: Center(child: Text("Report")),
+                                  child: Center(child: Text("Report".tr)),
                                 )),
                           )),
                     );

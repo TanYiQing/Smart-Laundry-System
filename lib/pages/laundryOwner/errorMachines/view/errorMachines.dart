@@ -13,7 +13,7 @@ class ErrorMachinesPageLaundry extends StatelessWidget {
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             title: Text(
-              "Error Machines",
+              "Error Machines".tr,
               style: TextStyle(color: Colors.black),
             ),
             elevation: 0,
@@ -30,12 +30,15 @@ class ErrorMachinesPageLaundry extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(controller.errorMachines.value.toString(),
-                              style: TextStyle(
-                                  fontSize: screenWidth / 8,
-                                  color: Colors.red,
-                                  fontWeight: FontWeight.bold)),
-                          Text(" Error(s) Reported")
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(controller.errorMachines.value.toString(),
+                                style: TextStyle(
+                                    fontSize: screenWidth / 8,
+                                    color: Colors.red,
+                                    fontWeight: FontWeight.bold)),
+                          ),
+                          Text("Error(s) Reported".tr)
                         ],
                       ),
                     ),

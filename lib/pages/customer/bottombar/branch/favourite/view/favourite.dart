@@ -17,7 +17,7 @@ class FavouritePage extends StatelessWidget {
             appBar: AppBar(
               backgroundColor: Colors.transparent,
               title: Text(
-                "Favourite",
+                "Favourite".tr,
                 style: TextStyle(color: Colors.black),
               ),
               elevation: 0,
@@ -56,11 +56,11 @@ class FavouritePage extends StatelessWidget {
                               "assets/lottie/favourite-not-found.json",
                             ),
                           ),
-                          Text("NO FAVOURITE ITEM",
+                          Text("NO FAVOURITE ITEM".tr,
                               style: TextStyle(
                                   fontSize: screenWidth / 18,
                                   fontWeight: FontWeight.bold)),
-                          Text("Explore and add it now",
+                          Text("Explore and add it now".tr,
                               style: TextStyle(fontSize: screenWidth / 25))
                         ],
                       ),

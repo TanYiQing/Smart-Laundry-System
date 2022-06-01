@@ -14,7 +14,7 @@ class MyWalletPageLaundry extends StatelessWidget {
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             title: Text(
-              "My Wallet",
+              "My Wallet".tr,
               style: TextStyle(color: Colors.black),
             ),
             elevation: 0,
@@ -67,7 +67,7 @@ class MyWalletPageLaundry extends StatelessWidget {
                     width: double.infinity,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text("Wallet History",
+                      child: Text("Wallet History".tr,
                           style: TextStyle(fontSize: screenWidth / 20)),
                     )),
                 Container(

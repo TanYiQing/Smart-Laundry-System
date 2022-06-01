@@ -17,7 +17,7 @@ class PurchaseHistoryPage extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           title: Text(
-            "Order History",
+            "Order History".tr,
             style: TextStyle(color: Colors.black),
           ),
           elevation: 0,
@@ -55,7 +55,7 @@ class PurchaseHistoryPage extends StatelessWidget {
                           "assets/lottie/purchasehistory-not-found.json",
                         ),
                       ),
-                      Text("NO PURCHASE HISTORY",
+                      Text("NO ORDER HISTORY",
                           style: TextStyle(
                               fontSize: screenWidth / 18,
                               fontWeight: FontWeight.bold)),

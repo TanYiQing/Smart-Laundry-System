@@ -17,7 +17,7 @@ class DryWashandIroningPage extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           title: Text(
-            "Dry Wash and Ironing",
+            "Dry Wash and Ironing".tr,
             style: TextStyle(color: Colors.black),
           ),
           elevation: 0,

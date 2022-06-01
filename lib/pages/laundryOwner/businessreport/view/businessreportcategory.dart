@@ -15,7 +15,7 @@ class BusinessReportCategory extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           title: Text(
-            "Business Report",
+            "Business Report".tr,
             style: TextStyle(color: Colors.black),
           ),
           elevation: 0,
@@ -37,7 +37,7 @@ class BusinessReportCategory extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "Income Report",
+                            "Income Report".tr,
                             style: TextStyle(fontSize: screenWidth / 22),
                           ),
                           GestureDetector(
@@ -54,7 +54,7 @@ class BusinessReportCategory extends StatelessWidget {
                   visible: controller.show1.value,
                   child: Container(
                     width: double.infinity,
-                    height: screenWidth / 2.5,
+                    height: screenWidth / 2.4,
                     child: Card(
                       elevation: 10,
                       child: Padding(
@@ -63,7 +63,7 @@ class BusinessReportCategory extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "Select Date Range",
+                              "Select Date Range".tr,
                             ),
                             Row(
                               children: [
@@ -71,7 +71,7 @@ class BusinessReportCategory extends StatelessWidget {
                                   width: screenWidth / 2.5,
                                   child: DateTimePicker(
                                       controller: controller.startincomedate,
-                                      dateHintText: "Start Date",
+                                      dateHintText: "Start Date".tr,
                                       icon: Icon(Icons.date_range_outlined),
                                       type: DateTimePickerType.date,
                                       firstDate: DateTime(2000),
@@ -82,7 +82,7 @@ class BusinessReportCategory extends StatelessWidget {
                                   width: screenWidth / 2.5,
                                   child: DateTimePicker(
                                       controller: controller.endincomedate,
-                                      dateHintText: "End Date",
+                                      dateHintText: "End Date".tr,
                                       icon: Icon(Icons.date_range_outlined),
                                       type: DateTimePickerType.date,
                                       firstDate: DateTime(2000),
@@ -103,7 +103,7 @@ class BusinessReportCategory extends StatelessWidget {
                                       child: Padding(
                                         padding: const EdgeInsets.all(8.0),
                                         child: Center(
-                                            child: Text("Generate Report")),
+                                            child: Text("Generate Report".tr)),
                                       )),
                                 ),
                               ),
@@ -124,7 +124,7 @@ class BusinessReportCategory extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "Error Machine Report",
+                            "Error Machine Report".tr,
                             style: TextStyle(fontSize: screenWidth / 22),
                           ),
                           GestureDetector(
@@ -141,7 +141,7 @@ class BusinessReportCategory extends StatelessWidget {
                   visible: controller.show2.value,
                   child: Container(
                     width: double.infinity,
-                    height: screenWidth / 2.5,
+                    height: screenWidth / 2.4,
                     child: Card(
                       elevation: 10,
                       child: Padding(
@@ -150,7 +150,7 @@ class BusinessReportCategory extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "Select Date Range",
+                              "Select Date Range".tr,
                             ),
                             Row(
                               children: [
@@ -158,7 +158,7 @@ class BusinessReportCategory extends StatelessWidget {
                                   width: screenWidth / 2.5,
                                   child: DateTimePicker(
                                       controller: controller.starterrordate,
-                                      dateHintText: "Start Date",
+                                      dateHintText: "Start Date".tr,
                                       icon: Icon(Icons.date_range_outlined),
                                       type: DateTimePickerType.date,
                                       firstDate: DateTime(2000),
@@ -169,7 +169,7 @@ class BusinessReportCategory extends StatelessWidget {
                                   width: screenWidth / 2.5,
                                   child: DateTimePicker(
                                       controller: controller.enderrordate,
-                                      dateHintText: "End Date",
+                                      dateHintText: "End Date".tr,
                                       icon: Icon(Icons.date_range_outlined),
                                       type: DateTimePickerType.date,
                                       firstDate: DateTime(2000),
@@ -190,7 +190,7 @@ class BusinessReportCategory extends StatelessWidget {
                                       child: Padding(
                                         padding: const EdgeInsets.all(8.0),
                                         child: Center(
-                                            child: Text("Generate Report")),
+                                            child: Text("Generate Report".tr)),
                                       )),
                                 ),
                               ),
@@ -211,7 +211,7 @@ class BusinessReportCategory extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "Customer Report",
+                            "Customer Report".tr,
                             style: TextStyle(fontSize: screenWidth / 22),
                           ),
                           GestureDetector(
@@ -228,7 +228,7 @@ class BusinessReportCategory extends StatelessWidget {
                   visible: controller.show3.value,
                   child: Container(
                     width: double.infinity,
-                    height: screenWidth / 2.5,
+                    height: screenWidth / 2.4,
                     child: Card(
                       elevation: 10,
                       child: Padding(
@@ -237,7 +237,7 @@ class BusinessReportCategory extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "Select Date Range",
+                              "Select Date Range".tr,
                             ),
                             Row(
                               children: [
@@ -256,7 +256,7 @@ class BusinessReportCategory extends StatelessWidget {
                                   width: screenWidth / 2.5,
                                   child: DateTimePicker(
                                       controller: controller.endcustomerdate,
-                                      dateHintText: "End Date",
+                                      dateHintText: "End Date".tr,
                                       icon: Icon(Icons.date_range_outlined),
                                       type: DateTimePickerType.date,
                                       firstDate: DateTime(2000),
@@ -277,7 +277,7 @@ class BusinessReportCategory extends StatelessWidget {
                                       child: Padding(
                                         padding: const EdgeInsets.all(8.0),
                                         child: Center(
-                                            child: Text("Generate Report")),
+                                            child: Text("Generate Report".tr)),
                                       )),
                                 ),
                               ),

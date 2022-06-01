@@ -10,11 +10,11 @@ class ErrorReportController extends GetxController {
   TextEditingController errorcontroller = new TextEditingController();
 
   var laundry = Get.arguments;
-  late var selectMachineType = "Washing Machine";
+  late var selectMachineType = "Washing Machine".tr;
   final List<String> machineType = [
-    "Washing Machine",
-    "Dry Washing Machine",
-    "Ironing Machine",
+    "Washing Machine".tr,
+    "Dry Washing Machine".tr,
+    "Ironing Machine".tr,
   ];
 
   void chooseMachineType(value) {

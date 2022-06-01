@@ -14,7 +14,7 @@ class BusinessReportPageLaundry extends StatelessWidget {
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             title: Text(
-              "Business Report",
+              "Business Report".tr,
               style: TextStyle(color: Colors.black),
             ),
             elevation: 0,

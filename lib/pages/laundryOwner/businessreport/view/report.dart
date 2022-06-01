@@ -13,7 +13,7 @@ class ReportPage extends StatelessWidget {
           appBar: AppBar(
             backgroundColor: Colors.teal,
             title: GetBuilder<ReportController>(builder: (controller) {
-              return Text(controller.generateReportType.value.toString());
+              return Text(controller.generateReportType.value.toString().tr);
             }),
           ),
           body: GetBuilder<ReportController>(builder: (controller) {
@@ -28,39 +28,39 @@ class ReportPage extends StatelessWidget {
 
   Widget buildDataTable() {
     final columnsIncome = [
-      'Order ID',
-      'Receipt ID',
-      'Email',
-      'Name',
-      'Phone Number',
-      'Order Method',
-      'Collect Time',
-      'Note to Laundry',
-      'Laundry ID',
-      'Machine ID',
-      'Machine Type',
-      'Price (RM)',
-      'Add On 1',
-      'Add On 2',
-      'Add On 3',
-      'Total Price (RM)',
-      'Order Created'
+      'Order ID'.tr,
+      'Receipt ID'.tr,
+      'Email'.tr,
+      'Name'.tr,
+      'Phone Number'.tr,
+      'Order Method'.tr,
+      'Collect Time'.tr,
+      'Note to Laundry'.tr,
+      'Laundry ID'.tr,
+      'Machine ID'.tr,
+      'Machine Type'.tr,
+      'Price (RM)'.tr,
+      'Add On 1'.tr,
+      'Add On 2'.tr,
+      'Add On 3'.tr,
+      'Total Price (RM)'.tr,
+      'Order Created'.tr
     ];
 
     final columnsError = [
-      'Error ID',
-      'Name',
-      'Phone Number',
-      'Email',
-      'Machine ID',
-      'Machine Type',
-      'Error'
+      'Error ID'.tr,
+      'Name'.tr,
+      'Phone Number'.tr,
+      'Email'.tr,
+      'Machine ID'.tr,
+      'Machine Type'.tr,
+      'Error'.tr
     ];
     final columnsCustomer = [
-      'Date',
-      'Page Views',
-      'Orders',
-      'Transaction Amount (RM)',
+      'Date'.tr,
+      'Page Views'.tr,
+      'Orders'.tr,
+      'Transaction Amount (RM)'.tr,
     ];
 
     return GetBuilder<ReportController>(builder: (controller) {

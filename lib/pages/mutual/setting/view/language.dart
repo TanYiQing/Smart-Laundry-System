@@ -38,7 +38,7 @@ class LanguagePage extends StatelessWidget {
                 ),
                 ListTile(
                   onTap: () {
-                    var locale = Locale('my', 'Mls');
+                    var locale = Locale('hi', 'IN');
                     controller.clickLanguage(locale);
                   },
                   title: Text("Malay"),

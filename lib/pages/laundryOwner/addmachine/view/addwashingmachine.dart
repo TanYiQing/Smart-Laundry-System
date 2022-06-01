@@ -14,7 +14,7 @@ class AddWashingMachinePageLaundry extends GetView<AddMachineController> {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           title: Text(
-            "Washing Machine",
+            "Washing Machine".tr,
             style: TextStyle(color: Colors.black),
           ),
           elevation: 0,
@@ -70,7 +70,7 @@ class AddWashingMachinePageLaundry extends GetView<AddMachineController> {
                                             child: Icon(
                                                 Icons.local_laundry_service),
                                           )),
-                                      Text("Machine Details")
+                                      Text("Machine Details".tr)
                                     ],
                                   ),
                                 ),
@@ -85,7 +85,7 @@ class AddWashingMachinePageLaundry extends GetView<AddMachineController> {
                                     Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: Text(
-                                        "Calculation Base",
+                                        "Calculation Base".tr,
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold),
                                       ),
@@ -98,7 +98,7 @@ class AddWashingMachinePageLaundry extends GetView<AddMachineController> {
                                         children: [
                                           Container(
                                             width: screenWidth / 4,
-                                            height: screenHeight / 7,
+                                            height: screenHeight / 6.5,
                                             child: Card(
                                               shape: RoundedRectangleBorder(
                                                   borderRadius:
@@ -125,7 +125,7 @@ class AddWashingMachinePageLaundry extends GetView<AddMachineController> {
                                                     activeColor: Colors.teal,
                                                   ),
                                                   Text(
-                                                    "Per Machine",
+                                                    "Per Machine".tr,
                                                     style: TextStyle(
                                                         fontSize:
                                                             screenWidth / 30),
@@ -146,7 +146,7 @@ class AddWashingMachinePageLaundry extends GetView<AddMachineController> {
                                           ),
                                           Container(
                                             width: screenWidth / 4,
-                                            height: screenHeight / 7,
+                                            height: screenHeight / 6.5,
                                             child: Card(
                                               shape: RoundedRectangleBorder(
                                                   borderRadius:
@@ -173,7 +173,7 @@ class AddWashingMachinePageLaundry extends GetView<AddMachineController> {
                                                     activeColor: Colors.teal,
                                                   ),
                                                   Text(
-                                                    "Per Cloth",
+                                                    "Per Cloth".tr,
                                                     style: TextStyle(
                                                         fontSize:
                                                             screenWidth / 30),
@@ -196,7 +196,7 @@ class AddWashingMachinePageLaundry extends GetView<AddMachineController> {
                                     Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: Text(
-                                        "Minimum Weight (kg)",
+                                        "Minimum Weight(kg)".tr,
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold),
                                       ),
@@ -255,7 +255,7 @@ class AddWashingMachinePageLaundry extends GetView<AddMachineController> {
                                     Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: Text(
-                                        "Maximum Weight (kg)",
+                                        "Maximum Weight(kg)".tr,
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold),
                                       ),
@@ -320,13 +320,13 @@ class AddWashingMachinePageLaundry extends GetView<AddMachineController> {
                                                     .toString() ==
                                                 "Per Machine")
                                             ? Text(
-                                                "Price Per Machine (RM)",
+                                                "Price Per Machine(RM)".tr,
                                                 style: TextStyle(
                                                     fontWeight:
                                                         FontWeight.bold),
                                               )
                                             : Text(
-                                                "Price Per Cloth (RM)",
+                                                "Price Per Cloth(RM)".tr,
                                                 style: TextStyle(
                                                     fontWeight:
                                                         FontWeight.bold),
@@ -387,7 +387,7 @@ class AddWashingMachinePageLaundry extends GetView<AddMachineController> {
                                     Padding(
                                         padding: const EdgeInsets.all(8.0),
                                         child: Text(
-                                          "Duration Per Slot (Minutes)",
+                                          "Duration Per Slot (Minutes)".tr,
                                           style: TextStyle(
                                               fontWeight: FontWeight.bold),
                                         )),
@@ -487,8 +487,8 @@ class AddWashingMachinePageLaundry extends GetView<AddMachineController> {
                                     padding: const EdgeInsets.all(8.0),
                                     child: Column(
                                       children: [
-                                        Text("Add-On Services"),
-                                        Text("(Maximum 3)",
+                                        Text("Add-On Services".tr),
+                                        Text("(Maximum 3)".tr,
                                             style: TextStyle(
                                                 color: Colors.grey,
                                                 fontSize: screenWidth / 35)),
@@ -509,7 +509,7 @@ class AddWashingMachinePageLaundry extends GetView<AddMachineController> {
                                                   padding:
                                                       const EdgeInsets.all(8.0),
                                                   child: Text(
-                                                    "Add-On Service 1",
+                                                    "Add-On Service 1".tr,
                                                     style: TextStyle(
                                                         fontWeight:
                                                             FontWeight.bold),
@@ -647,7 +647,7 @@ class AddWashingMachinePageLaundry extends GetView<AddMachineController> {
                                                   padding:
                                                       const EdgeInsets.all(8.0),
                                                   child: Text(
-                                                    "Add-On Service 2",
+                                                    "Add-On Service 2".tr,
                                                     style: TextStyle(
                                                         fontWeight:
                                                             FontWeight.bold),
@@ -785,7 +785,7 @@ class AddWashingMachinePageLaundry extends GetView<AddMachineController> {
                                                   padding:
                                                       const EdgeInsets.all(8.0),
                                                   child: Text(
-                                                    "Add-On Service 3",
+                                                    "Add-On Service 3".tr,
                                                     style: TextStyle(
                                                         fontWeight:
                                                             FontWeight.bold),
@@ -921,7 +921,7 @@ class AddWashingMachinePageLaundry extends GetView<AddMachineController> {
                                           },
                                           child: Container(
                                             child: Text(
-                                              "Add More",
+                                              "Add More".tr,
                                               style: TextStyle(
                                                   fontSize: screenWidth / 30),
                                             ),
@@ -956,7 +956,7 @@ class AddWashingMachinePageLaundry extends GetView<AddMachineController> {
                         },
                         child: Container(
                           child: Text(
-                            "Publish",
+                            "Publish".tr,
                             style: TextStyle(fontSize: screenWidth / 30),
                           ),
                         ),

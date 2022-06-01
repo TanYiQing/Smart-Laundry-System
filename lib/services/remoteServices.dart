@@ -591,6 +591,7 @@ class RemoteServices {
         Uri.parse(
             'https://hubbuddies.com/270607/onesource/php/calculateWallet.php'),
         body: {"email": email});
+        print(response.body);
     if (response.statusCode == 200) {
       if (response.body == "nodata") {
         return null;

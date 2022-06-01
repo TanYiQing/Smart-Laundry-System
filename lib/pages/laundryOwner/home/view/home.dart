@@ -480,6 +480,7 @@ class HomePageLaundry extends StatelessWidget {
                                                                         controller.checkWalletAmount(controller
                                                                             .walletvalue
                                                                             .value),
+                                                                      
                                                                     style:
                                                                         TextStyle(
                                                                       fontSize:
@@ -663,7 +664,7 @@ class HomePageLaundry extends StatelessWidget {
                                                                       : Colors
                                                                           .green)),
                                                           Text(
-                                                            "Error(s) Reported",
+                                                            "Error(s) Reported".tr,
                                                           ),
                                                         ],
                                                       ),

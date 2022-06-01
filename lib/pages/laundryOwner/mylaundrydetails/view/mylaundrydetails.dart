@@ -29,7 +29,7 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
                     Get.toNamed("/managemachinelaundry",
                         arguments: controller.laundry);
                   },
-                  child: Text("Manage Machine"));
+                  child: Text("Manage Machine".tr));
             })
           ],
         ),
@@ -88,7 +88,7 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  "Laundry Owner's Details",
+                  "Laundry Owner's Details".tr,
                   style: TextStyle(
                       fontSize: screenWidth / 20, fontWeight: FontWeight.bold),
                 ),
@@ -103,7 +103,7 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
                       children: [
                         Align(
                             alignment: Alignment.centerLeft,
-                            child: Text('Laundry Owner\'s Name')),
+                            child: Text('Laundry Owner\'s Name'.tr)),
                         Card(
                           elevation: 5,
                           shape: RoundedRectangleBorder(
@@ -130,7 +130,7 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
                         ),
                         Align(
                             alignment: Alignment.centerLeft,
-                            child: Text('Laundry Owner\'s Contact')),
+                            child: Text('Laundry Owner\'s Contact'.tr)),
                         Card(
                           elevation: 5,
                           shape: RoundedRectangleBorder(
@@ -164,7 +164,7 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
                                 },
                                 child: Container(
                                   child: Text(
-                                    "Save",
+                                    "Save".tr,
                                     style:
                                         TextStyle(fontSize: screenWidth / 30),
                                   ),
@@ -193,7 +193,7 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  "Laundry Details",
+                  "Laundry Details".tr,
                   style: TextStyle(
                       fontSize: screenWidth / 20, fontWeight: FontWeight.bold),
                 ),
@@ -208,7 +208,7 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
                       children: [
                         Align(
                             alignment: Alignment.centerLeft,
-                            child: Text('Laundry Name')),
+                            child: Text('Laundry Name'.tr)),
                         Card(
                           elevation: 5,
                           shape: RoundedRectangleBorder(
@@ -235,7 +235,7 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
                         ),
                         Align(
                             alignment: Alignment.centerLeft,
-                            child: Text('Laundry Address 1')),
+                            child: Text('Laundry Address 1'.tr)),
                         Card(
                           elevation: 5,
                           shape: RoundedRectangleBorder(
@@ -262,7 +262,7 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
                         ),
                         Align(
                             alignment: Alignment.centerLeft,
-                            child: Text('Laundry Address 2')),
+                            child: Text('Laundry Address 2'.tr)),
                         Card(
                           elevation: 5,
                           shape: RoundedRectangleBorder(
@@ -289,7 +289,7 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
                         ),
                         Align(
                             alignment: Alignment.centerLeft,
-                            child: Text('ZIP')),
+                            child: Text('ZIP Code'.tr)),
                         Card(
                           elevation: 5,
                           shape: RoundedRectangleBorder(
@@ -316,7 +316,7 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
                         ),
                         Align(
                             alignment: Alignment.centerLeft,
-                            child: Text('City')),
+                            child: Text('City'.tr)),
                         Card(
                           elevation: 5,
                           shape: RoundedRectangleBorder(
@@ -343,7 +343,7 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
                         ),
                         Align(
                             alignment: Alignment.centerLeft,
-                            child: Text('State')),
+                            child: Text('State'.tr)),
                         Card(
                           elevation: 5,
                           shape: RoundedRectangleBorder(
@@ -377,7 +377,7 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
                                 },
                                 child: Container(
                                   child: Text(
-                                    "Save",
+                                    "Save".tr,
                                     style:
                                         TextStyle(fontSize: screenWidth / 30),
                                   ),
@@ -406,7 +406,7 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  "Support Documents",
+                  "Support Documents".tr,
                   style: TextStyle(
                       fontSize: screenWidth / 20, fontWeight: FontWeight.bold),
                 ),
@@ -423,7 +423,7 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("Photo of SSM License"),
+                            Text("Photo of SSM License".tr),
                             GestureDetector(
                                 onTap: () {
                                   choosePhoto(screenHeight, screenWidth, 2);
@@ -439,7 +439,7 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
                             SizedBox(
                               height: screenWidth / 60,
                             ),
-                            Text("Photo of Business License"),
+                            Text("Photo of Business License".tr),
                             GestureDetector(
                                 onTap: () {
                                   choosePhoto(screenHeight, screenWidth, 3);
@@ -455,7 +455,7 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
                             SizedBox(
                               height: screenWidth / 60,
                             ),
-                            Text("Photo of Bank Header"),
+                            Text("Photo of Bank Header".tr),
                             GestureDetector(
                                 onTap: () {
                                   choosePhoto(screenHeight, screenWidth, 4);
@@ -480,7 +480,7 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
                                     },
                                     child: Container(
                                       child: Text(
-                                        "Save",
+                                        "Save".tr,
                                         style: TextStyle(
                                             fontSize: screenWidth / 30),
                                       ),
@@ -535,7 +535,7 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
                     Icons.camera_alt,
                     color: Colors.blue,
                   ),
-                  Text("Camera")
+                  Text("Camera".tr)
                 ],
               ),
             );
@@ -549,7 +549,7 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(Icons.photo_library_rounded, color: Colors.purple),
-                  Text("Gallery")
+                  Text("Gallery".tr)
                 ],
               ),
             );
@@ -566,7 +566,7 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
                     Icons.delete,
                     color: Colors.red,
                   ),
-                  Text("Remove")
+                  Text("Remove".tr)
                 ],
               ),
             );

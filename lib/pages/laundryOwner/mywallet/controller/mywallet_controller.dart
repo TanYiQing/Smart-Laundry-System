@@ -20,19 +20,21 @@ class MyWalletController extends GetxController {
     if (wallet != null) {
       walletList.assignAll(wallet);
     }
+    print("Hahaha");
     update();
   }
 
   Future<void> calculateWallet() async {
     var walletValue = await RemoteServices.calculateWallet(user.email);
     walletvalue.value = walletValue.toString();
+    print(walletValue);
     update();
   }
 
   String checkWalletAmount(String walletAmount) {
     var arr = walletAmount.split('.');
     if (arr[0].length < 8) {
-      return arr[0];
+      return walletAmount;
     } else {
       return arr[0].substring(0, 8) + "...";
     }

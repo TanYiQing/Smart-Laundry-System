@@ -18,7 +18,7 @@ class SettingController extends GetxController {
     if (languageStorage.read("language") == "zh_Hans") {
       language.value = '简体中文';
       print("Chinese Here");
-    } else if (languageStorage.read("language") == "my_Mls") {
+    } else if (languageStorage.read("language") == "hi_IN") {
       language.value = 'Malay';
       print("Malay Here");
     } else {

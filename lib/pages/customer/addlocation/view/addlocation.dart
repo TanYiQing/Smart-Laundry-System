@@ -13,7 +13,7 @@ class AddLocationPage extends StatelessWidget {
         appBar: AppBar(
             backgroundColor: Colors.transparent,
             title: Text(
-              "Add New Location",
+              "Add New Location".tr,
               style: TextStyle(color: Colors.black),
             ),
             elevation: 0,
@@ -75,13 +75,13 @@ class AddLocationPage extends StatelessWidget {
                     child: Row(
                       children: [
                         Text(
-                          "Name",
+                          "Name".tr,
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: screenWidth / 25),
                         ),
                         Text(
-                          " Required",
+                          " Required".tr,
                           style: TextStyle(
                               fontSize: screenWidth / 35, color: Colors.grey),
                         ),
@@ -117,13 +117,13 @@ class AddLocationPage extends StatelessWidget {
                     child: Row(
                       children: [
                         Text(
-                          "Contact Number",
+                          "Contact Number".tr,
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: screenWidth / 25),
                         ),
                         Text(
-                          " Required",
+                          " Required".tr,
                           style: TextStyle(
                               fontSize: screenWidth / 35, color: Colors.grey),
                         ),
@@ -157,13 +157,13 @@ class AddLocationPage extends StatelessWidget {
                     child: Row(
                       children: [
                         Text(
-                          "Address 1",
+                          "Address 1".tr,
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: screenWidth / 25),
                         ),
                         Text(
-                          " Required",
+                          " Required".tr,
                           style: TextStyle(
                               fontSize: screenWidth / 35, color: Colors.grey),
                         ),
@@ -198,13 +198,13 @@ class AddLocationPage extends StatelessWidget {
                     child: Row(
                       children: [
                         Text(
-                          "Address 2",
+                          "Address 2".tr,
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: screenWidth / 25),
                         ),
                         Text(
-                          " Optional",
+                          " Optional".tr,
                           style: TextStyle(
                               fontSize: screenWidth / 35, color: Colors.grey),
                         ),
@@ -239,13 +239,13 @@ class AddLocationPage extends StatelessWidget {
                     child: Row(
                       children: [
                         Text(
-                          "ZIP Code",
+                          "ZIP Code".tr,
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: screenWidth / 25),
                         ),
                         Text(
-                          " Required",
+                          " Required".tr,
                           style: TextStyle(
                               fontSize: screenWidth / 35, color: Colors.grey),
                         ),
@@ -280,13 +280,13 @@ class AddLocationPage extends StatelessWidget {
                     child: Row(
                       children: [
                         Text(
-                          "City",
+                          "City".tr,
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: screenWidth / 25),
                         ),
                         Text(
-                          " Required",
+                          " Required".tr,
                           style: TextStyle(
                               fontSize: screenWidth / 35, color: Colors.grey),
                         ),
@@ -321,13 +321,13 @@ class AddLocationPage extends StatelessWidget {
                     child: Row(
                       children: [
                         Text(
-                          "State",
+                          "State".tr,
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: screenWidth / 25),
                         ),
                         Text(
-                          " Required",
+                          " Required".tr,
                           style: TextStyle(
                               fontSize: screenWidth / 35, color: Colors.grey),
                         ),
@@ -362,13 +362,13 @@ class AddLocationPage extends StatelessWidget {
                     child: Row(
                       children: [
                         Text(
-                          "Location Type",
+                          "Location Type".tr,
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: screenWidth / 25),
                         ),
                         Text(
-                          " Required",
+                          " Required".tr,
                           style: TextStyle(
                               fontSize: screenWidth / 35, color: Colors.grey),
                         ),
@@ -402,7 +402,7 @@ class AddLocationPage extends StatelessWidget {
                                   activeColor: Colors.teal,
                                 ),
                                 Text(
-                                  "Home",
+                                  "Home Address".tr,
                                   textAlign: TextAlign.center,
                                 ),
                                 Text(
@@ -441,7 +441,7 @@ class AddLocationPage extends StatelessWidget {
                                   activeColor: Colors.teal,
                                 ),
                                 Text(
-                                  "Office",
+                                  "Office Address".tr,
                                   textAlign: TextAlign.center,
                                 ),
                                 Text(
@@ -476,7 +476,7 @@ class AddLocationPage extends StatelessWidget {
                         },
                         child: Container(
                           child: Text(
-                            "Save",
+                            "Save".tr,
                             style: TextStyle(fontSize: screenWidth / 30),
                           ),
                         ),

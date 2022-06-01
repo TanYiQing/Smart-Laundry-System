@@ -17,7 +17,7 @@ class IroningPage extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           title: Text(
-            "Ironing",
+            "Ironing".tr,
             style: TextStyle(color: Colors.black),
           ),
           elevation: 0,

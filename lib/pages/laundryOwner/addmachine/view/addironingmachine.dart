@@ -98,7 +98,7 @@ class AddIroningMachinePageLaundry extends StatelessWidget {
                                         children: [
                                           Container(
                                             width: screenWidth / 4,
-                                            height: screenHeight / 7,
+                                            height: screenHeight / 6.5,
                                             child: Card(
                                               shape: RoundedRectangleBorder(
                                                   borderRadius:
@@ -147,7 +147,7 @@ class AddIroningMachinePageLaundry extends StatelessWidget {
                                           ),
                                           Container(
                                             width: screenWidth / 4,
-                                            height: screenHeight / 7,
+                                            height: screenHeight / 6.5,
                                             child: Card(
                                               shape: RoundedRectangleBorder(
                                                   borderRadius:

@@ -13,7 +13,7 @@ class AddNewLaundryPageLaundry extends GetView<AddNewLaundryController> {
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             title: Text(
-              "Add New Laundry",
+              "Add New Laundry".tr,
               style: TextStyle(color: Colors.black),
             ),
             elevation: 0,
@@ -41,7 +41,7 @@ class AddNewLaundryPageLaundry extends GetView<AddNewLaundryController> {
     return [
       Step(
         isActive: controller.currentStep.value >= 0,
-        title: Text('Laundry Owner\'s Details'),
+        title: Text('Laundry Owner\'s Details'.tr),
         content: Card(
           elevation: 10,
           child: Padding(
@@ -50,7 +50,7 @@ class AddNewLaundryPageLaundry extends GetView<AddNewLaundryController> {
               children: [
                 Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('Laundry Owner\'s Name')),
+                    child: Text('Laundry Owner\'s Name'.tr)),
                 Card(
                   elevation: 5,
                   shape: RoundedRectangleBorder(
@@ -75,7 +75,7 @@ class AddNewLaundryPageLaundry extends GetView<AddNewLaundryController> {
                 ),
                 Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('Laundry Owner\'s Contact')),
+                    child: Text('Laundry Owner\'s Contact'.tr)),
                 Card(
                   elevation: 5,
                   shape: RoundedRectangleBorder(
@@ -102,7 +102,7 @@ class AddNewLaundryPageLaundry extends GetView<AddNewLaundryController> {
       ),
       Step(
           isActive: controller.currentStep.value >= 1,
-          title: Text("Laundry Details"),
+          title: Text("Laundry Details".tr),
           content: Card(
             elevation: 10,
             child: Padding(
@@ -111,7 +111,7 @@ class AddNewLaundryPageLaundry extends GetView<AddNewLaundryController> {
                 children: [
                   Align(
                       alignment: Alignment.centerLeft,
-                      child: Text('Laundry Name')),
+                      child: Text('Laundry Name'.tr)),
                   Card(
                     elevation: 5,
                     shape: RoundedRectangleBorder(
@@ -136,7 +136,7 @@ class AddNewLaundryPageLaundry extends GetView<AddNewLaundryController> {
                   ),
                   Align(
                       alignment: Alignment.centerLeft,
-                      child: Text('Laundry Address 1')),
+                      child: Text('Laundry Address 1'.tr)),
                   Card(
                     elevation: 5,
                     shape: RoundedRectangleBorder(
@@ -161,7 +161,7 @@ class AddNewLaundryPageLaundry extends GetView<AddNewLaundryController> {
                   ),
                   Align(
                       alignment: Alignment.centerLeft,
-                      child: Text('Laundry Address 2')),
+                      child: Text('Laundry Address 2'.tr)),
                   Card(
                     elevation: 5,
                     shape: RoundedRectangleBorder(
@@ -184,7 +184,7 @@ class AddNewLaundryPageLaundry extends GetView<AddNewLaundryController> {
                   SizedBox(
                     height: screenWidth / 60,
                   ),
-                  Align(alignment: Alignment.centerLeft, child: Text('ZIP')),
+                  Align(alignment: Alignment.centerLeft, child: Text('ZIP Code'.tr)),
                   Card(
                     elevation: 5,
                     shape: RoundedRectangleBorder(
@@ -207,7 +207,7 @@ class AddNewLaundryPageLaundry extends GetView<AddNewLaundryController> {
                   SizedBox(
                     height: screenWidth / 60,
                   ),
-                  Align(alignment: Alignment.centerLeft, child: Text('City')),
+                  Align(alignment: Alignment.centerLeft, child: Text('City'.tr)),
                   Card(
                     elevation: 5,
                     shape: RoundedRectangleBorder(
@@ -230,7 +230,7 @@ class AddNewLaundryPageLaundry extends GetView<AddNewLaundryController> {
                   SizedBox(
                     height: screenWidth / 60,
                   ),
-                  Align(alignment: Alignment.centerLeft, child: Text('State')),
+                  Align(alignment: Alignment.centerLeft, child: Text('State'.tr)),
                   Card(
                     elevation: 5,
                     shape: RoundedRectangleBorder(
@@ -255,7 +255,7 @@ class AddNewLaundryPageLaundry extends GetView<AddNewLaundryController> {
             ),
           )),
       Step(
-          title: Text("Support Document"),
+          title: Text("Support Documents".tr),
           content: Container(
             width: double.infinity,
             child: Card(
@@ -265,7 +265,7 @@ class AddNewLaundryPageLaundry extends GetView<AddNewLaundryController> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Photo of Laundry Shop"),
+                    Text("Photo of Laundry Shop".tr),
                     GestureDetector(
                       onTap: () {
                         choosePhoto(screenHeight, screenWidth, 1);
@@ -291,7 +291,7 @@ class AddNewLaundryPageLaundry extends GetView<AddNewLaundryController> {
                     SizedBox(
                       height: screenWidth / 60,
                     ),
-                    Text("Photo of SSM License"),
+                    Text("Photo of SSM License".tr),
                     GestureDetector(
                       onTap: () {
                         choosePhoto(screenHeight, screenWidth, 2);
@@ -316,7 +316,7 @@ class AddNewLaundryPageLaundry extends GetView<AddNewLaundryController> {
                     SizedBox(
                       height: screenWidth / 60,
                     ),
-                    Text("Photo of Business License"),
+                    Text("Photo of Business License".tr),
                     GestureDetector(
                       onTap: () {
                         choosePhoto(screenHeight, screenWidth, 3);
@@ -342,7 +342,7 @@ class AddNewLaundryPageLaundry extends GetView<AddNewLaundryController> {
                     SizedBox(
                       height: screenWidth / 60,
                     ),
-                    Text("Photo of Bank Header"),
+                    Text("Photo of Bank Header".tr),
                     GestureDetector(
                       onTap: () {
                         choosePhoto(screenHeight, screenWidth, 4);
@@ -392,7 +392,7 @@ class AddNewLaundryPageLaundry extends GetView<AddNewLaundryController> {
                   Icons.camera_alt,
                   color: Colors.blue,
                 ),
-                Text("Camera")
+                Text("Camera".tr)
               ],
             ),
           ),
@@ -404,7 +404,7 @@ class AddNewLaundryPageLaundry extends GetView<AddNewLaundryController> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(Icons.photo_library_rounded, color: Colors.purple),
-                Text("Gallery")
+                Text("Gallery".tr)
               ],
             ),
           ),
@@ -419,7 +419,7 @@ class AddNewLaundryPageLaundry extends GetView<AddNewLaundryController> {
                   Icons.delete,
                   color: Colors.red,
                 ),
-                Text("Remove")
+                Text("Remove".tr)
               ],
             ),
           ),
