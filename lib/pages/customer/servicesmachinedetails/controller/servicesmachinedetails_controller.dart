@@ -9,6 +9,8 @@ class ServicesMachineDetailsController extends GetxController {
   var user = Get.arguments;
   var machine = Get.arguments;
   TextEditingController notecontroller = new TextEditingController();
+  TextEditingController namecontroller = new TextEditingController();
+  TextEditingController contactcontroller = new TextEditingController();
 
   var orderMethod = "Reservation".obs;
   var paymentMethod = "".obs;
@@ -141,10 +143,16 @@ class ServicesMachineDetailsController extends GetxController {
         addon2: addon2.value,
         addon3: addon3.value,
         email: appData.read("email"),
-        name: addressList[index.value].name,
-        phone: addressList[index.value].contact,
+        name: (orderMethod.value == "Reservation")
+            ? namecontroller.text.toString()
+            : addressList[index.value].name,
+        phone: (orderMethod.value == "Reservation")
+            ? contactcontroller.text.toString()
+            : addressList[index.value].contact,
         ordermethod: orderMethod.value,
-        addressId: addressList[index.value].addressID,
+        addressId: (orderMethod.value == "Reservation")
+            ? "No Address"
+            : addressList[index.value].addressID,
         collecttime: collectTime.value,
         notetolaundry: notetoLaundry.value,
         totalPrice: totalPrice.value.toStringAsFixed(2));
@@ -152,10 +160,16 @@ class ServicesMachineDetailsController extends GetxController {
     if (paymentMethod.value == "Cash On Delivery") {
       RemoteServices.makePaymentCOD(
           appData.read("email").toString(),
-          addressList[index.value].name.toString(),
-          addressList[index.value].contact.toString(),
+          (orderMethod.value == "Reservation")
+              ? namecontroller.text.toString()
+              : addressList[index.value].name.toString(),
+          (orderMethod.value == "Reservation")
+              ? contactcontroller.text.toString()
+              : addressList[index.value].contact.toString(),
           orderMethod.value.toString(),
-          addressList[index.value].addressID.toString(),
+          (orderMethod.value == "Reservation")
+              ? "No Address"
+              : addressList[index.value].addressID.toString(),
           collectTime.value.toString(),
           notetoLaundry.value.toString(),
           machine.laundryID.toString(),

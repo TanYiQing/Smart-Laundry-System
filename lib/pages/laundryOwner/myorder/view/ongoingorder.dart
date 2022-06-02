@@ -33,7 +33,7 @@ class OnGoingOrderPageLaundry extends StatelessWidget {
                           List.generate(controller.ongoingorderList.length, (index) {
                         return GestureDetector(
                             onTap: () {
-                              // controller.viewServicesDetails(index);
+                              controller.viewOngoingOrderDetails(index);
                             },
                             child: OnGoingOrderTile(
                                 controller.ongoingorderList[index],index));

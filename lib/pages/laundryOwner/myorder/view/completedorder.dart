@@ -33,11 +33,10 @@ class CompleteOrderPageLaundry extends StatelessWidget {
                           controller.completedorderList.length, (index) {
                         return GestureDetector(
                             onTap: () {
-                              // controller.viewServicesDetails(index);
+                              controller.viewCompletedOrderDetails(index);
                             },
                             child: CompletedOrderTile(
-                                controller.completedorderList[index],
-                                index));
+                                controller.completedorderList[index], index));
                       }),
                     )))),
                   ],

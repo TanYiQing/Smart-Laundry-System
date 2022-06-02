@@ -33,7 +33,7 @@ class NewOrderPageLaundry extends StatelessWidget {
                           List.generate(controller.newandconfirmedorderList.length, (index) {
                         return GestureDetector(
                             onTap: () {
-                              // controller.viewServicesDetails(index);
+                              controller.viewNewAndConfirmedOrderDetails(index);
                             },
                             child: OrderTile(
                                 controller.newandconfirmedorderList[index],index));

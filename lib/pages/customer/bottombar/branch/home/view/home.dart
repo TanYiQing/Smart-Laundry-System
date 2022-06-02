@@ -511,8 +511,13 @@ class HomePage extends StatelessWidget {
                           childAspectRatio:
                               ((screenWidth / screenHeight) / 0.26),
                           children: List.generate(1, (index) {
-                            return OnGoingOrderTile(
-                                controller.onGoingOrderList[index], index);
+                            return GestureDetector(
+                              onTap: () {
+                                controller.viewOrderDetails(index);
+                              },
+                              child: OnGoingOrderTile(
+                                  controller.onGoingOrderList[index], index),
+                            );
                           }),
                         )),
                       )

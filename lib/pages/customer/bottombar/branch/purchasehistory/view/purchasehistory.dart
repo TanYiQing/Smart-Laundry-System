@@ -37,7 +37,7 @@ class PurchaseHistoryPage extends StatelessWidget {
                           controller.completedOrderList.length, (index) {
                         return GestureDetector(
                             onTap: () {
-                              // controller.viewServicesDetails(index);
+                              controller.viewCompletedOrderDetails(index);
                             },
                             child: PurchaseHistoryTile(
                                 controller.completedOrderList[index]));

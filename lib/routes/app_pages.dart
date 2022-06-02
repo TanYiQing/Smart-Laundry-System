@@ -27,6 +27,9 @@ import 'package:final_year_project/pages/customer/servicesmachinedetails/binding
 import 'package:final_year_project/pages/customer/servicesmachinedetails/view/servicesmachinedetails.dart';
 import 'package:final_year_project/pages/customer/trackorder/binding/trackorder_binding.dart';
 import 'package:final_year_project/pages/customer/trackorder/view/trackorder.dart';
+import 'package:final_year_project/pages/customer/vieworderdetails/binding/vieworderdetails_binding.dart';
+import 'package:final_year_project/pages/customer/vieworderdetails/controller/vieworderdetails_controller.dart';
+import 'package:final_year_project/pages/customer/vieworderdetails/view/vieworderdetails.dart';
 import 'package:final_year_project/pages/laundryOwner/addmachine/binding/addmachine_binding.dart';
 import 'package:final_year_project/pages/laundryOwner/addmachine/view/addmachine.dart';
 import 'package:final_year_project/pages/laundryOwner/addnewlaundry/binding/addnewlaundry_binding.dart';
@@ -395,6 +398,11 @@ class AppPages {
       name: "/changepasswordmutual",
       page: () => ChangePasswordPageMutual(),
       binding: ChangePasswordMutualBindings(),
+    ),
+    GetPage(
+      name: "/orderdetails",
+      page: () => ViewOrderDetailsPage(),
+      binding: ViewOrderDetailsBindings(),
     ),
   ];
 

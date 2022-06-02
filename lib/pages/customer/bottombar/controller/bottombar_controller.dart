@@ -116,4 +116,54 @@ class BottomBarController extends GetxController {
     }
     update();
   }
+
+  void viewOrderDetails(index) {
+    Order order = new Order(
+      orderId: onGoingOrderList[index].orderId,
+      receiptId: onGoingOrderList[index].receiptId,
+      email: onGoingOrderList[index].email,
+      name: onGoingOrderList[index].name,
+      phone: onGoingOrderList[index].phone,
+      ordermethod: onGoingOrderList[index].ordermethod,
+      addressId: onGoingOrderList[index].addressId,
+      collecttime: onGoingOrderList[index].collecttime,
+      notetolaundry: onGoingOrderList[index].notetolaundry,
+      laundryId: onGoingOrderList[index].laundryId,
+      machineId: onGoingOrderList[index].machineId,
+      machineType: onGoingOrderList[index].machineType,
+      price: onGoingOrderList[index].price,
+      addon1: onGoingOrderList[index].addon1,
+      addon2: onGoingOrderList[index].addon2,
+      addon3: onGoingOrderList[index].addon3,
+      totalPrice: onGoingOrderList[index].totalPrice,
+      status: onGoingOrderList[index].status,
+      orderCreated: onGoingOrderList[index].orderCreated,
+    );
+    Get.toNamed('/orderdetails', arguments: order);
+  }
+
+  void viewCompletedOrderDetails(index) {
+    Order order = new Order(
+      orderId: completedOrderList[index].orderId,
+      receiptId: completedOrderList[index].receiptId,
+      email: completedOrderList[index].email,
+      name: completedOrderList[index].name,
+      phone: completedOrderList[index].phone,
+      ordermethod: completedOrderList[index].ordermethod,
+      addressId: completedOrderList[index].addressId,
+      collecttime: completedOrderList[index].collecttime,
+      notetolaundry: completedOrderList[index].notetolaundry,
+      laundryId: completedOrderList[index].laundryId,
+      machineId: completedOrderList[index].machineId,
+      machineType: completedOrderList[index].machineType,
+      price: completedOrderList[index].price,
+      addon1: completedOrderList[index].addon1,
+      addon2: completedOrderList[index].addon2,
+      addon3: completedOrderList[index].addon3,
+      totalPrice: completedOrderList[index].totalPrice,
+      status: completedOrderList[index].status,
+      orderCreated: completedOrderList[index].orderCreated,
+    );
+    Get.toNamed('/orderdetails', arguments: order);
+  }
 }

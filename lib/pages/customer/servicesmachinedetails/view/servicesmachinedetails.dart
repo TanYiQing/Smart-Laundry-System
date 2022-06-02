@@ -364,6 +364,115 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                         ],
                       );
                     }),
+                    GetBuilder<ServicesMachineDetailsController>(
+                        builder: (controller) {
+                      return Visibility(
+                          visible:
+                              (controller.orderMethod.value == "Reservation")
+                                  ? true
+                                  : false,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Card(
+                              elevation: 5,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: 5.0, top: 10.0),
+                                      child: Align(
+                                        alignment: Alignment.centerLeft,
+                                        child: Row(
+                                          children: [
+                                            Text(
+                                              "Name".tr,
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: screenWidth / 25),
+                                            ),
+                                            Text(
+                                              " Required".tr,
+                                              style: TextStyle(
+                                                  fontSize: screenWidth / 35,
+                                                  color: Colors.grey),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Card(
+                                      elevation: 5,
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(10))),
+                                      child: Container(
+                                        child: Padding(
+                                          padding: const EdgeInsets.only(
+                                              left: 8.0, right: 8.0),
+                                          child: Container(
+                                            child: TextField(
+                                              controller:
+                                                  controller.namecontroller,
+                                              decoration: InputDecoration(
+                                                border: InputBorder.none,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: 5.0, top: 10.0),
+                                      child: Align(
+                                        alignment: Alignment.centerLeft,
+                                        child: Row(
+                                          children: [
+                                            Text(
+                                              "Contact Number".tr,
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: screenWidth / 25),
+                                            ),
+                                            Text(
+                                              " Required".tr,
+                                              style: TextStyle(
+                                                  fontSize: screenWidth / 35,
+                                                  color: Colors.grey),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Card(
+                                      elevation: 5,
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(10))),
+                                      child: Container(
+                                        child: Padding(
+                                          padding: const EdgeInsets.only(
+                                              left: 8.0, right: 8.0),
+                                          child: Container(
+                                            child: TextField(
+                                              controller:
+                                                  controller.contactcontroller,
+                                              decoration: InputDecoration(
+                                                border: InputBorder.none,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ));
+                    }),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Align(

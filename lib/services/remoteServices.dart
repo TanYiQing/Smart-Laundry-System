@@ -979,4 +979,38 @@ class RemoteServices {
       return null;
     }
   }
+
+  static Future<String?> loadAddressID(String addressID) async {
+    var response = await client.post(
+        Uri.parse(
+            'https://hubbuddies.com/270607/onesource/php/loadAddressID.php'),
+        body: {"addressID": addressID});
+    print(response.body);
+    if (response.statusCode == 200) {
+      if (response.body == "Failed") {
+        return response.body;
+      } else {
+        return response.body;
+      }
+    } else {
+      return null;
+    }
+  }
+
+  static Future<String?> loadLaundryID(String laundryID) async {
+    var response = await client.post(
+        Uri.parse(
+            'https://hubbuddies.com/270607/onesource/php/loadLaundryID.php'),
+        body: {"laundryID": laundryID});
+    print(response.body);
+    if (response.statusCode == 200) {
+      if (response.body == "Failed") {
+        return response.body;
+      } else {
+        return response.body;
+      }
+    } else {
+      return null;
+    }
+  }
 }
