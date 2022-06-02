@@ -253,9 +253,14 @@ class LoginPage extends StatelessWidget {
                               width: screenWidth / 1.5,
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text("Forget Password?"),
+                          GestureDetector(
+                            onTap: () {
+                              Get.toNamed('/enteremail');
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text("Forgot Password?"),
+                            ),
                           )
                         ],
                       ),

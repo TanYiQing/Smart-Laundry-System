@@ -73,6 +73,12 @@ import 'package:final_year_project/pages/mutual/account/view/firstname.dart';
 import 'package:final_year_project/pages/mutual/account/view/gender.dart';
 import 'package:final_year_project/pages/mutual/account/view/lastname.dart';
 import 'package:final_year_project/pages/mutual/account/view/phone.dart';
+import 'package:final_year_project/pages/mutual/changepassword/binding/changepassword_binding.dart';
+import 'package:final_year_project/pages/mutual/changepassword/view/changepassword.dart';
+import 'package:final_year_project/pages/mutual/enteremail/binding/enteremail_binding.dart';
+import 'package:final_year_project/pages/mutual/enteremail/view/enteremail.dart';
+import 'package:final_year_project/pages/mutual/forgotpassword/binding/forgotpassword_binding.dart';
+import 'package:final_year_project/pages/mutual/forgotpassword/view/forgotpassword.dart';
 import 'package:final_year_project/pages/mutual/intro/binding/intro_binding.dart';
 import 'package:final_year_project/pages/mutual/intro/view/intro.dart';
 import 'package:final_year_project/pages/mutual/login/binding/login_binding.dart';
@@ -375,6 +381,21 @@ class AppPages {
         page: () => ReportPage(),
         binding: BusinessReportBindings(),
         middlewares: [RouterAuthMiddleware()]),
+    GetPage(
+      name: "/forgotpassword",
+      page: () => ForgotPasswordPage(),
+      binding: ForgotPasswordBindings(),
+    ),
+    GetPage(
+      name: "/enteremail",
+      page: () => EnterEmailPage(),
+      binding: EnterEmailBindings(),
+    ),
+    GetPage(
+      name: "/changepasswordmutual",
+      page: () => ChangePasswordPageMutual(),
+      binding: ChangePasswordMutualBindings(),
+    ),
   ];
 
   static final notfound =

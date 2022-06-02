@@ -591,7 +591,7 @@ class RemoteServices {
         Uri.parse(
             'https://hubbuddies.com/270607/onesource/php/calculateWallet.php'),
         body: {"email": email});
-        print(response.body);
+    print(response.body);
     if (response.statusCode == 200) {
       if (response.body == "nodata") {
         return null;
@@ -939,6 +939,43 @@ class RemoteServices {
       }
     } else {
       Get.snackbar("Opps", "Error in loading laundry...");
+      return null;
+    }
+  }
+
+  static Future<String?> sendVerificationCode(String email, String role) async {
+    var response = await client.post(
+        Uri.parse(
+            'https://hubbuddies.com/270607/onesource/php/sendVerificationCode.php'),
+        body: {"email": email, "role": role});
+    print(response.body);
+    if (response.statusCode == 200) {
+      if (response.body == "Failed") {
+        return null;
+      } else {
+        return response.body;
+      }
+    } else {
+      return null;
+    }
+  }
+
+  static Future<String?> verifyCode(
+      String email, String role, String code) async {
+    print(email);
+    print(role);
+    print(code);
+    var response = await client.post(
+        Uri.parse('https://hubbuddies.com/270607/onesource/php/verifyCode.php'),
+        body: {"email": email, "role": role, "code": code});
+    print(response.body);
+    if (response.statusCode == 200) {
+      if (response.body == "Failed") {
+        return response.body;
+      } else {
+        return response.body;
+      }
+    } else {
       return null;
     }
   }
