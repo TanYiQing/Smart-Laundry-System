@@ -93,103 +93,106 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
                       fontSize: screenWidth / 20, fontWeight: FontWeight.bold),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Card(
-                  elevation: 10,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      children: [
-                        Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text('Laundry Owner\'s Name'.tr)),
-                        Card(
-                          elevation: 5,
-                          shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10))),
-                          child: Container(
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 8.0, right: 8.0),
-                              child: GetBuilder<MyLaundryDetailsController>(
-                                  builder: (controller) {
-                                return TextField(
-                                  controller: controller.ownernamecontroller,
-                                  decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                  ),
-                                );
-                              }),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: screenWidth / 60,
-                        ),
-                        Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text('Laundry Owner\'s Contact'.tr)),
-                        Card(
-                          elevation: 5,
-                          shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10))),
-                          child: Container(
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 8.0, right: 8.0),
-                              child: GetBuilder<MyLaundryDetailsController>(
-                                  builder: (controller) {
-                                return TextField(
-                                  controller: controller.ownercontactcontroller,
-                                  decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                  ),
-                                );
-                              }),
-                            ),
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: Padding(
-                            padding: const EdgeInsets.only(
-                                top: 10.0, left: 8.0, right: 8.0),
+              GetBuilder<MyLaundryDetailsController>(builder: (controller) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Card(
+                    elevation: 10,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text('Laundry Owner\'s Name'.tr)),
+                          Card(
+                            elevation: 5,
+                            shape: RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10))),
                             child: Container(
-                              child: MaterialButton(
-                                onPressed: () {
-                                  // _.clickLogin();
-                                },
-                                child: Container(
-                                  child: Text(
-                                    "Save".tr,
-                                    style:
-                                        TextStyle(fontSize: screenWidth / 30),
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 8.0, right: 8.0),
+                                child: GetBuilder<MyLaundryDetailsController>(
+                                    builder: (controller) {
+                                  return TextField(
+                                    controller: controller.ownernamecontroller,
+                                    decoration: InputDecoration(
+                                      border: InputBorder.none,
+                                    ),
+                                  );
+                                }),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: screenWidth / 60,
+                          ),
+                          Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text('Laundry Owner\'s Contact'.tr)),
+                          Card(
+                            elevation: 5,
+                            shape: RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10))),
+                            child: Container(
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 8.0, right: 8.0),
+                                child: GetBuilder<MyLaundryDetailsController>(
+                                    builder: (controller) {
+                                  return TextField(
+                                    controller:
+                                        controller.ownercontactcontroller,
+                                    decoration: InputDecoration(
+                                      border: InputBorder.none,
+                                    ),
+                                  );
+                                }),
+                              ),
+                            ),
+                          ),
+                          Align(
+                            alignment: Alignment.centerRight,
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                  top: 10.0, left: 8.0, right: 8.0),
+                              child: Container(
+                                child: MaterialButton(
+                                  onPressed: () {
+                                    controller.saveLaundryOwnerDetails();
+                                  },
+                                  child: Container(
+                                    child: Text(
+                                      "Save".tr,
+                                      style:
+                                          TextStyle(fontSize: screenWidth / 30),
+                                    ),
                                   ),
                                 ),
+                                decoration: BoxDecoration(
+                                    gradient: LinearGradient(
+                                        begin: Alignment(-1.0, -4.0),
+                                        end: Alignment(1.0, 4.0),
+                                        colors: [
+                                          Color.fromRGBO(0, 194, 203, 1),
+                                          Colors.white
+                                        ]),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10))),
+                                width: screenWidth / 3.5,
+                                height: screenHeight / 20,
                               ),
-                              decoration: BoxDecoration(
-                                  gradient: LinearGradient(
-                                      begin: Alignment(-1.0, -4.0),
-                                      end: Alignment(1.0, 4.0),
-                                      colors: [
-                                        Color.fromRGBO(0, 194, 203, 1),
-                                        Colors.white
-                                      ]),
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10))),
-                              width: screenWidth / 3.5,
-                              height: screenHeight / 20,
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ),
+                );
+              }),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
@@ -198,211 +201,214 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
                       fontSize: screenWidth / 20, fontWeight: FontWeight.bold),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Card(
-                  elevation: 10,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      children: [
-                        Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text('Laundry Name'.tr)),
-                        Card(
-                          elevation: 5,
-                          shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10))),
-                          child: Container(
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 8.0, right: 8.0),
-                              child: GetBuilder<MyLaundryDetailsController>(
-                                  builder: (controller) {
-                                return TextField(
-                                  controller: controller.laundrynamecontroller,
-                                  decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                  ),
-                                );
-                              }),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: screenWidth / 60,
-                        ),
-                        Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text('Laundry Address 1'.tr)),
-                        Card(
-                          elevation: 5,
-                          shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10))),
-                          child: Container(
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 8.0, right: 8.0),
-                              child: GetBuilder<MyLaundryDetailsController>(
-                                  builder: (controller) {
-                                return TextField(
-                                  controller: controller.address1controller,
-                                  decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                  ),
-                                );
-                              }),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: screenWidth / 60,
-                        ),
-                        Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text('Laundry Address 2'.tr)),
-                        Card(
-                          elevation: 5,
-                          shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10))),
-                          child: Container(
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 8.0, right: 8.0),
-                              child: GetBuilder<MyLaundryDetailsController>(
-                                  builder: (controller) {
-                                return TextField(
-                                  controller: controller.address2controller,
-                                  decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                  ),
-                                );
-                              }),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: screenWidth / 60,
-                        ),
-                        Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text('ZIP Code'.tr)),
-                        Card(
-                          elevation: 5,
-                          shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10))),
-                          child: Container(
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 8.0, right: 8.0),
-                              child: GetBuilder<MyLaundryDetailsController>(
-                                  builder: (controller) {
-                                return TextField(
-                                  controller: controller.zipcontroller,
-                                  decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                  ),
-                                );
-                              }),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: screenWidth / 60,
-                        ),
-                        Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text('City'.tr)),
-                        Card(
-                          elevation: 5,
-                          shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10))),
-                          child: Container(
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 8.0, right: 8.0),
-                              child: GetBuilder<MyLaundryDetailsController>(
-                                  builder: (controller) {
-                                return TextField(
-                                  controller: controller.citycontroller,
-                                  decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                  ),
-                                );
-                              }),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: screenWidth / 60,
-                        ),
-                        Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text('State'.tr)),
-                        Card(
-                          elevation: 5,
-                          shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10))),
-                          child: Container(
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 8.0, right: 8.0),
-                              child: GetBuilder<MyLaundryDetailsController>(
-                                  builder: (controller) {
-                                return TextField(
-                                  controller: controller.statecontroller,
-                                  decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                  ),
-                                );
-                              }),
-                            ),
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: Padding(
-                            padding: const EdgeInsets.only(
-                                top: 10.0, left: 8.0, right: 8.0),
+              GetBuilder<MyLaundryDetailsController>(builder: (controller) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Card(
+                    elevation: 10,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text('Laundry Name'.tr)),
+                          Card(
+                            elevation: 5,
+                            shape: RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10))),
                             child: Container(
-                              child: MaterialButton(
-                                onPressed: () {
-                                  // _.clickLogin();
-                                },
-                                child: Container(
-                                  child: Text(
-                                    "Save".tr,
-                                    style:
-                                        TextStyle(fontSize: screenWidth / 30),
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 8.0, right: 8.0),
+                                child: GetBuilder<MyLaundryDetailsController>(
+                                    builder: (controller) {
+                                  return TextField(
+                                    controller:
+                                        controller.laundrynamecontroller,
+                                    decoration: InputDecoration(
+                                      border: InputBorder.none,
+                                    ),
+                                  );
+                                }),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: screenWidth / 60,
+                          ),
+                          Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text('Laundry Address 1'.tr)),
+                          Card(
+                            elevation: 5,
+                            shape: RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10))),
+                            child: Container(
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 8.0, right: 8.0),
+                                child: GetBuilder<MyLaundryDetailsController>(
+                                    builder: (controller) {
+                                  return TextField(
+                                    controller: controller.address1controller,
+                                    decoration: InputDecoration(
+                                      border: InputBorder.none,
+                                    ),
+                                  );
+                                }),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: screenWidth / 60,
+                          ),
+                          Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text('Laundry Address 2'.tr)),
+                          Card(
+                            elevation: 5,
+                            shape: RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10))),
+                            child: Container(
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 8.0, right: 8.0),
+                                child: GetBuilder<MyLaundryDetailsController>(
+                                    builder: (controller) {
+                                  return TextField(
+                                    controller: controller.address2controller,
+                                    decoration: InputDecoration(
+                                      border: InputBorder.none,
+                                    ),
+                                  );
+                                }),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: screenWidth / 60,
+                          ),
+                          Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text('ZIP Code'.tr)),
+                          Card(
+                            elevation: 5,
+                            shape: RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10))),
+                            child: Container(
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 8.0, right: 8.0),
+                                child: GetBuilder<MyLaundryDetailsController>(
+                                    builder: (controller) {
+                                  return TextField(
+                                    controller: controller.zipcontroller,
+                                    decoration: InputDecoration(
+                                      border: InputBorder.none,
+                                    ),
+                                  );
+                                }),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: screenWidth / 60,
+                          ),
+                          Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text('City'.tr)),
+                          Card(
+                            elevation: 5,
+                            shape: RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10))),
+                            child: Container(
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 8.0, right: 8.0),
+                                child: GetBuilder<MyLaundryDetailsController>(
+                                    builder: (controller) {
+                                  return TextField(
+                                    controller: controller.citycontroller,
+                                    decoration: InputDecoration(
+                                      border: InputBorder.none,
+                                    ),
+                                  );
+                                }),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: screenWidth / 60,
+                          ),
+                          Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text('State'.tr)),
+                          Card(
+                            elevation: 5,
+                            shape: RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10))),
+                            child: Container(
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 8.0, right: 8.0),
+                                child: GetBuilder<MyLaundryDetailsController>(
+                                    builder: (controller) {
+                                  return TextField(
+                                    controller: controller.statecontroller,
+                                    decoration: InputDecoration(
+                                      border: InputBorder.none,
+                                    ),
+                                  );
+                                }),
+                              ),
+                            ),
+                          ),
+                          Align(
+                            alignment: Alignment.centerRight,
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                  top: 10.0, left: 8.0, right: 8.0),
+                              child: Container(
+                                child: MaterialButton(
+                                  onPressed: () {
+                                    controller.saveLaundryDetails();
+                                  },
+                                  child: Container(
+                                    child: Text(
+                                      "Save".tr,
+                                      style:
+                                          TextStyle(fontSize: screenWidth / 30),
+                                    ),
                                   ),
                                 ),
+                                decoration: BoxDecoration(
+                                    gradient: LinearGradient(
+                                        begin: Alignment(-1.0, -4.0),
+                                        end: Alignment(1.0, 4.0),
+                                        colors: [
+                                          Color.fromRGBO(0, 194, 203, 1),
+                                          Colors.white
+                                        ]),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10))),
+                                width: screenWidth / 3.5,
+                                height: screenHeight / 20,
                               ),
-                              decoration: BoxDecoration(
-                                  gradient: LinearGradient(
-                                      begin: Alignment(-1.0, -4.0),
-                                      end: Alignment(1.0, 4.0),
-                                      colors: [
-                                        Color.fromRGBO(0, 194, 203, 1),
-                                        Colors.white
-                                      ]),
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10))),
-                              width: screenWidth / 3.5,
-                              height: screenHeight / 20,
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ),
+                );
+              }),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
@@ -425,82 +431,113 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
                           children: [
                             Text("Photo of SSM License".tr),
                             GestureDetector(
-                                onTap: () {
-                                  choosePhoto(screenHeight, screenWidth, 2);
-                                },
-                                child: Container(
-                                  height: screenHeight / 10,
-                                  width: screenWidth / 5,
-                                  child: CachedNetworkImage(
-                                    imageUrl:
-                                        "https://hubbuddies.com/270607/onesource/images/laundry/${controller.laundry.laundryID}/ssmimage.png",
-                                  ),
-                                )),
+                              onTap: () {
+                                // controller.viewFullImage("2");
+                                // choosePhoto(screenHeight, screenWidth, 2);
+                              },
+                              child: (controller.ssmimage == null)
+                                  ? Container(
+                                      height: screenHeight / 10,
+                                      width: screenWidth / 5,
+                                      child: CachedNetworkImage(
+                                        imageUrl:
+                                            "https://hubbuddies.com/270607/onesource/images/laundry/${controller.laundry.laundryID}/ssmimage.png",
+                                      ),
+                                    )
+                                  : Container(
+                                      height: screenHeight / 10,
+                                      width: screenWidth / 5,
+                                      decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                              image: FileImage(
+                                                  controller.ssmimage!))),
+                                    ),
+                            ),
                             SizedBox(
                               height: screenWidth / 60,
                             ),
                             Text("Photo of Business License".tr),
                             GestureDetector(
-                                onTap: () {
-                                  choosePhoto(screenHeight, screenWidth, 3);
-                                },
-                                child: Container(
-                                  height: screenHeight / 10,
-                                  width: screenWidth / 5,
-                                  child: CachedNetworkImage(
-                                    imageUrl:
-                                        "https://hubbuddies.com/270607/onesource/images/laundry/${controller.laundry.laundryID}/businesslicenseimage.png",
-                                  ),
-                                )),
+                              onTap: () {
+                                // choosePhoto(screenHeight, screenWidth, 3);
+                              },
+                              child: (controller.businesslicenseimage == null)
+                                  ? Container(
+                                      height: screenHeight / 10,
+                                      width: screenWidth / 5,
+                                      child: CachedNetworkImage(
+                                        imageUrl:
+                                            "https://hubbuddies.com/270607/onesource/images/laundry/${controller.laundry.laundryID}/businesslicenseimage.png",
+                                      ),
+                                    )
+                                  : Container(
+                                      height: screenHeight / 10,
+                                      width: screenWidth / 5,
+                                      decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                              image: FileImage(controller
+                                                  .businesslicenseimage!))),
+                                    ),
+                            ),
                             SizedBox(
                               height: screenWidth / 60,
                             ),
                             Text("Photo of Bank Header".tr),
                             GestureDetector(
-                                onTap: () {
-                                  choosePhoto(screenHeight, screenWidth, 4);
-                                },
-                                child: Container(
-                                  height: screenHeight / 10,
-                                  width: screenWidth / 5,
-                                  child: CachedNetworkImage(
-                                    imageUrl:
-                                        "https://hubbuddies.com/270607/onesource/images/laundry/${controller.laundry.laundryID}/bankheaderimage.png",
-                                  ),
-                                )),
-                            Align(
-                              alignment: Alignment.centerRight,
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                    top: 10.0, left: 8.0, right: 8.0),
-                                child: Container(
-                                  child: MaterialButton(
-                                    onPressed: () {
-                                      // _.clickLogin();
-                                    },
-                                    child: Container(
-                                      child: Text(
-                                        "Save".tr,
-                                        style: TextStyle(
-                                            fontSize: screenWidth / 30),
+                              onTap: () {
+                                // choosePhoto(screenHeight, screenWidth, 4);
+                              },
+                              child: (controller.bankheaderimage == null)
+                                  ? Container(
+                                      height: screenHeight / 10,
+                                      width: screenWidth / 5,
+                                      child: CachedNetworkImage(
+                                        imageUrl:
+                                            "https://hubbuddies.com/270607/onesource/images/laundry/${controller.laundry.laundryID}/bankheaderimage.png",
                                       ),
+                                    )
+                                  : Container(
+                                      height: screenHeight / 10,
+                                      width: screenWidth / 5,
+                                      decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                              image: FileImage(controller
+                                                  .bankheaderimage!))),
                                     ),
-                                  ),
-                                  decoration: BoxDecoration(
-                                      gradient: LinearGradient(
-                                          begin: Alignment(-1.0, -4.0),
-                                          end: Alignment(1.0, 4.0),
-                                          colors: [
-                                            Color.fromRGBO(0, 194, 203, 1),
-                                            Colors.white
-                                          ]),
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(10))),
-                                  width: screenWidth / 3.5,
-                                  height: screenHeight / 20,
-                                ),
-                              ),
                             ),
+                            // Align(
+                            //   alignment: Alignment.centerRight,
+                            //   child: Padding(
+                            //     padding: const EdgeInsets.only(
+                            //         top: 10.0, left: 8.0, right: 8.0),
+                            //     child: Container(
+                            //       child: MaterialButton(
+                            //         onPressed: () {
+                            //           controller.saveLaundryDocuments();
+                            //         },
+                            //         child: Container(
+                            //           child: Text(
+                            //             "Save".tr,
+                            //             style: TextStyle(
+                            //                 fontSize: screenWidth / 30),
+                            //           ),
+                            //         ),
+                            //       ),
+                            //       decoration: BoxDecoration(
+                            //           gradient: LinearGradient(
+                            //               begin: Alignment(-1.0, -4.0),
+                            //               end: Alignment(1.0, 4.0),
+                            //               colors: [
+                            //                 Color.fromRGBO(0, 194, 203, 1),
+                            //                 Colors.white
+                            //               ]),
+                            //           borderRadius: BorderRadius.all(
+                            //               Radius.circular(10))),
+                            //       width: screenWidth / 3.5,
+                            //       height: screenHeight / 20,
+                            //     ),
+                            //   ),
+                            // ),
                           ],
                         ),
                       ),
@@ -515,64 +552,64 @@ class MyLaundryDetailsPageLaundry extends StatelessWidget {
     );
   }
 
-  void choosePhoto(double screenHeight, double screenWidth, id) {
-    print(id);
-    Get.bottomSheet(Container(
-      height: screenWidth / 4.5,
-      color: Colors.white,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          GetBuilder<AddNewLaundryController>(builder: (controller) {
-            return GestureDetector(
-              onTap: () {
-                controller.chooseCamera(id);
-              },
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.camera_alt,
-                    color: Colors.blue,
-                  ),
-                  Text("Camera".tr)
-                ],
-              ),
-            );
-          }),
-          GetBuilder<AddNewLaundryController>(builder: (controller) {
-            return GestureDetector(
-              onTap: () {
-                controller.chooseGallery(id);
-              },
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.photo_library_rounded, color: Colors.purple),
-                  Text("Gallery".tr)
-                ],
-              ),
-            );
-          }),
-          GetBuilder<AddNewLaundryController>(builder: (controller) {
-            return GestureDetector(
-              onTap: () {
-                controller.chooseRemove(id);
-              },
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.delete,
-                    color: Colors.red,
-                  ),
-                  Text("Remove".tr)
-                ],
-              ),
-            );
-          }),
-        ],
-      ),
-    ));
-  }
+  // void choosePhoto(double screenHeight, double screenWidth, id) {
+  //   print(id);
+  //   Get.bottomSheet(Container(
+  //     height: screenWidth / 4.5,
+  //     color: Colors.white,
+  //     child: Row(
+  //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  //       children: [
+  //         GetBuilder<MyLaundryDetailsController>(builder: (controller) {
+  //           return GestureDetector(
+  //             onTap: () {
+  //               controller.chooseCamera(id);
+  //             },
+  //             child: Column(
+  //               mainAxisAlignment: MainAxisAlignment.center,
+  //               children: [
+  //                 Icon(
+  //                   Icons.camera_alt,
+  //                   color: Colors.blue,
+  //                 ),
+  //                 Text("Camera".tr)
+  //               ],
+  //             ),
+  //           );
+  //         }),
+  //         GetBuilder<MyLaundryDetailsController>(builder: (controller) {
+  //           return GestureDetector(
+  //             onTap: () {
+  //               controller.chooseGallery(id);
+  //             },
+  //             child: Column(
+  //               mainAxisAlignment: MainAxisAlignment.center,
+  //               children: [
+  //                 Icon(Icons.photo_library_rounded, color: Colors.purple),
+  //                 Text("Gallery".tr)
+  //               ],
+  //             ),
+  //           );
+  //         }),
+  //         GetBuilder<MyLaundryDetailsController>(builder: (controller) {
+  //           return GestureDetector(
+  //             onTap: () {
+  //               controller.chooseRemove(id);
+  //             },
+  //             child: Column(
+  //               mainAxisAlignment: MainAxisAlignment.center,
+  //               children: [
+  //                 Icon(
+  //                   Icons.delete,
+  //                   color: Colors.red,
+  //                 ),
+  //                 Text("Remove".tr)
+  //               ],
+  //             ),
+  //           );
+  //         }),
+  //       ],
+  //     ),
+  //   ));
+  // }
 }

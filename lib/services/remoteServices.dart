@@ -1013,4 +1013,97 @@ class RemoteServices {
       return null;
     }
   }
+
+  static Future<String?> saveLaundryOwnerDetails(
+      String laundryID, String ownername, String ownercontact) async {
+    var response = await client.post(
+        Uri.parse(
+            'https://hubbuddies.com/270607/onesource/php/saveLaundryOwnerDetails.php'),
+        body: {
+          "laundryID": laundryID,
+          "ownername": ownername,
+          "ownercontact": ownercontact
+        });
+    print(response.body);
+    if (response.statusCode == 200) {
+      if (response.body == "Failed") {
+        return response.body;
+      } else {
+        Get.back();
+        Get.back();
+        Get.snackbar(
+            "Update Success", "Your laundry owner details has been updated");
+
+        return response.body;
+      }
+    } else {
+      return null;
+    }
+  }
+
+  static Future<String?> saveLaundryDetails(
+      String laundryID,
+      String laundryName,
+      String laundryAddress1,
+      String laundryAddress2,
+      String zip,
+      String city,
+      String state) async {
+    var response = await client.post(
+        Uri.parse(
+            'https://hubbuddies.com/270607/onesource/php/saveLaundryDetails.php'),
+        body: {
+          "laundryID": laundryID,
+          "laundryName": laundryName,
+          "laundryAddress1": laundryAddress1,
+          "laundryAddress2": laundryAddress2,
+          "zip": zip,
+          "city": city,
+          "state": state,
+        });
+    print(response.body);
+    if (response.statusCode == 200) {
+      if (response.body == "Failed") {
+        return response.body;
+      } else {
+        Get.back();
+        Get.back();
+        Get.snackbar("Update Success", "Your laundry details has been updated");
+
+        return response.body;
+      }
+    } else {
+      return null;
+    }
+  }
+
+  // static Future<String?> saveLaundryDocuments(
+  //     String laundryID,
+  //     String encoded_ssmimage,
+  //     String encoded_businesslicenseimage,
+  //     String encoded_bankheaderimage) async {
+  //   var response = await client.post(
+  //       Uri.parse(
+  //           'https://hubbuddies.com/270607/onesource/php/saveLaundryDocuments.php'),
+  //       body: {
+  //         "laundryID": laundryID,
+  //         "encoded_ssmimage": encoded_ssmimage,
+  //         "encoded_businesslicenseimage": encoded_businesslicenseimage,
+  //         "encoded_bankheaderimage": encoded_bankheaderimage
+  //       });
+  //   print(response.body);
+  //   if (response.statusCode == 200) {
+  //     if (response.body == "Failed") {
+  //       return response.body;
+  //     } else {
+  //       Get.back();
+  //       Get.back();
+  //       Get.snackbar("Update Success", "Your support documents has been updated");
+
+  //       return response.body;
+  //     }
+  //   } else {
+  //     return null;
+  //   }
+  // }
 }

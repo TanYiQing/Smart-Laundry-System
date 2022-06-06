@@ -52,10 +52,14 @@ class HomePageLaundry extends StatelessWidget {
                           children: [
                             GetBuilder<HomeLaundryController>(
                                 builder: (controller) {
-                              return Text((controller.userList.length != 0) ?
-                                controller.userList[0].firstName.toString() +
-                                    " " +
-                                    controller.userList[0].lastName.toString():"",
+                              return Text(
+                                (controller.userList.length != 0)
+                                    ? controller.userList[0].firstName
+                                            .toString() +
+                                        " " +
+                                        controller.userList[0].lastName
+                                            .toString()
+                                    : "",
                                 style: TextStyle(fontSize: screenWidth / 20),
                               );
                             }),
@@ -119,7 +123,7 @@ class HomePageLaundry extends StatelessWidget {
                             onTap: () {
                               Get.toNamed("/accountlaundry",
                                   arguments: controller.user);
-                                  Get.delete<HomeLaundryController>();
+                              Get.delete<HomeLaundryController>();
                             },
                             child: Container(
                               height: screenHeight / 12,
@@ -480,7 +484,6 @@ class HomePageLaundry extends StatelessWidget {
                                                                         controller.checkWalletAmount(controller
                                                                             .walletvalue
                                                                             .value),
-                                                                      
                                                                     style:
                                                                         TextStyle(
                                                                       fontSize:
@@ -664,7 +667,8 @@ class HomePageLaundry extends StatelessWidget {
                                                                       : Colors
                                                                           .green)),
                                                           Text(
-                                                            "Error(s) Reported".tr,
+                                                            "Error(s) Reported"
+                                                                .tr,
                                                           ),
                                                         ],
                                                       ),
