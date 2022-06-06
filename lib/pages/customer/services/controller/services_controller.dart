@@ -5,6 +5,7 @@ import 'package:get_storage/get_storage.dart';
 
 class ServicesController extends GetxController {
   var serviceList = <Laundry>[].obs;
+  var laundryNearbyList = <Laundry>[].obs;
   var favouriteList = [].obs;
 
   var serviceType = Get.arguments;
@@ -13,6 +14,7 @@ class ServicesController extends GetxController {
   @override
   void onInit() {
     loadServices();
+    loadLaundryNearby();
     super.onInit();
   }
 
@@ -74,6 +76,23 @@ class ServicesController extends GetxController {
   void countClick(index, String date) {
     print(date);
     print(serviceList[index].laundryID);
-    RemoteServices.countClick(date,serviceList[index].laundryID);
+    RemoteServices.countClick(date, serviceList[index].laundryID);
+  }
+
+  Future<void> loadLaundryNearby() async {
+    var laundryNearby =
+        await RemoteServices.loadLaundryNearby(appData.read("email"));
+    if (laundryNearby != null) {
+      laundryNearbyList.assignAll(laundryNearby);
+    }
+    print(laundryNearbyList);
+    for (int i = 0; i < laundryNearbyList.length; i++) {
+      if (laundryNearbyList[i].favourite == "unfavourite") {
+        favouriteList.insert(i, "unfavourite");
+      } else {
+        favouriteList.insert(i, "favourite");
+      }
+    }
+    update();
   }
 }

@@ -43,34 +43,38 @@ class RemoteServices {
   }
 
   static Future<User?> loginUser(String email, password, role) async {
-    var response = await client.post(
-        Uri.parse('https://hubbuddies.com/270607/onesource/php/loginUser.php'),
-        body: {"role": role, "email": email, "password": password});
-    if (response.statusCode == 200) {
-      if (response.body == "Failed") {
-        Get.snackbar("Opps", "Wrong username or password...");
-        Get.toNamed('/login');
-        return null;
-      } else {
-        Get.snackbar("Hooray!", "Successfully login into your account.");
-
-        List userdata = response.body.split('#');
-        User user = new User(
-          fname: userdata[1],
-          lname: userdata[2],
-          email: userdata[3],
-          dateregister: userdata[4],
-        );
-        if (role == "Customer") {
-          Get.offAllNamed('/bottombar', arguments: user);
+    try {
+      var response = await client.post(
+          Uri.parse(
+              'https://hubbuddies.com/270607/onesource/php/loginUser.php'),
+          body: {"role": role, "email": email, "password": password});
+          print(response.body);
+      if (response.statusCode == 200) {
+        if (response.body == "Failed") {
+          Get.snackbar("Opps", "Wrong username or password...");
+          Get.toNamed('/login');
+          return null;
         } else {
-          Get.offAllNamed('/homelaundry', arguments: user);
+          Get.snackbar("Hooray!", "Successfully login into your account.");
+
+          List userdata = response.body.split('#');
+          User user = new User(
+            fname: userdata[1],
+            lname: userdata[2],
+            email: userdata[3],
+            dateregister: userdata[4],
+          );
+          if (role == "Customer") {
+            Get.offAllNamed('/bottombar', arguments: user);
+          } else {
+            Get.offAllNamed('/homelaundry', arguments: user);
+          }
         }
+      } else {
+        Get.snackbar("Opps", "Wrong username or password...");
+        return null;
       }
-    } else {
-      Get.snackbar("Opps", "Wrong username or password...");
-      return null;
-    }
+    } on Exception catch (_) {}
   }
 
   static Future<Laundry?> addLaundry(
@@ -1075,6 +1079,27 @@ class RemoteServices {
     } else {
       return null;
     }
+  }
+
+  static Future<List<Laundry>?> loadLaundryNearby(String email) async {
+    try {
+      var response = await client.post(
+          Uri.parse(
+              'https://hubbuddies.com/270607/onesource/php/loadLaundryNearby.php'),
+          body: {"email": email});
+      print(response.body);
+      if (response.statusCode == 200) {
+        if (response.body == "nodata") {
+          return null;
+        } else {
+          var jsondata = response.body;
+          return laundryFromJson(jsondata);
+        }
+      } else {
+        Get.snackbar("Opps", "Error in loading laundry...");
+        return null;
+      }
+    } on Exception catch (_) {}
   }
 
   // static Future<String?> saveLaundryDocuments(

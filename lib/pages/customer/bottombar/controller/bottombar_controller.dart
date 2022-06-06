@@ -11,6 +11,7 @@ class BottomBarController extends GetxController {
   var serviceList = <Laundry>[].obs;
   var favouriteList = [].obs;
   var onGoingOrderList = [].obs;
+  var laundryNearbyList = [].obs;
   var completedOrderList = [].obs;
   var userList = <UserProfile>[].obs;
   var user = Get.arguments;
@@ -26,6 +27,7 @@ class BottomBarController extends GetxController {
   void onInit() {
     loadOnGoingOrder();
     loadUser();
+    loadLaundryNearby();
     super.onInit();
   }
 
@@ -33,6 +35,7 @@ class BottomBarController extends GetxController {
     tabIndex = index;
     if (tabIndex == 0) {
       loadOnGoingOrder();
+      loadLaundryNearby();
       loadUser();
     } else if (tabIndex == 1) {
       loadFavourite();
@@ -165,5 +168,40 @@ class BottomBarController extends GetxController {
       orderCreated: completedOrderList[index].orderCreated,
     );
     Get.toNamed('/orderdetails', arguments: order);
+  }
+
+  Future<void> loadLaundryNearby() async {
+    var laundryNearby =
+        await RemoteServices.loadLaundryNearby(appData.read("email"));
+    if (laundryNearby != null) {
+      laundryNearbyList.assignAll(laundryNearby);
+    }
+    print(laundryNearbyList);
+    for (int i = 0; i < laundryNearbyList.length; i++) {
+      if (laundryNearbyList[i].favourite == "unfavourite") {
+        favouriteList.insert(i, "unfavourite");
+      } else {
+        favouriteList.insert(i, "favourite");
+      }
+    }
+    update();
+  }
+
+  void viewServicesDetails(index) {
+    Laundry laundry = new Laundry(
+        laundryID: laundryNearbyList[index].laundryID,
+        laundryOwnerName: laundryNearbyList[index].laundryOwnerName,
+        laundryOwnerContact: laundryNearbyList[index].laundryOwnerContact,
+        laundryName: laundryNearbyList[index].laundryName,
+        laundryAddress1: laundryNearbyList[index].laundryAddress1,
+        laundryAddress2: laundryNearbyList[index].laundryAddress2,
+        laundryZIP: laundryNearbyList[index].laundryZIP,
+        laundryCity: laundryNearbyList[index].laundryCity,
+        laundryState: laundryNearbyList[index].laundryState,
+        dateLaunch: laundryNearbyList[index].dateLaunch,
+        email: laundryNearbyList[index].email,
+        approve: laundryNearbyList[index].approve);
+
+    Get.toNamed("/servicesdetails", arguments: laundry);
   }
 }

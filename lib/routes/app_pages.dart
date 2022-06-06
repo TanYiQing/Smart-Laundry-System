@@ -17,6 +17,7 @@ import 'package:final_year_project/pages/customer/services/binding/services_bind
 import 'package:final_year_project/pages/customer/services/view/drywash.dart';
 import 'package:final_year_project/pages/customer/services/view/drywashandironing.dart';
 import 'package:final_year_project/pages/customer/services/view/ironing.dart';
+import 'package:final_year_project/pages/customer/services/view/laundrynearby.dart';
 import 'package:final_year_project/pages/customer/services/view/normalwash.dart';
 import 'package:final_year_project/pages/customer/services/view/normalwashandironing.dart';
 import 'package:final_year_project/pages/customer/servicesdetails/binding/servicesdetails_binding.dart';
@@ -403,6 +404,11 @@ class AppPages {
       name: "/orderdetails",
       page: () => ViewOrderDetailsPage(),
       binding: ViewOrderDetailsBindings(),
+    ),
+    GetPage(
+      name: "/laundrynearby",
+      page: () => LaundryNearByPage(),
+      binding: ServicesBindings(),
     ),
   ];
 

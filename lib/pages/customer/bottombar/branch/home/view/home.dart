@@ -1,5 +1,6 @@
 import 'package:final_year_project/pages/customer/bottombar/branch/ongoingorder/tile/ongoingorder_tile.dart';
 import 'package:final_year_project/pages/customer/bottombar/controller/bottombar_controller.dart';
+import 'package:final_year_project/pages/customer/bottombar/tile/laundrynearby_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -526,18 +527,6 @@ class HomePage extends StatelessWidget {
                         width: screenWidth / 2,
                         child: Image.asset("assets/icons/noorder.png"),
                       ),
-
-                // Padding(
-                //   padding: const EdgeInsets.all(8.0),
-                //   child: Container(
-                //     color: Colors.black,
-                //     height: screenHeight / 4,
-                //     // child: GridView.count(
-                //     //   crossAxisCount: 4,
-                //     //   children: [],
-                //     // ),
-                //   ),
-                // ),
                 Padding(
                   padding:
                       const EdgeInsets.only(left: 8.0, right: 8.0, top: 20),
@@ -554,7 +543,9 @@ class HomePage extends StatelessWidget {
                           width: screenWidth / 5,
                           height: screenHeight / 35,
                           child: MaterialButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Get.toNamed('/laundrynearby');
+                            },
                             child: Container(
                               child: Text(
                                 "View All".tr,
@@ -575,17 +566,31 @@ class HomePage extends StatelessWidget {
                         ),
                       ]),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    color: Colors.black,
-                    height: screenHeight / 4,
-                    // child: GridView.count(
-                    //   crossAxisCount: 4,
-                    //   children: [],
-                    // ),
-                  ),
-                ),
+                (controller.laundryNearbyList.length != 0)
+                    ? Container(
+                        height: screenWidth / 2.2,
+                        child: Center(
+                            child: GridView.count(
+                          physics: NeverScrollableScrollPhysics(),
+                          crossAxisCount: 1,
+                          childAspectRatio:
+                              ((screenWidth / screenHeight) / 0.2),
+                          children: List.generate(1, (index) {
+                            return GestureDetector(
+                              onTap: () {
+                                controller.viewServicesDetails(index);
+                              },
+                              child: LaundryNearByTile(
+                                  controller.laundryNearbyList[index], index),
+                            );
+                          }),
+                        )),
+                      )
+                    : Container(
+                        height: screenHeight / 3,
+                        width: screenWidth / 2,
+                        child: Image.asset("assets/icons/noorder.png"),
+                      ),
               ],
             )),
           );
