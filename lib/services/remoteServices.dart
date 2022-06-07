@@ -307,7 +307,7 @@ class RemoteServices {
       String state,
       String addressType,
       String addressID) async {
-        print(addressID);
+    print(addressID);
     var response = await client.post(
         Uri.parse(
             'https://hubbuddies.com/270607/onesource/php/saveAddress.php'),
@@ -364,8 +364,9 @@ class RemoteServices {
       if (response.body == "Failed") {
         return null;
       } else {
+        Get.back();
+        Get.back();
         Get.snackbar("Address Removed", "Address has been removed.");
-        Get.offAndToNamed("/location");
       }
     } else {
       return null;
@@ -421,6 +422,19 @@ class RemoteServices {
       addon3,
       totalPrice,
       date) async {
+    print(email);
+    print(name);
+    print(phone);
+    print(orderMethod);
+    print(addressID);
+    print(collectTime);
+    print(note);
+    print(laundryID);
+    print(machineID);
+    print(machineType);
+    print(price);
+    print(addon1);
+    print(addon2);
     var response = await client.post(
         Uri.parse('https://hubbuddies.com/270607/onesource/php/paymentCOD.php'),
         body: {
@@ -443,11 +457,11 @@ class RemoteServices {
         });
     print(response.body);
     if (response.statusCode == 200) {
-      if (response.body == "Success") {
-        Get.snackbar("Hooray!", "Order placed!");
-      } else {
+      if (response.body == "Failed") {
         Get.snackbar(
             "Opps", "Something wrong in placing order, please try again...");
+      } else {
+        Get.snackbar("Hooray!", "Order placed!");
       }
     } else {
       return null;

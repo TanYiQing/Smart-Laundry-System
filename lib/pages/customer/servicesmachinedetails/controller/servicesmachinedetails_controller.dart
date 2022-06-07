@@ -118,7 +118,7 @@ class ServicesMachineDetailsController extends GetxController {
     notetoLaundry.value = note.toString();
   }
 
-  void placeorder(String date) {
+  Future<void> placeorder(String date) async {
     if (checked1.value == true) {
       addon1.value = machine.addOn1;
     } else {
@@ -181,6 +181,7 @@ class ServicesMachineDetailsController extends GetxController {
           addon3.value.toString(),
           totalPrice.value.toStringAsFixed(2),
           date);
+
       Get.offAllNamed("/payment", arguments: order);
     } else {
       Get.toNamed("/paymentonline", arguments: order);
