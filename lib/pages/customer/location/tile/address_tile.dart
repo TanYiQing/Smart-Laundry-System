@@ -6,7 +6,8 @@ import 'package:lottie/lottie.dart';
 
 class AddressTile extends StatelessWidget {
   final Address address;
-  AddressTile(this.address);
+  final int index;
+  AddressTile(this.address, this.index);
 
   @override
   Widget build(BuildContext context) {
@@ -55,12 +56,19 @@ class AddressTile extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Padding(
-                      padding: const EdgeInsets.only(right: 8.0),
-                      child: Icon(
-                        Icons.edit_location_alt_sharp,
-                        color: Colors.blue,
-                      )),
+                  GetBuilder<LocationController>(builder: (controller) {
+                    return GestureDetector(
+                      onTap: () {
+                        controller.editAddress(index);
+                      },
+                      child: Padding(
+                          padding: const EdgeInsets.only(right: 8.0),
+                          child: Icon(
+                            Icons.edit_location_alt_sharp,
+                            color: Colors.blue,
+                          )),
+                    );
+                  }),
                   GestureDetector(
                       onTap: () {
                         Get.defaultDialog(
@@ -83,25 +91,25 @@ class AddressTile extends StatelessWidget {
                             ),
                           ),
                           confirm: GetBuilder<LocationController>(
-                            builder: (controller) {
-                              return GestureDetector(
-                                onTap: () {
-                                  print("Delete");
-                                  // print(this.address.addressID);
-                                  controller.deleteAddress(this.address.addressID);
-                                },
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                      color: Colors.red,
-                                      borderRadius: BorderRadius.circular(10)),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text("Delete"),
-                                  ),
+                              builder: (controller) {
+                            return GestureDetector(
+                              onTap: () {
+                                print("Delete");
+                                // print(this.address.addressID);
+                                controller
+                                    .deleteAddress(this.address.addressID);
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.red,
+                                    borderRadius: BorderRadius.circular(10)),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text("Delete"),
                                 ),
-                              );
-                            }
-                          ),
+                              ),
+                            );
+                          }),
                         );
                       },
                       child: Icon(Icons.delete, color: Colors.red)),

@@ -26,4 +26,20 @@ class LocationController extends GetxController {
     RemoteServices.deleteAddress(addressID!);
     // print(addressID);
   }
+
+  void editAddress(int index) {
+    print(index);
+    Address address = new Address(
+        addressID: addressList[index].addressID,
+        name: addressList[index].name,
+        contact: addressList[index].contact,
+        address1: addressList[index].address1,
+        address2: addressList[index].address2,
+        zip: addressList[index].zip,
+        city: addressList[index].city,
+        state: addressList[index].state,
+        addressType: addressList[index].addressType,
+        email: addressList[index].email);
+    Get.toNamed('/editlocation', arguments: address);
+  }
 }

@@ -4,6 +4,9 @@ import 'package:final_year_project/pages/customer/addlocation/view/addlocation.d
 import 'package:final_year_project/pages/customer/bottombar/binding/bottombar_binding.dart';
 import 'package:final_year_project/pages/customer/chooselocation/binding/chooselocation_binding.dart';
 import 'package:final_year_project/pages/customer/chooselocation/view/chooselocation.dart';
+import 'package:final_year_project/pages/customer/editlocation/binding/editlocation_binding.dart';
+import 'package:final_year_project/pages/customer/editlocation/controller/editlocation_controller.dart';
+import 'package:final_year_project/pages/customer/editlocation/view/editlocation.dart';
 import 'package:final_year_project/pages/customer/errorreport/binding/errorreport_binding.dart';
 import 'package:final_year_project/pages/customer/errorreport/view/errorreport.dart';
 import 'package:final_year_project/pages/customer/location/binding/location_binding.dart';
@@ -409,6 +412,11 @@ class AppPages {
       name: "/laundrynearby",
       page: () => LaundryNearByPage(),
       binding: ServicesBindings(),
+    ),
+    GetPage(
+      name: "/editlocation",
+      page: () => EditLocationPage(),
+      binding: EditLocationBindings(),
     ),
   ];
 

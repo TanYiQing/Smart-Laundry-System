@@ -67,7 +67,7 @@ class LocationPage extends StatelessWidget {
                           onTap: () {
                             // controller.viewLaundryDetails(index);
                           },
-                          child: AddressTile(controller.addressList[index]));
+                          child: AddressTile(controller.addressList[index],index));
                     }),
                   )))),
                 ],
