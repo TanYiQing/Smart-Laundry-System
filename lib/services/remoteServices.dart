@@ -108,6 +108,7 @@ class RemoteServices {
           "encoded_businesslicenseimage": encoded_businesslicenseimage,
           "encoded_bankheaderimage": encoded_bankheaderimage
         });
+    print(response.body);
     if (response.statusCode == 200) {
       if (response.body == "Success") {
         Get.snackbar(
@@ -435,6 +436,9 @@ class RemoteServices {
     print(price);
     print(addon1);
     print(addon2);
+    print(addon3);
+    print(totalPrice);
+    print(date);
     var response = await client.post(
         Uri.parse('https://hubbuddies.com/270607/onesource/php/paymentCOD.php'),
         body: {
