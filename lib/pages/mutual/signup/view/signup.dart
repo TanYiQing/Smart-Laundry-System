@@ -305,7 +305,7 @@ class SignupPage extends StatelessWidget {
                             },
                             child: Container(
                               child: Text(
-                                "SIGN UP",
+                                "REGISTER",
                                 style: TextStyle(fontSize: screenWidth / 20),
                               ),
                             ),

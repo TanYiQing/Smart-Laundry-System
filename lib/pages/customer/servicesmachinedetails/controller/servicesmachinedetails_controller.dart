@@ -168,7 +168,7 @@ class ServicesMachineDetailsController extends GetxController {
               : addressList[index.value].contact.toString(),
           orderMethod.value.toString(),
           (orderMethod.value == "Reservation")
-              ? "No Address"
+              ? "No Ad"
               : addressList[index.value].addressID.toString(),
           collectTime.value.toString(),
           notetoLaundry.value.toString(),

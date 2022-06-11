@@ -15,10 +15,14 @@ class ViewOrderDetailsController extends GetxController {
 
   Future<void> loadAddressID() async {
     address = await RemoteServices.loadAddressID(order.addressId.toString());
+    print(address);
+    if (address != "Failed") {
+      List customeraddress = address!.split('#');
+      address = customeraddress[1].toString();
+    } else {
+      address = "No Address";
+    }
 
-    List customeraddress = address!.split('#');
-    print(customeraddress[1].toString());
-    address = customeraddress[1].toString();
     update();
   }
 

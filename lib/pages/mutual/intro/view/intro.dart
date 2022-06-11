@@ -170,7 +170,7 @@ class IntroPage extends StatelessWidget {
                         },
                         child: Container(
                           child: Text(
-                            "CREATE AN ACCOUNT",
+                            "REGISTER NOW",
                             style: TextStyle(fontSize: screenWidth / 20),
                           ),
                         ),

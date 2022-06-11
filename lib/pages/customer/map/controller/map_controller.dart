@@ -104,8 +104,7 @@ class MapController extends GetxController {
       markerId: markerId1,
       position: latLatPosition,
       infoWindow: InfoWindow(
-        title: 'Shop Location',
-        snippet: "Hong Mui Trading",
+        title: 'Your Location',
       ),
       icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
     ));
