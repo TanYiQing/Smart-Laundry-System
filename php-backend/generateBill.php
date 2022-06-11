@@ -19,8 +19,8 @@ $totalPrice=$_GET['totalPrice'];
 $status="Order Confirmed";
 
 
-$api_key='08bfa8ac-b29e-45c2-aa30-539da041c4f2';
-$collection_id='7k7e3bxl';
+$api_key='';
+$collection_id='';
 $host='https://www.billplz-sandbox.com/api/v3/bills';
 
 $data = array(

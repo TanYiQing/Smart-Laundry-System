@@ -32,12 +32,12 @@ function sendEmail($email,$resetotp){
     $mail = new PHPMailer(true);
     $mail->SMTPDebug = 0; //Disable verbose debug output
     $mail->isSMTP(); //Send using SMTP
-    $mail->Host= 'mail.hubbuddies.com'; //Set the SMTP server to send through
+    $mail->Host= ''; //Set the SMTP server to send through
     $mail->SMTPAuth= true; //Enable SMTP authentication
-    $mail->Username= 'onesourcelaundryapp@hubbuddies.com'; //SMTP username
-    $mail->Password= 'onesourcelaundryapp'; //SMTP password
+    $mail->Username= ''; //SMTP username
+    $mail->Password= ''; //SMTP password
     $mail->SMTPSecure= 'tls';         
-    $mail->Port= 587;
+    $mail->Port= ;
     
     $from = "onesourcelaundryapp@hubbuddies.com";
     $to = $email;
