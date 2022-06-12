@@ -536,7 +536,7 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                                                             .center,
                                                     crossAxisAlignment:
                                                         CrossAxisAlignment
-                                                            .center,
+                                                            .start,
                                                     children: [
                                                       Text(
                                                         controller
