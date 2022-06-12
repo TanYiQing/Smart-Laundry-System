@@ -154,7 +154,7 @@ class ServicesMachineDetailsController extends GetxController {
             ? "No Address"
             : addressList[index.value].addressID,
         collecttime: collectTime.value,
-        notetolaundry: notetoLaundry.value,
+        notetolaundry: notecontroller.text.toString(),
         totalPrice: totalPrice.value.toStringAsFixed(2));
 
     if (paymentMethod.value == "Cash On Delivery") {
@@ -171,7 +171,7 @@ class ServicesMachineDetailsController extends GetxController {
               ? "No Ad"
               : addressList[index.value].addressID.toString(),
           collectTime.value.toString(),
-          notetoLaundry.value.toString(),
+          notecontroller.text.toString(),
           machine.laundryID.toString(),
           machine.machineID.toString(),
           machine.machineType.toString(),

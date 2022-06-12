@@ -32,7 +32,7 @@ class RemoteServices {
         });
     if (response.statusCode == 200) {
       if (response.body == "Success") {
-        Get.snackbar("Hooray!", "Account registered successfully, login now.");
+        Get.snackbar("Hooray!", "Account registered successfully, please verify your account in.");
       } else {
         Get.snackbar("Sign Up Failed", "Please try again...");
         Get.offAllNamed('/intro');
