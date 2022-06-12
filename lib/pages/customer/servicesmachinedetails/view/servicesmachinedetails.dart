@@ -486,11 +486,13 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text("Choose your location"),
-                                      GestureDetector(
-                                          onTap: () async {
-                                            controller.updateAdress();
-                                          },
-                                          child: Text("Change location"))
+                                      (controller.addressList.length != 0)
+                                          ? GestureDetector(
+                                              onTap: () async {
+                                                controller.updateAdress();
+                                              },
+                                              child: Text("Change location"))
+                                          : Container()
                                     ],
                                   )
                                 : Container();
@@ -525,68 +527,106 @@ class ServicesMachineDetailsPage extends StatelessWidget {
                                           ),
                                           Padding(
                                             padding: const EdgeInsets.all(8.0),
-                                            child: Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  controller
-                                                      .addressList[controller
-                                                          .index.value]
-                                                      .addressType
-                                                      .toString(),
-                                                  style: TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      fontSize:
-                                                          screenWidth / 20),
-                                                ),
-                                                Text(controller
-                                                    .addressList[
-                                                        controller.index.value]
-                                                    .name
-                                                    .toString()),
-                                                Text(controller
-                                                    .addressList[
-                                                        controller.index.value]
-                                                    .contact
-                                                    .toString()),
-                                                Text(""),
-                                                Text(controller
-                                                    .addressList[
-                                                        controller.index.value]
-                                                    .address1
-                                                    .toString()),
-                                                (controller
+                                            child: (controller
+                                                        .addressList.length !=
+                                                    0)
+                                                ? Column(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Text(
+                                                        controller
                                                             .addressList[
                                                                 controller.index
                                                                     .value]
-                                                            .address2
-                                                            .toString() ==
-                                                        "")
-                                                    ? Text(controller
-                                                        .addressList[controller
-                                                            .index.value]
-                                                        .address2
-                                                        .toString())
-                                                    : Container(),
-                                                Text(controller
-                                                        .addressList[controller
-                                                            .index.value]
-                                                        .zip
-                                                        .toString() +
-                                                    controller
-                                                        .addressList[controller
-                                                            .index.value]
-                                                        .city
-                                                        .toString()),
-                                                Text(controller
-                                                    .addressList[
-                                                        controller.index.value]
-                                                    .state
-                                                    .toString()),
-                                              ],
-                                            ),
+                                                            .addressType
+                                                            .toString(),
+                                                        style: TextStyle(
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            fontSize:
+                                                                screenWidth /
+                                                                    20),
+                                                      ),
+                                                      Text(controller
+                                                          .addressList[
+                                                              controller
+                                                                  .index.value]
+                                                          .name
+                                                          .toString()),
+                                                      Text(controller
+                                                          .addressList[
+                                                              controller
+                                                                  .index.value]
+                                                          .contact
+                                                          .toString()),
+                                                      Text(""),
+                                                      Text(controller
+                                                          .addressList[
+                                                              controller
+                                                                  .index.value]
+                                                          .address1
+                                                          .toString()),
+                                                      (controller
+                                                                  .addressList[
+                                                                      controller
+                                                                          .index
+                                                                          .value]
+                                                                  .address2
+                                                                  .toString() ==
+                                                              "")
+                                                          ? Text(controller
+                                                              .addressList[
+                                                                  controller
+                                                                      .index
+                                                                      .value]
+                                                              .address2
+                                                              .toString())
+                                                          : Container(),
+                                                      Text(controller
+                                                              .addressList[
+                                                                  controller
+                                                                      .index
+                                                                      .value]
+                                                              .zip
+                                                              .toString() +
+                                                          controller
+                                                              .addressList[
+                                                                  controller
+                                                                      .index
+                                                                      .value]
+                                                              .city
+                                                              .toString()),
+                                                      Text(controller
+                                                          .addressList[
+                                                              controller
+                                                                  .index.value]
+                                                          .state
+                                                          .toString()),
+                                                    ],
+                                                  )
+                                                : Column(
+                                                    children: [
+                                                      Text("NO ADDRESS FOUND",
+                                                          style: TextStyle(
+                                                              fontSize:
+                                                                  screenWidth /
+                                                                      18,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold)),
+                                                      Text(
+                                                          "Please add your address now",
+                                                          style: TextStyle(
+                                                              fontSize:
+                                                                  screenWidth /
+                                                                      25))
+                                                    ],
+                                                  ),
                                           ),
                                         ],
                                       ),

@@ -586,10 +586,20 @@ class HomePage extends StatelessWidget {
                           }),
                         )),
                       )
-                    : Container(
-                        height: screenHeight / 3,
-                        width: screenWidth / 2,
-                        child: Image.asset("assets/icons/noorder.png"),
+                    : Column(
+                        children: [
+                          Container(
+                            height: screenHeight / 5,
+                            width: screenWidth / 5,
+                            child: Image.asset("assets/icons/sad.png"),
+                          ),
+                          Text("NO LAUNDRY NEARBY FOUND",
+                              style: TextStyle(
+                                  fontSize: screenWidth / 18,
+                                  fontWeight: FontWeight.bold)),
+                          Text("Please try to add new address",
+                              style: TextStyle(fontSize: screenWidth / 25))
+                        ],
                       ),
               ],
             )),
