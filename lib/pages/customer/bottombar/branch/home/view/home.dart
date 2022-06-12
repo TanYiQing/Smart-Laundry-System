@@ -191,31 +191,31 @@ class HomePage extends StatelessWidget {
                               fontSize: screenWidth / 20,
                               fontWeight: FontWeight.bold),
                         ),
-                        Container(
-                          width: screenWidth / 5,
-                          height: screenHeight / 35,
-                          child: MaterialButton(
-                            onPressed: () {
-                              Get.toNamed("/services");
-                            },
-                            child: Container(
-                              child: Text(
-                                "View All".tr,
-                                style: TextStyle(fontSize: screenWidth / 35),
-                              ),
-                            ),
-                          ),
-                          decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                  begin: Alignment(-1.0, -4.0),
-                                  end: Alignment(1.0, 4.0),
-                                  colors: [
-                                    Color.fromRGBO(0, 194, 203, 1),
-                                    Colors.white
-                                  ]),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10))),
-                        ),
+                        // Container(
+                        //   width: screenWidth / 5,
+                        //   height: screenHeight / 35,
+                        //   child: MaterialButton(
+                        //     onPressed: () {
+                        //       Get.toNamed("/services");
+                        //     },
+                        //     child: Container(
+                        //       child: Text(
+                        //         "View All".tr,
+                        //         style: TextStyle(fontSize: screenWidth / 35),
+                        //       ),
+                        //     ),
+                        //   ),
+                        //   decoration: BoxDecoration(
+                        //       gradient: LinearGradient(
+                        //           begin: Alignment(-1.0, -4.0),
+                        //           end: Alignment(1.0, 4.0),
+                        //           colors: [
+                        //             Color.fromRGBO(0, 194, 203, 1),
+                        //             Colors.white
+                        //           ]),
+                        //       borderRadius:
+                        //           BorderRadius.all(Radius.circular(10))),
+                        // ),
                       ]),
                 ),
                 Padding(

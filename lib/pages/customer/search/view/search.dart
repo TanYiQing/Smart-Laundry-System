@@ -1,6 +1,5 @@
 import 'package:final_year_project/pages/customer/search/controller/search_controller.dart';
 import 'package:final_year_project/pages/customer/search/tile/search_tile.dart';
-import 'package:final_year_project/pages/customer/services/tile/services_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
@@ -56,23 +55,40 @@ class SearchPage extends StatelessWidget {
                             ),
                           ),
                         )),
-                    Container(
-                        child: Flexible(
-                            child: Center(
-                                child: GridView.count(
-                      crossAxisCount: 1,
-                      childAspectRatio: ((screenWidth / screenHeight) / 0.2),
-                      children:
-                          List.generate(controller.serviceList.length, (index) {
-                        return GestureDetector(
-                            onTap: () {
-                              controller.countClick(index, date);
-                              controller.viewServicesDetails(index);
-                            },
-                            child: SearchTile(
-                                controller.serviceList[index], index));
-                      }),
-                    ))))
+                    (controller.serviceList.length != 0)
+                        ? Container(
+                            child: Flexible(
+                                child: Center(
+                                    child: GridView.count(
+                            crossAxisCount: 1,
+                            childAspectRatio:
+                                ((screenWidth / screenHeight) / 0.2),
+                            children: List.generate(
+                                controller.serviceList.length, (index) {
+                              return GestureDetector(
+                                  onTap: () {
+                                    controller.countClick(index, date);
+                                    controller.viewServicesDetails(index);
+                                  },
+                                  child: SearchTile(
+                                      controller.serviceList[index], index));
+                            }),
+                          ))))
+                        : Container(
+                            child: Column(
+                              children: [
+                                Container(
+                                  height: screenHeight / 5,
+                                  width: screenWidth / 5,
+                                  child: Image.asset("assets/icons/sad.png"),
+                                ),
+                                Text("WE COULD'NT FIND THIS SHOP...",
+                                    style: TextStyle(
+                                        fontSize: screenWidth / 18,
+                                        fontWeight: FontWeight.bold)),
+                              ],
+                            ),
+                          )
                   ],
                 ),
               ),

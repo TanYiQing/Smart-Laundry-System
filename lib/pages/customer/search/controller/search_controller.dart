@@ -9,7 +9,7 @@ class SearchController extends GetxController {
 
   @override
   void onInit() {
-    searchLaundry();
+    // searchLaundry();
     super.onInit();
   }
 
