@@ -25,7 +25,6 @@ class SettingController extends GetxController {
       language.value = 'English';
       print("English Here");
     }
-    
   }
 
   void clickLanguage(Locale locale) {
@@ -38,7 +37,6 @@ class SettingController extends GetxController {
 
   void clickLogout() {
     appData.write("staySignedIn", false);
-    appData.write("email", "");
     appData.write("password", "");
     appData.write("role", "");
     Get.offAllNamed('/intro');

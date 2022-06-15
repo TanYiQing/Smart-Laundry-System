@@ -1,14 +1,11 @@
-import 'dart:async';
 
 import 'package:final_year_project/pages/customer/payment/controller/payment_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:progress_stepper/progress_stepper.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 class PaymentPage extends StatelessWidget {
-  Completer<WebViewController> _controller = Completer<WebViewController>();
 
   @override
   Widget build(BuildContext context) {

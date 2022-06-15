@@ -14,6 +14,12 @@ class LoginController extends GetxController {
   var ishidden = true.obs;
   var rememberme = false.obs;
 
+  @override
+  void onInit() {
+    emailController.text = appData.read("email");
+    super.onInit();
+  }
+
   Future<void> clickLogin() async {
     user = await RemoteServices.loginUser(emailController.text.toString(),
         passwordController.text.toString(), selectedRole.value.toString());

@@ -37,8 +37,8 @@ class BirthdayPage extends StatelessWidget {
                           dateHintText: "Birth Date",
                           icon: Icon(Icons.date_range_outlined),
                           type: DateTimePickerType.date,
-                          firstDate: DateTime(2000),
-                          lastDate: DateTime(2100));
+                          firstDate: DateTime(1800),
+                          lastDate: DateTime.now());
                     }),
                   ),
                 ),
