@@ -160,33 +160,85 @@ class ServicesMachineDetailsController extends GetxController {
         totalPrice: totalPrice.value.toStringAsFixed(2));
 
     if (paymentMethod.value == "Cash On Delivery") {
-      RemoteServices.makePaymentCOD(
-          appData.read("email").toString(),
-          (orderMethod.value == "Reservation")
-              ? namecontroller.text.toString()
-              : addressList[index.value].name.toString(),
-          (orderMethod.value == "Reservation")
-              ? contactcontroller.text.toString()
-              : addressList[index.value].contact.toString(),
-          orderMethod.value.toString(),
-          (orderMethod.value == "Reservation")
-              ? "No Ad"
-              : addressList[index.value].addressID.toString(),
-          collectTime.value.toString(),
-          notecontroller.text.toString(),
-          machine.laundryID.toString(),
-          machine.machineID.toString(),
-          machine.machineType.toString(),
-          machine.price.toString(),
-          addon1.value.toString(),
-          addon2.value.toString(),
-          addon3.value.toString(),
-          totalPrice.value.toStringAsFixed(2),
-          date);
+      if (orderMethod.value == "Reservation") {
+        if (namecontroller.text == "" || contactcontroller.text == "") {
+          Get.snackbar("Payment Failed",
+              "Please make sure all the required field was filled.");
+        } else {
+          var response = await RemoteServices.makePaymentCOD(
+              appData.read("email").toString(),
+              (orderMethod.value == "Reservation")
+                  ? namecontroller.text.toString()
+                  : addressList[index.value].name.toString(),
+              (orderMethod.value == "Reservation")
+                  ? contactcontroller.text.toString()
+                  : addressList[index.value].contact.toString(),
+              orderMethod.value.toString(),
+              (orderMethod.value == "Reservation")
+                  ? "No Ad"
+                  : addressList[index.value].addressID.toString(),
+              collectTime.value.toString(),
+              notecontroller.text.toString(),
+              machine.laundryID.toString(),
+              machine.machineID.toString(),
+              machine.machineType.toString(),
+              machine.price.toString(),
+              addon1.value.toString(),
+              addon2.value.toString(),
+              addon3.value.toString(),
+              totalPrice.value.toStringAsFixed(2),
+              date);
 
-      Get.offAllNamed("/payment", arguments: order);
+          if (response == "Failed") {
+            Get.snackbar("Payment Failed",
+                "Something went wrong, please try again later.");
+          } else {
+            Get.offAllNamed("/payment", arguments: order);
+          }
+        }
+      } else {
+        var response = await RemoteServices.makePaymentCOD(
+            appData.read("email").toString(),
+            (orderMethod.value == "Reservation")
+                ? namecontroller.text.toString()
+                : addressList[index.value].name.toString(),
+            (orderMethod.value == "Reservation")
+                ? contactcontroller.text.toString()
+                : addressList[index.value].contact.toString(),
+            orderMethod.value.toString(),
+            (orderMethod.value == "Reservation")
+                ? "No Ad"
+                : addressList[index.value].addressID.toString(),
+            collectTime.value.toString(),
+            notecontroller.text.toString(),
+            machine.laundryID.toString(),
+            machine.machineID.toString(),
+            machine.machineType.toString(),
+            machine.price.toString(),
+            addon1.value.toString(),
+            addon2.value.toString(),
+            addon3.value.toString(),
+            totalPrice.value.toStringAsFixed(2),
+            date);
+
+        if (response == "Failed") {
+          Get.snackbar("Payment Failed",
+              "Something went wrong, please try again later.");
+        } else {
+          Get.offAllNamed("/payment", arguments: order);
+        }
+      }
     } else {
-      Get.toNamed("/paymentonline", arguments: order);
+      if (orderMethod.value == "Reservation") {
+        if (namecontroller.text == "" || contactcontroller.text == "") {
+          Get.snackbar("Payment Failed",
+              "Please make sure all the required field was filled.");
+        } else {
+          Get.toNamed("/paymentonline", arguments: order);
+        }
+      } else {
+        Get.toNamed("/paymentonline", arguments: order);
+      }
     }
   }
 }
