@@ -5,7 +5,6 @@ import 'package:final_year_project/pages/customer/bottombar/binding/bottombar_bi
 import 'package:final_year_project/pages/customer/chooselocation/binding/chooselocation_binding.dart';
 import 'package:final_year_project/pages/customer/chooselocation/view/chooselocation.dart';
 import 'package:final_year_project/pages/customer/editlocation/binding/editlocation_binding.dart';
-import 'package:final_year_project/pages/customer/editlocation/controller/editlocation_controller.dart';
 import 'package:final_year_project/pages/customer/editlocation/view/editlocation.dart';
 import 'package:final_year_project/pages/customer/errorreport/binding/errorreport_binding.dart';
 import 'package:final_year_project/pages/customer/errorreport/view/errorreport.dart';
@@ -32,7 +31,6 @@ import 'package:final_year_project/pages/customer/servicesmachinedetails/view/se
 import 'package:final_year_project/pages/customer/trackorder/binding/trackorder_binding.dart';
 import 'package:final_year_project/pages/customer/trackorder/view/trackorder.dart';
 import 'package:final_year_project/pages/customer/vieworderdetails/binding/vieworderdetails_binding.dart';
-import 'package:final_year_project/pages/customer/vieworderdetails/controller/vieworderdetails_controller.dart';
 import 'package:final_year_project/pages/customer/vieworderdetails/view/vieworderdetails.dart';
 import 'package:final_year_project/pages/laundryOwner/addmachine/binding/addmachine_binding.dart';
 import 'package:final_year_project/pages/laundryOwner/addmachine/view/addmachine.dart';

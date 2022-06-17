@@ -12,7 +12,7 @@ class SignupController extends GetxController {
   TextEditingController passwordcontroller = new TextEditingController();
   TextEditingController confirmpasswordcontroller = new TextEditingController();
 
-  void signupUser() {
+  Future<void> signupUser() async {
     if (firstnamecontroller.text == "" ||
         lastnamecontroller.text == "" ||
         emailcontroller.text == "" ||
@@ -24,19 +24,21 @@ class SignupController extends GetxController {
     } else if (selectedRole.value == "") {
       Get.snackbar("Sign Up Failed", "Please select a role");
     } else {
-      RemoteServices.signUpUser(
+      var response = await RemoteServices.signUpUser(
           firstnamecontroller.text.toString(),
           lastnamecontroller.text.toString(),
           emailcontroller.text.toString(),
           passwordcontroller.text.toString(),
           selectedRole.value.toString());
-      firstnamecontroller.text = "";
-      lastnamecontroller.text = "";
-      emailcontroller.text = "";
-      passwordcontroller.text = "";
-      confirmpasswordcontroller.text = "";
-      selectedRole.value = "";
-      Get.offAllNamed('/intro');
+      if (response == "Success") {
+        firstnamecontroller.text = "";
+        lastnamecontroller.text = "";
+        emailcontroller.text = "";
+        passwordcontroller.text = "";
+        confirmpasswordcontroller.text = "";
+        selectedRole.value = "";
+        Get.offAllNamed('/intro');
+      }
     }
   }
 

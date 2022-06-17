@@ -32,10 +32,10 @@ class RemoteServices {
         });
     if (response.statusCode == 200) {
       if (response.body == "Success") {
-        Get.snackbar("Hooray!", "Account registered successfully, please verify your account in email.");
+        Get.snackbar("Hooray!",
+            "Account registered successfully, please verify your account in email.");
       } else {
-        Get.snackbar("Sign Up Failed", "Please try again...");
-        Get.offAllNamed('/intro');
+        Get.snackbar("Sign Up Failed", "Please try again with another email.");
       }
     } else {
       return null;
@@ -290,9 +290,9 @@ class RemoteServices {
       if (response.body == "Failed") {
         return null;
       } else {
-        Get.back();Get.back();
+        Get.back();
+        Get.back();
         Get.snackbar("Hooray!", "Address has been saved.");
-        
       }
     } else {
       return null;
