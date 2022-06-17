@@ -38,7 +38,7 @@ class FavouritePage extends StatelessWidget {
                               (index) {
                             return GestureDetector(
                                 onTap: () {
-                                  // controller.viewServicesDetails(index);
+                                  controller.viewFavouriteServicesDetails(index);
                                 },
                                 child: FavouriteTile(
                                     controller.serviceList[index], index));
