@@ -147,10 +147,7 @@ class EnterEmailPage extends StatelessWidget {
                     child: MaterialButton(
                       onPressed: () {
                         controller.sendVerificationCode();
-                        Get.toNamed("/forgotpassword", arguments: [
-                          controller.emailController.text.toString(),
-                          controller.selectedRole.value
-                        ]);
+                        
                       },
                       child: Container(
                         child: Text(
