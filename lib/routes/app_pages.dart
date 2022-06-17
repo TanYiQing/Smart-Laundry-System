@@ -91,12 +91,14 @@ import 'package:final_year_project/pages/mutual/login/view/login.dart';
 import 'package:final_year_project/pages/mutual/notfound/notfound.dart';
 import 'package:final_year_project/pages/mutual/setting/binding/setting_binding.dart';
 import 'package:final_year_project/pages/mutual/setting/view/aboutus.dart';
+import 'package:final_year_project/pages/mutual/setting/view/helpcentre.dart';
 import 'package:final_year_project/pages/mutual/setting/view/language.dart';
 import 'package:final_year_project/pages/mutual/setting/view/setting.dart';
 import 'package:final_year_project/pages/mutual/signup/binding/singup_binding.dart';
 import 'package:final_year_project/pages/mutual/signup/view/signup.dart';
 import 'package:final_year_project/pages/mutual/splashScreen/binding/splashScreen_binding.dart';
 import 'package:final_year_project/pages/mutual/splashScreen/view/splashScreen.dart';
+import 'package:final_year_project/pages/mutual/setting/view/termsandcondition.dart';
 import 'package:get/get.dart';
 
 class AppPages {
@@ -415,6 +417,14 @@ class AppPages {
       name: "/editlocation",
       page: () => EditLocationPage(),
       binding: EditLocationBindings(),
+    ),
+    GetPage(
+      name: "/tnc",
+      page: () => TermsAndConditionsPage(),
+    ),
+    GetPage(
+      name: "/help",
+      page: () => HelpCentrePage(),
     ),
   ];
 
