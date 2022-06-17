@@ -63,7 +63,7 @@ class SettingPage extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                Get.toNamed('/language');
+                Get.toNamed('/help');
               },
               child: ListTile(
                 title: Row(
@@ -121,7 +121,7 @@ class SettingPage extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                Get.toNamed('/language');
+                Get.toNamed('/tnc');
               },
               child: ListTile(
                 title: Row(

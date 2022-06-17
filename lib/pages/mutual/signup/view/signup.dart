@@ -318,6 +318,9 @@ class SignupPage extends StatelessWidget {
                         ),
                       ),
                       GestureDetector(
+                          onTap: () {
+                            Get.toNamed("/tnc");
+                          },
                           child: Text("Terms and Conditions",
                               style: TextStyle(
                                   decoration: TextDecoration.underline)))
