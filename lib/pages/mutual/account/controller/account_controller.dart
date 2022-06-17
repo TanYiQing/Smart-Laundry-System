@@ -6,8 +6,9 @@ import 'package:get_storage/get_storage.dart';
 
 class AccountController extends GetxController {
   var user = Get.arguments;
-  var gender = "".obs;
+
   var userList = <UserProfile>[].obs;
+  var gender = "".obs;
   static final appData = GetStorage();
   TextEditingController firstnamecontroller = new TextEditingController();
   TextEditingController lastnamecontroller = new TextEditingController();
@@ -61,6 +62,11 @@ class AccountController extends GetxController {
     if (user != null) {
       userList.assignAll(user);
     }
+    gender.value=userList[0].gender.toString();
+    firstnamecontroller.text=userList[0].firstName.toString();
+    lastnamecontroller.text=userList[0].lastName.toString();
+    birthdaycontroller.text=userList[0].birthday.toString();
+    phonecontroller.text=userList[0].phone.toString();
     update();
   }
 
