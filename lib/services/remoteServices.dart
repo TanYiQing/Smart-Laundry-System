@@ -329,7 +329,8 @@ class RemoteServices {
       if (response.body == "Failed") {
         return null;
       } else {
-        Get.offAndToNamed("/location");
+        Get.back();
+        Get.back();
         Get.snackbar("Hooray!", "Address has been saved.");
       }
     } else {

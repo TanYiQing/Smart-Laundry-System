@@ -65,18 +65,20 @@ class ServicesMachineDetailsController extends GetxController {
       print(checked1.value);
     } else if (addon == "addon2") {
       checked2.value = checkValue;
-      if (checked1.value == true) {
+      if (checked2.value == true) {
         totalPrice.value += double.parse(machine.addOn2Price);
       } else {
         totalPrice.value -= double.parse(machine.addOn2Price);
       }
+      print(checked2.value);
     } else {
       checked3.value = checkValue;
-      if (checked1.value == true) {
+      if (checked3.value == true) {
         totalPrice.value += double.parse(machine.addOn3Price);
       } else {
         totalPrice.value -= double.parse(machine.addOn3Price);
       }
+      print(checked3.value);
     }
 
     update();
