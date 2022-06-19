@@ -523,11 +523,11 @@ class RemoteServices {
     } on Exception catch (_) {}
   }
 
-  static Future<List<Order>?> loadNewAndConfirmedOrder() async {
+  static Future<List<Order>?> loadNewAndConfirmedOrder(String email) async {
     var response = await client.post(
-      Uri.parse(
-          'https://hubbuddies.com/270607/onesource/php/loadNewAndConfirmedOrder.php'),
-    );
+        Uri.parse(
+            'https://hubbuddies.com/270607/onesource/php/loadNewAndConfirmedOrder.php'),
+        body: {"email": email});
 
     if (response.statusCode == 200) {
       if (response.body == "nodata") {
@@ -537,7 +537,7 @@ class RemoteServices {
         return orderFromJson(jsondata);
       }
     } else {
-      Get.snackbar("Opps", "Error in loading service...");
+      Get.snackbar("Opps", "Error in loading order...");
       return null;
     }
   }
@@ -556,16 +556,17 @@ class RemoteServices {
         return orderFromJson(jsondata);
       }
     } else {
-      Get.snackbar("Opps", "Error in loading service...");
+      Get.snackbar("Opps", "Error in loading order...");
       return null;
     }
   }
 
-  static Future<List<Order>?> loadOnGoingOrderLaundry() async {
+  static Future<List<Order>?> loadOnGoingOrderLaundry(String email) async {
     var response = await client.post(
-      Uri.parse(
-          'https://hubbuddies.com/270607/onesource/php/loadOnGoingOrderLaundry.php'),
-    );
+        Uri.parse(
+            'https://hubbuddies.com/270607/onesource/php/loadOnGoingOrderLaundry.php'),
+        body: {"email": email});
+    print(response.body);
     if (response.statusCode == 200) {
       if (response.body == "nodata") {
         return null;
@@ -574,16 +575,16 @@ class RemoteServices {
         return orderFromJson(jsondata);
       }
     } else {
-      Get.snackbar("Opps", "Error in loading service...");
+      Get.snackbar("Opps", "Error in loading order...");
       return null;
     }
   }
 
-  static Future<List<Order>?> loadCompletedOrderLaundry() async {
+  static Future<List<Order>?> loadCompletedOrderLaundry(String email) async {
     var response = await client.post(
-      Uri.parse(
-          'https://hubbuddies.com/270607/onesource/php/loadCompletedOrder.php'),
-    );
+        Uri.parse(
+            'https://hubbuddies.com/270607/onesource/php/loadCompletedOrder.php'),
+        body: {"email": email});
     if (response.statusCode == 200) {
       if (response.body == "nodata") {
         return null;
@@ -592,7 +593,7 @@ class RemoteServices {
         return orderFromJson(jsondata);
       }
     } else {
-      Get.snackbar("Opps", "Error in loading service...");
+      Get.snackbar("Opps", "Error in loading order...");
       return null;
     }
   }

@@ -25,7 +25,8 @@ class MyOrderLaundryController extends GetxController {
   }
 
   Future<void> loadNewAndConfirmedOrder() async {
-    var newAndConfirmedOrder = await RemoteServices.loadNewAndConfirmedOrder();
+    String email=appData.read("email");
+    var newAndConfirmedOrder = await RemoteServices.loadNewAndConfirmedOrder(email);
     if (newAndConfirmedOrder != null) {
       newandconfirmedorderList.assignAll(newAndConfirmedOrder);
     }
@@ -33,8 +34,8 @@ class MyOrderLaundryController extends GetxController {
   }
 
   Future<void> loadOnGoingOrder() async {
-    print("Hello");
-    var onGoingOrder = await RemoteServices.loadOnGoingOrderLaundry();
+    String email=appData.read("email");
+    var onGoingOrder = await RemoteServices.loadOnGoingOrderLaundry(email);
     if (onGoingOrder != null) {
       ongoingorderList.assignAll(onGoingOrder);
     }
@@ -42,7 +43,8 @@ class MyOrderLaundryController extends GetxController {
   }
 
   Future<void> loadConfirmedOrder() async {
-    var confirmedOrder = await RemoteServices.loadCompletedOrderLaundry();
+    String email=appData.read("email");
+    var confirmedOrder = await RemoteServices.loadCompletedOrderLaundry(email);
     if (confirmedOrder != null) {
       completedorderList.assignAll(confirmedOrder);
     }
