@@ -34,15 +34,29 @@ class AccountPageCustomer extends StatelessWidget {
                     left: screenWidth / 20,
                     child: Row(
                       children: [
-                        Container(
-                            height: screenHeight / 6,
-                            width: screenWidth / 4,
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image:
-                                        AssetImage("assets/images/people.jpg")),
-                                shape: BoxShape.circle)),
+                        GetBuilder<BottomBarController>(builder: (controller) {
+                          return (controller.imageStatus.value.toString() ==
+                                  "No")
+                              ? Container(
+                                  height: screenHeight / 6,
+                                  width: screenWidth / 4,
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          fit: BoxFit.cover,
+                                          image: AssetImage(
+                                              "assets/images/people.jpg")),
+                                      shape: BoxShape.circle))
+                              : Container(
+                                  height: screenHeight / 6,
+                                  width: screenWidth / 4,
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          fit: BoxFit.cover,
+                                          image: NetworkImage(
+                                              "https://hubbuddies.com/270607/onesource/images/profileImage/${controller.appData.read("email")}/profileImage.png")),
+                                      shape: BoxShape.circle)
+                                );
+                        }),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
@@ -71,7 +85,9 @@ class AccountPageCustomer extends StatelessWidget {
                                   width: screenWidth / 5,
                                   height: screenHeight / 35,
                                   child: MaterialButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      choosePhoto(screenHeight, screenWidth);
+                                    },
                                     child: Container(
                                       child: Row(
                                         mainAxisAlignment:
@@ -379,5 +395,64 @@ class AccountPageCustomer extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void choosePhoto(
+    double screenHeight,
+    double screenWidth,
+  ) {
+    Get.bottomSheet(Container(
+      height: screenWidth / 4.5,
+      color: Colors.white,
+      child: GetBuilder<BottomBarController>(builder: (controller) {
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            GestureDetector(
+              onTap: () {
+                controller.chooseCamera();
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.camera_alt,
+                    color: Colors.blue,
+                  ),
+                  Text("Camera".tr)
+                ],
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                controller.chooseGallery();
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.photo_library_rounded, color: Colors.purple),
+                  Text("Gallery".tr)
+                ],
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                controller.chooseRemove();
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.delete,
+                    color: Colors.red,
+                  ),
+                  Text("Remove".tr)
+                ],
+              ),
+            ),
+          ],
+        );
+      }),
+    ));
   }
 }

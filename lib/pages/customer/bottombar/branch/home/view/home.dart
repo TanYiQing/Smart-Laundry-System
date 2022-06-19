@@ -43,15 +43,29 @@ class HomePage extends StatelessWidget {
                       left: screenWidth / 20,
                       child: Row(
                         children: [
-                          Container(
-                              height: screenHeight / 6,
-                              width: screenWidth / 4,
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: AssetImage(
-                                          "assets/images/people.jpg")),
-                                  shape: BoxShape.circle)),
+                          GetBuilder<BottomBarController>(builder: (controller) {
+                          return (controller.imageStatus.value.toString() ==
+                                  "No")
+                              ? Container(
+                                  height: screenHeight / 6,
+                                  width: screenWidth / 4,
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          fit: BoxFit.cover,
+                                          image: AssetImage(
+                                              "assets/images/people.jpg")),
+                                      shape: BoxShape.circle))
+                              : Container(
+                                  height: screenHeight / 6,
+                                  width: screenWidth / 4,
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          fit: BoxFit.cover,
+                                          image: NetworkImage(
+                                              "https://hubbuddies.com/270607/onesource/images/profileImage/${controller.appData.read("email")}/profileImage.png")),
+                                      shape: BoxShape.circle)
+                                );
+                        }),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Column(

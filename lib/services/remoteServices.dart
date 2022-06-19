@@ -74,7 +74,9 @@ class RemoteServices {
         Get.snackbar("Opps", "Wrong username or password...");
         return null;
       }
-    } on Exception catch (_) {}
+    } on Exception catch (_) {
+      print("Error");
+    }
   }
 
   static Future<Laundry?> addLaundry(
@@ -1158,6 +1160,28 @@ class RemoteServices {
         return null;
       }
     } on Exception catch (_) {}
+  }
+
+  static Future<String?> addProfileImage(
+      String email, String encoded_profileImage) async {
+    var response = await client.post(
+        Uri.parse(
+            'https://hubbuddies.com/270607/onesource/php/addProfileImage.php'),
+        body: {
+          "email": email,
+          "encoded_profileImage": encoded_profileImage,
+        });
+    print(response.body);
+    if (response.statusCode == 200) {
+      if (response.body == "Failed") {
+        return response.body;
+      } else {
+        Get.snackbar("Update Success", "Your profile image has been updated");
+        return response.body;
+      }
+    } else {
+      return null;
+    }
   }
 
   // static Future<String?> saveLaundryDocuments(

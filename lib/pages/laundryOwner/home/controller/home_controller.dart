@@ -17,7 +17,7 @@ class HomeLaundryController extends GetxController {
 
   Future<void> calculateApproval() async {
     approval.value =
-        (await RemoteServices.calculateApproval(appData.read("email").toString()))!;
+        (await RemoteServices.calculateApproval(appData.read("email").toString()))??"0";
 
     update();
   }

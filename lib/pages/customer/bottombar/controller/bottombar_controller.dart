@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:final_year_project/models/laundry.dart';
 import 'package:final_year_project/models/order.dart';
 import 'package:final_year_project/models/userprofile.dart';
@@ -5,6 +8,7 @@ import 'package:final_year_project/services/remoteServices.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:image_picker/image_picker.dart';
 
 class BottomBarController extends GetxController {
   final appData = GetStorage();
@@ -16,12 +20,15 @@ class BottomBarController extends GetxController {
   var userList = <UserProfile>[].obs;
   var user = Get.arguments;
   var tabIndex = 0;
+  var imageStatus = "No".obs;
   late PageController pagecontroller = new PageController();
   final List<String> orderStatus = [
     "Washing Machine",
     "Dry Washing Machine",
     "Ironing Machine",
   ];
+  File? profileImage;
+  String? encoded_profileImage;
 
   @override
   void onInit() {
@@ -29,6 +36,12 @@ class BottomBarController extends GetxController {
     loadUser();
     loadLaundryNearby();
     super.onInit();
+  }
+
+  @override
+  void dispose() {
+    loadUser();
+    super.dispose();
   }
 
   void changeTab(int index) {
@@ -117,6 +130,7 @@ class BottomBarController extends GetxController {
     if (userProfile != null) {
       userList.assignAll(userProfile);
     }
+    imageStatus.value = userList[0].imageStatus.toString();
     update();
   }
 
@@ -221,5 +235,50 @@ class BottomBarController extends GetxController {
         approve: serviceList[index].approve);
 
     Get.toNamed("/servicesdetails", arguments: laundry);
+  }
+
+  Future chooseGallery() async {
+    final picker = ImagePicker();
+    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
+
+    if (pickedFile != null) {
+      profileImage = File(pickedFile.path);
+      String email = appData.read("email");
+      encoded_profileImage = base64Encode(profileImage!.readAsBytesSync());
+      RemoteServices.addProfileImage(email, encoded_profileImage!);
+      loadUser();
+    } else {
+      print("No Image Selected");
+    }
+    update();
+    Get.back();
+    update();
+    loadUser();
+  }
+
+  Future chooseCamera() async {
+    final picker = ImagePicker();
+    final pickedFile = await picker.pickImage(source: ImageSource.camera);
+
+    if (pickedFile != null) {
+      profileImage = File(pickedFile.path);
+      String email = appData.read("email");
+      encoded_profileImage = base64Encode(profileImage!.readAsBytesSync());
+      RemoteServices.addProfileImage(email, encoded_profileImage!);
+      loadUser();
+    } else {
+      print("No Image Selected");
+    }
+    update();
+    Get.back();
+    update();
+    loadUser();
+  }
+
+  void chooseRemove() {
+    profileImage = null;
+    update();
+    Get.back();
+    update();
   }
 }
