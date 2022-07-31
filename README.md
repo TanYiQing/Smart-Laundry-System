@@ -95,5 +95,11 @@ D - Desirable
 |   4  |SLS_02_01           |User can login with their account.                                                                             | M          |
 |   5  |SLS_02_02           |User can login and redirect to management page if they are laundry owner.                                      | M          |
 |   6  |SLS_02_03           |Users can reset password.                                                                                      | M          |
+|      |**SLS_03**          |**Logout**                                                                                                     |            |
+|   7  |SLS_03_01           |Users can logout their account.                                                                                | M          |
+|      |**SLS_04**          |**Manage Laundry**                                                                                             |            |
+|   8  |SLS_04_01           |Laundry owner can select quantity and type of machines.                                                        | M          |
+|   9  |SLS_04_02           |Laundry owner manage to overview on occupied level of machines.                                                | M          |
+
  
  
