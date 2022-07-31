@@ -100,6 +100,24 @@ D - Desirable
 |      |**SLS_04**          |**Manage Laundry**                                                                                             |            |
 |   8  |SLS_04_01           |Laundry owner can select quantity and type of machines.                                                        | M          |
 |   9  |SLS_04_02           |Laundry owner manage to overview on occupied level of machines.                                                | M          |
+|   10 |SLS_04_03           |Laundry owner can generate business report.                                                                    | O          |
+|   11 |SLS_04_04           |Laundry owner can add laundry shop.                                                                            | O          |
+|      |**SLS_05**          |**Manage Order**                                                                                               |            |
+|   12 |SLS_05_01           |Customer can make reservation on machines.                                                                     | M          |
+|   13 |SLS_05_02           |Customer can check for laundry shop occupied level.                                                            | M          |
+|   14 |SLS_05_03           |Customer can order for runner to deliver their clothes.                                                        | D          |
+|   15 |SLS_05_04           |Customer can choose pick up time to collect their clothes.                                                     | D          |
+|   16 |SLS_05_05           |Customer will receive notification when clothes is done washing.                                               | M          |
+|   17 |SLS_05_06           |Laundry owner will be notified when there is an order.                                                         | D          |
+|   18 |SLS_05_07           |Laundry owner can cancel customer’s reservation.                                                               | O          |
+|   19 |SLS_05_08           |Customer can search for laundry shop.                                                                          | O          |
+|      |**SLS_06**          |**Track Order**                                                                                                |            |
+|   20 |SLS_06_01           |Customer can make reservation on machines.                                                                     | O          |
+|   21 |SLS_06_02           |Customer can check for laundry shop occupied level.                                                            | O          |
+|      |**SLS_07**          |**Manage Payment**                                                                                             |            |
+|   22 |SLS_07_01           |Customer can make payment online.                                                                              | O          |
+|   23 |SLS_07_02           |Laundry owner can check wallet balance.                                                                        | O          |
+|   24 |SLS_07_03           |Laundry owner can receive payment online.                                                                      | O          |
 
  
  
