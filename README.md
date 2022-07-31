@@ -69,10 +69,27 @@ The general constraints of this system are:
  
 
 ## 2.4 Assumptions and Dependencies
-
-
 ## 2.4.1 Assumptions
 1. Users of this system have a smartphone.
 2. Users understand English language.
+
+## 2.4.2 Dependencies
+1. System will need internet connection to function.
+2. The payment function will connect with the payment gateway from third party API. 
+
+
+## 3.0 Requirements
+## 3.1 Functional Requirements
+The functional requirements for the Smart Laundry System consist of nine major requirements namely “Sign Up”, “Login”, “Logout”, “Manage Laundry”, “Manage Order”, “Track Order”, “Manage Payment”, “Manage Error”, and “Manage User Profile” as rendered in Table 1. The priority of the requirements are indicated by: 
+M - Mandatory
+O - Optional
+D - Desirable
+
+|  No  | Requirements ID |  Requirement Description   |  Priority  |
+| :--: | :-------------: | :------------------------: | :--------: |
+|      |SLS_01           |User sign up their account. |  |
+|   1  |SLS_01_01        |User sign up their account. | M |
+|   2  |SLS_01_02        |Users can choose account type (Laundry Owner or Customers) to be sign up.    | M |
+|   3  |SLS_01_03        |Users need to input personal details (First Name and Last name), email, and password to register an account.    | M |
  
  
