@@ -67,5 +67,12 @@ The general constraints of this system are:
 4. System need database to store data. 
 5. System will need a smartphone as a platform to function. 
  
+
+## 2.4 Assumptions and Dependencies
+
+
+## 2.4.1 Assumptions
+1. Users of this system have a smartphone.
+2. Users understand English language.
  
  
