@@ -37,5 +37,35 @@ This document will covers requirements list, use case model, use case specificat
 6. PHP – Open source scripting language for backend performance of this system. 
 7. Billplz – Payment gateway platform to pay and get paid. 
 
+
+## 2.0 General Description
+## 2.1 System Functions
+The functions of the Smart Laundry System mobile application are: 
+1. Users can sign up to the Smart Laundry System. 
+2. Users can login to the Smart Laundry System. 
+3. Users can logout from Smart Laundry System. 
+4. Laundry owner can manage laundry. 
+5. Customer can place order and laundry owner can receive order. 
+6. Customer can make payment through online and laundry owner can receive the payment. 
+7. Customer can track order status and laundry owner can update order status. 
+8. Customer can report error and laundry owner can receive error reported. 
+9. Users can manage user profile. 
+
+
+## 2.2 User
+The users of this system are:
+Customer – The person who will make reservation on laundry machine through this system. 
+Laundry owner – The person who own laundry shop and provide laundry machine to be use by customer. 
+Admin – The person who will maintain and regulate this system.
+ 
+
+## 2.3 General Constraints
+The general constraints of this system are: 
+1. System will need admin and support team to regulate and maintain stability. 
+2. System need internet connection to function. 
+3. System need server to connect within customers and laundry owners. 
+4. System need database to store data. 
+5. System will need a smartphone as a platform to function. 
+ 
  
  
