@@ -87,9 +87,13 @@ D - Desirable
 
 |**No**|**Requirements ID** |**Requirement Description**                                                                                    |**Priority**|
 | :--- | :----------------- | :------------------------------------------------------------------------------------------------------------ | :--------- |
-|      |SLS_01              |User sign up their account.                                                                                    |            |
+|      |**SLS_01**          |**Sign Up**                                                                                                    |            |
 |   1  |SLS_01_01           |User sign up their account.                                                                                    | M          |
 |   2  |SLS_01_02           |Users can choose account type (Laundry Owner or Customers) to be sign up.                                      | M          |
 |   3  |SLS_01_03           |Users need to input personal details (First Name and Last name), email, and password to register an account.   | M          |
+|      |**SLS_02**          |**Login**                                                                                                      |            |
+|   4  |SLS_02_01           |User can login with their account.                                                                             | M          |
+|   5  |SLS_02_02           |User can login and redirect to management page if they are laundry owner.                                      | M          |
+|   6  |SLS_02_03           |Users can reset password.                                                                                      | M          |
  
  
