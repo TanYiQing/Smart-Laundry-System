@@ -129,4 +129,22 @@ D - Desirable
 <h5 align="center">Table 1: The Functional Requirements Definition</h5>
 
  
- 
+ ## 3.2 Non-Functional Requirements
+The non-functional requirements for the Smart Laundry System consist of four major requirements namely “Security”, “Reliability”, “Usability”, and “Scalability” as rendered in Table The priority of the requirements are indicated by: 
+M - Mandatory
+O - Optional
+D - Desirable
+
+|**No**|**Requirements ID** |**Requirement Description**                                                                                    |**Priority**|
+| :--- | :----------------- | :------------------------------------------------------------------------------------------------------------ | :--------- |
+|      |**SLS_10**          |**Security**                                                                                                   |            |
+|   1  |SLS_10_01           |Laundry owner and customer can only log in with the correct username and password.                             | M          |
+|   2  |SLS_10_02           |Payment is manage by payment gateway to enhance secureness.                                                    | M          |
+|      |**SLS_11**          |**Reliability**                                                                                                |            |
+|   3  |SLS_11_01           |The system should defect at a rate shall be no more than 1 failure per 1000 hours of operation.                | M          |
+|      |**SLS_12**          |**Usability**                                                                                                  |            |
+|   4  |SLS_12_01           |System is easy to use and not complicated to function.                                                         | M          |
+|      |**SLS_13**          |**Scalability**                                                                                                |            |
+|   5  |SLS_13_01           |System will not crash even if many users use it at the same time which can hold up to 1000 users per time.     | M          |
+
+<h5 align="center">Table 2: The Non-Functional Requirements Definition</h5>
