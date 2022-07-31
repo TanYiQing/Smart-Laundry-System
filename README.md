@@ -115,9 +115,18 @@ D - Desirable
 |   20 |SLS_06_01           |Customer can make reservation on machines.                                                                     | O          |
 |   21 |SLS_06_02           |Customer can check for laundry shop occupied level.                                                            | O          |
 |      |**SLS_07**          |**Manage Payment**                                                                                             |            |
-|   22 |SLS_07_01           |Customer can make payment online.                                                                              | O          |
-|   23 |SLS_07_02           |Laundry owner can check wallet balance.                                                                        | O          |
-|   24 |SLS_07_03           |Laundry owner can receive payment online.                                                                      | O          |
+|   22 |SLS_07_01           |Customer can make payment online.                                                                              | M          |
+|   23 |SLS_07_02           |Laundry owner can check wallet balance.                                                                        | M          |
+|   24 |SLS_07_03           |Laundry owner can receive payment online.                                                                      | M          |
+|      |**SLS_08**          |**Manage Error**                                                                                               |            |
+|   25 |SLS_08_01           |Customer can report on error machines.                                                                         | D          |
+|   26 |SLS_08_02           |Laundry owner can get report on error machines.                                                                | D          |
+|      |**SLS_09**          |**Manage User Profile**                                                                                        |            |
+|   27 |SLS_09_01           |Users are able to update personal information.                                                                 | D          |
+|   28 |SLS_09_02           |Users can update their password.                                                                               | D          |
+|   29 |SLS_09_03           |Customer are able to overview order history.                                                                   | D          |
+
+<h5 align="center">Table 1: The Functional Requirements Definition</h5>
 
  
  
