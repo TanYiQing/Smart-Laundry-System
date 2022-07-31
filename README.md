@@ -1,4 +1,4 @@
-# final_year_project
+# Smart Laundry System
 
 A new Flutter project.
 
