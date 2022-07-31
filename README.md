@@ -86,7 +86,7 @@ O - Optional
 D - Desirable
 
 |  No  | Requirements ID |  Requirement Description   |  Priority  |
-| :--: | :-------------: | :------------------------: | :--------: |
+| :--- | :-------------- | :------------------------- | :--------- |
 |      |SLS_01           |User sign up their account. |  |
 |   1  |SLS_01_01        |User sign up their account. | M |
 |   2  |SLS_01_02        |Users can choose account type (Laundry Owner or Customers) to be sign up.    | M |
