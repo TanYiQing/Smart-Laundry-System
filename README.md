@@ -66,6 +66,7 @@ The general constraints of this system are:
 ## 3.0 Requirements
 ## 3.1 Functional Requirements
 The functional requirements for the Smart Laundry System consist of nine major requirements namely “Sign Up”, “Login”, “Logout”, “Manage Laundry”, “Manage Order”, “Track Order”, “Manage Payment”, “Manage Error”, and “Manage User Profile” as rendered in Table 1. The priority of the requirements are indicated by: 
+
 M - Mandatory
 O - Optional
 D - Desirable
@@ -116,6 +117,7 @@ D - Desirable
  
  ## 3.2 Non-Functional Requirements
 The non-functional requirements for the Smart Laundry System consist of four major requirements namely “Security”, “Reliability”, “Usability”, and “Scalability” as rendered in Table The priority of the requirements are indicated by: 
+
 M - Mandatory
 O - Optional
 D - Desirable
